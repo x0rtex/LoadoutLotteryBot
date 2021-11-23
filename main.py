@@ -1,5 +1,6 @@
 import time
 import random
+import sys
 
 weaponList = [
     "ADAR 2-15",
@@ -242,7 +243,7 @@ mapList = [
     "Woods",
     "Labs"
 ]
-bonusModifiers = [
+bonusList = [
     "Night time",
     "Hipfire only",
     "Flash grenades only",
@@ -252,66 +253,83 @@ bonusModifiers = [
     "Swap gun and ammo trader level",
     "Ironsights only"
 ]
+wildcard = ["WILDCARD - YOUR CHOICE"]
 
-rolledWeapon = random.choice(weaponList)
-rolledArmor = random.choice(armorList + armorRigList)
-rolledRig = random.choice(rigList)
-rolledHelmet = random.choice(helmetList)
-rolledBackpack = random.choice(backpackList)
-rolledGunModifiers = random.choice(modifierList)
-rolledAmmoModifiers = random.choice(modifierList)
-rolledMap = random.choice(mapList)
-rolledBonus = random.choice(bonusModifiers)
+hasWildcard = False
+def pickChoices(choices):
+    global hasWildcard
+    if hasWildcard:
+        choices += wildcard
+    item = random.choice(choices)
+    hasWildcard = hasWildcard or item in wildcard
+    return item
+
+rolledWeapon = pickChoices(weaponList)
+rolledArmor = pickChoices(armorList + armorRigList)
+rolledRig = pickChoices(rigList)
+rolledHelmet = pickChoices(helmetList)
+rolledBackpack = pickChoices(backpackList)
+rolledGunModifiers = pickChoices(modifierList)
+rolledAmmoModifiers = pickChoices(modifierList)
+rolledMap = pickChoices(mapList)
+rolledBonus = pickChoices(bonusList)
+
+def slowPrint(prefix, suffix):
+    for i in (prefix + ' ' + suffix):
+        print(i, end='')
+        sys.stdout.flush()
+        time.sleep(0.05)
+    print()
 
 print("Welcome to Tarkov Loadout Lottery")
 time.sleep(1)
 input("Press enter to roll your loadout... ")
 
+time.sleep(0.5)
 print("\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 time.sleep(1)
-print("Weapon:", rolledWeapon)
-time.sleep(1)
+slowPrint("Weapon:", rolledWeapon)
+time.sleep(0.5)
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 time.sleep(1)
 if rolledArmor in armorList:
-    print("Armor:", rolledArmor)
+    slowPrint("Armor:", rolledArmor)
     time.sleep(1)
     print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
     time.sleep(1)
-    print("Rig:", rolledRig)
+    slowPrint("Rig:", rolledRig)
 else:
-    print("Armored Rig:", rolledArmor)
-time.sleep(1)
+    slowPrint("Armored Rig:", rolledArmor)
+time.sleep(0.5)
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 time.sleep(1)
-print("Helmet:", rolledHelmet)
-time.sleep(1)
+slowPrint("Helmet:", rolledHelmet)
+time.sleep(0.5)
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 time.sleep(1)
-print("Backpack:", rolledBackpack)
-time.sleep(1)
+slowPrint("Backpack:", rolledBackpack)
+time.sleep(0.5)
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 time.sleep(1)
-print("Gun Modifications:", rolledGunModifiers)
-time.sleep(1)
+slowPrint("Gun Modifications:", rolledGunModifiers)
+time.sleep(0.5)
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 time.sleep(1)
-print("Ammunition:", rolledAmmoModifiers)
-time.sleep(1)
+slowPrint("Ammunition:", rolledAmmoModifiers)
+time.sleep(0.5)
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 time.sleep(1)
-print("Map:", rolledMap)
-time.sleep(1)
+slowPrint("Map:", rolledMap)
+time.sleep(0.5)
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 time.sleep(1)
-
 userInput = input("Would you like the bonus modifier? (Y = yes, any other key = no) ")
-time.sleep(1)
+time.sleep(0.5)
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 time.sleep(1)
 if userInput.upper() == "Y":
-    print("Bonus modifier:", rolledBonus)
-    time.sleep(1)
+    slowPrint("Bonus modifier:", rolledBonus)
+    time.sleep(0.5)
     print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
     time.sleep(1)
 print("\nThank you!")
