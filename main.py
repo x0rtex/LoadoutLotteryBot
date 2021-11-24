@@ -282,7 +282,7 @@ def slowPrint(prefix, suffix):
     print()
 
 print("Welcome to Tarkov Loadout Lottery")
-time.sleep(1)
+time.sleep(0.5)
 input("Press enter to roll your loadout... ")
 
 time.sleep(0.5)
