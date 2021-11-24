@@ -25,7 +25,7 @@ weaponList = [
     "AS VAL",
     "CMMG Mk47 Mutant",
     "DT MDR 5.56x45",
-    "DT NDR .308",
+    "DT MDR .308",
     "HK 416A5",
     "Colt M4A1",
     "SIG MCX",
