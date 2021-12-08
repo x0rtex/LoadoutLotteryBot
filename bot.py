@@ -214,7 +214,7 @@ async def help(ctx):
         description = command.description
         if not description or description is None or description == "":
             description = "No Description Provided"
-        embed.add_field(name=f"`!{command.name}{command.signature if command.signature is not None else ''}`",
+        embed.add_field(name=f"`t!{command.name}{command.signature if command.signature is not None else ''}`",
                         value=description)
     await ctx.send(embed=embed)
 
