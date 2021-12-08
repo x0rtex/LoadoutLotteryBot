@@ -10,13 +10,13 @@ from lists import *
 ts = time.gmtime()
 user_reroll = ""
 
-client = commands.Bot(command_prefix="!")
+client = commands.Bot(command_prefix="t!")
 client.remove_command("help")
 
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=nextcord.Game("!help"))
+    await client.change_presence(activity=nextcord.Game("t!help"))
     print("BOT ONLINE")
     while True:
         print("List of guilds as of:", time.strftime("%x %X", ts), client.guilds)
@@ -99,7 +99,7 @@ class RerollAnythingButton(nextcord.ui.View):
 @client.command(name="roll", description="Classic Tarkov Loadout Lottery uses a super quantum algorithm to generate a "
                                          "random loadout and map for you to play with.")
 async def roll(ctx):
-    print("!roll", ctx.message)
+    print("t!roll", ctx.message)
     rollmsg = await ctx.reply("Welcome to Tarkov Loadout Lottery!")
     await asyncio.sleep(1)
     rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
@@ -207,7 +207,7 @@ async def roll(ctx):
 
 @client.command(description="Commands List")
 async def help(ctx):
-    print("!help", ctx.message)
+    print("t!help", ctx.message)
     embed = nextcord.Embed(
         title="Tarkov Loadout Lottery Help - Commands are case-sensitive", description="Commands ""List")
     for command in client.walk_commands():
@@ -221,7 +221,7 @@ async def help(ctx):
 
 @client.command(description="Pong!")
 async def ping(ctx):
-    print("!ping", ctx.message)
+    print("t!ping", ctx.message)
     await ctx.reply("pong")
 
 
