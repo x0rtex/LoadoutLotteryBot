@@ -249,11 +249,11 @@ good_bonus_list = (
     "+1 level to all traders",
     "Swap gun and ammo trader level",
     "Pistol secondary",
+    "Must use highest penetration round",
     "Re-roll anything"
 )
 bad_bonus_list = (
     "Flash grenades only",
-    "No meds in pocket",
     "No suppressor",
     "No insurance",
     "Iron sights only",
@@ -261,10 +261,13 @@ bad_bonus_list = (
     "Night raid (No NVG)",
     "Hip fire only (unbind aim)",
     "No surgery kits",
-    "No keys",
-    "Use lowest capacity magazine possible",
-    "No kit upgrades in raid",
-    "Re-roll anything"
+    "No keys or keycards",
+    "No loadout upgrades in raid",
+    "Weapon must be stock",
+    "Single-fire only",
+    "Must use highest flash damage round",
+    "Hatchlings must be killed with a melee",
+    "Attempt to befriend a random player"
 )
 
 bonus_list = good_bonus_list, bad_bonus_list
