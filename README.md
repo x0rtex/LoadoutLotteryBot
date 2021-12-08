@@ -4,6 +4,7 @@
 
 Currently, the only commands are: 
 - **t!help** - Shows list of commands
+- **t!ping** - Pong!
 - **t!roll** - Rolls the loadout roulette!
 
 Preview:
