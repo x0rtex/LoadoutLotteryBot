@@ -1,3 +1,5 @@
+# This is a script that will generate a loadout in Python's command line - no discord bot.
+
 import time
 import random
 import sys
