@@ -1,5 +1,6 @@
 weapon_list = (
     "WILDCARD - YOUR CHOICE",
+    "Melee Weapon",
     "ADAR 2-15",
     "AK-101",
     "AK-102",
@@ -90,6 +91,7 @@ weapon_list = (
 )
 armor_list = (
     "WILDCARD - YOUR CHOICE",
+    "None",
     "BNTI Module-3M body armor",
     "PACA soft armor",
     "6B2 armor (Flora)",
@@ -133,6 +135,7 @@ armor_rig_list = (
 )
 rig_list = (
     "WILDCARD - YOUR CHOICE",
+    "None",
     "Scav Vest",
     "Security Vest",
     "DIY IDEA chest rig",
@@ -160,6 +163,7 @@ rig_list = (
 )
 helmet_list = (
     "WILDCARD - YOUR CHOICE",
+    "None",
     "Armasight NVG head strap",
     "Wilcox Skull Lock head mount",
     "Tac-Kek FAST MT helmet",
@@ -202,6 +206,7 @@ helmet_list = (
 )
 backpack_list = (
     "WILDCARD - YOUR CHOICE",
+    "None",
     "6Sh118 raid backpack",
     "LBT-2670 Slim Field Med Pack",
     "Mystery Ranch Blackjack 50 backpack (Multicam)",
