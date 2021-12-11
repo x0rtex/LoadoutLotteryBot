@@ -11,4 +11,4 @@ Currently, the only commands are:
 
 Preview:
 
-![Preview](https://i.imgur.com/LXAPov7.png)
+![Preview](https://i.imgur.com/3hMqnG0.png)
