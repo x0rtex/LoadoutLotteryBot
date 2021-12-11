@@ -1,3 +1,5 @@
+# This is just a text based script to generate a loadout, no discord bot
+
 import time
 import random
 import sys
