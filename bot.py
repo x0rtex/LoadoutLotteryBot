@@ -100,109 +100,236 @@ class RerollAnythingButton(nextcord.ui.View):
                                          "random loadout and map for you to play with.")
 async def roll(ctx):
     print("t!roll", ctx.message)
-    rollmsg = await ctx.reply("Welcome to Tarkov Loadout Lottery!")
-    await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-    await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Weapon:**")
-    await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(weapon_list)}")
+
+    rolled_weapon = random.choice(tuple(weapons.keys()))
+    rolled_armor = random.choice(tuple(armors.keys()) + tuple(armor_rigs.keys()))
+    rolled_rig = random.choice(tuple(rigs.keys()))
+    rolled_helmet = random.choice(tuple(helmets.keys()))
+    rolled_backpack = random.choice(tuple(backpacks.keys()))
+    rolled_map = random.choice(tuple(maps.keys()))
+
+    embed = nextcord.Embed(title="Welcome to Tarkov Loadout Lottery!",
+                           url="https://github.com/x0rtex/TarkovLoadoutLottery",
+                           color=0x5036d3)
+    embed.set_author(name="Made by x0rtex",
+                     url="https://discord.gg/tPSG2hAbUF",
+                     icon_url="https://i.imgur.com/4q2U4QN.png")
+    embed.set_thumbnail(url="https://i.imgur.com/6KhM3gw.png")
+    embed_msg = await ctx.send(embed=embed)
     await asyncio.sleep(1)
 
-    rolled_armor = random.choice(armor_list + armor_rig_list)
+    embed.add_field(name="Weapon:", value=":grey_question:", inline=False)
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(1)
+    field_index = 0
 
-    if rolled_armor in armor_list:
-        rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Armor:**")
+    embed.set_field_at(field_index, name="Weapon:", value=rolled_weapon, inline=False)
+    embed.set_image(url=weapons[rolled_weapon])
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(2)
+
+    if rolled_armor in armors:
+        embed.add_field(name="Armor:", value=":grey_question:", inline=False)
+        embed.set_image(url="")
+        await embed_msg.edit(embed=embed)
         await asyncio.sleep(1)
-        rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(armor_list)}")
+        field_index += 1
+        embed.set_field_at(field_index, name="Armor:", value=rolled_armor, inline=False)
+        embed.set_image(url=armors[rolled_armor])
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(2)
+
+        embed.add_field(name="Rig:", value=":grey_question:", inline=False)
+        embed.set_image(url="")
+        await embed_msg.edit(embed=embed)
         await asyncio.sleep(1)
-        rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rig:**")
-        await asyncio.sleep(1)
-        rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(rig_list)}")
+        field_index += 1
+        embed.set_field_at(field_index, name="Rig:", value=rolled_rig, inline=False)
+        embed.set_image(url=rigs[rolled_rig])
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(2)
     else:
-        rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Armored Rig:**")
+        embed.add_field(name="Armored Rig:", value=":grey_question:", inline=False)
+        embed.set_image(url="")
+        await embed_msg.edit(embed=embed)
         await asyncio.sleep(1)
-        rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(armor_rig_list)}")
+        field_index += 1
+        embed.set_field_at(field_index, name="Armored Rig:", value=rolled_armor, inline=False)
+        embed.set_image(url=armor_rigs[rolled_armor])
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(2)
 
+    embed.add_field(name="Helmet:", value=":grey_question:", inline=False)
+    embed.set_image(url="")
+    await embed_msg.edit(embed=embed)
     await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Helmet:**")
+    field_index += 1
+    embed.set_field_at(field_index, name="Helmet:", value=rolled_helmet, inline=False)
+    embed.set_image(url=helmets[rolled_helmet])
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(2)
+
+    embed.add_field(name="Backpack:", value=":grey_question:", inline=False)
+    embed.set_image(url="")
+    await embed_msg.edit(embed=embed)
     await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(helmet_list)}")
+    field_index += 1
+    embed.set_field_at(field_index, name="Backpack:", value=rolled_backpack, inline=False)
+    embed.set_image(url=backpacks[rolled_backpack])
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(2)
+
+    embed.add_field(name="Gun Mods:", value=":grey_question:", inline=False)
+    embed.set_image(url="")
+    await embed_msg.edit(embed=embed)
     await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Backpack:**")
+    field_index += 1
+    embed.set_field_at(field_index, name="Gun Mods:", value=random.choice(modifiers), inline=False)
+    await embed_msg.edit(embed=embed)
     await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(backpack_list)}")
+
+    embed.add_field(name="Ammo:", value=":grey_question:", inline=False)
+    await embed_msg.edit(embed=embed)
     await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Gun Mods:**")
+    field_index += 1
+    embed.set_field_at(field_index, name="Ammo:", value=random.choice(modifiers), inline=False)
+    await embed_msg.edit(embed=embed)
     await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(modifier_list)}")
+
+    embed.add_field(name="Map:", value=":grey_question:", inline=False)
+    await embed_msg.edit(embed=embed)
     await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Ammo:**")
+    field_index += 1
+    embed.set_field_at(field_index, name="Map:", value=rolled_map, inline=False)
+    embed.set_image(url=maps[rolled_map])
+    await embed_msg.edit(embed=embed)
     await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(modifier_list)}")
-    await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Map:**")
-    await asyncio.sleep(1)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(map_list)}")
-    await asyncio.sleep(1)
+
+    embed.set_footer(text="Would you like to roll an optional bonus modifier?")
 
     view1 = BonusButton(ctx)
-    rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-", view=view1)
+    await embed_msg.edit(embed=embed, view=view1)
     await view1.wait()
-    rollmsg = await rollmsg.edit(view=None)
+    embed.set_footer(text="")
+    embed.set_image(url="")
+    await embed_msg.edit(embed=embed, view=None)
 
     if view1.value:
-        rolled_bonus = random.choice(random.choice(bonus_list))
-        rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Bonus modifier:**")
+        rolled_bonus = random.choice(random.choice(bonuses))
+        embed.add_field(name="Bonus modifier:", value=":grey_question:", inline=False)
+        await embed_msg.edit(embed=embed)
         await asyncio.sleep(1)
-        rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {rolled_bonus}")
-        await asyncio.sleep(1)
+        field_index += 1
+        embed.set_field_at(field_index, name="Bonus modifier:", value=rolled_bonus, inline=False)
+        await embed_msg.edit(embed=embed)
 
         if rolled_bonus == "Re-roll anything":
+
+            rolled_weapon = random.choice(tuple(weapons.keys()))
+            rolled_armor = random.choice(tuple(armors.keys()))
+            rolled_armor_rig = random.choice(tuple(armor_rigs.keys()))
+            rolled_rig = random.choice(tuple(rigs.keys()))
+            rolled_helmet = random.choice(tuple(helmets.keys()))
+            rolled_backpack = random.choice(tuple(backpacks.keys()))
+            rolled_map = random.choice(tuple(maps.keys()))
+
             view2 = RerollAnythingButton()
-            rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-",
-                                         view=view2)
+            embed_msg = await ctx.send(embed=embed, view=view2)
             await view2.wait()
-            rollmsg = await rollmsg.edit(view=None)
 
             if view2.value == "Weapon":
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rerolled weapon:**")
+                embed.add_field(name="Rerolled weapon:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(1)
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(weapon_list)}")
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled weapon:", value=rolled_weapon, inline=False)
+                embed.set_image(url=weapons[rolled_weapon])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
             if view2.value == "Armor":
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rerolled armor:**")
+                embed.add_field(name="Rerolled armor:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(1)
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(armor_list)}")
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled armor:", value=rolled_armor, inline=False)
+                embed.set_image(url=armors[rolled_armor])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
             if view2.value == "Rig":
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rerolled rig:**")
+                embed.add_field(name="Rerolled rig:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(1)
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(rig_list)}")
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled rig:", value=rolled_rig, inline=False)
+                embed.set_image(url=rigs[rolled_rig])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
             if view2.value == "Armored Rig":
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rerolled armored rig:**")
+                embed.add_field(name="Rerolled armored rig:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(1)
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(armor_rig_list)}")
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled armored rig:", value=rolled_armor_rig, inline=False)
+                embed.set_image(url=armor_rigs[rolled_armor_rig])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
             if view2.value == "Helmet":
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rerolled helmet:** ")
+                embed.add_field(name="Rerolled helmet:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(1)
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(helmet_list)}")
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled helmet:", value=rolled_helmet, inline=False)
+                embed.set_image(url=helmets[rolled_helmet])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
             if view2.value == "Backpack":
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rerolled backpack:**")
+                embed.add_field(name="Rerolled backpack:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(1)
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(backpack_list)}")
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled backpack:", value=rolled_backpack, inline=False)
+                embed.set_image(url=backpacks[rolled_backpack])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
             if view2.value == "Gun mods":
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rerolled gun mods:**")
+                embed.add_field(name="Rerolled gun mods:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(1)
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(modifier_list)}")
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled gun mods:", value=random.choice(modifiers), inline=False)
+                await embed_msg.edit(embed=embed)
             if view2.value == "Ammo":
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rerolled ammo:**")
+                embed.add_field(name="Rerolled ammo:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(1)
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(modifier_list)}")
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled ammo:", value=random.choice(modifiers), inline=False)
+                await embed_msg.edit(embed=embed)
             if view2.value == "Map":
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content}\n**Rerolled map:**")
+                embed.add_field(name="Rerolled map:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(1)
-                rollmsg = await rollmsg.edit(content=f"{rollmsg.content} {random.choice(map_list)}")
-    await asyncio.sleep(1)
-    await rollmsg.edit(content=f"{rollmsg.content}\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled map:", value=rolled_map, inline=False)
+                embed.set_image(url=maps[rolled_map])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(4)
+        await asyncio.sleep(1)
+        embed.set_footer(text="Enjoy! :)")
+        embed.set_image(url="")
+        await embed_msg.edit(embed=embed, view=None)
 
 
 @client.command(description="Commands List")
