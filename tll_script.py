@@ -7,7 +7,6 @@ import sys
 from lists import *
 
 ts = time.gmtime()
-user_reroll = ""
 
 
 def slow_print(prefix, suffix):
@@ -92,32 +91,31 @@ if userInput.upper() == "Y":
             print("'weapon' - 'armoredrig' - 'helmet' - 'backpack' - 'mods' - 'ammo' - 'map'")
         user_reroll = input("> ")
         print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-    if user_reroll == 'weapon':
-        rolled_weapon = random.choice(weapons)
-        slow_print("Re-rolled weapon:", rolled_weapon)
-    elif user_reroll == 'armoredrig':
-        rolled_armor = random.choice(armor_rigs)
-        slow_print("Re-rolled armored rig:", rolled_armor)
-    elif user_reroll == 'armor':
-        rolled_armor = random.choice(armors)
-        slow_print("Re-rolled armor:", rolled_armor)
-    elif user_reroll == 'rig':
-        rolled_rig = random.choice(rigs)
-        slow_print("Re-rolled rig:", rolled_rig)
-    elif user_reroll == 'helmet':
-        rolled_helmet = random.choice(helmets)
-        slow_print("Re-rolled helmet:", rolled_helmet)
-    elif user_reroll == 'backpack':
-        rolled_backpack = random.choice(backpacks)
-        slow_print("Re-rolled backpack:", rolled_backpack)
-    elif user_reroll == 'mods':
-        rolled_gun_modifiers = random.choice(modifiers)
-        slow_print("Re-rolled gun mods:", rolled_gun_modifiers)
-    elif user_reroll == 'ammo':
-        rolled_ammo_modifiers = random.choice(modifiers)
-        slow_print("Re-rolled ammo:", rolled_ammo_modifiers)
-    elif user_reroll == 'map':
-        rolled_map = random.choice(maps)
-        slow_print("Re-rolled map:", rolled_map)
-    if rolled_bonus == "Re-roll anything":
+        if user_reroll == 'weapon':
+            rolled_weapon = random.choice(weapons)
+            slow_print("Re-rolled weapon:", rolled_weapon)
+        elif user_reroll == 'armoredrig':
+            rolled_armor = random.choice(armor_rigs)
+            slow_print("Re-rolled armored rig:", rolled_armor)
+        elif user_reroll == 'armor':
+            rolled_armor = random.choice(armors)
+            slow_print("Re-rolled armor:", rolled_armor)
+        elif user_reroll == 'rig':
+            rolled_rig = random.choice(rigs)
+            slow_print("Re-rolled rig:", rolled_rig)
+        elif user_reroll == 'helmet':
+            rolled_helmet = random.choice(helmets)
+            slow_print("Re-rolled helmet:", rolled_helmet)
+        elif user_reroll == 'backpack':
+            rolled_backpack = random.choice(backpacks)
+            slow_print("Re-rolled backpack:", rolled_backpack)
+        elif user_reroll == 'mods':
+            rolled_gun_modifiers = random.choice(modifiers)
+            slow_print("Re-rolled gun mods:", rolled_gun_modifiers)
+        elif user_reroll == 'ammo':
+            rolled_ammo_modifiers = random.choice(modifiers)
+            slow_print("Re-rolled ammo:", rolled_ammo_modifiers)
+        elif user_reroll == 'map':
+            rolled_map = random.choice(maps)
+            slow_print("Re-rolled map:", rolled_map)
         print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
