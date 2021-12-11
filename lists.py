@@ -117,9 +117,9 @@ armors = {
     "IOTV Gen4 body armor (Full Protection)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/52/IOTVfullIcon.png/revision/latest/scale-to-width-down/250?cb=20200318200506",
     "FORT Redut-T5 body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/23/FORT_Redut-T5_body_armor_icon.png/revision/latest/scale-to-width-down/250?cb=20200318200444",
     "5.11 Tactical Hexgrid plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/5.11_Hexgrid_plate_carrier.png/revision/latest/scale-to-width-down/180?cb=20210129120630",
-    "NFM THOR Integrated Carrier body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c6/Slick.gif/revision/latest/scale-to-width-down/180?cb=20210401231720",
+    "NFM THOR Integrated Carrier body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/THOR_IC_Icon.png/revision/latest/scale-to-width-down/250?cb=20211206001408",
     "BNTI Zhuk-6a heavy armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5c/Zhuk-6a_heavy_armor_icon.png/revision/latest/scale-to-width-down/190?cb=20190110121834",
-    "LBT 6094A Slick Plate Carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/THOR_IC_Icon.png/revision/latest/scale-to-width-down/250?cb=20211206001408",
+    "LBT 6094A Slick Plate Carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c6/Slick.gif/revision/latest/scale-to-width-down/180?cb=20210401231720",
     "6b43 Zabralo-Sh 6A body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/FORT_armor_icon.png/revision/latest/scale-to-width-down/250?cb=20200318200430"
 }
 armor_rigs = {
