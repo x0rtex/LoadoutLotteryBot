@@ -112,7 +112,6 @@ async def roll(ctx):
                            url="https://github.com/x0rtex/TarkovLoadoutLottery",
                            color=0x5036d3)
     embed.set_author(name="Made by x0rtex",
-                     url="https://discord.gg/tPSG2hAbUF",
                      icon_url="https://i.imgur.com/4q2U4QN.png")
     embed.set_thumbnail(url="https://i.imgur.com/6KhM3gw.png")
     embed_msg = await ctx.send(embed=embed)
