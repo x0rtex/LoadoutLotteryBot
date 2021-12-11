@@ -1,4 +1,4 @@
-## This loadout lottery bot will generate a completely random loadout, map, and optional bonus modifier for Escape from Tarkov. (Includes a cool animation and images too!)
+## Discord bot designed to generate a completely random loadout, map, and optional bonus modifier for use in Escape from Tarkov. (Includes a cool animation and images too!)
 
 - Invite me to your server: https://discord.com/oauth2/authorize?client_id=917846908075139083&permissions=414464724032&scope=bot
 
