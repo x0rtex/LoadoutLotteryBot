@@ -49,9 +49,9 @@ async def ping(ctx):
     await msg.edit(f"Pong! DWSP latency: {round(client.latency * 1000)} ms. Response time: {round((end-start)*1000)} ms.")
 
 
-@client.command(description="Display the bot's statistics")
+@client.command(description="Displays the bot's statistics")
 async def stats(ctx):
-    embed = nextcord.Embed(title="Bot Statistics", color=ctx.author.color, timestamp=datetime.datetime.now())
+    embed = nextcord.Embed(title="Bot Statistics", color=ctx.author.color)
     embed.set_thumbnail(url=client.user.avatar.url)
 
     proc = psutil.Process()
@@ -161,7 +161,7 @@ async def roll(ctx):
 
     embed = nextcord.Embed(title="Welcome to Tarkov Loadout Lottery!", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Made by x0rtex", icon_url="https://i.imgur.com/4q2U4QN.png")
-    embed.set_thumbnail(url=client.user.avatar.url)
+    embed.set_thumbnail(url=ctx.message.author.avatar.url)
     embed_msg = await ctx.send(embed=embed)
 
     await asyncio.sleep(0.66)
@@ -385,7 +385,7 @@ async def fastroll(ctx):
 
     embed = nextcord.Embed(title="Welcome to Tarkov Loadout Lottery!", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Made by x0rtex", icon_url="https://i.imgur.com/4q2U4QN.png")
-    embed.set_thumbnail(url=client.user.avatar.url)
+    embed.set_thumbnail(url=ctx.message.author.avatar.url)
     embed.add_field(name="Weapon:", value=rolled_weapon, inline=False)
     if rolled_armor in lists.armors:
         embed.add_field(name="Armor:", value=rolled_armor, inline=False)
