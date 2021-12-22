@@ -3,7 +3,7 @@
 import time
 import random
 import sys
-from listsdebug import *
+from lists import *
 
 ts = time.gmtime()
 
