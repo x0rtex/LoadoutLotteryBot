@@ -1,121 +1,74 @@
-# This is just a text based script to generate a loadout, no discord bot
+# Simply a script to generate a loadout, no discord bot
 
 import time
 import random
 import sys
-
-from lists import *
+from listsdebug import *
 
 ts = time.gmtime()
 
 
-def slow_print(prefix, suffix):
-    for i in (prefix + ' ' + suffix):
+# Will print each character every 0.05s, and add a seperator with 0.5s delay
+def slow_print_sleep(text):
+    for i in text:
         print(i, end='')
         sys.stdout.flush()
         time.sleep(0.05)
     print()
+    time.sleep(0.5)
+    print("-=" * 19 + "-")
+    time.sleep(0.5)
 
 
-rolled_weapon = random.choice(tuple(weapons.keys()))
-rolled_armor = random.choice(tuple(armors.keys()) + tuple(armor_rigs.keys()))
-rolled_rig = random.choice(tuple(rigs.keys()))
-rolled_helmet = random.choice(tuple(helmets.keys()))
-rolled_backpack = random.choice(tuple(backpacks.keys()))
-rolled_gun_modifiers = random.choice(modifiers)
-rolled_ammo_modifiers = random.choice(modifiers)
-rolled_map = random.choice(tuple(maps.keys()))
-rolled_bonus = random.choice(random.choice(bonuses))
+# Dictionary containing all the randomized rolls
+rolls = {
+    "Weapon": random.choice(tuple(weapons.keys())),
+}
 
+rolled_armor = random.choice(tuple(armors.keys()))
+if rolled_armor in armor_vests:
+    rolls["Armor Vest"] = rolled_armor
+    rolls["Rig"] = random.choice(tuple(rigs.keys()))
+else:
+    rolls["Armored Rig"] = rolled_armor
+
+rolls.update({
+    "Helmet": random.choice(tuple(helmets.keys())),
+    "Backpack": random.choice(tuple(backpacks.keys())),
+    "Gun mods": random.choice(modifiers),
+    "Ammo": random.choice(modifiers),
+    "Map": random.choice(tuple(maps.keys())),
+})
+
+# Prints all rolls categories
 print("Welcome to Tarkov Loadout Lottery")
 time.sleep(0.5)
 input("Press enter to roll your loadout... ")
-print("")
-slow_print(time.strftime("%x %X", ts), "")
-time.sleep(0.5)
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-time.sleep(0.5)
-slow_print("Weapon:", rolled_weapon)
-time.sleep(0.5)
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-time.sleep(0.5)
-# Armor can be worn with a rig, armored rig cannot be worn with an individual rig/armor
-if rolled_armor in armors:
-    slow_print("Armor:", rolled_armor)
-    time.sleep(0.5)
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-    time.sleep(0.5)
-    slow_print("Rig:", rolled_rig)
-else:
-    slow_print("Armored Rig:", rolled_armor)
-time.sleep(0.5)
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-time.sleep(0.5)
-slow_print("Helmet:", rolled_helmet)
-time.sleep(0.5)
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-time.sleep(0.5)
-slow_print("Backpack:", rolled_backpack)
-time.sleep(0.5)
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-time.sleep(0.5)
-slow_print("Gun Mods:", rolled_gun_modifiers)
-time.sleep(0.5)
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-time.sleep(0.5)
-slow_print("Ammo:", rolled_ammo_modifiers)
-time.sleep(0.5)
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-time.sleep(0.5)
-slow_print("Map:", rolled_map)
-time.sleep(0.5)
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-time.sleep(0.5)
+slow_print_sleep(f"\n{time.strftime('%x %X', ts)}")
+for roll in rolls:
+    slow_print_sleep(f"{roll}: {rolls[roll]}")
 
-userInput = input("\nType 'y' to roll bonus modifier, or press enter... ")
+# User given the option to roll an optional bonus modifier from list
+print("Type 'y' to roll optional bonus modifier, or press enter to quit...")
+userInput = input("> ").lower().strip()
 time.sleep(0.5)
-print("\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+print("-=" * 19 + "-")
 time.sleep(0.5)
+if userInput == "y":
+    rolled_bonus = random.choice(random.choice(bonuses))
+    slow_print_sleep(f"Bonus modifier: {rolled_bonus}")
 
-if userInput.upper() == "Y":
-    slow_print("Bonus modifier:", rolled_bonus)
-    time.sleep(0.5)
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-    time.sleep(0.5)
-
+    # Re-roll and print a new category of the user's choice
     if rolled_bonus == "Re-roll anything":
+        def random_key(x):
+            return random.choice(tuple(x.keys()))
         print("Select one of the following to re-roll...")
-        if rolled_armor in armors:
-            print("'weapon' - 'armor' - 'rig' - 'helmet' - 'backpack' - 'mods' - 'ammo' - 'map'")
-        else:
-            print("'weapon' - 'armoredrig' - 'helmet' - 'backpack' - 'mods' - 'ammo' - 'map'")
-        user_reroll = input("> ")
-        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-        if user_reroll == 'weapon':
-            rolled_weapon = random.choice(weapons)
-            slow_print("Re-rolled weapon:", rolled_weapon)
-        elif user_reroll == 'armoredrig':
-            rolled_armor = random.choice(armor_rigs)
-            slow_print("Re-rolled armored rig:", rolled_armor)
-        elif user_reroll == 'armor':
-            rolled_armor = random.choice(armors)
-            slow_print("Re-rolled armor:", rolled_armor)
-        elif user_reroll == 'rig':
-            rolled_rig = random.choice(rigs)
-            slow_print("Re-rolled rig:", rolled_rig)
-        elif user_reroll == 'helmet':
-            rolled_helmet = random.choice(helmets)
-            slow_print("Re-rolled helmet:", rolled_helmet)
-        elif user_reroll == 'backpack':
-            rolled_backpack = random.choice(backpacks)
-            slow_print("Re-rolled backpack:", rolled_backpack)
-        elif user_reroll == 'mods':
-            rolled_gun_modifiers = random.choice(modifiers)
-            slow_print("Re-rolled gun mods:", rolled_gun_modifiers)
-        elif user_reroll == 'ammo':
-            rolled_ammo_modifiers = random.choice(modifiers)
-            slow_print("Re-rolled ammo:", rolled_ammo_modifiers)
-        elif user_reroll == 'map':
-            rolled_map = random.choice(maps)
-            slow_print("Re-rolled map:", rolled_map)
-        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+        print(", ".join(rolls.keys()))
+        user_reroll = ""
+        while user_reroll not in rolls:
+            user_reroll = input("> ").title().strip()
+            if user_reroll not in rolls:
+                print("Invalid input, try again.")
+        print("-=" * 19 + "-")
+        rolls[user_reroll] = random_key(all[user_reroll])
+        slow_print_sleep(f"Re-rolled {user_reroll.lower()}: {rolls[user_reroll]}")
