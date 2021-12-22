@@ -26,7 +26,7 @@ weapons = {
     "DT MDR .308": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/DT_MDR_308.png/revision/latest/scale-to-width-down/180?cb=20191228210602",
     "HK 416A5": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/HK416Image.png/revision/latest/scale-to-width-down/180?cb=20181226145352",
     "Colt M4A1": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/29/M4a1.png/revision/latest/scale-to-width-down/180?cb=20181028172147",
-    "HK SCAR-L": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a5/Scar_placeholder.jpg/revision/latest/scale-to-width-down/180?cb=20180212232843",
+    "HK SCAR-L": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4a/FN_SCAR-L_5.56x45_FDE_weaponspage.png/revision/latest/scale-to-width-down/180?cb=20211214080022",
     "HK SCAR-H": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a5/Scar_placeholder.jpg/revision/latest/scale-to-width-down/180?cb=20180212232843",
     "SIG MCX": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/08/-92ucz5kq_Y.jpg/revision/latest/scale-to-width-down/180?cb=20201226014736",
     "DS Arms SA-58": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ae/DS_Arms_SA-58_OSW_Para_7.62x51.png/revision/latest/scale-to-width-down/180?cb=20181028172156",
@@ -65,7 +65,7 @@ weapons = {
     "Saiga-12": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cd/Saiga12.png/revision/latest/scale-to-width-down/180?cb=20180219121914",
     "TOZ-106": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/Toz.png/revision/latest/scale-to-width-down/180?cb=20180219121918",
     "TOZ KS-23M": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/85/KS-23M.png/revision/latest/scale-to-width-down/180?cb=20201019145716",
-    "HK G28": "https://cdnb.artstation.com/p/assets/images/images/026/615/275/large/jinjer-5.jpg?1589252604",
+    "HK G28": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/18/G28_Full.png/revision/latest/scale-to-width-down/180?cb=20211214013521",
     "Springfield Armory M1A": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/M1A_Icon.png/revision/latest/scale-to-width-down/180?cb=20180503234958",
     "SWORD International Mk-18": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a2/Mk18.png/revision/latest/scale-to-width-down/180?cb=20210102132503",
     "Kel-Tec RFB": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/KT_RFB.png/revision/latest/scale-to-width-down/180?cb=20201019134602",
@@ -99,7 +99,8 @@ weapons = {
     "TT pistol": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/Tt.png/revision/latest/scale-to-width-down/200?cb=20200216022150",
     "TT pistol (Gold)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203"
 }
-armors = {
+
+armor_vests = {
     "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
     "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4b/TT_plate_carrier_SK.jpg/revision/latest/scale-to-width-down/180?cb=20190214161136",
     "BNTI Module-3M body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f8/3M_icon.png/revision/latest/scale-to-width-down/190?cb=20190519124804",
@@ -128,6 +129,7 @@ armors = {
     "LBT 6094A Slick Plate Carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c6/Slick.gif/revision/latest/scale-to-width-down/180?cb=20210401231720",
     "6b43 Zabralo-Sh 6A body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/FORT_armor_icon.png/revision/latest/scale-to-width-down/250?cb=20200318200430"
 }
+
 armor_rigs = {
     "6B5-16 Zh-86 \"Uley\" armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/6B5-16_armored_rig_icon.png/revision/latest/scale-to-width-down/190?cb=20200422225151",
     "6B3TM-01M armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/79/6B3TM-01M_Icon.png/revision/latest/scale-to-width-down/190?cb=20200326122406",
@@ -143,6 +145,9 @@ armor_rigs = {
     "Ars Arma CPC MOD.2 plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7c/AACPC_icon.png/revision/latest/scale-to-width-down/250?cb=20200501235928",
     "Crye Precision AVS MBAV (Tagilla Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fa/MBAV_icon.png/revision/latest/scale-to-width-down/190?cb=20210701042443"
 }
+
+armors = {**armor_vests, **armor_rigs}
+
 rigs = {
     "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
     "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/Unknown_chestrig.png/revision/latest/scale-to-width-down/180?cb=20200325010917",
@@ -171,6 +176,7 @@ rigs = {
     "Velocity Systems Multi-Purpose Patrol Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MPPV_ICon.png/revision/latest/scale-to-width-down/250?cb=20191227220252",
     "Belt-A + Belt-B gear rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/Belt-A_Belt-B_gear_rig_icon.png/revision/latest/scale-to-width-down/250?cb=20190106165224"
 }
+
 helmets = {
     "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
     "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fb/Knitcap_icon.png/revision/latest/scale-to-width-down/64?cb=20190319180816",
@@ -214,6 +220,7 @@ helmets = {
     "Tagilla's welding mask \"Gorilla\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/Tagilla_Mask_Gorilla_Icon.png/revision/latest/scale-to-width-down/127?cb=20210701033555",
     "Tagilla's welding mask \"UBEY\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f6/Tagilla_Mask_Ubey_Icon.png/revision/latest/scale-to-width-down/127?cb=20210701034602"
 }
+
 backpacks = {
     "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
     "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/27/Scorpion_backpack.jpg/revision/latest/scale-to-width-down/180?cb=20190124174541",
@@ -245,6 +252,7 @@ backpacks = {
     "Tactical sling bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/SlingBackPackIcon.png/revision/latest/scale-to-width-down/190?cb=20200317180926",
     "Gruppa 99 T20": ""
 }
+
 modifiers = (
     "Up to level 1 traders",
     "Up to level 2 traders",
@@ -252,6 +260,7 @@ modifiers = (
     "Up to level 4 traders",
     "No restrictions"
 )
+
 maps = {
     "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
     "Factory": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Factory-Day_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811153020",
@@ -263,15 +272,17 @@ maps = {
     "Labs": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/TheLabBanner.png/revision/latest/scale-to-width-down/382?cb=20181225171705",
     "Lighthouse": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d6/Lighthouse_concept_%282%29.jpg/revision/latest/scale-to-width-down/600?cb=20211102173810",
 }
+
 good_bonuses = (
     "Pop any 3 stimulants at start of raid",
     "+1 level to all traders",
     "Swap gun and ammo trader level",
     "Pistol secondary",
     "Must use highest penetration round",
-    "Must use highest capacity magazine"
+    "Must use highest capacity magazine",
     "Re-roll anything"
 )
+
 bad_bonuses = (
     "Flash grenades only",
     "No suppressor",
@@ -291,3 +302,15 @@ bad_bonuses = (
 )
 
 bonuses = good_bonuses, bad_bonuses
+
+all = {
+    "Weapon": weapons,
+    "Armor Vest": armor_vests,
+    "Armored Rig": armor_rigs,
+    "Rig": rigs,
+    "Helmet": helmets,
+    "Backpack": backpacks,
+    "Gun mods": modifiers,
+    "Ammo": modifiers,
+    "Maps": maps
+}
