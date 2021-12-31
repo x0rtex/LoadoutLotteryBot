@@ -26,8 +26,8 @@ weapons = {
     "DT MDR .308": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/DT_MDR_308.png/revision/latest/scale-to-width-down/180?cb=20191228210602",
     "HK 416A5": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/HK416Image.png/revision/latest/scale-to-width-down/180?cb=20181226145352",
     "Colt M4A1": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/29/M4a1.png/revision/latest/scale-to-width-down/180?cb=20181028172147",
-    "HK SCAR-L": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4a/FN_SCAR-L_5.56x45_FDE_weaponspage.png/revision/latest/scale-to-width-down/180?cb=20211214080022",
-    "HK SCAR-H": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a5/Scar_placeholder.jpg/revision/latest/scale-to-width-down/180?cb=20180212232843",
+    "FN SCAR-L (Mk 16)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4a/FN_SCAR-L_5.56x45_FDE_weaponspage.png/revision/latest/scale-to-width-down/180?cb=20211214080022",
+    "FN SCAR-H (Mk 17)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a5/Scar_placeholder.jpg/revision/latest/scale-to-width-down/180?cb=20180212232843",
     "SIG MCX": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/08/-92ucz5kq_Y.jpg/revision/latest/scale-to-width-down/180?cb=20201226014736",
     "DS Arms SA-58": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ae/DS_Arms_SA-58_OSW_Para_7.62x51.png/revision/latest/scale-to-width-down/180?cb=20181028172156",
     "Lone Star TX-15 DML": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/TX-15_View.PNG/revision/latest/scale-to-width-down/180?cb=20191103030150",
@@ -143,7 +143,9 @@ armor_rigs = {
     "5.11 Tactical TacTec plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/TactecIcon.png/revision/latest/scale-to-width-down/250?cb=20200422225205",
     "CQC Osprey MK4A plate carrier (Protection, MTP)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/11/OspreyMk4_Protection_Icon.png/revision/latest/scale-to-width-down/250?cb=20211206002404",
     "Ars Arma CPC MOD.2 plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7c/AACPC_icon.png/revision/latest/scale-to-width-down/250?cb=20200501235928",
-    "Crye Precision AVS MBAV (Tagilla Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fa/MBAV_icon.png/revision/latest/scale-to-width-down/190?cb=20210701042443"
+    "Crye Precision AVS MBAV (Tagilla Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fa/MBAV_icon.png/revision/latest/scale-to-width-down/190?cb=20210701042443",
+    "Eagle Industries \"MMAC\" plate carrier (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/Mmac_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229222915",
+    "FirstSpear \"Strandhogg\" plate carrier rig (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b4/Strandhogg_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229223247",
 }
 
 armors = {**armor_vests, **armor_rigs}
@@ -218,7 +220,8 @@ helmets = {
     "Bomber Beanie": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b0/BomberBeanie_icon.png/revision/latest/scale-to-width-down/64?cb=20211207021634",
     "Shattered light armored mask": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/94/Shattered_icon.png/revision/latest/scale-to-width-down/127?cb=20180828112738",
     "Tagilla's welding mask \"Gorilla\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/Tagilla_Mask_Gorilla_Icon.png/revision/latest/scale-to-width-down/127?cb=20210701033555",
-    "Tagilla's welding mask \"UBEY\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f6/Tagilla_Mask_Ubey_Icon.png/revision/latest/scale-to-width-down/127?cb=20210701034602"
+    "Tagilla's welding mask \"UBEY\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f6/Tagilla_Mask_Ubey_Icon.png/revision/latest/scale-to-width-down/127?cb=20210701034602",
+    "Jack Pyke Hunting LLCS boonie hat": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a0/LLCS.png/revision/latest/scale-to-width-down/127?cb=20211217124547",
 }
 
 backpacks = {
@@ -280,6 +283,7 @@ good_bonuses = (
     "Pistol secondary",
     "Must use highest penetration round",
     "Must use highest capacity magazine",
+    "Impact grenades only",
     "Re-roll anything"
 )
 
