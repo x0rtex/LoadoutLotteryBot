@@ -316,5 +316,5 @@ all = {
     "Backpack": backpacks,
     "Gun mods": modifiers,
     "Ammo": modifiers,
-    "Maps": maps
+    "Map": maps
 }
