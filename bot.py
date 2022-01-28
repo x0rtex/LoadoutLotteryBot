@@ -74,6 +74,27 @@ async def stats(ctx):
     await ctx.send(embed=embed)
 
 
+# Button to exclude FIR-only items from roll
+class FIROnly(nextcord.ui.View):
+    def __init__(self, ctx):
+        super().__init__(timeout=None)
+        self.value = None
+        self.ctx = ctx
+
+    async def interaction_check(self, interaction):
+        return self.ctx.author == interaction.user
+
+    @nextcord.ui.button(label="Exclude FIR-only items", style=nextcord.ButtonStyle.green)
+    async def confirm(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = True
+        self.stop()
+
+    @nextcord.ui.button(label="Include FIR-only items", style=nextcord.ButtonStyle.gray)
+    async def cancel(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = False
+        self.stop()
+
+
 # Button to roll a bonus modifier
 class BonusButton(nextcord.ui.View):
     def __init__(self, ctx):
@@ -164,6 +185,16 @@ async def roll(ctx):
     embed.set_thumbnail(url=ctx.message.author.avatar.url)
     embed_msg = await ctx.send(embed=embed)
 
+    embed.add_field(name="Would you like to include or exclude FIR-only items? i.e. Unobtainable via purchase or barter from traders or flea", value="p.s. Currently only include armor vests", inline=False)
+    view1 = FIROnly(ctx)
+    await embed_msg.edit(embed=embed, view=view1)
+    await view1.wait()
+    embed.remove_field(0)
+    await embed_msg.edit(embed=embed, view=None)
+
+    if view1.value == "Exclude FIR-only items":
+        del armor_vests[fir_only_armor_vests]
+
     await asyncio.sleep(0.66)
     embed.add_field(name="Weapon:", value=":grey_question:", inline=False)
     await embed_msg.edit(embed=embed)
@@ -249,13 +280,13 @@ async def roll(ctx):
     await embed_msg.edit(embed=embed)
 
     embed.set_footer(text="Would you like to roll an optional bonus modifier?")
-    view1 = BonusButton(ctx)
-    await embed_msg.edit(embed=embed, view=view1)
-    await view1.wait()
+    view2 = BonusButton(ctx)
+    await embed_msg.edit(embed=embed, view=view2)
+    await view2.wait()
     embed.set_footer(text="")
     embed.set_image(url="")
     await embed_msg.edit(embed=embed, view=None)
-    if view1.value:
+    if view2.value:
         rolled_bonus = random.choice(random.choice(lists.bonuses))
         embed.add_field(name="\nBonus modifier:", value=":grey_question:", inline=False)
         await embed_msg.edit(embed=embed)
@@ -273,10 +304,10 @@ async def roll(ctx):
             rolled_backpack = random.choice(tuple(lists.backpacks.keys()))
             rolled_map = random.choice(tuple(lists.maps.keys()))
 
-            view2 = RerollAnythingButton()
-            embed_msg = await ctx.send(embed=embed, view=view2)
-            await view2.wait()
-            if view2.value == "Weapon":
+            view3 = RerollAnythingButton()
+            embed_msg = await ctx.send(embed=embed, view=view3)
+            await view3.wait()
+            if view3.value == "Weapon":
                 embed.add_field(name="Rerolled weapon:", value=":grey_question:", inline=False)
                 await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(0.66)
@@ -287,7 +318,7 @@ async def roll(ctx):
                 await asyncio.sleep(5)
                 embed.set_image(url="")
                 await embed_msg.edit(embed=embed)
-            if view2.value == "Armor":
+            if view3.value == "Armor":
                 embed.add_field(name="Rerolled armor:", value=":grey_question:", inline=False)
                 await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(0.66)
@@ -298,7 +329,7 @@ async def roll(ctx):
                 await asyncio.sleep(5)
                 embed.set_image(url="")
                 await embed_msg.edit(embed=embed)
-            if view2.value == "Rig":
+            if view3.value == "Rig":
                 embed.add_field(name="Rerolled rig:", value=":grey_question:", inline=False)
                 await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(0.66)
@@ -309,7 +340,7 @@ async def roll(ctx):
                 await asyncio.sleep(5)
                 embed.set_image(url="")
                 await embed_msg.edit(embed=embed)
-            if view2.value == "Armored Rig":
+            if view3.value == "Armored Rig":
                 embed.add_field(name="Rerolled armored rig:", value=":grey_question:", inline=False)
                 await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(0.66)
@@ -320,7 +351,7 @@ async def roll(ctx):
                 await asyncio.sleep(5)
                 embed.set_image(url="")
                 await embed_msg.edit(embed=embed)
-            if view2.value == "Helmet":
+            if view3.value == "Helmet":
                 embed.add_field(name="Rerolled helmet:", value=":grey_question:", inline=False)
                 await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(0.66)
@@ -331,7 +362,7 @@ async def roll(ctx):
                 await asyncio.sleep(5)
                 embed.set_image(url="")
                 await embed_msg.edit(embed=embed)
-            if view2.value == "Backpack":
+            if view3.value == "Backpack":
                 embed.add_field(name="Rerolled backpack:", value=":grey_question:", inline=False)
                 await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(0.66)
@@ -342,21 +373,21 @@ async def roll(ctx):
                 await asyncio.sleep(5)
                 embed.set_image(url="")
                 await embed_msg.edit(embed=embed)
-            if view2.value == "Gun mods":
+            if view3.value == "Gun mods":
                 embed.add_field(name="Rerolled gun mods:", value=":grey_question:", inline=False)
                 await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(0.66)
                 field_index += 1
                 embed.set_field_at(field_index, name="Rerolled gun mods:", value=random.choice(lists.modifiers), inline=False)
                 await embed_msg.edit(embed=embed)
-            if view2.value == "Ammo":
+            if view3.value == "Ammo":
                 embed.add_field(name="Rerolled ammo:", value=":grey_question:", inline=False)
                 await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(0.66)
                 field_index += 1
                 embed.set_field_at(field_index, name="Rerolled ammo:", value=random.choice(lists.modifiers), inline=False)
                 await embed_msg.edit(embed=embed)
-            if view2.value == "Map":
+            if view3.value == "Map":
                 embed.add_field(name="Rerolled map:", value=":grey_question:", inline=False)
                 await embed_msg.edit(embed=embed, view=None)
                 await asyncio.sleep(0.66)
@@ -398,35 +429,35 @@ async def fastroll(ctx):
     embed.add_field(name="Ammo:", value=random.choice(lists.modifiers), inline=False)
     embed.add_field(name="Map:", value=rolled_map, inline=False)
     embed.set_footer(text="Would you like to roll an optional bonus modifier?")
-    view1 = BonusButton(ctx)
-    embed_msg = await ctx.send(embed=embed, view=view1)
-    await view1.wait()
+    view2 = BonusButton(ctx)
+    embed_msg = await ctx.send(embed=embed, view=view2)
+    await view2.wait()
     embed.set_footer(text="")
     await embed_msg.edit(embed=embed, view=None)
-    if view1.value:
+    if view2.value:
         rolled_bonus = random.choice(random.choice(lists.bonuses))
         embed.add_field(name="\nBonus modifier:", value=rolled_bonus, inline=False)
         if rolled_bonus == "Re-roll anything":
-            view2 = RerollAnythingButton()
-            embed_msg = await ctx.send(embed=embed, view=view2)
-            await view2.wait()
-            if view2.value == "Weapon":
+            view3 = RerollAnythingButton()
+            embed_msg = await ctx.send(embed=embed, view=view3)
+            await view3.wait()
+            if view3.value == "Weapon":
                 embed.add_field(name="Rerolled weapon:", value=random.choice(tuple(lists.weapons.keys())), inline=False)
-            if view2.value == "Armor":
+            if view3.value == "Armor":
                 embed.add_field(name="Rerolled armor:", value=random.choice(tuple(lists.armors.keys())), inline=False)
-            if view2.value == "Rig":
+            if view3.value == "Rig":
                 embed.add_field(name="Rerolled rig:", value=random.choice(tuple(lists.rigs.keys())), inline=False)
-            if view2.value == "Armored Rig":
+            if view3.value == "Armored Rig":
                 embed.add_field(name="Rerolled armored rig:", value=random.choice(tuple(lists.armor_rigs.keys())), inline=False)
-            if view2.value == "Helmet":
+            if view3.value == "Helmet":
                 embed.add_field(name="Rerolled helmet:", value=random.choice(tuple(lists.helmets.keys())), inline=False)
-            if view2.value == "Backpack":
+            if view3.value == "Backpack":
                 embed.add_field(name="Rerolled backpack:", value=random.choice(tuple(lists.backpacks.keys())), inline=False)
-            if view2.value == "Gun mods":
+            if view3.value == "Gun mods":
                 embed.add_field(name="Rerolled gun mods:", value=random.choice(lists.modifiers), inline=False)
-            if view2.value == "Ammo":
+            if view3.value == "Ammo":
                 embed.add_field(name="Rerolled ammo:", value=random.choice(lists.modifiers), inline=False)
-            if view2.value == "Map":
+            if view3.value == "Map":
                 embed.add_field(name="Rerolled map:", value=random.choice(tuple(lists.maps.keys())), inline=False)
         embed.set_footer(text="Enjoy! :)")
         await embed_msg.edit(embed=embed, view=None)
