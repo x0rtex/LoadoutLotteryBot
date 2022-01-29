@@ -80,7 +80,7 @@ weapons = {
     "SV-98": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7d/Sv98.png/revision/latest/scale-to-width-down/180?cb=20180427101420",
     "Orsis T-5000M": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/T-5000_View.png/revision/latest/scale-to-width-down/180?cb=20200216013517",
     "Molot VPO-215 \"Gornostay\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4e/VPO-215_View.png/revision/latest/scale-to-width-down/180?cb=20200216013459",
-    "HK USP": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/df/USP_Preview_All_in_one.jpg/revision/latest/scale-to-width-down/180?cb=20210607200653",
+    "HK USP": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ad/Usp1.png/revision/latest/scale-to-width-down/180?cb=20220118221605",
     "APB": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/APBImage.png/revision/latest/scale-to-width-down/400?cb=20200216023044",
     "Stechkin APS": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Stechkin_Automatic_Pistol_9x18PM.png/revision/latest/scale-to-width-down/200?cb=20200216021943",
     "FN 5-7": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/de/Five-seveN.gif/revision/latest/scale-to-width-down/200?cb=20191109004734",
@@ -222,6 +222,7 @@ helmets = {
     "Tagilla's welding mask \"Gorilla\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/Tagilla_Mask_Gorilla_Icon.png/revision/latest/scale-to-width-down/127?cb=20210701033555",
     "Tagilla's welding mask \"UBEY\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f6/Tagilla_Mask_Ubey_Icon.png/revision/latest/scale-to-width-down/127?cb=20210701034602",
     "Jack Pyke Hunting LLCS boonie hat": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a0/LLCS.png/revision/latest/scale-to-width-down/127?cb=20211217124547",
+    "NFM \"HJELM\" helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9e/NFM_HJELM_helmet_Icon.png/revision/latest/scale-to-width-down/127?cb=20211229085639"
 }
 
 backpacks = {
@@ -229,7 +230,7 @@ backpacks = {
     "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/27/Scorpion_backpack.jpg/revision/latest/scale-to-width-down/180?cb=20190124174541",
     "6Sh118 raid backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b5/6SH118_Icon.png/revision/latest/scale-to-width-down/250?cb=20191227220310",
     "LBT-2670 Slim Field Med Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6d/LBT-2670_Icon.png/revision/latest/scale-to-width-down/250?cb=20201028055441",
-    "LBT-1476A 3Day Pack": "",
+    "LBT-1476A 3Day Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/LBT-1476A_Icon.png/revision/latest/scale-to-width-down/250?cb=20220102181844",
     "Mystery Ranch Blackjack 50 backpack (Multicam)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/Mystery_Ranch_Blackjack_50_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20190102002519",
     "Eberlestock F4 Terminator load bearing backpack (Tiger Stripe)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/ff/F4_terminator_icon.png/revision/latest/scale-to-width-down/250?cb=20201020145531",
     "SSO \"Attack 2\" raid backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/AttackInventory.PNG/revision/latest/scale-to-width-down/250?cb=20180517203909",
@@ -253,8 +254,15 @@ backpacks = {
     "Transformer Bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e5/T-Bag_icon.png/revision/latest/scale-to-width-down/190?cb=20190517222054",
     "VKBO army bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/35/Armybagicon.png/revision/latest/scale-to-width-down/190?cb=20190602192511",
     "Tactical sling bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/SlingBackPackIcon.png/revision/latest/scale-to-width-down/190?cb=20200317180926",
-    "Gruppa 99 T20": ""
+    "Gruppa 99 T20": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/Gruppa_99_T20_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20220102181250"
 }
+
+fir_only_armor_vests = (
+    "5.11 Tactical Hexgrid plate carrier",
+    "BNTI Zhuk-6a heavy armor",
+    "FORT Defender-2 body armor",
+    "IOTV Gen4 body armor (Full Protection)"
+)
 
 modifiers = (
     "Up to level 1 traders",
