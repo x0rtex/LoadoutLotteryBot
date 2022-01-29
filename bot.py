@@ -1,328 +1,465 @@
-weapons = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "Melee Weapon": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8a/Antique_Axe.png/revision/latest/scale-to-width-down/200?cb=20181110013042",
-    "ADAR 2-15": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/ADAR2-15Image.png/revision/latest/scale-to-width-down/180?cb=20190226190907",
-    "Kalshnikov AK-101": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/AK101_Image.png/revision/latest/scale-to-width-down/180?cb=20180502204454",
-    "Kalshnikov AK-102": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ca/Ak102image.png/revision/latest/scale-to-width-down/180?cb=20180506001257",
-    "Kalshnikov AK-103": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/AK-103_7.62x39.png/revision/latest/scale-to-width-down/180?cb=20180429234506",
-    "Kalshnikov AK-104": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b2/AK-104Image.png/revision/latest/scale-to-width-down/180?cb=20180503235112",
-    "Kalshnikov AK-105": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8b/AK-105_5.45x39.png/revision/latest/scale-to-width-down/180?cb=20180429234412",
-    "Kalshnikov AK-74": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/AK-74Image.png/revision/latest/scale-to-width-down/180?cb=20181226154054",
-    "Kalshnikov AK-74M": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/AK-74M.png/revision/latest/scale-to-width-down/180?cb=20180513014125",
-    "Kalshnikov AK-74N": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Akn.png/revision/latest/scale-to-width-down/180?cb=20181028171233",
-    "Kalshnikov AKM": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/Akm.png/revision/latest/scale-to-width-down/180?cb=20180206133400",
-    "Kalshnikov AKMN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/55/Akmn.png/revision/latest/scale-to-width-down/180?cb=20180206133117",
-    "Kalshnikov AKMS": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/Akms.png/revision/latest/scale-to-width-down/180?cb=20180427005729",
-    "Kalshnikov AKMSN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e6/Akmsn.png/revision/latest/scale-to-width-down/180?cb=20180503233021",
-    "Kalshnikov AKS-74": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/AKS-74.png/revision/latest/scale-to-width-down/180?cb=20181230153732",
-    "Kalshnikov AKS-74N": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4f/AKS-74N.png/revision/latest/scale-to-width-down/180?cb=20180426173339",
-    "Kalshnikov AKS-74U": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Aks74u.png/revision/latest/scale-to-width-down/180?cb=20181028171406",
-    "Kalshnikov AKS-74UB": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/Aks74ub.png/revision/latest/scale-to-width-down/180?cb=20181028171415",
-    "Kalshnikov AKS-74UN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/Aks74un.png/revision/latest/scale-to-width-down/180?cb=20181028171353",
-    "ASh-12": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f1/ASh_12.png/revision/latest/scale-to-width-down/180?cb=20211206013813",
-    "AS VAL": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Asval.png/revision/latest/scale-to-width-down/180?cb=20190305220933",
-    "CMMG Mk47 Mutant": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/Mk47_Mutant_View.png/revision/latest/scale-to-width-down/180?cb=20211203223357",
-    "DT MDR 5.56x45": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/DT_MDR_5.56x45_Assault_Rifle.png/revision/latest/scale-to-width-down/180?cb=20190411211744",
-    "DT MDR .308": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/DT_MDR_308.png/revision/latest/scale-to-width-down/180?cb=20191228210602",
-    "HK 416A5": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/HK416Image.png/revision/latest/scale-to-width-down/180?cb=20181226145352",
-    "Colt M4A1": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/29/M4a1.png/revision/latest/scale-to-width-down/180?cb=20181028172147",
-    "FN SCAR-L (Mk 16)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4a/FN_SCAR-L_5.56x45_FDE_weaponspage.png/revision/latest/scale-to-width-down/180?cb=20211214080022",
-    "FN SCAR-H (Mk 17)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a5/Scar_placeholder.jpg/revision/latest/scale-to-width-down/180?cb=20180212232843",
-    "SIG MCX": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/08/-92ucz5kq_Y.jpg/revision/latest/scale-to-width-down/180?cb=20201226014736",
-    "DS Arms SA-58": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ae/DS_Arms_SA-58_OSW_Para_7.62x51.png/revision/latest/scale-to-width-down/180?cb=20181028172156",
-    "Lone Star TX-15 DML": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/TX-15_View.PNG/revision/latest/scale-to-width-down/180?cb=20191103030150",
-    "Vepr AKM / VPO-209 (.366)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b0/Vpo209.png/revision/latest/scale-to-width-down/180?cb=20181028171328",
-    "VPO-136 \"Vepr KM\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/Vpo136.png/revision/latest/scale-to-width-down/180?cb=20181028171300",
-    "Simonov OP-SKS": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/08/Opsks.png/revision/latest/scale-to-width-down/180?cb=20190414112410",
-    "Simonov SKS (No Dovetail)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/72/Sks.png/revision/latest/scale-to-width-down/180?cb=20190414112401",
-    "VPO-101 \"Vepr-Hunter\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f0/VeprHunterImage.png/revision/latest/scale-to-width-down/180?cb=20190410211507",
-    "RPK-16": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/RPK-16.png/revision/latest/scale-to-width-down/180?cb=20181226153306",
-    "HK MP5": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/54/Mp5.png/revision/latest/scale-to-width-down/180?cb=20180507221414",
-    "HK MP5K-N": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/45/HK_MP5K-N.png/revision/latest/scale-to-width-down/180?cb=20211206013958",
-    "HK MP7A1": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/HKMP7A1Image.png/revision/latest/scale-to-width-down/180?cb=20181111215340",
-    "HK MP7A2": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/52/HKMP7A2Image.png/revision/latest/scale-to-width-down/180?cb=20181111214757",
-    "B&T MP9": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0e/MP9_View.png/revision/latest/scale-to-width-down/180?cb=20211206014311",
-    "B&T MP9-N": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fd/B%26T_MP9-N_9x19_Submachinegun.png/revision/latest/scale-to-width-down/180?cb=20211206014309",
-    "SIG MPX": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f7/Mpx.png/revision/latest/scale-to-width-down/180?cb=20180219121907",
-    "FN P90": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/P90Image.png/revision/latest/scale-to-width-down/180?cb=20191109011038",
-    "PP-19-01 Vityaz-SN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fb/Pp19.png/revision/latest/scale-to-width-down/180?cb=20180219121911",
-    "PP-9 \"Klin\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/48/Klin.png/revision/latest/scale-to-width-down/180?cb=20180219121903",
-    "PP-91 \"Kedr\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/Kedr.png/revision/latest/scale-to-width-down/180?cb=20180219121901",
-    "PP-91-01 \"Kedr-B\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a4/Kedrb.png/revision/latest/scale-to-width-down/180?cb=20180219121902",
-    "PPSH-41": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d0/PPSH-41_View.png/revision/latest/scale-to-width-down/180?cb=20211206010213",
-    "Saiga-9": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/70/Saiga9.png/revision/latest/scale-to-width-down/180?cb=20180219121912",
-    "Soyuz-TM STM-9": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cd/STM-9_Base_View.png/revision/latest/scale-to-width-down/180?cb=20211206010453",
-    "HK UMP 45": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/UMP45_View.png/revision/latest/scale-to-width-down/180?cb=20211206010703",
-    "KRISS Vector .45": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bf/Vector45_fir_unloaded_view.png/revision/latest/scale-to-width-down/180?cb=20211206011407",
-    "KRISS Vector 9x19": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9e/Vector_9x19_View.png/revision/latest/scale-to-width-down/180?cb=20211206011601",
-    "Mossberg 590A1": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/56/M590A1_View.png/revision/latest/scale-to-width-down/180?cb=20211206014100",
-    "Remington M870": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/91/M870.png/revision/latest/scale-to-width-down/180?cb=20180426140946",
-    "MP-133": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/Mr133.png/revision/latest/scale-to-width-down/180?cb=20180219121908",
-    "MP-153": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/Mp153.png/revision/latest/scale-to-width-down/180?cb=20180219121906",
-    "MP-155": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/MP-155.png/revision/latest/scale-to-width-down/180?cb=20211205210153",
-    "Baikal MP-43-1C": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f1/Mp-43_develop.jpg/revision/latest/scale-to-width-down/180?cb=20171109151742",
-    "MTs-255-12": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2d/EFT_UpcomingMTs255.png/revision/latest/scale-to-width-down/180?cb=20190515021208",
-    "Saiga-12": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cd/Saiga12.png/revision/latest/scale-to-width-down/180?cb=20180219121914",
-    "TOZ-106": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/Toz.png/revision/latest/scale-to-width-down/180?cb=20180219121918",
-    "TOZ KS-23M": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/85/KS-23M.png/revision/latest/scale-to-width-down/180?cb=20201019145716",
-    "HK G28": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/18/G28_Full.png/revision/latest/scale-to-width-down/180?cb=20211214013521",
-    "Springfield Armory M1A": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/M1A_Icon.png/revision/latest/scale-to-width-down/180?cb=20180503234958",
-    "SWORD International Mk-18": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a2/Mk18.png/revision/latest/scale-to-width-down/180?cb=20210102132503",
-    "Kel-Tec RFB": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/KT_RFB.png/revision/latest/scale-to-width-down/180?cb=20201019134602",
-    "Remington R11 RSASS": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9b/Rsass.png/revision/latest/scale-to-width-down/180?cb=20181122021513",
-    "Knight's Armament Company SR-25": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/69/SR-25_View.png/revision/latest/scale-to-width-down/180?cb=20191227220256",
-    "SVDS": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8f/SVD-S.png/revision/latest/scale-to-width-down/180?cb=20190411211731",
-    "VSS Vintorez": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/Vss.png/revision/latest/scale-to-width-down/180?cb=20210114170659",
-    "LOBAEV Arms DVL-10 Saboteur": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/Dvl10.png/revision/latest/scale-to-width-down/180?cb=20180219121859",
-    "Remington M700": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/26/M700Image.png/revision/latest/scale-to-width-down/180?cb=20181226171021",
-    "Mosin Sniper Rifle": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/MosinInspect.png/revision/latest/scale-to-width-down/180?cb=20180918200314",
-    "Mosin Infrantry Rifle": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d4/MosinInfantryImage.png/revision/latest/scale-to-width-down/180?cb=20181226165344",
-    "SV-98": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7d/Sv98.png/revision/latest/scale-to-width-down/180?cb=20180427101420",
-    "Orsis T-5000M": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/T-5000_View.png/revision/latest/scale-to-width-down/180?cb=20200216013517",
-    "Molot VPO-215 \"Gornostay\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4e/VPO-215_View.png/revision/latest/scale-to-width-down/180?cb=20200216013459",
-    "HK USP": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ad/Usp1.png/revision/latest/scale-to-width-down/180?cb=20220118221605",
-    "APB": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/APBImage.png/revision/latest/scale-to-width-down/400?cb=20200216023044",
-    "Stechkin APS": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Stechkin_Automatic_Pistol_9x18PM.png/revision/latest/scale-to-width-down/200?cb=20200216021943",
-    "FN 5-7": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/de/Five-seveN.gif/revision/latest/scale-to-width-down/200?cb=20191109004734",
-    "Glock 17": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/54/Glock17.png/revision/latest/scale-to-width-down/200?cb=20200216022006",
-    "Glock 18C": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Glock18CImage.png/revision/latest/scale-to-width-down/200?cb=20200216022017",
-    "Colt M1911A1": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bd/M1911A1_View.png/revision/latest/scale-to-width-down/200?cb=20200508214809",
-    "Colt M45A1": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c3/M45A1.png/revision/latest/scale-to-width-down/200?cb=20201019153037",
-    "Beretta M9A3": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/86/EFT_UpcomingM9A3.png/revision/latest/scale-to-width-down/200?cb=20200216022039",
-    "Yarygin MP-443 Grach": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0b/Grach.png/revision/latest/scale-to-width-down/200?cb=20200216022052",
-    "SIG P226R": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c6/P226.png/revision/latest/scale-to-width-down/200?cb=20200216022104",
-    "PB": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c4/Pb.png/revision/latest/scale-to-width-down/200?cb=20200216023013",
-    "PL15": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/38/PL-15image.png/revision/latest/scale-to-width-down/200?cb=20211206010342",
-    "PM (t) \"Makarov\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/Makarovt.png/revision/latest/scale-to-width-down/200?cb=20200216022116",
-    "PM \"Makarov\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4c/Makarov.png/revision/latest/scale-to-width-down/200?cb=20200216022127",
-    "Serdyukov SR-1MP Gyurza": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cc/Sr1mp.png/revision/latest/scale-to-width-down/200?cb=20200216022136",
-    "TT pistol": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/Tt.png/revision/latest/scale-to-width-down/200?cb=20200216022150",
-    "TT pistol (Gold)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203"
-}
+import asyncio
+import bot_token
+import datetime
+import lists
+import nextcord
+from nextcord.ext import commands
+import platform
+import psutil
+import random
+import time
 
-armor_vests = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4b/TT_plate_carrier_SK.jpg/revision/latest/scale-to-width-down/180?cb=20190214161136",
-    "BNTI Module-3M body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f8/3M_icon.png/revision/latest/scale-to-width-down/190?cb=20190519124804",
-    "PACA soft armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/91/PACA_icon.png/revision/latest/scale-to-width-down/190?cb=20181225213000",
-    "6B2 armor (Flora)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ca/6B2_Icon.png/revision/latest/scale-to-width-down/190?cb=20191227220308",
-    "MF-UNTAR body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/62/UNTARArmorIcon.png/revision/latest/scale-to-width-down/190?cb=20210109181147",
-    "BNTI Zhuk-3 press armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/61/Zhuk-3_Press_armor_icon.png/revision/latest/scale-to-width-down/190?cb=20181230160722",
-    "6B23-1 body armor (Digital Flora)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/61/6B23-1icon.png/revision/latest/scale-to-width-down/190?cb=20190101212542",
-    "BNTI Kirasa-N armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b6/BNTIKirasaNarmorIcon.png/revision/latest/scale-to-width-down/190?cb=20200710212404",
-    "NFM THOR Concealable Vest body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a6/THOR_Concealable_Icon.png/revision/latest/scale-to-width-down/190?cb=20211205235344",
-    "6B13 assault armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/6B13_assault_armor_icon.gif/revision/latest/scale-to-width-down/190?cb=20190101213918",
-    "6B23-2 armor (Mountain Flora)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/79/6B23-2_armorIcon.png/revision/latest/scale-to-width-down/190?cb=20200318194650",
-    "Highcom Trooper TFO armor (Multicam)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/Highcom_Trooper_TFO_armor_%28multicam%29_icon.png/revision/latest/scale-to-width-down/190?cb=20200314230803",
-    "NPP KIASS Korund-VM armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/96/KORUNDIcon.png/revision/latest/scale-to-width-down/190?cb=20201019171750",
-    "FORT Redut-M body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/FORT_Redut-M_body_armor_icon.png/revision/latest/scale-to-width-down/190?cb=20200318200437",
-    "6B13 M assault armor (Tan)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d9/6B13_M_icon.png/revision/latest/scale-to-width-down/190?cb=20181226000642",
-    "IOTV Gen4 body armor (High Mobility Kit)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/26/Gen4hmk.png/revision/latest/scale-to-width-down/190?cb=20200318200459",
-    "BNTI Gzhel-K armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a1/GZHELKArmorIcon.png/revision/latest/scale-to-width-down/190?cb=20200209203059",
-    "FORT Defender-2 body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/52/Defender-2_Icon.png/revision/latest/scale-to-width-down/190?cb=20200606094109",
-    "IOTV Gen4 body armor (Assault Kit)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/05/Gen4assault.png/revision/latest/scale-to-width-down/250?cb=20200318200452",
-    "IOTV Gen4 body armor (Full Protection)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/52/IOTVfullIcon.png/revision/latest/scale-to-width-down/250?cb=20200318200506",
-    "FORT Redut-T5 body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/23/FORT_Redut-T5_body_armor_icon.png/revision/latest/scale-to-width-down/250?cb=20200318200444",
-    "5.11 Tactical Hexgrid plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/5.11_Hexgrid_plate_carrier.png/revision/latest/scale-to-width-down/180?cb=20210129120630",
-    "NFM THOR Integrated Carrier body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/THOR_IC_Icon.png/revision/latest/scale-to-width-down/250?cb=20211206001408",
-    "BNTI Zhuk-6a heavy armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5c/Zhuk-6a_heavy_armor_icon.png/revision/latest/scale-to-width-down/190?cb=20190110121834",
-    "LBT 6094A Slick Plate Carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c6/Slick.gif/revision/latest/scale-to-width-down/180?cb=20210401231720",
-    "6b43 Zabralo-Sh 6A body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/FORT_armor_icon.png/revision/latest/scale-to-width-down/250?cb=20200318200430"
-}
+client = commands.Bot(command_prefix="t!")
+client.remove_command("help")
 
-armor_rigs = {
-    "6B5-16 Zh-86 \"Uley\" armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/6B5-16_armored_rig_icon.png/revision/latest/scale-to-width-down/190?cb=20200422225151",
-    "6B3TM-01M armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/79/6B3TM-01M_Icon.png/revision/latest/scale-to-width-down/190?cb=20200326122406",
-    "6B5-15 Zh-86 \"Uley\" armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8e/6B5-15icon.png/revision/latest/scale-to-width-down/190?cb=20200422225144",
-    "ANA Tactical M2 armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/M2Inventory.PNG/revision/latest/scale-to-width-down/250?cb=20201102231418",
-    "CQC Osprey MK4A plate carrier (Assault, MTP)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b0/OspreyMk4_Assault_Icon.png/revision/latest/scale-to-width-down/250?cb=20211206002249",
-    "ANA Tactical M1 armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/ANA_Tactical_M1_icon.png/revision/latest/scale-to-width-down/250?cb=20200422225159",
-    "Crye Precision AVS plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ae/AVS_icon.png/revision/latest/scale-to-width-down/190?cb=20191226173848",
-    "Ars Arma A18 Skanda plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f8/A18_Icon.png/revision/latest/scale-to-width-down/250?cb=20191214005138",
-    "WARTECH TV-110 plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ee/Wartech_TV-110_plate_carrier_icon.png/revision/latest/scale-to-width-down/250?cb=20191227004802",
-    "5.11 Tactical TacTec plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/TactecIcon.png/revision/latest/scale-to-width-down/250?cb=20200422225205",
-    "CQC Osprey MK4A plate carrier (Protection, MTP)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/11/OspreyMk4_Protection_Icon.png/revision/latest/scale-to-width-down/250?cb=20211206002404",
-    "Ars Arma CPC MOD.2 plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7c/AACPC_icon.png/revision/latest/scale-to-width-down/250?cb=20200501235928",
-    "Crye Precision AVS MBAV (Tagilla Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fa/MBAV_icon.png/revision/latest/scale-to-width-down/190?cb=20210701042443",
-    "Eagle Industries \"MMAC\" plate carrier (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/Mmac_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229222915",
-    "FirstSpear \"Strandhogg\" plate carrier rig (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b4/Strandhogg_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229223247",
-}
 
-armors = {**armor_vests, **armor_rigs}
+@client.event
+async def on_ready():
+    await client.change_presence(activity=nextcord.Game("t!help"))
+    print("BOT ONLINE")
+    while True:
+        print("List of guilds:", client.guilds)
+        await asyncio.sleep(21600)
 
-rigs = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/Unknown_chestrig.png/revision/latest/scale-to-width-down/180?cb=20200325010917",
-    "Scav Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/39/Scav_Vest_icon.png/revision/latest/scale-to-width-down/127?cb=20190517215835",
-    "Security Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/25/Securityvesticon.png/revision/latest/scale-to-width-down/127?cb=20210331215236",
-    "DIY IDEA chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9c/DIY_IDEArig_icon.png/revision/latest/scale-to-width-down/190?cb=20211206005208",
-    "Spiritus Systems Bank Robber chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9b/Bank_Robber_icon.png/revision/latest/scale-to-width-down/190?cb=20200315233059",
-    "SOE Micro rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2d/SOEicon.png/revision/latest/scale-to-width-down/127?cb=20200502195206",
-    "WARTECH TV-109 + TV-106 chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/57/Wartech_gear_rig_icon.png/revision/latest/scale-to-width-down/190?cb=20190517220149",
-    "CSA chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/11/CSAicon.png/revision/latest/scale-to-width-down/127?cb=20210330190714",
-    "UMTBS 6sh113 Scout-Sniper": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a6/Scout_Sniper_rig_icon.png/revision/latest/scale-to-width-down/250?cb=20180326204111",
-    "Splav Tarzan M22 chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bd/Tarzan_icon.png/revision/latest/scale-to-width-down/250?cb=20200317181341",
-    "Haley Strategic D3CRX Chest Harness": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6e/D3CRX_Icon.PNG/revision/latest/scale-to-width-down/193?cb=20191030042350",
-    "Dynaforce Triton M43-A Chest Harness": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b0/Triton_M43-A_Chest_Harness_icon.png/revision/latest/scale-to-width-down/250?cb=20190410162951",
-    "Blackhawk! Commando Chest Harness": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b7/Blackhawk%21_commando_icon.gif/revision/latest/scale-to-width-down/250?cb=20190615175223",
-    "Direct Action Thunderbolt compact chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/88/Direct_Action_Thunderbolt_compact_chest_rig_icon.png/revision/latest/scale-to-width-down/190?cb=20201020141602",
-    "Gear Craft GC-BSS-MK1 chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/03/Gc-bss-mk1.png/revision/latest/scale-to-width-down/190?cb=20201224221408",
-    "Umka M33-SET1 hunter vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/65/M33-SET1_vest_icon.png/revision/latest/scale-to-width-down/190?cb=20210330132300",
-    "LBT-1961A Load Bearing chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2e/LBCR_LBT-1961A_Icon.png/revision/latest/scale-to-width-down/250?cb=20210807105713",
-    "Stich Profi Chest Rig MK2 (Recon, A-TACS FG)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/36/StichMk2Recon_Icon.png/revision/latest/scale-to-width-down/190?cb=20211206001750",
-    "Stich Profi Chest Rig MK2 (Assault, A-TACS FG)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a4/StichMk2Assault_Icon_.png/revision/latest/scale-to-width-down/190?cb=20211206002038",
-    "BlackRock chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/Blackrock_Icon.png/revision/latest/scale-to-width-down/190?cb=20191029140712",
-    "WARTECH MK3 TV-104 chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Mk3.PNG/revision/latest/scale-to-width-down/190?cb=20191030003831",
-    "ANA Tactical Alpha chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fa/Alpha_Rig_icon.png/revision/latest/scale-to-width-down/250?cb=20190517215944",
-    "Azimut SS Zhuk Chest Harness": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b2/Azimutharness.gif/revision/latest/scale-to-width-down/250?cb=20210330190322",
-    "Velocity Systems Multi-Purpose Patrol Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MPPV_ICon.png/revision/latest/scale-to-width-down/250?cb=20191227220252",
-    "Belt-A + Belt-B gear rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/Belt-A_Belt-B_gear_rig_icon.png/revision/latest/scale-to-width-down/250?cb=20190106165224"
-}
 
-helmets = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fb/Knitcap_icon.png/revision/latest/scale-to-width-down/64?cb=20190319180816",
-    "Armasight NVG head strap": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/78/Armasight_NVG_Mask_Icon.png/revision/latest/scale-to-width-down/127?cb=20190319182456",
-    "Wilcox Skull Lock head mount": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f2/Slockicon.png/revision/latest/scale-to-width-down/127?cb=20190319182533",
-    "Tac-Kek FAST MT helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c0/TK_FAST_Icon.png/revision/latest/scale-to-width-down/127?cb=20200607112137",
-    "TSh-4M-L soft tank crew helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/20/TankHelm2.png/revision/latest/scale-to-width-down/127?cb=20191229160330",
-    "Kolpak-1S riot helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c3/Kolpak-1S_Icon.png/revision/latest/scale-to-width-down/127?cb=20180426010933",
-    "ShPM Firefighter helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/SHPM_Firefighter%27s_helmet_icon.png/revision/latest/scale-to-width-down/127?cb=20190110180222",
-    "PSh-97 \"Djeta\" riot helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/PSH-97_-Jeta-_helmet_Icon.png/revision/latest/scale-to-width-down/127?cb=20190110174515",
-    "UNTAR helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e3/UNTARHelmetIcon.png/revision/latest/scale-to-width-down/127?cb=20190112203847",
-    "6B47 Ratnik-BSh helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1e/6B47_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180806190854",
-    "LZSh light helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/LZSh_light_helmet_icon.png/revision/latest/scale-to-width-down/127?cb=20180729193601",
-    "SSh-68 steel helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/aa/SSH-68Icon.png/revision/latest/scale-to-width-down/127?cb=20181226233101",
-    "FORT Kiver-M bulletproof helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Kiver-M_Helmet_icon.png/revision/latest/scale-to-width-down/127?cb=20191227210553",
-    "DevTac Ronin ballistic helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/97/DEVTAC_Ronin_ballistic_helmet_Icon.png/revision/latest/scale-to-width-down/127?cb=20190614231710",
-    "SSSh-95 Sfera-S helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b0/SFERAHelmetIcon.png/revision/latest/scale-to-width-down/127?cb=20190119182649",
-    "MSA ACH TC-2001 MICH Series helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cb/MICH_Icon.PNG/revision/latest/scale-to-width-down/127?cb=20191213025908",
-    "MSA ACH TC-2002 MICH Series helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/83/MICH_Icon_2002.PNG/revision/latest/scale-to-width-down/127?cb=20210124003917",
-    "MSA Gallet TC 800 High Cut combat helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/67/MSA_TC_800_Icon.png/revision/latest/scale-to-width-down/127?cb=20200314230815",
-    "Highcom Striker ACHHC IIIA helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/ACHHC_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180805175453",
-    "ZSh-1-2M helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0d/ZSH-1-2M_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180809202110",
-    "Highcom Striker ULACH IIIA helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/ULACH_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180806205056",
-    "Diamond Age Bastion helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5c/Bastion_Icon.png/revision/latest/scale-to-width-down/127?cb=20200606092904",
-    "Ops-Core FAST MT Super High Cut helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ed/FASTMT_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180805220154",
-    "Crye Precision AirFrame helmet (Tan)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/Crye_Precision_Airframe_Tan_Icon.png/revision/latest/scale-to-width-down/127?cb=20190102011853",
-    "Team Wendy EXFIL Ballistic Helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/89/Team_Wendy_EXFIL_Ballistic_Helmet_icon.gif/revision/latest/scale-to-width-down/127?cb=20191229154600",
-    "Galvion Caiman Hybrid helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/ff/Caiman_icon.png/revision/latest/scale-to-width-down/127?cb=20201019155531",
-    "BNTI LShZ-2DTM helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/50/LZHZ-2DTMIcon.png/revision/latest/scale-to-width-down/127?cb=20191030044453",
-    "Maska-1Shch bulletproof helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/Maska_1Sch_helmet_icon.gif/revision/latest/scale-to-width-down/127?cb=20190101110609",
-    "Altyn assault helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2d/AltynHelmetIcon.png/revision/latest/scale-to-width-down/127?cb=20180517203714",
-    "Rys-T bulletproof helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e2/RystIcon.png/revision/latest/scale-to-width-down/127?cb=20201020092927",
-    "Vulkan-5 (LShZ-5) heavy helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/30/Vulkan-5_%28LShZ-5%29_heavy_helmet_icon.png/revision/latest/scale-to-width-down/127?cb=20190411084254",
-    "Stich Profi Chimera boonie hat": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7e/Stich_Profi_boonie_hat_Icon.png/revision/latest/scale-to-width-down/127?cb=20211207021801",
-    "Kinda cowboy hat": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/44/Cow_boy_hat_icon.png/revision/latest/scale-to-width-down/127?cb=20210712185856",
-    "Ushanka ear flap hat": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b8/Ushanka_icon.png/revision/latest/scale-to-width-down/127?cb=20190319180737",
-    "MIL-TEC panama hat": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/63/Panama_Icon.png/revision/latest/scale-to-width-down/127?cb=20190319180758",
-    "\"Door Kicker\" Boonie hat": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e0/Door_kicker_boonie_hat_icon.png/revision/latest/scale-to-width-down/127?cb=20200315090005",
-    "Bomber Beanie": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b0/BomberBeanie_icon.png/revision/latest/scale-to-width-down/64?cb=20211207021634",
-    "Shattered light armored mask": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/94/Shattered_icon.png/revision/latest/scale-to-width-down/127?cb=20180828112738",
-    "Tagilla's welding mask \"Gorilla\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/Tagilla_Mask_Gorilla_Icon.png/revision/latest/scale-to-width-down/127?cb=20210701033555",
-    "Tagilla's welding mask \"UBEY\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f6/Tagilla_Mask_Ubey_Icon.png/revision/latest/scale-to-width-down/127?cb=20210701034602",
-    "Jack Pyke Hunting LLCS boonie hat": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a0/LLCS.png/revision/latest/scale-to-width-down/127?cb=20211217124547",
-    "NFM \"HJELM\" helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9e/NFM_HJELM_helmet_Icon.png/revision/latest/scale-to-width-down/127?cb=20211229085639"
-}
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandOnCooldown):  # Checks if on cooldown
+        await ctx.message.add_reaction("⌛")
+        await asyncio.sleep(error.retry_after)
+        await ctx.message.clear_reaction("⌛")
 
-backpacks = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/27/Scorpion_backpack.jpg/revision/latest/scale-to-width-down/180?cb=20190124174541",
-    "6Sh118 raid backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b5/6SH118_Icon.png/revision/latest/scale-to-width-down/250?cb=20191227220310",
-    "LBT-2670 Slim Field Med Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6d/LBT-2670_Icon.png/revision/latest/scale-to-width-down/250?cb=20201028055441",
-    "LBT-1476A 3Day Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/LBT-1476A_Icon.png/revision/latest/scale-to-width-down/250?cb=20220102181844",
-    "Mystery Ranch Blackjack 50 backpack (Multicam)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/Mystery_Ranch_Blackjack_50_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20190102002519",
-    "Eberlestock F4 Terminator load bearing backpack (Tiger Stripe)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/ff/F4_terminator_icon.png/revision/latest/scale-to-width-down/250?cb=20201020145531",
-    "SSO \"Attack 2\" raid backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/AttackInventory.PNG/revision/latest/scale-to-width-down/250?cb=20180517203909",
-    "Pilgrim tourist backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/Pilgrim_Backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20190516145600",
-    "3V G Paratus 3-Day Operator's Tactical backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/92/3V_G_Paratus_icon.png/revision/latest/scale-to-width-down/250?cb=20181228192344",
-    "Eberlestock G2 Gunslinger II backpack (Dry Earth)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a6/Gunslingericon.png/revision/latest/scale-to-width-down/250?cb=20210330154242",
-    "Oakley Mechanism heavy duty backpack (Black)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/Oakley_Mechanism_icon.png/revision/latest/scale-to-width-down/250?cb=20201019134811",
-    "Camelbak Tri-Zip backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/88/Tri-Zip_Backpack.png/revision/latest/scale-to-width-down/250?cb=20190517215213",
-    "ANA Tactical Beta 2 Battle backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6e/Beta2_outside.png/revision/latest/scale-to-width-down/250?cb=20200710203724",
-    "Eberlestock F5 Switchblade backpack (Dry Earth)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ef/Eberlestock_F5_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20201020150740",
-    "Hazard4 Drawbridge backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/99/HazardDrawbridge_Icon.png/revision/latest/scale-to-width-down/250?cb=20211206001250",
-    "Hazard4 Takedown sling backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d9/Hazard4takedown.gif/revision/latest/scale-to-width-down/190?cb=20210330174303",
-    "Hazard4 Pillbox backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9e/HazardPillboxIcon.png/revision/latest/scale-to-width-down/250?cb=20211206001551",
-    "WARTECH Berkut BB-102 backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/56/Wartech_Berkut_VV-102_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20190410161914",
-    "LBT-8005A Day Pack backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/df/Day_pack_icon.PNG/revision/latest/scale-to-width-down/180?cb=20211206005546",
-    "Scav backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/34/ScavBP_Icon.png/revision/latest/scale-to-width-down/250?cb=20190517215057",
-    "Flyye MBSS backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e4/Flyye_MBSS_Backpack.png/revision/latest/scale-to-width-down/250?cb=20201020054420",
-    "Sanitar's bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/41/Sanitar_Bag_Icon.png/revision/latest/scale-to-width-down/250?cb=20210502000747",
-    "Duffle bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1f/Duffel_icon.png/revision/latest/scale-to-width-down/250?cb=20201019204302",
-    "LK 3F Transfer tourist backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/41/LK_3F_backpack_icon.png/revision/latest/scale-to-width-down/190?cb=20201020151140",
-    "Transformer Bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e5/T-Bag_icon.png/revision/latest/scale-to-width-down/190?cb=20190517222054",
-    "VKBO army bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/35/Armybagicon.png/revision/latest/scale-to-width-down/190?cb=20190602192511",
-    "Tactical sling bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/SlingBackPackIcon.png/revision/latest/scale-to-width-down/190?cb=20200317180926",
-    "Gruppa 99 T20": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/Gruppa_99_T20_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20220102181250"
-}
 
-fir_only_armor_vests = (
-    "5.11 Tactical Hexgrid plate carrier",
-    "BNTI Zhuk-6a heavy armor",
-    "FORT Defender-2 body armor",
-    "IOTV Gen4 body armor (Full Protection)"
-)
+@client.command(description="Commands List")
+async def help(ctx):
+    print(f"{datetime.datetime.now()}, t!help - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}")
+    embed = nextcord.Embed(title="Tarkov Loadout Lottery Help - Commands are case-sensitive", description="Commands List")
+    for command in client.walk_commands():
+        description = command.description
+        embed.add_field(name=f"`t!{command.name}{command.signature if command.signature is not None else ''}`", value=description)
+    await ctx.send(embed=embed)
 
-modifiers = (
-    "Up to level 1 traders",
-    "Up to level 2 traders",
-    "Up to level 3 traders",
-    "Up to level 4 traders",
-    "No restrictions"
-)
 
-maps = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "Factory": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Factory-Day_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811153020",
-    "Customs": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9f/Customs_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811151055",
-    "Interchange": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_interchange.png/revision/latest/scale-to-width-down/382?cb=20200811153253",
-    "Reserve": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f4/Reserve.png/revision/latest/scale-to-width-down/382?cb=20191101214624",
-    "Shoreline": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/Banner_shoreline.png/revision/latest/scale-to-width-down/382?cb=20171101223501",
-    "Woods": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_woods.png/revision/latest/scale-to-width-down/382?cb=20171101223132",
-    "Labs": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/TheLabBanner.png/revision/latest/scale-to-width-down/382?cb=20181225171705",
-    "Lighthouse": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d6/Lighthouse_concept_%282%29.jpg/revision/latest/scale-to-width-down/600?cb=20211102173810",
-}
+@client.command(description="Pong!")
+async def ping(ctx):
+    print(f"{datetime.datetime.now()}, t!ping - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}")
+    start = time.time()
+    msg = await ctx.send(f"Pong! DWSP latency: {round (client.latency*1000)} ms.")
+    end = time.time()
+    await msg.edit(f"Pong! DWSP latency: {round(client.latency * 1000)} ms. Response time: {round((end-start)*1000)} ms.")
 
-good_bonuses = (
-    "Pop any 3 stimulants at start of raid",
-    "+1 level to all traders",
-    "Swap gun and ammo trader level",
-    "Pistol secondary",
-    "Must use highest penetration round",
-    "Must use highest capacity magazine",
-    "Impact grenades only",
-    "Re-roll anything"
-)
 
-bad_bonuses = (
-    "Flash grenades only",
-    "No suppressor",
-    "No insurance",
-    "Iron sights only",
-    "Night raid (NVG)",
-    "Night raid (No NVG)",
-    "Hip fire only (unbind aim)",
-    "No surgery kits",
-    "No keys or keycards",
-    "No loadout upgrades in raid",
-    "Weapon must be stock",
-    "Single-fire only",
-    "Must use highest flash damage round",
-    "Hatchlings must be killed with a melee",
-    "Attempt to befriend a random player"
-)
+@client.command(description="Displays the bot's statistics")
+async def stats(ctx):
+    embed = nextcord.Embed(title="Bot Statistics", color=ctx.author.color)
+    embed.set_thumbnail(url=client.user.avatar.url)
 
-bonuses = good_bonuses, bad_bonuses
+    proc = psutil.Process()
+    with proc.oneshot():
+        uptime = datetime.timedelta(seconds=time.time()-proc.create_time())
+        cpu_time = datetime.timedelta(seconds=(cpu := proc.cpu_times()).system + cpu.user)
+        mem_total = psutil.virtual_memory().total / (1024**2)
+        mem_of_total = proc.memory_percent()
+        mem_usage = mem_total * (mem_of_total / 100)
+    fields = [
+        ("Python version", platform.python_version(), True),
+        ("Nextcord version", nextcord.__version__, True),
+        ("Uptime", uptime, True),
+        ("CPU time", cpu_time, True),
+        ("Memory usage", f"{mem_usage:,.0f} MiB / {mem_total:,.0f} MiB ({mem_of_total:,.0f}%)", True),
+        ("Servers", len(client.guilds), True)
+    ]
+    for name, value, inline in fields:
+        embed.add_field(name=name, value=value, inline=inline)
+    await ctx.send(embed=embed)
 
-all = {
-    "Weapon": weapons,
-    "Armor Vest": armor_vests,
-    "Armored Rig": armor_rigs,
-    "Rig": rigs,
-    "Helmet": helmets,
-    "Backpack": backpacks,
-    "Gun mods": modifiers,
-    "Ammo": modifiers,
-    "Map": maps
-}
+
+# Button to exclude FIR-only items from roll
+class FIROnly(nextcord.ui.View):
+    def __init__(self, ctx):
+        super().__init__(timeout=None)
+        self.value = None
+        self.ctx = ctx
+
+    async def interaction_check(self, interaction):
+        return self.ctx.author == interaction.user
+
+    @nextcord.ui.button(label="Exclude FIR-only items", style=nextcord.ButtonStyle.green)
+    async def confirm(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = True
+        self.stop()
+
+    @nextcord.ui.button(label="Include FIR-only items", style=nextcord.ButtonStyle.gray)
+    async def cancel(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = False
+        self.stop()
+
+
+# Button to roll a bonus modifier
+class BonusButton(nextcord.ui.View):
+    def __init__(self, ctx):
+        super().__init__(timeout=None)
+        self.value = None
+        self.ctx = ctx
+
+    async def interaction_check(self, interaction):
+        return self.ctx.author == interaction.user
+
+    @nextcord.ui.button(label="Roll Optional Bonus Modifier", style=nextcord.ButtonStyle.green)
+    async def confirm(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = True
+        self.stop()
+
+    @nextcord.ui.button(label="Cancel", style=nextcord.ButtonStyle.gray)
+    async def cancel(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = False
+        self.stop()
+
+
+# Buttons for every re-rollable category
+class RerollAnythingButton(nextcord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.value = "None"
+
+    @nextcord.ui.button(label="Weapon", style=nextcord.ButtonStyle.primary)
+    async def weapon(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Weapon"
+        self.stop()
+
+    @nextcord.ui.button(label="Armor", style=nextcord.ButtonStyle.primary)
+    async def armor(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Armor"
+        self.stop()
+
+    @nextcord.ui.button(label="Rig", style=nextcord.ButtonStyle.primary)
+    async def rig(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Rig"
+        self.stop()
+
+    @nextcord.ui.button(label="Armored Rig", style=nextcord.ButtonStyle.primary)
+    async def armored_rig(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Armored Rig"
+        self.stop()
+
+    @nextcord.ui.button(label="Helmet", style=nextcord.ButtonStyle.primary)
+    async def helmet(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Helmet"
+        self.stop()
+
+    @nextcord.ui.button(label="Backpack", style=nextcord.ButtonStyle.primary)
+    async def backpack(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Backpack"
+        self.stop()
+
+    @nextcord.ui.button(label="Gun mods", style=nextcord.ButtonStyle.primary)
+    async def gun_mods(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Gun mods"
+        self.stop()
+
+    @nextcord.ui.button(label="Ammo", style=nextcord.ButtonStyle.primary)
+    async def ammo(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Ammo"
+        self.stop()
+
+    @nextcord.ui.button(label="Map", style=nextcord.ButtonStyle.primary)
+    async def map(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Map"
+        self.stop()
+
+
+@client.command(name="roll", description="Classic Tarkov Loadout Lottery uses a super quantum algorithm to generate a random loadout and map for you to play with.")
+@commands.cooldown(1, 20, commands.BucketType.channel)
+async def roll(ctx):
+    print(f"{datetime.datetime.now()}, t!roll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}")
+
+    rolled_weapon = random.choice(tuple(lists.weapons.keys()))
+    rolled_armor = random.choice(tuple(lists.armors.keys()) + tuple(lists.armor_rigs.keys()))
+    rolled_rig = random.choice(tuple(lists.rigs.keys()))
+    rolled_helmet = random.choice(tuple(lists.helmets.keys()))
+    rolled_backpack = random.choice(tuple(lists.backpacks.keys()))
+    rolled_map = random.choice(tuple(lists.maps.keys()))
+
+    embed = nextcord.Embed(title="Welcome to Tarkov Loadout Lottery!", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
+    embed.set_author(name="Made by x0rtex", icon_url="https://i.imgur.com/4q2U4QN.png")
+    embed.set_thumbnail(url=ctx.message.author.avatar.url)
+    embed_msg = await ctx.send(embed=embed)
+
+    embed.add_field(name="Would you like to include or exclude FIR-only items? i.e. Unobtainable via purchase or barter from traders or flea", value="p.s. Currently only include armor vests", inline=False)
+    view1 = FIROnly(ctx)
+    await embed_msg.edit(embed=embed, view=view1)
+    await view1.wait()
+    embed.remove_field(0)
+    await embed_msg.edit(embed=embed, view=None)
+
+    if view1.value == "Exclude FIR-only items":
+        del armor_vests[fir_only_armor_vests]
+
+    await asyncio.sleep(0.66)
+    embed.add_field(name="Weapon:", value=":grey_question:", inline=False)
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(0.66)
+    field_index = 0
+    embed.set_field_at(field_index, name="Weapon:", value=rolled_weapon, inline=False)
+    embed.set_image(url=lists.weapons[rolled_weapon])
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(1.5)
+    if rolled_armor in lists.armors:
+        embed.add_field(name="Armor:", value=":grey_question:", inline=False)
+        embed.set_image(url="")
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(0.66)
+        field_index += 1
+        embed.set_field_at(field_index, name="Armor:", value=rolled_armor, inline=False)
+        embed.set_image(url=lists.armors[rolled_armor])
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(1.5)
+
+        embed.add_field(name="Rig:", value=":grey_question:", inline=False)
+        embed.set_image(url="")
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(0.66)
+        field_index += 1
+        embed.set_field_at(field_index, name="Rig:", value=rolled_rig, inline=False)
+        embed.set_image(url=lists.rigs[rolled_rig])
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(1.5)
+    else:
+        embed.add_field(name="Armored Rig:", value=":grey_question:", inline=False)
+        embed.set_image(url="")
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(0.66)
+        field_index += 1
+        embed.set_field_at(field_index, name="Armored Rig:", value=rolled_armor, inline=False)
+        embed.set_image(url=lists.armor_rigs[rolled_armor])
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(1.5)
+    embed.add_field(name="Helmet:", value=":grey_question:", inline=False)
+    embed.set_image(url="")
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(0.66)
+    field_index += 1
+    embed.set_field_at(field_index, name="Helmet:", value=rolled_helmet, inline=False)
+    embed.set_image(url=lists.helmets[rolled_helmet])
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(1.5)
+
+    embed.add_field(name="Backpack:", value=":grey_question:", inline=False)
+    embed.set_image(url="")
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(0.66)
+    field_index += 1
+    embed.set_field_at(field_index, name="Backpack:", value=rolled_backpack, inline=False)
+    embed.set_image(url=lists.backpacks[rolled_backpack])
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(1.5)
+
+    embed.add_field(name="Gun Mods:", value=":grey_question:", inline=False)
+    embed.set_image(url="")
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(0.66)
+    field_index += 1
+    embed.set_field_at(field_index, name="Gun Mods:", value=random.choice(lists.modifiers), inline=False)
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(0.66)
+
+    embed.add_field(name="Ammo:", value=":grey_question:", inline=False)
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(0.66)
+    field_index += 1
+    embed.set_field_at(field_index, name="Ammo:", value=random.choice(lists.modifiers), inline=False)
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(0.66)
+
+    embed.add_field(name="Map:", value=":grey_question:", inline=False)
+    await embed_msg.edit(embed=embed)
+    await asyncio.sleep(0.66)
+    field_index += 1
+    embed.set_field_at(field_index, name="Map:", value=rolled_map, inline=False)
+    embed.set_image(url=lists.maps[rolled_map])
+    await embed_msg.edit(embed=embed)
+
+    embed.set_footer(text="Would you like to roll an optional bonus modifier?")
+    view2 = BonusButton(ctx)
+    await embed_msg.edit(embed=embed, view=view2)
+    await view2.wait()
+    embed.set_footer(text="")
+    embed.set_image(url="")
+    await embed_msg.edit(embed=embed, view=None)
+    if view2.value:
+        rolled_bonus = random.choice(random.choice(lists.bonuses))
+        embed.add_field(name="\nBonus modifier:", value=":grey_question:", inline=False)
+        await embed_msg.edit(embed=embed)
+        await asyncio.sleep(0.66)
+        field_index += 1
+        embed.set_field_at(field_index, name="\nBonus modifier:", value=rolled_bonus, inline=False)
+        await embed_msg.edit(embed=embed)
+        if rolled_bonus == "Re-roll anything":
+
+            rolled_weapon = random.choice(tuple(lists.weapons.keys()))
+            rolled_armor = random.choice(tuple(lists.armors.keys()))
+            rolled_armor_rig = random.choice(tuple(lists.armor_rigs.keys()))
+            rolled_rig = random.choice(tuple(lists.rigs.keys()))
+            rolled_helmet = random.choice(tuple(lists.helmets.keys()))
+            rolled_backpack = random.choice(tuple(lists.backpacks.keys()))
+            rolled_map = random.choice(tuple(lists.maps.keys()))
+
+            view3 = RerollAnythingButton()
+            embed_msg = await ctx.send(embed=embed, view=view3)
+            await view3.wait()
+            if view3.value == "Weapon":
+                embed.add_field(name="Rerolled weapon:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled weapon:", value=rolled_weapon, inline=False)
+                embed.set_image(url=lists.weapons[rolled_weapon])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
+            if view3.value == "Armor":
+                embed.add_field(name="Rerolled armor:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled armor:", value=rolled_armor, inline=False)
+                embed.set_image(url=lists.armors[rolled_armor])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
+            if view3.value == "Rig":
+                embed.add_field(name="Rerolled rig:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled rig:", value=rolled_rig, inline=False)
+                embed.set_image(url=lists.rigs[rolled_rig])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
+            if view3.value == "Armored Rig":
+                embed.add_field(name="Rerolled armored rig:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled armored rig:", value=rolled_armor_rig, inline=False)
+                embed.set_image(url=lists.armor_rigs[rolled_armor_rig])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
+            if view3.value == "Helmet":
+                embed.add_field(name="Rerolled helmet:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled helmet:", value=rolled_helmet, inline=False)
+                embed.set_image(url=lists.helmets[rolled_helmet])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
+            if view3.value == "Backpack":
+                embed.add_field(name="Rerolled backpack:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled backpack:", value=rolled_backpack, inline=False)
+                embed.set_image(url=lists.backpacks[rolled_backpack])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(5)
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed)
+            if view3.value == "Gun mods":
+                embed.add_field(name="Rerolled gun mods:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled gun mods:", value=random.choice(lists.modifiers), inline=False)
+                await embed_msg.edit(embed=embed)
+            if view3.value == "Ammo":
+                embed.add_field(name="Rerolled ammo:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled ammo:", value=random.choice(lists.modifiers), inline=False)
+                await embed_msg.edit(embed=embed)
+            if view3.value == "Map":
+                embed.add_field(name="Rerolled map:", value=":grey_question:", inline=False)
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name="Rerolled map:", value=rolled_map, inline=False)
+                embed.set_image(url=lists.maps[rolled_map])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(4)
+        await asyncio.sleep(0.66)
+        embed.set_footer(text="Enjoy! :)")
+        embed.set_image(url="")
+        await embed_msg.edit(embed=embed, view=None)
+
+
+@client.command(name="fastroll", description="Same as classic loadout lottery, but with less waiting around.")
+@commands.cooldown(1, 5, commands.BucketType.channel)
+async def fastroll(ctx):
+    print(f"{datetime.datetime.now()}, t!fastroll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}")
+
+    rolled_weapon = random.choice(tuple(lists.weapons.keys()))
+    rolled_armor = random.choice(tuple(lists.armors.keys()) + tuple(lists.armor_rigs.keys()))
+    rolled_rig = random.choice(tuple(lists.rigs.keys()))
+    rolled_helmet = random.choice(tuple(lists.helmets.keys()))
+    rolled_backpack = random.choice(tuple(lists.backpacks.keys()))
+    rolled_map = random.choice(tuple(lists.maps.keys()))
+
+    embed = nextcord.Embed(title="Welcome to Tarkov Loadout Lottery!", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
+    embed.set_author(name="Made by x0rtex", icon_url="https://i.imgur.com/4q2U4QN.png")
+    embed.set_thumbnail(url=ctx.message.author.avatar.url)
+    embed.add_field(name="Weapon:", value=rolled_weapon, inline=False)
+    if rolled_armor in lists.armors:
+        embed.add_field(name="Armor:", value=rolled_armor, inline=False)
+        embed.add_field(name="Rig:", value=rolled_rig, inline=False)
+    else:
+        embed.add_field(name="Armored Rig:", value=rolled_armor, inline=False)
+    embed.add_field(name="Helmet:", value=rolled_helmet, inline=False)
+    embed.add_field(name="Backpack:", value=rolled_backpack, inline=False)
+    embed.add_field(name="Gun Mods:", value=random.choice(lists.modifiers), inline=False)
+    embed.add_field(name="Ammo:", value=random.choice(lists.modifiers), inline=False)
+    embed.add_field(name="Map:", value=rolled_map, inline=False)
+    embed.set_footer(text="Would you like to roll an optional bonus modifier?")
+    view2 = BonusButton(ctx)
+    embed_msg = await ctx.send(embed=embed, view=view2)
+    await view2.wait()
+    embed.set_footer(text="")
+    await embed_msg.edit(embed=embed, view=None)
+    if view2.value:
+        rolled_bonus = random.choice(random.choice(lists.bonuses))
+        embed.add_field(name="\nBonus modifier:", value=rolled_bonus, inline=False)
+        if rolled_bonus == "Re-roll anything":
+            view3 = RerollAnythingButton()
+            embed_msg = await ctx.send(embed=embed, view=view3)
+            await view3.wait()
+            if view3.value == "Weapon":
+                embed.add_field(name="Rerolled weapon:", value=random.choice(tuple(lists.weapons.keys())), inline=False)
+            if view3.value == "Armor":
+                embed.add_field(name="Rerolled armor:", value=random.choice(tuple(lists.armors.keys())), inline=False)
+            if view3.value == "Rig":
+                embed.add_field(name="Rerolled rig:", value=random.choice(tuple(lists.rigs.keys())), inline=False)
+            if view3.value == "Armored Rig":
+                embed.add_field(name="Rerolled armored rig:", value=random.choice(tuple(lists.armor_rigs.keys())), inline=False)
+            if view3.value == "Helmet":
+                embed.add_field(name="Rerolled helmet:", value=random.choice(tuple(lists.helmets.keys())), inline=False)
+            if view3.value == "Backpack":
+                embed.add_field(name="Rerolled backpack:", value=random.choice(tuple(lists.backpacks.keys())), inline=False)
+            if view3.value == "Gun mods":
+                embed.add_field(name="Rerolled gun mods:", value=random.choice(lists.modifiers), inline=False)
+            if view3.value == "Ammo":
+                embed.add_field(name="Rerolled ammo:", value=random.choice(lists.modifiers), inline=False)
+            if view3.value == "Map":
+                embed.add_field(name="Rerolled map:", value=random.choice(tuple(lists.maps.keys())), inline=False)
+        embed.set_footer(text="Enjoy! :)")
+        await embed_msg.edit(embed=embed, view=None)
+
+client.run(bot_token.token)
