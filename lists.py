@@ -1,24 +1,24 @@
 weapons = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
+    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "Melee Weapon": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8a/Antique_Axe.png/revision/latest/scale-to-width-down/200?cb=20181110013042",
     "ADAR 2-15": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/ADAR2-15Image.png/revision/latest/scale-to-width-down/180?cb=20190226190907",
-    "Kalshnikov AK-101": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/AK101_Image.png/revision/latest/scale-to-width-down/180?cb=20180502204454",
-    "Kalshnikov AK-102": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ca/Ak102image.png/revision/latest/scale-to-width-down/180?cb=20180506001257",
-    "Kalshnikov AK-103": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/AK-103_7.62x39.png/revision/latest/scale-to-width-down/180?cb=20180429234506",
-    "Kalshnikov AK-104": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b2/AK-104Image.png/revision/latest/scale-to-width-down/180?cb=20180503235112",
-    "Kalshnikov AK-105": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8b/AK-105_5.45x39.png/revision/latest/scale-to-width-down/180?cb=20180429234412",
-    "Kalshnikov AK-74": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/AK-74Image.png/revision/latest/scale-to-width-down/180?cb=20181226154054",
-    "Kalshnikov AK-74M": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/AK-74M.png/revision/latest/scale-to-width-down/180?cb=20180513014125",
-    "Kalshnikov AK-74N": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Akn.png/revision/latest/scale-to-width-down/180?cb=20181028171233",
-    "Kalshnikov AKM": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/Akm.png/revision/latest/scale-to-width-down/180?cb=20180206133400",
-    "Kalshnikov AKMN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/55/Akmn.png/revision/latest/scale-to-width-down/180?cb=20180206133117",
-    "Kalshnikov AKMS": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/Akms.png/revision/latest/scale-to-width-down/180?cb=20180427005729",
-    "Kalshnikov AKMSN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e6/Akmsn.png/revision/latest/scale-to-width-down/180?cb=20180503233021",
-    "Kalshnikov AKS-74": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/AKS-74.png/revision/latest/scale-to-width-down/180?cb=20181230153732",
-    "Kalshnikov AKS-74N": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4f/AKS-74N.png/revision/latest/scale-to-width-down/180?cb=20180426173339",
-    "Kalshnikov AKS-74U": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Aks74u.png/revision/latest/scale-to-width-down/180?cb=20181028171406",
-    "Kalshnikov AKS-74UB": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/Aks74ub.png/revision/latest/scale-to-width-down/180?cb=20181028171415",
-    "Kalshnikov AKS-74UN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/Aks74un.png/revision/latest/scale-to-width-down/180?cb=20181028171353",
+    "Kalashnikov AK-101": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/AK101_Image.png/revision/latest/scale-to-width-down/180?cb=20180502204454",
+    "Kalashnikov AK-102": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ca/Ak102image.png/revision/latest/scale-to-width-down/180?cb=20180506001257",
+    "Kalashnikov AK-103": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/AK-103_7.62x39.png/revision/latest/scale-to-width-down/180?cb=20180429234506",
+    "Kalashnikov AK-104": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b2/AK-104Image.png/revision/latest/scale-to-width-down/180?cb=20180503235112",
+    "Kalashnikov AK-105": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8b/AK-105_5.45x39.png/revision/latest/scale-to-width-down/180?cb=20180429234412",
+    "Kalashnikov AK-74": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/AK-74Image.png/revision/latest/scale-to-width-down/180?cb=20181226154054",
+    "Kalashnikov AK-74M": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/AK-74M.png/revision/latest/scale-to-width-down/180?cb=20180513014125",
+    "Kalashnikov AK-74N": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Akn.png/revision/latest/scale-to-width-down/180?cb=20181028171233",
+    "Kalashnikov AKM": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/Akm.png/revision/latest/scale-to-width-down/180?cb=20180206133400",
+    "Kalashnikov AKMN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/55/Akmn.png/revision/latest/scale-to-width-down/180?cb=20180206133117",
+    "Kalashnikov AKMS": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/Akms.png/revision/latest/scale-to-width-down/180?cb=20180427005729",
+    "Kalashnikov AKMSN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e6/Akmsn.png/revision/latest/scale-to-width-down/180?cb=20180503233021",
+    "Kalashnikov AKS-74": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/AKS-74.png/revision/latest/scale-to-width-down/180?cb=20181230153732",
+    "Kalashnikov AKS-74N": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4f/AKS-74N.png/revision/latest/scale-to-width-down/180?cb=20180426173339",
+    "Kalashnikov AKS-74U": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Aks74u.png/revision/latest/scale-to-width-down/180?cb=20181028171406",
+    "Kalashnikov AKS-74UB": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/Aks74ub.png/revision/latest/scale-to-width-down/180?cb=20181028171415",
+    "Kalashnikov AKS-74UN": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/Aks74un.png/revision/latest/scale-to-width-down/180?cb=20181028171353",
     "ASh-12": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f1/ASh_12.png/revision/latest/scale-to-width-down/180?cb=20211206013813",
     "AS VAL": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Asval.png/revision/latest/scale-to-width-down/180?cb=20190305220933",
     "CMMG Mk47 Mutant": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/Mk47_Mutant_View.png/revision/latest/scale-to-width-down/180?cb=20211203223357",
@@ -60,7 +60,7 @@ weapons = {
     "MP-133": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/Mr133.png/revision/latest/scale-to-width-down/180?cb=20180219121908",
     "MP-153": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/Mp153.png/revision/latest/scale-to-width-down/180?cb=20180219121906",
     "MP-155": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/MP-155.png/revision/latest/scale-to-width-down/180?cb=20211205210153",
-    "Baikal MP-43-1C": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f1/Mp-43_develop.jpg/revision/latest/scale-to-width-down/180?cb=20171109151742",
+    "Baikal MP-43-1C": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MP-43-1C_12ga_double-barrel_shotgun.jpg/revision/latest/scale-to-width-down/180?cb=20211213051714",
     "MTs-255-12": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2d/EFT_UpcomingMTs255.png/revision/latest/scale-to-width-down/180?cb=20190515021208",
     "Saiga-12": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cd/Saiga12.png/revision/latest/scale-to-width-down/180?cb=20180219121914",
     "TOZ-106": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/Toz.png/revision/latest/scale-to-width-down/180?cb=20180219121918",
@@ -101,8 +101,8 @@ weapons = {
 }
 
 armor_vests = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4b/TT_plate_carrier_SK.jpg/revision/latest/scale-to-width-down/180?cb=20190214161136",
+    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    "None": "https://i.imgur.com/V2SWmZh.png",
     "BNTI Module-3M body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f8/3M_icon.png/revision/latest/scale-to-width-down/190?cb=20190519124804",
     "PACA soft armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/91/PACA_icon.png/revision/latest/scale-to-width-down/190?cb=20181225213000",
     "6B2 armor (Flora)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ca/6B2_Icon.png/revision/latest/scale-to-width-down/190?cb=20191227220308",
@@ -151,8 +151,8 @@ armor_rigs = {
 armors = {**armor_vests, **armor_rigs}
 
 rigs = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/Unknown_chestrig.png/revision/latest/scale-to-width-down/180?cb=20200325010917",
+    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    "None": "https://i.imgur.com/hvS3rKi.png",
     "Scav Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/39/Scav_Vest_icon.png/revision/latest/scale-to-width-down/127?cb=20190517215835",
     "Security Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/25/Securityvesticon.png/revision/latest/scale-to-width-down/127?cb=20210331215236",
     "DIY IDEA chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9c/DIY_IDEArig_icon.png/revision/latest/scale-to-width-down/190?cb=20211206005208",
@@ -180,8 +180,8 @@ rigs = {
 }
 
 helmets = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fb/Knitcap_icon.png/revision/latest/scale-to-width-down/64?cb=20190319180816",
+    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    "None": "https://i.imgur.com/mYp2Kzv.png",
     "Armasight NVG head strap": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/78/Armasight_NVG_Mask_Icon.png/revision/latest/scale-to-width-down/127?cb=20190319182456",
     "Wilcox Skull Lock head mount": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f2/Slockicon.png/revision/latest/scale-to-width-down/127?cb=20190319182533",
     "Tac-Kek FAST MT helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c0/TK_FAST_Icon.png/revision/latest/scale-to-width-down/127?cb=20200607112137",
@@ -226,8 +226,8 @@ helmets = {
 }
 
 backpacks = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-    "None": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/27/Scorpion_backpack.jpg/revision/latest/scale-to-width-down/180?cb=20190124174541",
+    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    "None": "https://i.imgur.com/HV7jzIL.png",
     "6Sh118 raid backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b5/6SH118_Icon.png/revision/latest/scale-to-width-down/250?cb=20191227220310",
     "LBT-2670 Slim Field Med Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6d/LBT-2670_Icon.png/revision/latest/scale-to-width-down/250?cb=20201028055441",
     "LBT-1476A 3Day Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/LBT-1476A_Icon.png/revision/latest/scale-to-width-down/250?cb=20220102181844",
@@ -261,19 +261,29 @@ fir_only_armor_vests = (
     "5.11 Tactical Hexgrid plate carrier",
     "BNTI Zhuk-6a heavy armor",
     "FORT Defender-2 body armor",
-    "IOTV Gen4 body armor (Full Protection)"
+    "6B13 M assault armor (Tan)",
+    "IOTV Gen4 body armor (Assault Kit)"
 )
 
-modifiers = (
-    "Up to level 1 traders",
-    "Up to level 2 traders",
-    "Up to level 3 traders",
-    "Up to level 4 traders",
-    "No restrictions"
+fir_only_armor_rigs = (
+    "Crye Precision AVS MBAV (Tagilla Edition)"
 )
+
+fir_only_helmets = (
+    "Tagilla's welding mask \"Gorilla\"",
+    "Tagilla's welding mask \"UBEY\""
+)
+
+modifiers = {
+    "Up to level 1 traders": "https://i.imgur.com/I71LsPN.png",
+    "Up to level 2 traders": "https://i.imgur.com/qmB6NSH.png",
+    "Up to level 3 traders": "https://i.imgur.com/vupz2Hi.png",
+    "Up to level 4 traders": "https://i.imgur.com/tROE6zs.png",
+    "No restrictions": "https://i.imgur.com/r5VRNUB.png"
+}
 
 maps = {
-    "WILDCARD - YOUR CHOICE": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
+    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "Factory": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Factory-Day_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811153020",
     "Customs": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9f/Customs_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811151055",
     "Interchange": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_interchange.png/revision/latest/scale-to-width-down/382?cb=20200811153253",
@@ -310,10 +320,16 @@ bad_bonuses = (
     "Single-fire only",
     "Must use highest flash damage round",
     "Hatchlings must be killed with a melee",
-    "Attempt to befriend a random player"
+    "Attempt to befriend a random player",
+    "Re-roll anything"
 )
 
 bonuses = good_bonuses, bad_bonuses
+
+# For debugging
+# reroll1 = ("Re-roll anything", "Re-roll anything")
+# reroll2 = ("Re-roll anything", "Re-roll anything")
+# bonuses = reroll1, reroll2
 
 all = {
     "Weapon": weapons,
