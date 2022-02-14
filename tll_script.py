@@ -1,4 +1,4 @@
-# Simply a script to generate a loadout, no discord bot
+# Script version, no discord bot. Only uses lists.py
 
 import time
 import random
