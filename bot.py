@@ -1,7 +1,6 @@
 import asyncio
 import bot_token
 import datetime
-import lists
 import nextcord
 from nextcord.ext import commands
 import platform
@@ -16,9 +15,9 @@ client.remove_command("help")
 @client.event
 async def on_ready():
     await client.change_presence(activity=nextcord.Game("t!help"))
-    print("BOT ONLINE")
+    print("BOT ONLINE\n")
     while True:
-        print("List of guilds:", client.guilds)
+        print(f"List of guilds:\n{client.guilds}\n")
         await asyncio.sleep(21600)
 
 
@@ -32,7 +31,7 @@ async def on_command_error(ctx, error):
 
 @client.command(description="Commands List")
 async def help(ctx):
-    print(f"{datetime.datetime.now()}, t!help - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}")
+    print(f"{datetime.datetime.now()}, t!help - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
     embed = nextcord.Embed(title="Tarkov Loadout Lottery Help - Commands are case-sensitive", description="Commands List")
     for command in client.walk_commands():
         description = command.description
@@ -42,23 +41,24 @@ async def help(ctx):
 
 @client.command(description="Pong!")
 async def ping(ctx):
-    print(f"{datetime.datetime.now()}, t!ping - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}")
+    print(f"{datetime.datetime.now()}, t!ping - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
     start = time.time()
-    msg = await ctx.send(f"Pong! DWSP latency: {round (client.latency*1000)} ms.")
+    msg = await ctx.send(f"Pong! DWSP latency: {round(client.latency * 1000)} ms.")
     end = time.time()
-    await msg.edit(f"Pong! DWSP latency: {round(client.latency * 1000)} ms. Response time: {round((end-start)*1000)} ms.")
+    await msg.edit(f"Pong! DWSP latency: {round(client.latency * 1000)} ms. Response time: {round((end - start) * 1000)} ms.")
 
 
 @client.command(description="Displays the bot's statistics")
 async def stats(ctx):
+    print(f"{datetime.datetime.now()}, t!stats - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
     embed = nextcord.Embed(title="Bot Statistics", color=ctx.author.color)
     embed.set_thumbnail(url=client.user.avatar.url)
 
     proc = psutil.Process()
     with proc.oneshot():
-        uptime = datetime.timedelta(seconds=time.time()-proc.create_time())
+        uptime = datetime.timedelta(seconds=time.time() - proc.create_time())
         cpu_time = datetime.timedelta(seconds=(cpu := proc.cpu_times()).system + cpu.user)
-        mem_total = psutil.virtual_memory().total / (1024**2)
+        mem_total = psutil.virtual_memory().total / (1024 ** 2)
         mem_of_total = proc.memory_percent()
         mem_usage = mem_total * (mem_of_total / 100)
     fields = [
@@ -171,17 +171,15 @@ class RerollAnythingButton(nextcord.ui.View):
 @client.command(name="roll", description="Classic Tarkov Loadout Lottery uses a super quantum algorithm to generate a random loadout and map for you to play with.")
 @commands.cooldown(1, 20, commands.BucketType.channel)
 async def roll(ctx):
-    print(f"{datetime.datetime.now()}, t!roll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}")
+    import lists
+    print(f"{datetime.datetime.now()}, t!roll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
 
-    embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎲", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
+    embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Support & LFG Server", icon_url="https://i.imgur.com/ptkBfO2.png", url="https://discord.gg/mgXmtMZgfb")
     embed.set_thumbnail(url=ctx.message.author.avatar.url)
-    embed_msg = await ctx.send(embed=embed)
-
-    embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)",
-                    value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
+    embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)", value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
     view1 = FIROnly(ctx)
-    await embed_msg.edit(embed=embed, view=view1)
+    embed_msg = await ctx.send(embed=embed, view=view1)
     await view1.wait()
     embed.remove_field(0)
     await embed_msg.edit(embed=embed, view=None)
@@ -212,16 +210,16 @@ async def roll(ctx):
     await asyncio.sleep(0.66)
 
     # Prints all rolls categories
-    for key, value in rolls.items():
-        embed.add_field(name=key, value=":grey_question:", inline=False)
+    for category, item in rolls.items():
+        embed.add_field(name=category, value=":grey_question:", inline=False)
         embed.set_image(url="")
         await embed_msg.edit(embed=embed)
         await asyncio.sleep(0.66)
         field_index += 1
-        embed.set_field_at(field_index, name=key, value=value, inline=False)
-        for dict in lists.all.values():
-            if value in dict:
-                embed.set_image(url=dict[value])
+        embed.set_field_at(field_index, name=category, value=item, inline=False)
+        for category_dict in lists.all.values():
+            if item in category_dict:
+                embed.set_image(url=category_dict[item])
         await embed_msg.edit(embed=embed)
         await asyncio.sleep(1.5)
 
@@ -234,13 +232,15 @@ async def roll(ctx):
     embed.set_image(url="")
     await embed_msg.edit(embed=embed, view=None)
     if view2.value:
-        rolled_bonus = random.choice(random.choice(lists.bonuses))
+        rolled_bonus = random.choice(tuple(random.choice(lists.bonuses).keys()))
         embed.add_field(name="\nBonus modifier:", value=":grey_question:", inline=False)
         await embed_msg.edit(embed=embed)
         await asyncio.sleep(0.66)
         field_index += 1
         embed.set_field_at(field_index, name="\nBonus modifier:", value=rolled_bonus, inline=False)
-        await embed_msg.edit(embed=embed)
+        for dict in lists.bonuses:
+            if rolled_bonus in dict:
+                embed.set_image(url=dict[rolled_bonus])
 
         # Re-roll and print a new category of the user's choice
         if rolled_bonus == "Re-roll anything":
@@ -248,7 +248,6 @@ async def roll(ctx):
             view3 = RerollAnythingButton()
             embed_msg = await ctx.send(embed=embed, view=view3)
             await view3.wait()
-
             embed.add_field(name=f"Rerolled {view3.value.lower()}:", value=":grey_question:", inline=False)
             rerolled = random.choice(tuple(lists.all[view3.value].keys()))
             await embed_msg.edit(embed=embed, view=None)
@@ -259,30 +258,28 @@ async def roll(ctx):
                 if rerolled in dict:
                     embed.set_image(url=dict[rerolled])
             await embed_msg.edit(embed=embed)
-            await asyncio.sleep(5)
-            embed.set_image(url="")
+        else:
             await embed_msg.edit(embed=embed)
-            await asyncio.sleep(3)
-        await asyncio.sleep(0.66)
-        embed.set_footer(text="Enjoy! :)")
+
+        await asyncio.sleep(3)
         embed.set_image(url="")
+        embed.set_footer(text="Enjoy! :)")
         await embed_msg.edit(embed=embed, view=None)
 
 
 @client.command(name="fastroll", description="Same as classic loadout lottery, but with less waiting around.")
 @commands.cooldown(1, 5, commands.BucketType.channel)
 async def fastroll(ctx):
-    print(f"{datetime.datetime.now()}, t!fastroll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}")
+    import lists
+    print(f"{datetime.datetime.now()}, t!fastroll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
 
-    embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎲", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
+    embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Support & LFG Server", icon_url="https://i.imgur.com/ptkBfO2.png", url="https://discord.gg/mgXmtMZgfb")
     embed.set_thumbnail(url=ctx.message.author.avatar.url)
-    embed_msg = await ctx.send(embed=embed)
 
-    embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)",
-                    value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
+    embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)", value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
     view1 = FIROnly(ctx)
-    await embed_msg.edit(embed=embed, view=view1)
+    embed_msg = await ctx.send(embed=embed, view=view1)
     await view1.wait()
     embed.remove_field(0)
     await embed_msg.edit(embed=embed, view=None)
@@ -310,8 +307,8 @@ async def fastroll(ctx):
     })
 
     # Prints all rolls categories
-    for key, value in rolls.items():
-        embed.add_field(name=key, value=value, inline=False)
+    for category, item in rolls.items():
+        embed.add_field(name=category, value=item, inline=False)
     await embed_msg.edit(embed=embed)
 
     # User given the option to roll an optional bonus modifier from list
@@ -322,20 +319,19 @@ async def fastroll(ctx):
     embed.set_footer(text="")
     await embed_msg.edit(embed=embed, view=None)
     if view2.value:
-        rolled_bonus = random.choice(random.choice(lists.bonuses))
+        rolled_bonus = random.choice(tuple(random.choice(lists.bonuses).keys()))
         embed.add_field(name="\nBonus modifier:", value=rolled_bonus, inline=False)
-        await embed_msg.edit(embed=embed)
 
         # Re-roll and print a new category of the user's choice
         if rolled_bonus == "Re-roll anything":
-
             view3 = RerollAnythingButton()
             await embed_msg.edit(embed=embed, view=view3)
             await view3.wait()
             rerolled = random.choice(tuple(lists.all[view3.value].keys()))
-            embed.add_field(name=f"Rerolled {lists.view3.value.lower()}:", value=rerolled, inline=False)
+            embed.add_field(name=f"Rerolled {view3.value.lower()}:", value=rerolled, inline=False)
 
         embed.set_footer(text="Enjoy! :)")
         await embed_msg.edit(embed=embed, view=None)
+
 
 client.run(bot_token.token)
