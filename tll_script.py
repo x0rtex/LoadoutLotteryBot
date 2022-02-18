@@ -1,9 +1,9 @@
-# Script version, no discord bot. Only uses lists.py
+# Simply a script to generate a loadout, no discord bot
 
 import time
 import random
 import sys
-from lists import *
+import lists
 
 ts = time.gmtime()
 
@@ -22,22 +22,22 @@ def slow_print_sleep(text):
 
 # Dictionary containing all the randomized rolls
 rolls = {
-    "Weapon": random.choice(tuple(weapons.keys())),
+    "Weapon": random.choice(tuple(lists.weapons.keys())),
 }
 
-rolled_armor = random.choice(tuple(armors.keys()))
-if rolled_armor in armor_vests:
+rolled_armor = random.choice(tuple(lists.armors.keys()))
+if rolled_armor in lists.armor_vests:
     rolls["Armor Vest"] = rolled_armor
-    rolls["Rig"] = random.choice(tuple(rigs.keys()))
+    rolls["Rig"] = random.choice(tuple(lists.rigs.keys()))
 else:
     rolls["Armored Rig"] = rolled_armor
 
 rolls.update({
-    "Helmet": random.choice(tuple(helmets.keys())),
-    "Backpack": random.choice(tuple(backpacks.keys())),
-    "Gun mods": random.choice(modifiers),
-    "Ammo": random.choice(modifiers),
-    "Map": random.choice(tuple(maps.keys())),
+    "Helmet": random.choice(tuple(lists.helmets.keys())),
+    "Backpack": random.choice(tuple(lists.backpacks.keys())),
+    "Gun mods": random.choice(tuple(lists.modifiers.keys())),
+    "Ammo": random.choice(tuple(lists.modifiers.keys())),
+    "Map": random.choice(tuple(lists.maps.keys())),
 })
 
 # Prints all rolls categories
@@ -55,7 +55,7 @@ time.sleep(0.5)
 print("-=" * 19 + "-")
 time.sleep(0.5)
 if userInput == "y":
-    rolled_bonus = random.choice(random.choice(bonuses))
+    rolled_bonus = random.choice(tuple(random.choice(lists.bonuses).keys()))
     slow_print_sleep(f"Bonus modifier: {rolled_bonus}")
 
     # Re-roll and print a new category of the user's choice
