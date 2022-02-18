@@ -1,5 +1,6 @@
 weapons = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
     "Melee Weapon": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8a/Antique_Axe.png/revision/latest/scale-to-width-down/200?cb=20181110013042",
     "ADAR 2-15": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/ADAR2-15Image.png/revision/latest/scale-to-width-down/180?cb=20190226190907",
     "Kalashnikov AK-101": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/AK101_Image.png/revision/latest/scale-to-width-down/180?cb=20180502204454",
@@ -102,6 +103,7 @@ weapons = {
 
 armor_vests = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
     "None": "https://i.imgur.com/V2SWmZh.png",
     "BNTI Module-3M body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f8/3M_icon.png/revision/latest/scale-to-width-down/190?cb=20190519124804",
     "PACA soft armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/91/PACA_icon.png/revision/latest/scale-to-width-down/190?cb=20181225213000",
@@ -153,6 +155,7 @@ armors = {**armor_vests, **armor_rigs}
 rigs = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "None": "https://i.imgur.com/hvS3rKi.png",
+    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
     "Scav Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/39/Scav_Vest_icon.png/revision/latest/scale-to-width-down/127?cb=20190517215835",
     "Security Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/25/Securityvesticon.png/revision/latest/scale-to-width-down/127?cb=20210331215236",
     "DIY IDEA chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9c/DIY_IDEArig_icon.png/revision/latest/scale-to-width-down/190?cb=20211206005208",
@@ -182,6 +185,7 @@ rigs = {
 helmets = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "None": "https://i.imgur.com/mYp2Kzv.png",
+    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
     "Armasight NVG head strap": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/78/Armasight_NVG_Mask_Icon.png/revision/latest/scale-to-width-down/127?cb=20190319182456",
     "Wilcox Skull Lock head mount": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f2/Slockicon.png/revision/latest/scale-to-width-down/127?cb=20190319182533",
     "Tac-Kek FAST MT helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c0/TK_FAST_Icon.png/revision/latest/scale-to-width-down/127?cb=20200607112137",
@@ -228,6 +232,7 @@ helmets = {
 backpacks = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "None": "https://i.imgur.com/HV7jzIL.png",
+    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
     "6Sh118 raid backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b5/6SH118_Icon.png/revision/latest/scale-to-width-down/250?cb=20191227220310",
     "LBT-2670 Slim Field Med Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6d/LBT-2670_Icon.png/revision/latest/scale-to-width-down/250?cb=20201028055441",
     "LBT-1476A 3Day Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/LBT-1476A_Icon.png/revision/latest/scale-to-width-down/250?cb=20220102181844",
@@ -257,6 +262,7 @@ backpacks = {
     "Gruppa 99 T20": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/Gruppa_99_T20_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20220102181250"
 }
 
+# Found-In-Raid only items that users can exclude from the rolls
 fir_only_armor_vests = (
     "5.11 Tactical Hexgrid plate carrier",
     "BNTI Zhuk-6a heavy armor",
@@ -264,11 +270,9 @@ fir_only_armor_vests = (
     "6B13 M assault armor (Tan)",
     "IOTV Gen4 body armor (Assault Kit)"
 )
-
 fir_only_armor_rigs = (
     "Crye Precision AVS MBAV (Tagilla Edition)"
 )
-
 fir_only_helmets = (
     "Tagilla's welding mask \"Gorilla\"",
     "Tagilla's welding mask \"UBEY\""
@@ -294,43 +298,45 @@ maps = {
     "Lighthouse": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d6/Lighthouse_concept_%282%29.jpg/revision/latest/scale-to-width-down/600?cb=20211102173810",
 }
 
-good_bonuses = (
-    "Pop any 3 stimulants at start of raid",
-    "+1 level to all traders",
-    "Swap gun and ammo trader level",
-    "Pistol secondary",
-    "Must use highest penetration round",
-    "Must use highest capacity magazine",
-    "Impact grenades only",
-    "Re-roll anything"
-)
+good_bonuses = {
+    "Pop any 3 stimulants at start of raid": "https://i.imgur.com/lYmpWWL.png",
+    "+1 level to all traders": "https://i.imgur.com/EDccZfH.png",
+    "Swap gun and ammo trader level": "https://i.imgur.com/N43aCh0.png",
+    "Pistol secondary": "https://i.imgur.com/pIIl7j1.png",
+    "Must use highest penetration round": "https://i.imgur.com/l2Zb9aH.png",
+    "Must use highest capacity magazine": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/MAG5-100.png/revision/latest/scale-to-width-down/1200?cb=20190414152250",
+    "You can only use Impact grenades": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/RGN_View.png/revision/latest?cb=20211212210251",
+    "Re-roll anything": ""
+}
 
-bad_bonuses = (
-    "Flash grenades only",
-    "No suppressor",
-    "No insurance",
-    "Iron sights only",
-    "Night raid (NVG)",
-    "Night raid (No NVG)",
-    "Hip fire only (unbind aim)",
-    "No surgery kits",
-    "No keys or keycards",
-    "No loadout upgrades in raid",
-    "Weapon must be stock",
-    "Single-fire only",
-    "Must use highest flash damage round",
-    "Hatchlings must be killed with a melee",
-    "Attempt to befriend a random player",
-    "Re-roll anything"
-)
+bad_bonuses = {
+    "You can only use Flash grenades": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fc/Model_7290_Flash_Bang.png/revision/latest?cb=20211212182627",
+    "You can only use Smoke grenades": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/M18_Green_View.png/revision/latest?cb=20211212211007",
+    "You can only use M67 Hand grenades": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e2/M67.png/revision/latest/scale-to-width-down/320?cb=20200216033043",
+    "No suppressor": "https://i.imgur.com/Otrn9Xc.png",
+    "No insurance": "https://i.imgur.com/E5xueS0.png",
+    "Iron sights only": "https://i.imgur.com/oE4qQ4b.png",
+    "Night raid (NVG if applicable)": "https://i.redd.it/juv50kmkgm941.png",
+    "Hip fire only (unbind aim)": "https://i.imgur.com/xh2Z6eT.jpg",
+    "No surgery kits": "https://i.imgur.com/ZLf9udj.png",
+    "No docs/sicc/keytool/keycard holder": "https://i.imgur.com/5Rusxe3.png",
+    "No loadout upgrades in raid": "",
+    "Weapon must be stock": "https://i.imgur.com/j3RShdo.png",
+    "Single-fire only": "https://i.imgur.com/yhRZB5H.png",
+    "Must use highest flash damage round": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/.45_RIP_View.png/revision/latest/scale-to-width-down/211?cb=20200508230152",
+    "Hatchlings must be killed with a melee": "https://academyoffencingmasters.com/blog/wp-content/uploads/2017/02/Valentine%E2%80%99s-Day-Love-and-Swordfighting-Duels.jpg",
+    "No headphones": "https://i.imgur.com/FOrgqJm.png",
+    "Attempt to befriend a random player": "https://i.imgur.com/i3KRTCc.png"
+}
 
 bonuses = good_bonuses, bad_bonuses
 
 # For debugging
-# reroll1 = ("Re-roll anything", "Re-roll anything")
-# reroll2 = ("Re-roll anything", "Re-roll anything")
+# reroll1 = {"Re-roll anything": "", "Re-roll anything": ""}
+# reroll2 = {"Re-roll anything": "", "Re-roll anything": ""}
 # bonuses = reroll1, reroll2
 
+# Rolled categories can iterate upon the dictionaries to find image url
 all = {
     "Weapon": weapons,
     "Armor Vest": armor_vests,
