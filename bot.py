@@ -183,10 +183,15 @@ async def roll(ctx):
     await view1.wait()
     embed.remove_field(0)
     await embed_msg.edit(embed=embed, view=None)
-    if view1.value == "Exclude FIR-only items":
-        del armor_vests[fir_only_armor_vests]
-        del armor_rigs[fir_only_armor_rigs]
-        del helmets[fir_only_helmets]
+    if view1.value:
+        for i in lists.fir_only_armor_vests:
+            del lists.armor_vests[i]
+        del lists.armor_rigs[lists.fir_only_armor_rig]
+        for i in lists.fir_only_helmets:
+            del lists.helmets[i]
+
+        if fir_only_armor_vests not in armor_vests:
+            print("armor delete success")
 
     # Dictionary containing all the randomized rolls
     rolls = {
@@ -283,10 +288,12 @@ async def fastroll(ctx):
     await view1.wait()
     embed.remove_field(0)
     await embed_msg.edit(embed=embed, view=None)
-    if view1.value == "Exclude FIR-only items":
-        del armor_vests[fir_only_armor_vests]
-        del armor_rigs[fir_only_armor_rigs]
-        del helmets[fir_only_helmets]
+    if view1.value:
+        for i in lists.fir_only_armor_vests:
+            del lists.armor_vests[i]
+        del lists.armor_rigs[lists.fir_only_armor_rig]
+        for i in lists.fir_only_helmets:
+            del lists.helmets[i]
 
     # Dictionary containing all the randomized rolls
     rolls = {
