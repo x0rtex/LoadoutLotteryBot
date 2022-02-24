@@ -10,8 +10,8 @@ ts = time.gmtime()
 
 # Will print each character every 0.05s, and add a seperator with 0.5s delay
 def slow_print_sleep(text):
-    for i in text:
-        print(i, end='')
+    for letter in text:
+        print(letter, end='')
         sys.stdout.flush()
         time.sleep(0.05)
     print()
@@ -19,6 +19,15 @@ def slow_print_sleep(text):
     print("-=" * 19 + "-")
     time.sleep(0.5)
 
+
+print("Type 'y' to exclude items with no purchase or barter, or press enter key to include them..")
+userInput = input("> ").lower().strip()
+if userInput == 'y':
+    for i in lists.fir_only_armor_vests:
+        del lists.armor_vests[i]
+    del lists.armor_rigs[lists.fir_only_armor_rig]
+    for i in lists.fir_only_helmets:
+        del lists.helmets[i]
 
 # Dictionary containing all the randomized rolls
 rolls = {
@@ -60,8 +69,10 @@ if userInput == "y":
 
     # Re-roll and print a new category of the user's choice
     if rolled_bonus == "Re-roll anything":
-        def random_key(x):
-            return random.choice(tuple(x.keys()))
+        def random_key(category):
+            return random.choice(tuple(category.keys()))
+
+
         print("Select one of the following to re-roll...")
         print(", ".join(rolls.keys()))
         user_reroll = ""
