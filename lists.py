@@ -270,9 +270,8 @@ fir_only_armor_vests = (
     "6B13 M assault armor (Tan)",
     "IOTV Gen4 body armor (Assault Kit)"
 )
-fir_only_armor_rigs = (
-    "Crye Precision AVS MBAV (Tagilla Edition)"
-)
+fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
+
 fir_only_helmets = (
     "Tagilla's welding mask \"Gorilla\"",
     "Tagilla's welding mask \"UBEY\""
