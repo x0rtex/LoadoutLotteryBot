@@ -7,6 +7,7 @@ import platform
 import psutil
 import random
 import time
+import lists
 
 client = commands.Bot(command_prefix="t!")
 client.remove_command("help")
@@ -171,27 +172,19 @@ class RerollAnythingButton(nextcord.ui.View):
 @client.command(name="roll", description="Classic Tarkov Loadout Lottery uses a super quantum algorithm to generate a random loadout and map for you to play with.")
 @commands.cooldown(1, 20, commands.BucketType.channel)
 async def roll(ctx):
-    import lists
     print(f"{datetime.datetime.now()}, t!roll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
 
     embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Support & LFG Server", icon_url="https://i.imgur.com/ptkBfO2.png", url="https://discord.gg/mgXmtMZgfb")
     embed.set_thumbnail(url=ctx.message.author.avatar.url)
-    embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)", value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
+
+    embed.add_field(name="temporarily broken", value="just move along", inline=False)
     view1 = FIROnly(ctx)
     embed_msg = await ctx.send(embed=embed, view=view1)
     await view1.wait()
     embed.remove_field(0)
     await embed_msg.edit(embed=embed, view=None)
-    if view1.value:
-        for i in lists.fir_only_armor_vests:
-            del lists.armor_vests[i]
-        del lists.armor_rigs[lists.fir_only_armor_rig]
-        for i in lists.fir_only_helmets:
-            del lists.helmets[i]
-
-        if fir_only_armor_vests not in armor_vests:
-            print("armor delete success")
+    print("before view1 ok")
 
     # Dictionary containing all the randomized rolls
     rolls = {
@@ -275,22 +268,24 @@ async def roll(ctx):
 @client.command(name="fastroll", description="Same as classic loadout lottery, but with less waiting around.")
 @commands.cooldown(1, 5, commands.BucketType.channel)
 async def fastroll(ctx):
-    import lists
     print(f"{datetime.datetime.now()}, t!fastroll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
 
     embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Support & LFG Server", icon_url="https://i.imgur.com/ptkBfO2.png", url="https://discord.gg/mgXmtMZgfb")
     embed.set_thumbnail(url=ctx.message.author.avatar.url)
 
-    embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)", value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
+    embed.add_field(name="temporarily broken", value="just move along", inline=False)
     view1 = FIROnly(ctx)
     embed_msg = await ctx.send(embed=embed, view=view1)
     await view1.wait()
     embed.remove_field(0)
     await embed_msg.edit(embed=embed, view=None)
+    print("before view1 ok")
     if view1.value:
+        print("after view1 ok")
         for i in lists.fir_only_armor_vests:
             del lists.armor_vests[i]
+        print("armor")
         del lists.armor_rigs[lists.fir_only_armor_rig]
         for i in lists.fir_only_helmets:
             del lists.helmets[i]
