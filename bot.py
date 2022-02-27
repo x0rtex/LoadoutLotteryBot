@@ -8,6 +8,7 @@ import psutil
 import random
 import time
 import lists
+import copy
 
 client = commands.Bot(command_prefix="t!")
 client.remove_command("help")
@@ -174,34 +175,57 @@ class RerollAnythingButton(nextcord.ui.View):
 async def roll(ctx):
     print(f"{datetime.datetime.now()}, t!roll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
 
+    # Take all variables from lists.py to save a few hundred lines + fresh lists every command run
+    weapons = copy.deepcopy(lists.weapons)
+    armor_vests = copy.deepcopy(lists.armor_vests)
+    armor_rigs = copy.deepcopy(lists.armor_rigs)
+    armors = {**armor_vests, **armor_rigs}
+    rigs = copy.deepcopy(lists.rigs)
+    helmets = copy.deepcopy(lists.helmets)
+    backpacks = copy.deepcopy(lists.backpacks)
+    modifiers = copy.deepcopy(lists.modifiers)
+    maps = copy.deepcopy(lists.maps)
+    good_bonuses = copy.deepcopy(lists.good_bonuses)
+    bad_bonuses = copy.deepcopy(lists.bad_bonuses)
+    bonuses = good_bonuses, bad_bonuses
+    fir_only_armor_vests = copy.deepcopy(lists.fir_only_armor_vests)
+    fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
+    fir_only_helmets = copy.deepcopy(lists.fir_only_helmets)
+    all_rolls = copy.deepcopy(lists.all_rolls)
+
     embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Support & LFG Server", icon_url="https://i.imgur.com/ptkBfO2.png", url="https://discord.gg/mgXmtMZgfb")
     embed.set_thumbnail(url=ctx.message.author.avatar.url)
 
-    embed.add_field(name="temporarily broken", value="just move along", inline=False)
+    embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)", value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
     view1 = FIROnly(ctx)
     embed_msg = await ctx.send(embed=embed, view=view1)
     await view1.wait()
     embed.remove_field(0)
     await embed_msg.edit(embed=embed, view=None)
-    print("before view1 ok")
+    if view1.value:
+        for i in fir_only_armor_vests:
+            del armor_vests[i]
+        del armor_rigs[fir_only_armor_rig]
+        for i in fir_only_helmets:
+            del helmets[i]
 
     # Dictionary containing all the randomized rolls
     rolls = {
-        "Weapon": random.choice(tuple(lists.weapons.keys())),
+        "Weapon": random.choice(tuple(weapons.keys())),
     }
-    rolled_armor = random.choice(tuple(lists.armors.keys()))
-    if rolled_armor in lists.armor_vests:
+    rolled_armor = random.choice(tuple(armors.keys()))
+    if rolled_armor in armor_vests:
         rolls["Armor Vest"] = rolled_armor
-        rolls["Rig"] = random.choice(tuple(lists.rigs.keys()))
+        rolls["Rig"] = random.choice(tuple(rigs.keys()))
     else:
         rolls["Armored Rig"] = rolled_armor
     rolls.update({
-        "Helmet": random.choice(tuple(lists.helmets.keys())),
-        "Backpack": random.choice(tuple(lists.backpacks.keys())),
-        "Gun mods": random.choice(tuple(lists.modifiers.keys())),
-        "Ammo": random.choice(tuple(lists.modifiers.keys())),
-        "Map": random.choice(tuple(lists.maps.keys())),
+        "Helmet": random.choice(tuple(helmets.keys())),
+        "Backpack": random.choice(tuple(backpacks.keys())),
+        "Gun mods": random.choice(tuple(modifiers.keys())),
+        "Ammo": random.choice(tuple(modifiers.keys())),
+        "Map": random.choice(tuple(maps.keys())),
     })
 
     field_index = -1
@@ -215,7 +239,7 @@ async def roll(ctx):
         await asyncio.sleep(0.66)
         field_index += 1
         embed.set_field_at(field_index, name=category, value=item, inline=False)
-        for category_dict in lists.all.values():
+        for category_dict in all_rolls.values():
             if item in category_dict:
                 embed.set_image(url=category_dict[item])
         await embed_msg.edit(embed=embed)
@@ -230,13 +254,13 @@ async def roll(ctx):
     embed.set_image(url="")
     await embed_msg.edit(embed=embed, view=None)
     if view2.value:
-        rolled_bonus = random.choice(tuple(random.choice(lists.bonuses).keys()))
+        rolled_bonus = random.choice(tuple(random.choice(bonuses).keys()))
         embed.add_field(name="\nBonus modifier:", value=":grey_question:", inline=False)
         await embed_msg.edit(embed=embed)
         await asyncio.sleep(0.66)
         field_index += 1
         embed.set_field_at(field_index, name="\nBonus modifier:", value=rolled_bonus, inline=False)
-        for dict in lists.bonuses:
+        for dict in bonuses:
             if rolled_bonus in dict:
                 embed.set_image(url=dict[rolled_bonus])
 
@@ -247,12 +271,12 @@ async def roll(ctx):
             embed_msg = await ctx.send(embed=embed, view=view3)
             await view3.wait()
             embed.add_field(name=f"Rerolled {view3.value.lower()}:", value=":grey_question:", inline=False)
-            rerolled = random.choice(tuple(lists.all[view3.value].keys()))
+            rerolled = random.choice(tuple(all_rolls[view3.value].keys()))
             await embed_msg.edit(embed=embed, view=None)
             await asyncio.sleep(0.66)
             field_index += 1
             embed.set_field_at(field_index, name=f"Rerolled {view3.value.lower()}:", value=rerolled, inline=False)
-            for dict in lists.all.values():
+            for dict in all_rolls.values():
                 if rerolled in dict:
                     embed.set_image(url=dict[rerolled])
             await embed_msg.edit(embed=embed)
@@ -270,42 +294,57 @@ async def roll(ctx):
 async def fastroll(ctx):
     print(f"{datetime.datetime.now()}, t!fastroll - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
 
+    # Take all variables from lists.py to save a few hundred lines + fresh lists every command run
+    weapons = copy.deepcopy(lists.weapons)
+    armor_vests = copy.deepcopy(lists.armor_vests)
+    armor_rigs = copy.deepcopy(lists.armor_rigs)
+    armors = {**armor_vests, **armor_rigs}
+    rigs = copy.deepcopy(lists.rigs)
+    helmets = copy.deepcopy(lists.helmets)
+    backpacks = copy.deepcopy(lists.backpacks)
+    modifiers = copy.deepcopy(lists.modifiers)
+    maps = copy.deepcopy(lists.maps)
+    good_bonuses = copy.deepcopy(lists.good_bonuses)
+    bad_bonuses = copy.deepcopy(lists.bad_bonuses)
+    bonuses = good_bonuses, bad_bonuses
+    fir_only_armor_vests = copy.deepcopy(lists.fir_only_armor_vests)
+    fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
+    fir_only_helmets = copy.deepcopy(lists.fir_only_helmets)
+    all_rolls = copy.deepcopy(lists.all_rolls)
+
     embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Support & LFG Server", icon_url="https://i.imgur.com/ptkBfO2.png", url="https://discord.gg/mgXmtMZgfb")
     embed.set_thumbnail(url=ctx.message.author.avatar.url)
 
-    embed.add_field(name="temporarily broken", value="just move along", inline=False)
+    embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)", value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
     view1 = FIROnly(ctx)
     embed_msg = await ctx.send(embed=embed, view=view1)
     await view1.wait()
     embed.remove_field(0)
     await embed_msg.edit(embed=embed, view=None)
-    print("before view1 ok")
     if view1.value:
-        print("after view1 ok")
-        for i in lists.fir_only_armor_vests:
-            del lists.armor_vests[i]
-        print("armor")
-        del lists.armor_rigs[lists.fir_only_armor_rig]
-        for i in lists.fir_only_helmets:
-            del lists.helmets[i]
+        for i in fir_only_armor_vests:
+            del armor_vests[i]
+        del armor_rigs[fir_only_armor_rig]
+        for i in fir_only_helmets:
+            del helmets[i]
 
     # Dictionary containing all the randomized rolls
     rolls = {
-        "Weapon": random.choice(tuple(lists.weapons.keys())),
+        "Weapon": random.choice(tuple(weapons.keys())),
     }
-    rolled_armor = random.choice(tuple(lists.armors.keys()))
-    if rolled_armor in lists.armor_vests:
+    rolled_armor = random.choice(tuple(armors.keys()))
+    if rolled_armor in armor_vests:
         rolls["Armor Vest"] = rolled_armor
-        rolls["Rig"] = random.choice(tuple(lists.rigs.keys()))
+        rolls["Rig"] = random.choice(tuple(rigs.keys()))
     else:
         rolls["Armored Rig"] = rolled_armor
     rolls.update({
-        "Helmet": random.choice(tuple(lists.helmets.keys())),
-        "Backpack": random.choice(tuple(lists.backpacks.keys())),
-        "Gun mods": random.choice(tuple(lists.modifiers.keys())),
-        "Ammo": random.choice(tuple(lists.modifiers.keys())),
-        "Map": random.choice(tuple(lists.maps.keys())),
+        "Helmet": random.choice(tuple(helmets.keys())),
+        "Backpack": random.choice(tuple(backpacks.keys())),
+        "Gun mods": random.choice(tuple(modifiers.keys())),
+        "Ammo": random.choice(tuple(modifiers.keys())),
+        "Map": random.choice(tuple(maps.keys())),
     })
 
     # Prints all rolls categories
@@ -321,7 +360,7 @@ async def fastroll(ctx):
     embed.set_footer(text="")
     await embed_msg.edit(embed=embed, view=None)
     if view2.value:
-        rolled_bonus = random.choice(tuple(random.choice(lists.bonuses).keys()))
+        rolled_bonus = random.choice(tuple(random.choice(bonuses).keys()))
         embed.add_field(name="\nBonus modifier:", value=rolled_bonus, inline=False)
 
         # Re-roll and print a new category of the user's choice
@@ -329,7 +368,7 @@ async def fastroll(ctx):
             view3 = RerollAnythingButton()
             await embed_msg.edit(embed=embed, view=view3)
             await view3.wait()
-            rerolled = random.choice(tuple(lists.all[view3.value].keys()))
+            rerolled = random.choice(tuple(all_rolls[view3.value].keys()))
             embed.add_field(name=f"Rerolled {view3.value.lower()}:", value=rerolled, inline=False)
 
         embed.set_footer(text="Enjoy! :)")
