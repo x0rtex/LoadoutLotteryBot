@@ -100,7 +100,6 @@ weapons = {
     "TT pistol": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/Tt.png/revision/latest/scale-to-width-down/200?cb=20200216022150",
     "TT pistol (Gold)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203"
 }
-
 armor_vests = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
@@ -131,7 +130,6 @@ armor_vests = {
     "LBT 6094A Slick Plate Carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c6/Slick.gif/revision/latest/scale-to-width-down/180?cb=20210401231720",
     "6b43 Zabralo-Sh 6A body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/FORT_armor_icon.png/revision/latest/scale-to-width-down/250?cb=20200318200430"
 }
-
 armor_rigs = {
     "6B5-16 Zh-86 \"Uley\" armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/6B5-16_armored_rig_icon.png/revision/latest/scale-to-width-down/190?cb=20200422225151",
     "6B3TM-01M armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/79/6B3TM-01M_Icon.png/revision/latest/scale-to-width-down/190?cb=20200326122406",
@@ -149,9 +147,7 @@ armor_rigs = {
     "Eagle Industries \"MMAC\" plate carrier (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/Mmac_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229222915",
     "FirstSpear \"Strandhogg\" plate carrier rig (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b4/Strandhogg_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229223247",
 }
-
 armors = {**armor_vests, **armor_rigs}
-
 rigs = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "None": "https://i.imgur.com/hvS3rKi.png",
@@ -181,7 +177,6 @@ rigs = {
     "Velocity Systems Multi-Purpose Patrol Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MPPV_ICon.png/revision/latest/scale-to-width-down/250?cb=20191227220252",
     "Belt-A + Belt-B gear rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/Belt-A_Belt-B_gear_rig_icon.png/revision/latest/scale-to-width-down/250?cb=20190106165224"
 }
-
 helmets = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "None": "https://i.imgur.com/mYp2Kzv.png",
@@ -228,7 +223,6 @@ helmets = {
     "Jack Pyke Hunting LLCS boonie hat": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a0/LLCS.png/revision/latest/scale-to-width-down/127?cb=20211217124547",
     "NFM \"HJELM\" helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9e/NFM_HJELM_helmet_Icon.png/revision/latest/scale-to-width-down/127?cb=20211229085639"
 }
-
 backpacks = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "None": "https://i.imgur.com/HV7jzIL.png",
@@ -261,22 +255,6 @@ backpacks = {
     "Tactical sling bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/SlingBackPackIcon.png/revision/latest/scale-to-width-down/190?cb=20200317180926",
     "Gruppa 99 T20": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/Gruppa_99_T20_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20220102181250"
 }
-
-# Found-In-Raid only items that users can exclude from the rolls
-fir_only_armor_vests = (
-    "5.11 Tactical Hexgrid plate carrier",
-    "BNTI Zhuk-6a heavy armor",
-    "FORT Defender-2 body armor",
-    "6B13 M assault armor (Tan)",
-    "IOTV Gen4 body armor (Assault Kit)"
-)
-fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
-
-fir_only_helmets = (
-    "Tagilla's welding mask \"Gorilla\"",
-    "Tagilla's welding mask \"UBEY\""
-)
-
 modifiers = {
     "Up to level 1 traders": "https://i.imgur.com/I71LsPN.png",
     "Up to level 2 traders": "https://i.imgur.com/qmB6NSH.png",
@@ -284,7 +262,6 @@ modifiers = {
     "Up to level 4 traders": "https://i.imgur.com/tROE6zs.png",
     "No restrictions": "https://i.imgur.com/r5VRNUB.png"
 }
-
 maps = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "Factory": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Factory-Day_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811153020",
@@ -296,7 +273,6 @@ maps = {
     "Labs": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/TheLabBanner.png/revision/latest/scale-to-width-down/382?cb=20181225171705",
     "Lighthouse": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d6/Lighthouse_concept_%282%29.jpg/revision/latest/scale-to-width-down/600?cb=20211102173810",
 }
-
 good_bonuses = {
     "Pop any 3 stimulants at start of raid": "https://i.imgur.com/lYmpWWL.png",
     "+1 level to all traders": "https://i.imgur.com/EDccZfH.png",
@@ -307,7 +283,6 @@ good_bonuses = {
     "You can only use Impact grenades": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/RGN_View.png/revision/latest?cb=20211212210251",
     "Re-roll anything": ""
 }
-
 bad_bonuses = {
     "You can only use Flash grenades": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fc/Model_7290_Flash_Bang.png/revision/latest?cb=20211212182627",
     "You can only use Smoke grenades": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/M18_Green_View.png/revision/latest?cb=20211212211007",
@@ -327,8 +302,21 @@ bad_bonuses = {
     "No headphones": "https://i.imgur.com/FOrgqJm.png",
     "Attempt to befriend a random player": "https://i.imgur.com/i3KRTCc.png"
 }
-
 bonuses = good_bonuses, bad_bonuses
+
+# Found-In-Raid only items that user can exclude from the rolls
+fir_only_armor_vests = (
+    "5.11 Tactical Hexgrid plate carrier",
+    "BNTI Zhuk-6a heavy armor",
+    "FORT Defender-2 body armor",
+    "6B13 M assault armor (Tan)",
+    "IOTV Gen4 body armor (Assault Kit)"
+)
+fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
+fir_only_helmets = (
+    "Tagilla's welding mask \"Gorilla\"",
+    "Tagilla's welding mask \"UBEY\""
+)
 
 # For debugging
 # reroll1 = {"Re-roll anything": "", "Re-roll anything": ""}
@@ -336,7 +324,7 @@ bonuses = good_bonuses, bad_bonuses
 # bonuses = reroll1, reroll2
 
 # Rolled categories can iterate upon the dictionaries to find image url
-all = {
+all_rolls = {
     "Weapon": weapons,
     "Armor Vest": armor_vests,
     "Armored Rig": armor_rigs,
