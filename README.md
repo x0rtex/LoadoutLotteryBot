@@ -12,12 +12,8 @@ List of commands:
 - **t!stats** - Displays the bot's statistics
 - **t!ping** - Pong!
 
-Preview:
-
-![Preview](https://i.imgur.com/SMAeIKt.png)
-
-![Preview](https://i.imgur.com/0FAye6t.png)
-
-![Preview](https://i.imgur.com/DgPfPfF.png)
-
-![Preview](https://i.imgur.com/TXThfe1.png)
+Example 1                             |  Example 2
+:------------------------------------:|:------------------------------------:
+![](https://i.imgur.com/SMAeIKt.png)  |  ![](https://i.imgur.com/0FAye6t.pngg)
+Example 3                             |  Example 4
+![](https://i.imgur.com/DgPfPfF.png)  |  ![](https://i.imgur.com/TXThfe1.png)
