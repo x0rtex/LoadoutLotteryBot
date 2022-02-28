@@ -119,7 +119,7 @@ class BonusButton(nextcord.ui.View):
 
 
 # Buttons for every re-rollable category
-class RerollAnythingButton(nextcord.ui.View):
+class RerollButton(nextcord.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
         self.value = "None"
@@ -129,19 +129,19 @@ class RerollAnythingButton(nextcord.ui.View):
         self.value = "Weapon"
         self.stop()
 
-    @nextcord.ui.button(label="Armor", style=nextcord.ButtonStyle.primary)
-    async def armor(self, _: nextcord.ui.Button, __: nextcord.Interaction):
-        self.value = "Armor"
-        self.stop()
-
-    @nextcord.ui.button(label="Rig", style=nextcord.ButtonStyle.primary)
-    async def rig(self, _: nextcord.ui.Button, __: nextcord.Interaction):
-        self.value = "Rig"
+    @nextcord.ui.button(label="Armor Vest", style=nextcord.ButtonStyle.primary)
+    async def armor_vest(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Armor Vest"
         self.stop()
 
     @nextcord.ui.button(label="Armored Rig", style=nextcord.ButtonStyle.primary)
     async def armored_rig(self, _: nextcord.ui.Button, __: nextcord.Interaction):
         self.value = "Armored Rig"
+        self.stop()
+
+    @nextcord.ui.button(label="Rig", style=nextcord.ButtonStyle.primary)
+    async def rig(self, _: nextcord.ui.Button, __: nextcord.Interaction):
+        self.value = "Rig"
         self.stop()
 
     @nextcord.ui.button(label="Helmet", style=nextcord.ButtonStyle.primary)
@@ -186,8 +186,9 @@ async def roll(ctx):
     modifiers = copy.deepcopy(lists.modifiers)
     maps = copy.deepcopy(lists.maps)
     good_bonuses = copy.deepcopy(lists.good_bonuses)
+    mid_bonuses = copy.deepcopy(lists.mid_bonuses)
     bad_bonuses = copy.deepcopy(lists.bad_bonuses)
-    bonuses = good_bonuses, bad_bonuses
+    bonuses = good_bonuses, mid_bonuses, bad_bonuses
     fir_only_armor_vests = copy.deepcopy(lists.fir_only_armor_vests)
     fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
     fir_only_helmets = copy.deepcopy(lists.fir_only_helmets)
@@ -233,12 +234,12 @@ async def roll(ctx):
 
     # Prints all rolls categories
     for category, item in rolls.items():
-        embed.add_field(name=category, value=":grey_question:", inline=False)
+        embed.add_field(name=f"{category}:", value=":grey_question:", inline=False)
         embed.set_image(url="")
         await embed_msg.edit(embed=embed)
         await asyncio.sleep(0.66)
         field_index += 1
-        embed.set_field_at(field_index, name=category, value=item, inline=False)
+        embed.set_field_at(field_index, name=f"{category}:", value=item, inline=False)
         for category_dict in all_rolls.values():
             if item in category_dict:
                 embed.set_image(url=category_dict[item])
@@ -255,20 +256,20 @@ async def roll(ctx):
     await embed_msg.edit(embed=embed, view=None)
     if view2.value:
         rolled_bonus = random.choice(tuple(random.choice(bonuses).keys()))
-        embed.add_field(name="\nBonus modifier:", value=":grey_question:", inline=False)
+        embed.add_field(name="\nBonus:", value=":grey_question:", inline=False)
         await embed_msg.edit(embed=embed)
         await asyncio.sleep(0.66)
         field_index += 1
-        embed.set_field_at(field_index, name="\nBonus modifier:", value=rolled_bonus, inline=False)
+        embed.set_field_at(field_index, name="\nBonus:", value=rolled_bonus, inline=False)
         for dict in bonuses:
             if rolled_bonus in dict:
                 embed.set_image(url=dict[rolled_bonus])
 
         # Re-roll and print a new category of the user's choice
-        if rolled_bonus == "Re-roll anything":
+        if rolled_bonus == "Re-roll one slot":
             await asyncio.sleep(1)
-            view3 = RerollAnythingButton()
-            embed_msg = await ctx.send(embed=embed, view=view3)
+            view3 = RerollButton()
+            await embed_msg.edit(embed=embed, view=view3)
             await view3.wait()
             embed.add_field(name=f"Rerolled {view3.value.lower()}:", value=":grey_question:", inline=False)
             rerolled = random.choice(tuple(all_rolls[view3.value].keys()))
@@ -282,6 +283,27 @@ async def roll(ctx):
             await embed_msg.edit(embed=embed)
         else:
             await embed_msg.edit(embed=embed)
+
+        if rolled_bonus == "Re-roll two slots":
+            for _ in range(2):
+                await asyncio.sleep(1)
+                view3 = RerollButton()
+                embed.set_image(url="")
+                await embed_msg.edit(embed=embed, view=view3)
+                await view3.wait()
+                embed.add_field(name=f"Rerolled {view3.value.lower()}:", value=":grey_question:", inline=False)
+                rerolled = random.choice(tuple(all_rolls[view3.value].keys()))
+                await embed_msg.edit(embed=embed, view=None)
+                await asyncio.sleep(0.66)
+                field_index += 1
+                embed.set_field_at(field_index, name=f"Rerolled {view3.value.lower()}:", value=rerolled, inline=False)
+                for dict in all_rolls.values():
+                    if rerolled in dict:
+                        embed.set_image(url=dict[rerolled])
+                await embed_msg.edit(embed=embed)
+                await asyncio.sleep(2)
+            else:
+                await embed_msg.edit(embed=embed)
 
         await asyncio.sleep(3)
         embed.set_image(url="")
@@ -305,8 +327,9 @@ async def fastroll(ctx):
     modifiers = copy.deepcopy(lists.modifiers)
     maps = copy.deepcopy(lists.maps)
     good_bonuses = copy.deepcopy(lists.good_bonuses)
+    mid_bonuses = copy.deepcopy(lists.mid_bonuses)
     bad_bonuses = copy.deepcopy(lists.bad_bonuses)
-    bonuses = good_bonuses, bad_bonuses
+    bonuses = good_bonuses, mid_bonuses, bad_bonuses
     fir_only_armor_vests = copy.deepcopy(lists.fir_only_armor_vests)
     fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
     fir_only_helmets = copy.deepcopy(lists.fir_only_helmets)
@@ -364,12 +387,20 @@ async def fastroll(ctx):
         embed.add_field(name="\nBonus modifier:", value=rolled_bonus, inline=False)
 
         # Re-roll and print a new category of the user's choice
-        if rolled_bonus == "Re-roll anything":
-            view3 = RerollAnythingButton()
+        if rolled_bonus == "Re-roll one slot":
+            view3 = RerollButton()
             await embed_msg.edit(embed=embed, view=view3)
             await view3.wait()
             rerolled = random.choice(tuple(all_rolls[view3.value].keys()))
             embed.add_field(name=f"Rerolled {view3.value.lower()}:", value=rerolled, inline=False)
+
+        if rolled_bonus == "Re-roll two slots":
+            for _ in range(2):
+                view3 = RerollButton()
+                await embed_msg.edit(embed=embed, view=view3)
+                await view3.wait()
+                rerolled = random.choice(tuple(all_rolls[view3.value].keys()))
+                embed.add_field(name=f"Rerolled {view3.value.lower()}:", value=rerolled, inline=False)
 
         embed.set_footer(text="Enjoy! :)")
         await embed_msg.edit(embed=embed, view=None)
