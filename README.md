@@ -1,6 +1,6 @@
 ## Discord bot for generating a completely random loadout, map, and optional bonus modifier for use in Escape from Tarkov. (No features locked behind twitch subscriptions, includes a cool 'animation' and images too!)
 
-- Invite me to your server: https://discord.com/oauth2/authorize?client_id=917846908075139083&permissions=414464724032&scope=bot
+- Invite me to your server: https://discord.com/api/oauth2/authorize?client_id=917846908075139083&permissions=414464666688&scope=bot%20applications.commands
 - Support / LFG server: https://discord.gg/mgXmtMZgfb
 
 #### It's advanced AI will ensure the best loadout for any given person, map, and time! You must believe in the system- whether you get a drum mag Makarov with a Slick on labs or a Mk47 with a PACA- and it will reward you. :)
