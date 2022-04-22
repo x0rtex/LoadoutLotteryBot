@@ -54,7 +54,7 @@ async def ping(ctx):
 async def stats(ctx):
     print(f"{datetime.datetime.now()}, t!stats - {ctx.message.author.name} - #{ctx.message.channel.name} - {ctx.message.guild.name}\n")
     embed = nextcord.Embed(title="Bot Statistics", color=ctx.author.color)
-    embed.set_thumbnail(url=client.user.avatar.url)
+    embed.set_thumbnail(url=ctx.message.author.display_avatar)
 
     proc = psutil.Process()
     with proc.oneshot():
@@ -196,7 +196,7 @@ async def roll(ctx):
 
     embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Support & LFG Server", icon_url="https://i.imgur.com/ptkBfO2.png", url="https://discord.gg/mgXmtMZgfb")
-    embed.set_thumbnail(url=ctx.message.author.avatar.url)
+    embed.set_thumbnail(url=ctx.message.author.display_avatar)
 
     embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)", value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
     view1 = FIROnly(ctx)
@@ -261,9 +261,9 @@ async def roll(ctx):
         await asyncio.sleep(0.66)
         field_index += 1
         embed.set_field_at(field_index, name="\nBonus:", value=rolled_bonus, inline=False)
-        for dict in bonuses:
-            if rolled_bonus in dict:
-                embed.set_image(url=dict[rolled_bonus])
+        for dictionary in bonuses:
+            if rolled_bonus in dictionary:
+                embed.set_image(url=dictionary[rolled_bonus])
 
         # Re-roll and print a new category of the user's choice
         if rolled_bonus == "Re-roll one slot":
@@ -277,9 +277,9 @@ async def roll(ctx):
             await asyncio.sleep(0.66)
             field_index += 1
             embed.set_field_at(field_index, name=f"Rerolled {view3.value.lower()}:", value=rerolled, inline=False)
-            for dict in all_rolls.values():
-                if rerolled in dict:
-                    embed.set_image(url=dict[rerolled])
+            for dictionary in all_rolls.values():
+                if rerolled in dictionary:
+                    embed.set_image(url=dictionary[rerolled])
             await embed_msg.edit(embed=embed)
         else:
             await embed_msg.edit(embed=embed)
@@ -297,9 +297,9 @@ async def roll(ctx):
                 await asyncio.sleep(0.66)
                 field_index += 1
                 embed.set_field_at(field_index, name=f"Rerolled {view3.value.lower()}:", value=rerolled, inline=False)
-                for dict in all_rolls.values():
-                    if rerolled in dict:
-                        embed.set_image(url=dict[rerolled])
+                for dictionary in all_rolls.values():
+                    if rerolled in dictionary:
+                        embed.set_image(url=dictionary[rerolled])
                 await embed_msg.edit(embed=embed)
                 await asyncio.sleep(2)
             else:
@@ -337,7 +337,7 @@ async def fastroll(ctx):
 
     embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
     embed.set_author(name="Support & LFG Server", icon_url="https://i.imgur.com/ptkBfO2.png", url="https://discord.gg/mgXmtMZgfb")
-    embed.set_thumbnail(url=ctx.message.author.avatar.url)
+    embed.set_thumbnail(url=ctx.message.author.display_avatar)
 
     embed.add_field(name="Would you like to include or exclude FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)", value="p.s. Currently only includes various armors, and tagilla masks.", inline=False)
     view1 = FIROnly(ctx)
