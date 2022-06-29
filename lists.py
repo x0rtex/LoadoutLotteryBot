@@ -98,8 +98,17 @@ weapons = {
     "PM \"Makarov\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4c/Makarov.png/revision/latest/scale-to-width-down/200?cb=20200216022127",
     "Serdyukov SR-1MP Gyurza": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cc/Sr1mp.png/revision/latest/scale-to-width-down/200?cb=20200216022136",
     "TT pistol": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/Tt.png/revision/latest/scale-to-width-down/200?cb=20200216022150",
-    "TT pistol (Gold)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203"
-}
+    "TT pistol (Gold)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203",
+    "CR 200DS 9x19mm": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7a/CR_200DS_1.png/revision/latest/scale-to-width-down/180?cb=20220416231853",
+    "CR 50DS .357 Magnum": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9c/CR_50DS_.357_1.png/revision/latest/scale-to-width-down/180?cb=20220417132057",
+    "Heckler & Koch G36": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a9/Heckler_and_Koch_G36.jpg/revision/latest/scale-to-width-down/180?cb=20190221154922",
+    "Benelli M3": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/66/CW_BenelliM3.jpg/revision/latest/scale-to-width-down/180?cb=20190307235532",
+    "Accuracy International AXMC": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5c/CW_AWSM.jpg/revision/latest/scale-to-width-down/180?cb=20190307235520",
+    "MP-18 single-shot rifle": "",
+    "Rifle Dynamics 704": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/RD704.jpg/revision/latest/scale-to-width-down/180?cb=20210508124419",
+    "SAG AK": ""
+}   
+    
 armor_vests = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
     "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
