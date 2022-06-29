@@ -296,8 +296,6 @@ good_bonuses = {
     "+1 level (Gun mods)": "https://i.imgur.com/EDccZfH.png",
     "Pistol secondary": "https://i.imgur.com/pIIl7j1.png",
     "Impact grenades only": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/RGN_View.png/revision/latest?cb=20211212210251",
-    "Change one item of your choice": "",
-    "Change two items of your choice": "",
     "Re-roll one slot": "",
     "Re-roll two slots": ""
 }
