@@ -101,12 +101,13 @@ weapons = {
     "TT pistol (Gold)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203",
     "CR 200DS 9x19mm": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7a/CR_200DS_1.png/revision/latest/scale-to-width-down/180?cb=20220416231853",
     "CR 50DS .357 Magnum": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9c/CR_50DS_.357_1.png/revision/latest/scale-to-width-down/180?cb=20220417132057",
-    "Heckler & Koch G36": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a9/Heckler_and_Koch_G36.jpg/revision/latest/scale-to-width-down/180?cb=20190221154922",
-    "Benelli M3": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/66/CW_BenelliM3.jpg/revision/latest/scale-to-width-down/180?cb=20190307235532",
-    "Accuracy International AXMC": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5c/CW_AWSM.jpg/revision/latest/scale-to-width-down/180?cb=20190307235520",
-    "MP-18 single-shot rifle": "",
-    "Rifle Dynamics 704": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/RD704.jpg/revision/latest/scale-to-width-down/180?cb=20210508124419",
-    "SAG AK": ""
+    "HK G36": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/G36_View.png/revision/latest/scale-to-width-down/180?cb=20220705223014",
+    "Benelli M3 Super 90": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/55/Benelli_M3_Super_90.png/revision/latest/scale-to-width-down/180?cb=20220703180524",
+    "Accuracy International AXMC": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c5/AXMC_.338_LM.png/revision/latest/scale-to-width-down/180?cb=20220705212920",
+    "MP-18 single-shot rifle": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9d/MP18_VIew.png/revision/latest/scale-to-width-down/180?cb=20220629224646",
+    "RD-704": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ce/RD-704.jpg/revision/latest/scale-to-width-down/180?cb=20220702095109",
+    "SAG AK": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/SAG.545.png/revision/latest/scale-to-width-down/180?cb=20220701160057",
+    "SAG AK Short": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/70/AK-545Short_View.png/revision/latest/scale-to-width-down/180?cb=202206292156099"
 }   
     
 armor_vests = {
@@ -155,6 +156,7 @@ armor_rigs = {
     "Crye Precision AVS MBAV (Tagilla Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fa/MBAV_icon.png/revision/latest/scale-to-width-down/190?cb=20210701042443",
     "Eagle Industries \"MMAC\" plate carrier (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/Mmac_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229222915",
     "FirstSpear \"Strandhogg\" plate carrier rig (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b4/Strandhogg_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229223247",
+    "S&S Precision PlateFrame plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4b/TT_plate_carrier_SK.jpg/revision/latest/scale-to-width-down/180?cb=20190214161136"
 }
 armors = {**armor_vests, **armor_rigs}
 rigs = {
