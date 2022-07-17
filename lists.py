@@ -138,7 +138,8 @@ armor_vests = {
     "NFM THOR Integrated Carrier body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/THOR_IC_Icon.png/revision/latest/scale-to-width-down/250?cb=20211206001408",
     "BNTI Zhuk-6a heavy armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5c/Zhuk-6a_heavy_armor_icon.png/revision/latest/scale-to-width-down/190?cb=20190110121834",
     "LBT 6094A Slick Plate Carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c6/Slick.gif/revision/latest/scale-to-width-down/180?cb=20210401231720",
-    "6b43 Zabralo-Sh 6A body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/FORT_armor_icon.png/revision/latest/scale-to-width-down/250?cb=20200318200430"
+    "6b43 Zabralo-Sh 6A body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/FORT_armor_icon.png/revision/latest/scale-to-width-down/250?cb=20200318200430",
+    "DRD body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/22/DRD_body_armor.png/revision/latest?cb=20220703010422"
 }
 armor_rigs = {
     "6B5-16 Zh-86 \"Uley\" armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/6B5-16_armored_rig_icon.png/revision/latest/scale-to-width-down/190?cb=20200422225151",
@@ -156,7 +157,11 @@ armor_rigs = {
     "Crye Precision AVS MBAV (Tagilla Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fa/MBAV_icon.png/revision/latest/scale-to-width-down/190?cb=20210701042443",
     "Eagle Industries \"MMAC\" plate carrier (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/Mmac_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229222915",
     "FirstSpear \"Strandhogg\" plate carrier rig (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b4/Strandhogg_Icon.png/revision/latest/scale-to-width-down/190?cb=20211229223247",
-    "S&S Precision PlateFrame plate carrier": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4b/TT_plate_carrier_SK.jpg/revision/latest/scale-to-width-down/180?cb=20190214161136"
+    "ECLiPSE RBAV-AF plate carrier (Ranger Green)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/RBAV-AF_Thumb.png/revision/latest?cb=20220705225148",
+    "Crye Precision CPC plate carrier (Goons Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/43/CPCGoons.png/revision/latest/scale-to-width-down/250?cb=20220705230535",
+    "S&S Precision PlateFrame plate carrier (Goons Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/21/S%26S_Precision_PlateFrame_GE_icon.png/revision/latest?cb=20220705231759",
+    "NPP KlASS \"Bagariy\" armored rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f2/NPP_Bagariy_icon.png/revision/latest/scale-to-width-down/250?cb=20220705234556",
+    "Tasmanian Tiger SK plate carrier (Multicam Black)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/TT_SK.PNG/revision/latest?cb=20220705233101"
 }
 armors = {**armor_vests, **armor_rigs}
 rigs = {
@@ -186,7 +191,8 @@ rigs = {
     "ANA Tactical Alpha chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fa/Alpha_Rig_icon.png/revision/latest/scale-to-width-down/250?cb=20190517215944",
     "Azimut SS Zhuk Chest Harness": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b2/Azimutharness.gif/revision/latest/scale-to-width-down/250?cb=20210330190322",
     "Velocity Systems Multi-Purpose Patrol Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MPPV_ICon.png/revision/latest/scale-to-width-down/250?cb=20191227220252",
-    "Belt-A + Belt-B gear rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/Belt-A_Belt-B_gear_rig_icon.png/revision/latest/scale-to-width-down/250?cb=20190106165224"
+    "Belt-A + Belt-B gear rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/Belt-A_Belt-B_gear_rig_icon.png/revision/latest/scale-to-width-down/250?cb=20190106165224",
+    "LBT-1961A Load Bearing chest rig (Goons Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/LCBRGoonsIcon.png/revision/latest?cb=20220705233718"
 }
 helmets = {
     "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
@@ -265,7 +271,9 @@ backpacks = {
     "Transformer Bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e5/T-Bag_icon.png/revision/latest/scale-to-width-down/190?cb=20190517222054",
     "VKBO army bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/35/Armybagicon.png/revision/latest/scale-to-width-down/190?cb=20190602192511",
     "Tactical sling bag": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/SlingBackPackIcon.png/revision/latest/scale-to-width-down/190?cb=20200317180926",
-    "Gruppa 99 T20": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/Gruppa_99_T20_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20220102181250"
+    "Gruppa 99 T20 backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/Gruppa_99_T20_backpack_icon.png/revision/latest/scale-to-width-down/250?cb=20220102181250",
+    "Gruppa 99 T30 backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/ff/Gruppa_99_T30_BM_icon.gif/revision/latest/scale-to-width-down/250?cb=20220705202115",
+    "Mystery Ranch NICE COMM 3 BVS frame system": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/49/COMM_3_BVS_icon.png/revision/latest/scale-to-width-down/250?cb=20220705200158"
 }
 modifiers = {
     "Up to level 1 traders": "https://i.imgur.com/I71LsPN.png",
@@ -338,11 +346,19 @@ fir_only_armor_vests = (
     "6B13 M assault armor (Tan)",
     "IOTV Gen4 body armor (Assault Kit)"
 )
-fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
+fir_only_armor_rigs = (
+    "Crye Precision AVS MBAV (Tagilla Edition)",
+    "S&S Precision PlateFrame plate carrier (Goons Edition)",
+    "Crye Precision CPC plate carrier (Goons Edition)"
+)
 fir_only_helmets = (
     "Tagilla's welding mask \"Gorilla\"",
     "Tagilla's welding mask \"UBEY\""
 )
+
+fir_only_rigs = "LBT-1961A Load Bearing chest rig (Goons Edition)"
+
+fir_only_backpacks = "Mystery Ranch NICE COMM 3 BVS frame system"
 
 # For debugging
 # reroll1 = {"Re-roll two slots": "", "Re-roll two slots": ""}
