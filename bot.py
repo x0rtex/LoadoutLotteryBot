@@ -18,9 +18,6 @@ client.remove_command("help")
 async def on_ready():
     await client.change_presence(activity=nextcord.Game("t!help"))
     print("BOT ONLINE\n")
-    while True:
-        print(f"List of guilds:\n{client.guilds}\n")
-        await asyncio.sleep(21600)
 
 
 @client.event
@@ -190,8 +187,10 @@ async def roll(ctx):
     bad_bonuses = copy.deepcopy(lists.bad_bonuses)
     bonuses = good_bonuses, mid_bonuses, bad_bonuses
     fir_only_armor_vests = copy.deepcopy(lists.fir_only_armor_vests)
-    fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
+    fir_only_armor_rigs = copy.deepcopy(lists.fir_only_armor_rigs)
+    fir_only_rigs = "LBT-1961A Load Bearing chest rig (Goons Edition)"
     fir_only_helmets = copy.deepcopy(lists.fir_only_helmets)
+    fir_only_backpacks = "Mystery Ranch NICE COMM 3 BVS frame system"
     all_rolls = copy.deepcopy(lists.all_rolls)
 
     embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
@@ -207,9 +206,12 @@ async def roll(ctx):
     if view1.value:
         for i in fir_only_armor_vests:
             del armor_vests[i]
-        del armor_rigs[fir_only_armor_rig]
+        for i in fir_only_armor_rigs:
+            del armor_rigs[i]
         for i in fir_only_helmets:
             del helmets[i]
+        del rigs[fir_only_rigs]
+        del backpacks[fir_only_backpacks]
 
     # Dictionary containing all the randomized rolls
     rolls = {
@@ -331,8 +333,10 @@ async def fastroll(ctx):
     bad_bonuses = copy.deepcopy(lists.bad_bonuses)
     bonuses = good_bonuses, mid_bonuses, bad_bonuses
     fir_only_armor_vests = copy.deepcopy(lists.fir_only_armor_vests)
-    fir_only_armor_rig = "Crye Precision AVS MBAV (Tagilla Edition)"
+    fir_only_armor_rigs = copy.deepcopy(lists.fir_only_armor_rigs)
+    fir_only_rigs = "LBT-1961A Load Bearing chest rig (Goons Edition)"
     fir_only_helmets = copy.deepcopy(lists.fir_only_helmets)
+    fir_only_backpacks = "Mystery Ranch NICE COMM 3 BVS frame system"
     all_rolls = copy.deepcopy(lists.all_rolls)
 
     embed = nextcord.Embed(title="🎲 Welcome to Tarkov Loadout Lottery! 🎰", url="https://github.com/x0rtex/TarkovLoadoutLottery", color=ctx.author.color)
@@ -348,9 +352,12 @@ async def fastroll(ctx):
     if view1.value:
         for i in fir_only_armor_vests:
             del armor_vests[i]
-        del armor_rigs[fir_only_armor_rig]
+        for i in fir_only_armor_rigs:
+            del armor_rigs[i]
         for i in fir_only_helmets:
             del helmets[i]
+        del rigs[fir_only_rigs]
+        del backpacks[fir_only_backpacks]
 
     # Dictionary containing all the randomized rolls
     rolls = {
