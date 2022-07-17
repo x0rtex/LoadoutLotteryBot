@@ -23,11 +23,15 @@ def slow_print_sleep(text):
 print("Type 'y' to exclude items with no purchase or barter, or press enter key to include them..")
 userInput = input("> ").lower().strip()
 if userInput == 'y':
-    for i in lists.fir_only_armor_vests:
-        del lists.armor_vests[i]
-    del lists.armor_rigs[lists.fir_only_armor_rig]
-    for i in lists.fir_only_helmets:
-        del lists.helmets[i]
+    if view1.value:
+        for i in fir_only_armor_vests:
+            del armor_vests[i]
+        for i in fir_only_armor_rigs:
+            del armor_rigs[i]
+        for i in fir_only_helmets:
+            del helmets[i]
+        del rigs[fir_only_rigs]
+        del backpacks[fir_only_backpacks]
 
 # Dictionary containing all the randomized rolls
 rolls = {
