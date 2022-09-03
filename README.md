@@ -6,11 +6,11 @@
 #### It's advanced AI will ensure the best loadout for any given person, map, and time! You must believe in the system- whether you get a drum mag Makarov with a Slick on labs or a Mk47 with a PACA- and it will reward you. :)
 
 List of commands: 
-- **t!roll** - Classic Tarkov Loadout Lottery uses a super quantum algorithm to generate a random loadout and map for you to play with.
-- **t!fastroll** - Same as classic loadout lottery, but with less waiting around.
-- **t!help** - Commands List
-- **t!stats** - Displays the bot's statistics
-- **t!ping** - Pong!
+- **/roll** - Classic Tarkov Loadout Lottery uses a super quantum algorithm to generate a random loadout and map for you to play with.
+- **/fastroll** - Same as classic loadout lottery, but with less waiting around.
+- **/help** - Commands List
+- **/stats** - Displays the bot's statistics
+- **/ping** - Pong!
 
 Example 1                             |  Example 2
 :------------------------------------:|:------------------------------------:
@@ -18,4 +18,4 @@ Example 1                             |  Example 2
 Example 3                             |  Example 4
 ![](https://i.imgur.com/DgPfPfF.png)  |  ![](https://i.imgur.com/TXThfe1.png)
 
-p.s. it's my beginner project:)
+p.s. beginner project:)
