@@ -15,6 +15,10 @@ import random
 import copy
 
 
+def random_key(category):
+    return random.choice(tuple(category.keys()))
+
+
 class FIROnly(miru.View):
     def __init__(
             self,
@@ -157,8 +161,8 @@ class Reroll2(miru.View):
 
 bot = lightbulb.BotApp(
     os.environ["TOKEN"],
-    default_enabled_guilds=int(os.environ["DEFAULT_GUILD_ID"]),
-    help_slash_command=True,
+    # default_enabled_guilds=int(os.environ["DEFAULT_GUILD_ID"]),
+    help_slash_command=True
 )
 
 miru.load(bot)
@@ -193,7 +197,7 @@ async def cmd_stats(ctx: lightbulb.SlashContext) -> None:
         ("Uptime", uptime, True),
         ("CPU time", cpu_time, True),
         ("Memory usage", f"{mem_usage:,.0f} MiB / {mem_total:,.0f} MiB ({mem_of_total:,.0f}%)", True),
-        ("Servers", len(bot.default_enabled_guilds), True)
+        ("Servers", len(bot.cache.get_guilds_view()), True)
     ]
     for name, value, inline in fields:
         embed_msg.add_field(name=name, value=value, inline=inline)
@@ -209,6 +213,9 @@ async def cmd_roll(ctx: lightbulb.SlashContext) -> None:
     view_bonus = Bonus(300.0)
     view_reroll1 = Reroll1(300.0)
     view_reroll2 = Reroll2(300.0)
+
+    question_mark_emoji = ":grey_question:"
+    bonus_text = "\nBonus:"
 
     # Take all variables from lists.py to save a few hundred lines + fresh lists every command run
     weapons = copy.deepcopy(lists.weapons)
@@ -266,33 +273,35 @@ async def cmd_roll(ctx: lightbulb.SlashContext) -> None:
 
     # Dictionary containing all the randomized rolls
     rolls = {
-        "Weapon": random.choice(tuple(weapons.keys())),
+        "Weapon": random_key(weapons),
     }
     armors = {**armor_vests, **armor_rigs}
-    rolled_armor = random.choice(tuple(armors.keys()))
+    rolled_armor = random_key(armors)
     if rolled_armor in armor_vests:
         rolls["Armor Vest"] = rolled_armor
-        rolls["Rig"] = random.choice(tuple(rigs.keys()))
+        rolls["Rig"] = random_key(rigs)
     else:
         rolls["Armored Rig"] = rolled_armor
     rolls.update({
-        "Helmet": random.choice(tuple(helmets.keys())),
-        "Backpack": random.choice(tuple(backpacks.keys())),
-        "Gun mods": random.choice(tuple(modifiers.keys())),
-        "Ammo": random.choice(tuple(modifiers.keys())),
-        "Map": random.choice(tuple(maps.keys())),
+        "Helmet": random_key(helmets),
+        "Backpack": random_key(backpacks),
+        "Gun mods": random_key(modifiers),
+        "Ammo": random_key(modifiers),
+        "Map": random_key(maps),
     })
 
     # Prints all rolls categories
     for category, item in rolls.items():
-        embed_msg.add_field(f"{category}:", ":grey_question:", inline=False)
+        embed_msg.add_field(f"{category}:", question_mark_emoji, inline=False)
         embed_msg.set_image(None)
         await ctx.edit_last_response(embed_msg)
+        await asyncio.sleep(0.66)
         embed_msg.edit_field(-1, f"{category}:", item, inline=False)
         for category_dict in all_rolls.values():
             if item in category_dict:
                 embed_msg.set_image(category_dict[item])
         await ctx.edit_last_response(embed_msg)
+        await asyncio.sleep(1.5)
 
     # User given the option to roll an optional bonus modifier from list
     embed_msg.set_footer(text="Would you like to roll an optional bonus modifier?")
@@ -302,11 +311,11 @@ async def cmd_roll(ctx: lightbulb.SlashContext) -> None:
     embed_msg.set_footer(text=None)
     embed_msg.set_image(None)
     if view_bonus.value:
-        rolled_bonus = random.choice(tuple(random.choice(bonuses).keys()))
-        embed_msg.add_field(name="\nBonus:", value=":grey_question:", inline=False)
+        rolled_bonus = random_key(random.choice(bonuses))
+        embed_msg.add_field(name=bonus_text, value=question_mark_emoji, inline=False)
         await ctx.edit_last_response(embed_msg)
         await asyncio.sleep(0.66)
-        embed_msg.edit_field(-1, "\nBonus:", rolled_bonus, inline=False)
+        embed_msg.edit_field(-1, bonus_text, rolled_bonus, inline=False)
         for dictionary in bonuses:
             if rolled_bonus in dictionary:
                 embed_msg.set_image(dictionary[rolled_bonus])
@@ -319,8 +328,8 @@ async def cmd_roll(ctx: lightbulb.SlashContext) -> None:
             view_reroll1.start(message3)
             await view_reroll1.wait()
             for i in view_reroll1.value:
-                embed_msg.add_field(name=f"Rerolled {i.lower()}:", value=":grey_question:", inline=False)
-                rerolled = random.choice(tuple(all_rolls[i].keys()))
+                embed_msg.add_field(name=f"Rerolled {i.lower()}:", value=question_mark_emoji, inline=False)
+                rerolled = random_key(all_rolls[i])
                 await ctx.edit_last_response(embed_msg)
                 await asyncio.sleep(0.66)
                 embed_msg.edit_field(-1, f"Rerolled {i.lower()}:", rerolled, inline=False)
@@ -336,9 +345,9 @@ async def cmd_roll(ctx: lightbulb.SlashContext) -> None:
             view_reroll2.start(message4)
             await view_reroll2.wait()
             for i in view_reroll2.value:
-                embed_msg.add_field(name=f"Rerolled {i.lower()}:", value=":grey_question:",
+                embed_msg.add_field(name=f"Rerolled {i.lower()}:", value=question_mark_emoji,
                                     inline=False)
-                rerolled = random.choice(tuple(all_rolls[i].keys()))
+                rerolled = random_key(all_rolls[i])
                 embed_msg.set_image(None)
                 await ctx.edit_last_response(embed_msg)
                 await asyncio.sleep(0.66)
@@ -366,6 +375,8 @@ async def cmd_fastroll(ctx: lightbulb.SlashContext) -> None:
     view_bonus = Bonus(300)
     view_reroll1 = Reroll1(300)
     view_reroll2 = Reroll2(300)
+
+    bonus_text = "\nBonus:"
 
     # Take all variables from lists.py to save a few hundred lines + fresh lists every command run
     weapons = copy.deepcopy(lists.weapons)
@@ -423,21 +434,21 @@ async def cmd_fastroll(ctx: lightbulb.SlashContext) -> None:
 
     # Dictionary containing all the randomized rolls
     rolls = {
-        "Weapon": random.choice(tuple(weapons.keys())),
+        "Weapon": random_key(weapons),
     }
     armors = {**armor_vests, **armor_rigs}
-    rolled_armor = random.choice(tuple(armors.keys()))
+    rolled_armor = random_key(armors)
     if rolled_armor in armor_vests:
         rolls["Armor Vest"] = rolled_armor
-        rolls["Rig"] = random.choice(tuple(rigs.keys()))
+        rolls["Rig"] = random_key(rigs)
     else:
         rolls["Armored Rig"] = rolled_armor
     rolls.update({
-        "Helmet": random.choice(tuple(helmets.keys())),
-        "Backpack": random.choice(tuple(backpacks.keys())),
-        "Gun mods": random.choice(tuple(modifiers.keys())),
-        "Ammo": random.choice(tuple(modifiers.keys())),
-        "Map": random.choice(tuple(maps.keys())),
+        "Helmet": random_key(helmets),
+        "Backpack": random_key(backpacks),
+        "Gun mods": random_key(modifiers),
+        "Ammo": random_key(modifiers),
+        "Map": random_key(maps),
     })
 
     # Prints all rolls categories
@@ -451,8 +462,8 @@ async def cmd_fastroll(ctx: lightbulb.SlashContext) -> None:
     await view_bonus.wait()
     embed_msg.set_footer(text=None)
     if view_bonus.value:
-        rolled_bonus = random.choice(tuple(random.choice(bonuses).keys()))
-        embed_msg.add_field("\nBonus:", rolled_bonus, inline=False)
+        rolled_bonus = random_key(random.choice(bonuses))
+        embed_msg.add_field(bonus_text, rolled_bonus, inline=False)
 
         # Re-roll and print a new category of the user's choice
         if rolled_bonus == "Re-roll one slot":
@@ -460,7 +471,7 @@ async def cmd_fastroll(ctx: lightbulb.SlashContext) -> None:
             view_reroll1.start(message7)
             await view_reroll1.wait()
             for i in view_reroll1.value:
-                rerolled = random.choice(tuple(all_rolls[i].keys()))
+                rerolled = random_key(all_rolls[i])
                 embed_msg.add_field(f"Rerolled {i.lower()}:", rerolled, inline=False)
 
         elif rolled_bonus == "Re-roll two slots":
@@ -468,7 +479,7 @@ async def cmd_fastroll(ctx: lightbulb.SlashContext) -> None:
             view_reroll2.start(message8)
             await view_reroll2.wait()
             for i in view_reroll2.value:
-                rerolled = random.choice(tuple(all_rolls[i].keys()))
+                rerolled = random_key(all_rolls[i])
                 embed_msg.add_field(f"Rerolled {i.lower()}:", rerolled, inline=False)
 
     embed_msg.set_footer(text="Enjoy! :)")
@@ -484,4 +495,9 @@ def run() -> None:
         asyncio_debug=True,  # enable asyncio debug to detect blocking and slow code.
         coroutine_tracking_depth=20,  # enable tracking of coroutines, makes some asyncio errors clearer.
         propagate_interrupts=True,  # Any OS interrupts get rethrown as errors.
+        status=hikari.Status.ONLINE,
+        activity=hikari.Activity(
+            name="/help",
+            type=hikari.ActivityType.LISTENING
+        )
     )
