@@ -1,6 +1,11 @@
+fence = "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434"
+plus_one = "https://i.imgur.com/EDccZfH.png"
+wildcard = "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg"
+wildcard_your_choice = "WILDCARD - YOUR CHOICE"
+
 weapons = {
-    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
-    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
+    wildcard_your_choice: wildcard,
+    "Fence": fence,
     "Melee Weapon": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8a/Antique_Axe.png/revision/latest/scale-to-width-down/200?cb=20181110013042",
     "ADAR 2-15": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/ADAR2-15Image.png/revision/latest/scale-to-width-down/180?cb=20190226190907",
     "Kalashnikov AK-101": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/AK101_Image.png/revision/latest/scale-to-width-down/180?cb=20180502204454",
@@ -77,7 +82,7 @@ weapons = {
     "LOBAEV Arms DVL-10 Saboteur": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/Dvl10.png/revision/latest/scale-to-width-down/180?cb=20180219121859",
     "Remington M700": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/26/M700Image.png/revision/latest/scale-to-width-down/180?cb=20181226171021",
     "Mosin Sniper Rifle": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/MosinInspect.png/revision/latest/scale-to-width-down/180?cb=20180918200314",
-    "Mosin Infrantry Rifle": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d4/MosinInfantryImage.png/revision/latest/scale-to-width-down/180?cb=20181226165344",
+    "Mosin Infantry Rifle": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d4/MosinInfantryImage.png/revision/latest/scale-to-width-down/180?cb=20181226165344",
     "SV-98": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7d/Sv98.png/revision/latest/scale-to-width-down/180?cb=20180427101420",
     "Orsis T-5000M": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/T-5000_View.png/revision/latest/scale-to-width-down/180?cb=20200216013517",
     "Molot VPO-215 \"Gornostay\"": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4e/VPO-215_View.png/revision/latest/scale-to-width-down/180?cb=20200216013459",
@@ -111,8 +116,8 @@ weapons = {
 }   
     
 armor_vests = {
-    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
-    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
+    wildcard_your_choice: wildcard,
+    "Fence": fence,
     "None": "https://i.imgur.com/V2SWmZh.png",
     "BNTI Module-3M body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f8/3M_icon.png/revision/latest/scale-to-width-down/190?cb=20190519124804",
     "PACA soft armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/91/PACA_icon.png/revision/latest/scale-to-width-down/190?cb=20181225213000",
@@ -124,7 +129,7 @@ armor_vests = {
     "NFM THOR Concealable Vest body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a6/THOR_Concealable_Icon.png/revision/latest/scale-to-width-down/190?cb=20211205235344",
     "6B13 assault armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/6B13_assault_armor_icon.gif/revision/latest/scale-to-width-down/190?cb=20190101213918",
     "6B23-2 armor (Mountain Flora)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/79/6B23-2_armorIcon.png/revision/latest/scale-to-width-down/190?cb=20200318194650",
-    "Highcom Trooper TFO armor (Multicam)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/Highcom_Trooper_TFO_armor_%28multicam%29_icon.png/revision/latest/scale-to-width-down/190?cb=20200314230803",
+    "HighCom Trooper TFO armor (Multicam)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/Highcom_Trooper_TFO_armor_%28multicam%29_icon.png/revision/latest/scale-to-width-down/190?cb=20200314230803",
     "NPP KIASS Korund-VM armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/96/KORUNDIcon.png/revision/latest/scale-to-width-down/190?cb=20201019171750",
     "FORT Redut-M body armor": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/FORT_Redut-M_body_armor_icon.png/revision/latest/scale-to-width-down/190?cb=20200318200437",
     "6B13 M assault armor (Tan)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d9/6B13_M_icon.png/revision/latest/scale-to-width-down/190?cb=20181226000642",
@@ -165,9 +170,9 @@ armor_rigs = {
 }
 armors = {**armor_vests, **armor_rigs}
 rigs = {
-    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    wildcard_your_choice: wildcard,
     "None": "https://i.imgur.com/hvS3rKi.png",
-    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
+    "Fence": fence,
     "Scav Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/39/Scav_Vest_icon.png/revision/latest/scale-to-width-down/127?cb=20190517215835",
     "Security Vest": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/25/Securityvesticon.png/revision/latest/scale-to-width-down/127?cb=20210331215236",
     "DIY IDEA chest rig": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9c/DIY_IDEArig_icon.png/revision/latest/scale-to-width-down/190?cb=20211206005208",
@@ -195,16 +200,16 @@ rigs = {
     "LBT-1961A Load Bearing chest rig (Goons Edition)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/LCBRGoonsIcon.png/revision/latest?cb=20220705233718"
 }
 helmets = {
-    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    wildcard_your_choice: wildcard,
     "None": "https://i.imgur.com/mYp2Kzv.png",
-    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
+    "Fence": fence,
     "Armasight NVG head strap": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/78/Armasight_NVG_Mask_Icon.png/revision/latest/scale-to-width-down/127?cb=20190319182456",
     "Wilcox Skull Lock head mount": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f2/Slockicon.png/revision/latest/scale-to-width-down/127?cb=20190319182533",
     "Tac-Kek FAST MT helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c0/TK_FAST_Icon.png/revision/latest/scale-to-width-down/127?cb=20200607112137",
     "TSh-4M-L soft tank crew helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/20/TankHelm2.png/revision/latest/scale-to-width-down/127?cb=20191229160330",
     "Kolpak-1S riot helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c3/Kolpak-1S_Icon.png/revision/latest/scale-to-width-down/127?cb=20180426010933",
     "ShPM Firefighter helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/SHPM_Firefighter%27s_helmet_icon.png/revision/latest/scale-to-width-down/127?cb=20190110180222",
-    "PSh-97 \"Djeta\" riot helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/PSH-97_-Jeta-_helmet_Icon.png/revision/latest/scale-to-width-down/127?cb=20190110174515",
+    "PSh-97 \"DJETA\" riot helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/PSH-97_-Jeta-_helmet_Icon.png/revision/latest/scale-to-width-down/127?cb=20190110174515",
     "UNTAR helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e3/UNTARHelmetIcon.png/revision/latest/scale-to-width-down/127?cb=20190112203847",
     "6B47 Ratnik-BSh helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1e/6B47_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180806190854",
     "LZSh light helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/LZSh_light_helmet_icon.png/revision/latest/scale-to-width-down/127?cb=20180729193601",
@@ -215,9 +220,9 @@ helmets = {
     "MSA ACH TC-2001 MICH Series helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cb/MICH_Icon.PNG/revision/latest/scale-to-width-down/127?cb=20191213025908",
     "MSA ACH TC-2002 MICH Series helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/83/MICH_Icon_2002.PNG/revision/latest/scale-to-width-down/127?cb=20210124003917",
     "MSA Gallet TC 800 High Cut combat helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/67/MSA_TC_800_Icon.png/revision/latest/scale-to-width-down/127?cb=20200314230815",
-    "Highcom Striker ACHHC IIIA helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/ACHHC_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180805175453",
+    "HighCom Striker ACHHC IIIA helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/ACHHC_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180805175453",
     "ZSh-1-2M helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0d/ZSH-1-2M_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180809202110",
-    "Highcom Striker ULACH IIIA helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/ULACH_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180806205056",
+    "HighCom Striker ULACH IIIA helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/ULACH_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180806205056",
     "Diamond Age Bastion helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5c/Bastion_Icon.png/revision/latest/scale-to-width-down/127?cb=20200606092904",
     "Ops-Core FAST MT Super High Cut helmet": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ed/FASTMT_Icon.gif/revision/latest/scale-to-width-down/127?cb=20180805220154",
     "Crye Precision AirFrame helmet (Tan)": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/Crye_Precision_Airframe_Tan_Icon.png/revision/latest/scale-to-width-down/127?cb=20190102011853",
@@ -242,9 +247,9 @@ helmets = {
     "Balaclava": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/27/Balaclava_Inspection.png/revision/latest/scale-to-width-down/286?cb=20190304040318"
 }
 backpacks = {
-    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    wildcard_your_choice: wildcard,
     "None": "https://i.imgur.com/HV7jzIL.png",
-    "Fence": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/FenceFullRes.png/revision/latest/scale-to-width-down/320?cb=20190224001434",
+    "Fence": fence,
     "6Sh118 raid backpack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b5/6SH118_Icon.png/revision/latest/scale-to-width-down/250?cb=20191227220310",
     "LBT-2670 Slim Field Med Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6d/LBT-2670_Icon.png/revision/latest/scale-to-width-down/250?cb=20201028055441",
     "LBT-1476A 3Day Pack": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/LBT-1476A_Icon.png/revision/latest/scale-to-width-down/250?cb=20220102181844",
@@ -283,7 +288,7 @@ modifiers = {
     "No restrictions": "https://i.imgur.com/r5VRNUB.png"
 }
 maps = {
-    "WILDCARD - YOUR CHOICE": "https://hodgsonhealth.com/wp-content/uploads/2017/01/your-choice.jpg",
+    wildcard_your_choice: wildcard,
     "Factory": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Factory-Day_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811153020",
     "Customs": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9f/Customs_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811151055",
     "Interchange": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_interchange.png/revision/latest/scale-to-width-down/382?cb=20200811153253",
@@ -294,53 +299,53 @@ maps = {
     "Lighthouse": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d6/Lighthouse_concept_%282%29.jpg/revision/latest/scale-to-width-down/600?cb=20211102173810",
 }
 
-# good_bonuses = {
-#     "Weapon of your choice": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-#     "Helmet of your choice": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/14/Skill_mental_perception.png/revision/latest/scale-to-width-down/70?cb=20170329164851",
-#     "Backpack of your choice": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/63/Skill_physical_endurance.png/revision/latest/scale-to-width-down/70?cb=20170329164840",
-#     "Map of your choice": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/43/Map.png/revision/latest/scale-to-width-down/662?cb=20220102134631",
-#     "Ask your scav for some loot": "https://pbs.twimg.com/media/DlXnlRvXoAAhOv2.jpg",
-#     "Pop any 3 stimulants at start of raid": "https://i.imgur.com/lYmpWWL.png",
-#     "+1 level to all traders": "https://i.imgur.com/EDccZfH.png",
-#     "+1 level (Ammo)": "https://i.imgur.com/EDccZfH.png",
-#     "+1 level (Gun mods)": "https://i.imgur.com/EDccZfH.png",
-#     "Pistol secondary": "https://i.imgur.com/pIIl7j1.png",
-#     "Impact grenades only": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/RGN_View.png/revision/latest?cb=20211212210251",
-#     "Re-roll one slot": "",
-#     "Re-roll two slots": ""
-# }
-# mid_bonuses = {
-#     "Swap gun and ammo trader level": "https://i.imgur.com/N43aCh0.png",
-#     "Use highest capacity magazine": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/MAG5-100.png/revision/latest/scale-to-width-down/1200?cb=20190414152250",
-#     "Attempt to befriend a random player": "https://i.imgur.com/i3KRTCc.png",
-#     "Night raid (NVG if applicable)": "https://i.redd.it/juv50kmkgm941.png",
-#     "Flash grenades only": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fc/Model_7290_Flash_Bang.png/revision/latest?cb=20211212182627",
-#     "Smoke grenades only": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/M18_Green_View.png/revision/latest?cb=20211212211007",
-#     "M67 Hand grenades only": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e2/M67.png/revision/latest/scale-to-width-down/320?cb=20200216033043",
-#     "Use highest flesh damage round": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/.45_RIP_View.png/revision/latest/scale-to-width-down/211?cb=20200508230152",
-#     "Use highest penetration round": "https://i.imgur.com/l2Zb9aH.png",
-#     "Have 800m+ sighting range": ""
-# }
-# bad_bonuses = {
-#     "No suppressor": "https://i.imgur.com/Otrn9Xc.png",
-#     "No insurance": "https://i.imgur.com/E5xueS0.png",
-#     "Iron sights only": "https://i.imgur.com/oE4qQ4b.png",
-#     "Hip fire only (unbind aim)": "https://i.imgur.com/xh2Z6eT.jpg",
-#     "No surgery kits": "https://i.imgur.com/ZLf9udj.png",
-#     "No docs/sicc/keytool/keycard holder": "https://i.imgur.com/5Rusxe3.png",
-#     "No loadout upgrades in raid": "",
-#     "Weapon must be stock": "https://i.imgur.com/j3RShdo.png",
-#     "Single-fire only": "https://i.imgur.com/yhRZB5H.png",
-#     "Hatchlings must be killed with a melee": "https://academyoffencingmasters.com/blog/wp-content/uploads/2017/02/Valentine%E2%80%99s-Day-Love-and-Swordfighting-Duels.jpg",
-#     "No headphones": "https://i.imgur.com/FOrgqJm.png",
-#     "Level 1 Meds": "https://i.imgur.com/I71LsPN.png",
-#     "No grenades": "https://i.imgur.com/8d22sUW.png"
-# }
+good_bonuses = {
+    "Weapon of your choice": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
+    "Helmet of your choice": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/14/Skill_mental_perception.png/revision/latest/scale-to-width-down/70?cb=20170329164851",
+    "Backpack of your choice": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/63/Skill_physical_endurance.png/revision/latest/scale-to-width-down/70?cb=20170329164840",
+    "Map of your choice": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/43/Map.png/revision/latest/scale-to-width-down/662?cb=20220102134631",
+    "Ask your scav for some loot": "https://pbs.twimg.com/media/DlXnlRvXoAAhOv2.jpg",
+    "Pop any 3 stimulants at start of raid": "https://i.imgur.com/lYmpWWL.png",
+    "+1 level to all traders": plus_one,
+    "+1 level (Ammo)": plus_one,
+    "+1 level (Gun mods)": plus_one,
+    "Pistol secondary": "https://i.imgur.com/pIIl7j1.png",
+    "Impact grenades only": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/RGN_View.png/revision/latest?cb=20211212210251",
+    "Re-roll one slot": "",
+    "Re-roll two slots": ""
+}
+mid_bonuses = {
+    "Swap gun and ammo trader level": "https://i.imgur.com/N43aCh0.png",
+    "Use highest capacity magazine": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/MAG5-100.png/revision/latest/scale-to-width-down/1200?cb=20190414152250",
+    "Attempt to befriend a random player": "https://i.imgur.com/i3KRTCc.png",
+    "Night raid (NVG if applicable)": "https://i.redd.it/juv50kmkgm941.png",
+    "Flash grenades only": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fc/Model_7290_Flash_Bang.png/revision/latest?cb=20211212182627",
+    "Smoke grenades only": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/M18_Green_View.png/revision/latest?cb=20211212211007",
+    "M67 Hand grenades only": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e2/M67.png/revision/latest/scale-to-width-down/320?cb=20200216033043",
+    "Use highest flesh damage round": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/.45_RIP_View.png/revision/latest/scale-to-width-down/211?cb=20200508230152",
+    "Use highest penetration round": "https://i.imgur.com/l2Zb9aH.png",
+    "Have 800m+ sighting range": ""
+}
+bad_bonuses = {
+    "No suppressor": "https://i.imgur.com/Otrn9Xc.png",
+    "No insurance": "https://i.imgur.com/E5xueS0.png",
+    "Iron sights only": "https://i.imgur.com/oE4qQ4b.png",
+    "Hip fire only (unbind aim)": "https://i.imgur.com/xh2Z6eT.jpg",
+    "No surgery kits": "https://i.imgur.com/ZLf9udj.png",
+    "No docs/sicc/keytool/keycard holder": "https://i.imgur.com/5Rusxe3.png",
+    "No loadout upgrades in raid": "",
+    "Weapon must be stock": "https://i.imgur.com/j3RShdo.png",
+    "Single-fire only": "https://i.imgur.com/yhRZB5H.png",
+    "Hatchlings must be killed with a melee": "https://academyoffencingmasters.com/blog/wp-content/uploads/2017/02/Valentine%E2%80%99s-Day-Love-and-Swordfighting-Duels.jpg",
+    "No headphones": "https://i.imgur.com/FOrgqJm.png",
+    "Level 1 Meds": "https://i.imgur.com/I71LsPN.png",
+    "No grenades": "https://i.imgur.com/8d22sUW.png"
+}
 
 # For debugging
-good_bonuses = {"Re-roll one slot": "", "Re-roll two slots": ""}
-mid_bonuses = {"Re-roll one slot": "", "Re-roll two slots": ""}
-bad_bonuses = {"Re-roll one slot": "", "Re-roll two slots": ""}
+# good_bonuses = {"Re-roll one slot": "", "Re-roll two slots": ""}
+# mid_bonuses = {"Re-roll one slot": "", "Re-roll two slots": ""}
+# bad_bonuses = {"Re-roll one slot": "", "Re-roll two slots": ""}
 
 bonuses = good_bonuses, mid_bonuses, bad_bonuses
 
