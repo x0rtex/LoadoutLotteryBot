@@ -3,6 +3,7 @@ import lightbulb
 import miru
 
 from tarkovbot import lists
+from tarkovbot import meta_lists
 
 from typing import Optional
 import os
@@ -339,6 +340,163 @@ async def cmd_roll(ctx: lightbulb.SlashContext) -> None:
                 await ctx.edit_last_response(embed_msg)
 
         elif rolled_bonus == "Re-roll two slots":
+            await asyncio.sleep(1)
+            embed_msg.set_image(None)
+            message4 = await ctx.edit_last_response(embed_msg, components=view_reroll2.build())
+            view_reroll2.start(message4)
+            await view_reroll2.wait()
+            for i in view_reroll2.value:
+                embed_msg.add_field(name=f"Rerolled {i.lower()}:", value=question_mark_emoji,
+                                    inline=False)
+                rerolled = random_key(all_rolls[i])
+                embed_msg.set_image(None)
+                await ctx.edit_last_response(embed_msg)
+                await asyncio.sleep(0.66)
+                embed_msg.edit_field(-1, f"Rerolled {i.lower()}:", rerolled, inline=False)
+                for dictionary in all_rolls.values():
+                    if rerolled in dictionary:
+                        embed_msg.set_image(dictionary[rerolled])
+                await ctx.edit_last_response(embed_msg)
+            await asyncio.sleep(2)
+        else:
+            await ctx.edit_last_response(embed_msg)
+
+        await asyncio.sleep(3)
+        embed_msg.set_image(None)
+        embed_msg.set_footer(text="Enjoy! :)")
+        await ctx.edit_last_response(embed_msg)
+
+# Ok it's pretty disgusting to just copy the roll command for this but ill make it better later (probably)
+@bot.command()
+@lightbulb.add_cooldown(15.0, 1, lightbulb.GuildBucket)
+@lightbulb.command("metaroll", "Loadout Lottery, except we bar all the noob and rat gear!")
+@lightbulb.implements(lightbulb.SlashCommand)
+async def cmd_metaroll(ctx: lightbulb.SlashContext) -> None:
+    view_fironly = FIROnly(300.0)
+    view_bonus = Bonus(300.0)
+    view_reroll1 = Reroll1(300.0)
+    view_reroll2 = Reroll2(300.0)
+
+    question_mark_emoji = ":grey_question:"
+    bonus_text = "\n***META*** Bonus:"
+
+    # Take all variables from lists.py to save a few hundred lines + fresh lists every command run
+    weapons = copy.deepcopy(meta_lists.weapons)
+    armor_vests = copy.deepcopy(meta_lists.armor_vests)
+    armor_rigs = copy.deepcopy(meta_lists.armor_rigs)
+    rigs = copy.deepcopy(meta_lists.rigs)
+    helmets = copy.deepcopy(meta_lists.helmets)
+    backpacks = copy.deepcopy(meta_lists.backpacks)
+    maps = copy.deepcopy(meta_lists.maps)
+    good_bonuses = copy.deepcopy(meta_lists.good_bonuses)
+    mid_bonuses = copy.deepcopy(meta_lists.mid_bonuses)
+    bad_bonuses = copy.deepcopy(meta_lists.bad_bonuses)
+    bonuses = good_bonuses, mid_bonuses, bad_bonuses
+    fir_only_armor_vests = copy.deepcopy(meta_lists.fir_only_armor_vests)
+    fir_only_armor_rigs = copy.deepcopy(meta_lists.fir_only_armor_rigs)
+    fir_only_rigs = copy.deepcopy(meta_lists.fir_only_rigs)
+    fir_only_helmets = copy.deepcopy(meta_lists.fir_only_helmets)
+    all_rolls = copy.deepcopy(meta_lists.all_rolls)
+
+    embed_msg = hikari.Embed(
+        title="🎲 Welcome to Tarkov META Loadout Lottery! 🎰",
+        url="https://github.com/x0rtex/TarkovLoadoutLottery"
+    )
+    embed_msg.set_author(
+        name="Support & LFG Server",
+        icon="https://i.imgur.com/ptkBfO2.png",
+        url="https://discord.gg/mgXmtMZgfb"
+    )
+    embed_msg.set_thumbnail(
+        ctx.author.avatar_url
+    )
+    embed_msg.add_field(
+        name="Would you like to include or exclude meta FIR-only items? (i.e. Unobtainable via purchase or barter from traders or flea)",
+        value="This currently includes various armor vests, goons armors/rig, and tagilla armor/masks.",
+        inline=False
+    )
+
+    message1 = await ctx.respond(embed_msg, components=view_fironly.build())
+    message1 = await message1
+    view_fironly.start(message1)
+    await view_fironly.wait()
+    embed_msg.remove_field(0)
+
+    if view_fironly:
+        for i in fir_only_armor_vests:
+            del armor_vests[i]
+        for i in fir_only_armor_rigs:
+            del armor_rigs[i]
+        for i in fir_only_helmets:
+            del helmets[i]
+        del rigs[fir_only_rigs]
+
+    # Dictionary containing all the randomized rolls
+    rolls = {
+        "Weapon": random_key(weapons),
+    }
+    armors = {**armor_vests, **armor_rigs}
+    rolled_armor = random_key(armors)
+    if rolled_armor in armor_vests:
+        rolls["Armor Vest"] = rolled_armor
+        rolls["Rig"] = random_key(rigs)
+    else:
+        rolls["Armored Rig"] = rolled_armor
+    rolls.update({
+        "Helmet": random_key(helmets),
+        "Backpack": random_key(backpacks),
+        "Map": random_key(maps),
+    })
+
+    # Prints all rolls categories
+    for category, item in rolls.items():
+        embed_msg.add_field(f"***META*** {category}:", question_mark_emoji, inline=False)
+        embed_msg.set_image(None)
+        await ctx.edit_last_response(embed_msg)
+        await asyncio.sleep(0.66)
+        embed_msg.edit_field(-1, f"***META*** {category}:", item, inline=False)
+        for category_dict in all_rolls.values():
+            if item in category_dict:
+                embed_msg.set_image(category_dict[item])
+        await ctx.edit_last_response(embed_msg)
+        await asyncio.sleep(1.5)
+
+    # User given the option to roll an optional bonus modifier from list
+    embed_msg.set_footer(text="Would you like to roll an optional bonus modifier?")
+    message2 = await ctx.edit_last_response(embed_msg, components=view_bonus.build())
+    view_bonus.start(message2)
+    await view_bonus.wait()
+    embed_msg.set_footer(text=None)
+    embed_msg.set_image(None)
+    if view_bonus.value:
+        rolled_bonus = random_key(random.choice(bonuses))
+        embed_msg.add_field(name=bonus_text, value=question_mark_emoji, inline=False)
+        await ctx.edit_last_response(embed_msg)
+        await asyncio.sleep(0.66)
+        embed_msg.edit_field(-1, bonus_text, rolled_bonus, inline=False)
+        for dictionary in bonuses:
+            if rolled_bonus in dictionary:
+                embed_msg.set_image(dictionary[rolled_bonus])
+
+        # Re-roll and print a new category of the user's choice
+        if rolled_bonus == "Re-roll one meta slot":
+            await asyncio.sleep(1)
+            embed_msg.set_image(None)
+            message3 = await ctx.edit_last_response(embed_msg, components=view_reroll1.build())
+            view_reroll1.start(message3)
+            await view_reroll1.wait()
+            for i in view_reroll1.value:
+                embed_msg.add_field(name=f"Rerolled {i.lower()}:", value=question_mark_emoji, inline=False)
+                rerolled = random_key(all_rolls[i])
+                await ctx.edit_last_response(embed_msg)
+                await asyncio.sleep(0.66)
+                embed_msg.edit_field(-1, f"Rerolled {i.lower()}:", rerolled, inline=False)
+                for dictionary in all_rolls.values():
+                    if rerolled in dictionary:
+                        embed_msg.set_image(dictionary[rerolled])
+                await ctx.edit_last_response(embed_msg)
+
+        elif rolled_bonus == "Re-roll two meta slots":
             await asyncio.sleep(1)
             embed_msg.set_image(None)
             message4 = await ctx.edit_last_response(embed_msg, components=view_reroll2.build())
