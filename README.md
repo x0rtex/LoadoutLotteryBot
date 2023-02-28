@@ -8,6 +8,7 @@
 List of commands: 
 - **/roll** - Classic Tarkov Loadout Lottery uses a super quantum algorithm to generate a random loadout and map for you to play with.
 - **/fastroll** - Same as classic loadout lottery, but with less waiting around.
+- **/metaroll** - Loadout Lottery, except we bar all the noob and rat gear!
 - **/help** - Commands List
 - **/stats** - Displays the bot's statistics
 - **/ping** - Pong!
