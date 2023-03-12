@@ -7,8 +7,8 @@ class Armor:
             name: str,
             image_url: str,
             category: Literal["Armor Vest", "Armored Rig"],
-            trader: Literal["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger", None],
-            trader_level: Literal[1, 2, 3, 4, None],
+            trader: Literal["Flea", "Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger", None],
+            trader_level: Literal[0, 1, 2, 3, 4],
             fir_only: bool,
             quest_locked: bool,
             meta: bool,
@@ -23,13 +23,36 @@ class Armor:
         self.meta = meta
 
 
-Melee = Armor(
-    name="",
-    image_url="",
-    category="",
-    trader=None,
-    trader_level=None,
-    fir_only=False,
-    quest_locked=False,
-    meta=False,
-)
+armor_vest_list = [
+
+    No_Armor := Armor(
+        name="No Armor",
+        image_url="https://i.imgur.com/V2SWmZh.png",
+        category="Armor Vest",
+        trader=None,
+        trader_level=0,
+        fir_only=False,
+        quest_locked=False,
+        meta=False,
+    ),
+
+    Module_3M := Armor(
+        name="BNTI Module-3M body armor",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f8/3M_icon.png/revision/latest/scale-to-width-down/190?cb=20190519124804",
+        category="Armor Vest",
+        trader="Flea",
+        trader_level=0,
+        fir_only=False,
+        quest_locked=False,
+        meta=False,
+    ),
+
+]
+
+armored_rig_list = [
+
+
+
+]
+
+armor_list = armor_vest_list + armored_rig_list
