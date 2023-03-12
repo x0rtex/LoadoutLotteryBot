@@ -7,7 +7,7 @@ class Helmet:
             name: str,
             image_url: str,
             trader: Literal["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger", None],
-            trader_level: Literal[1, 2, 3, 4, None],
+            trader_level: Literal[0, 1, 2, 3, 4],
             fir_only: bool,
             quest_locked: bool,
             meta: bool,
@@ -21,12 +21,16 @@ class Helmet:
         self.meta = meta
 
 
-Melee = Helmet(
-    name="",
-    image_url="",
-    trader=None,
-    trader_level=None,
-    fir_only=False,
-    quest_locked=False,
-    meta=False,
-)
+helmet_list = [
+
+    Melee := Helmet(
+        name="",
+        image_url="",
+        trader=None,
+        trader_level=0,
+        fir_only=False,
+        quest_locked=False,
+        meta=False,
+    ),
+
+]
