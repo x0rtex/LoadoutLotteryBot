@@ -13,8 +13,12 @@ class Rig:
         self.meta = meta
 
 
-Melee = Rig(
-    name="",
-    image_url="",
-    meta=False,
-)
+rig_list = [
+
+    some_rig := Rig(
+        name="",
+        image_url="",
+        meta=False,
+    ),
+
+]
