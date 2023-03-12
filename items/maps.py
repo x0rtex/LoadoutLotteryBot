@@ -11,7 +11,11 @@ class Map:
         self.image_url = image_url
 
 
-Factory = Map(
-    name="Factory",
-    image_url="",
-)
+map_list = [
+
+    Factory := Map(
+        name="Factory",
+        image_url="",
+    ),
+
+]
