@@ -12,12 +12,7 @@ import datetime
 import platform
 import psutil
 
-import eft_items.weapons
-import eft_items.armors
-import eft_items.rigs
-import eft_items.helmets
-import eft_items.backpacks
-import eft_items.maps
+import eft_items
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -34,6 +29,37 @@ debug_guilds = [
 bot = commands.Bot(
     debug_guilds=debug_guilds,
 )
+
+
+def roll_items(meta_only, user_traders, user_trader_levels, allow_quest_locked, flea):
+    weapon_roll_list = [item for item in eft_items.all_weapons]
+    armor_roll_list = [item for item in eft_items.all_armors]
+    rig_roll_list = [item for item in eft_items.all_rigs]
+    helmet_roll_list = [item for item in eft_items.all_helmets]
+    backpack_roll_list = [item for item in eft_items.all_backpacks]
+    map_roll_list = [item for item in eft_items.all_maps]
+
+    for item in weapon_roll_list.copy():
+         if (not item.meta and meta_only) \
+                or (not item.trader) \
+                or (item.trader_level > user_trader_levels) \
+                or (item.quest_locked and not allow_quest_locked) \
+                or (item.flea and not flea):
+            weapon_roll_list.remove(item)
+
+    rolled_weapon = random.choice(weapon_roll_list)
+    rolled_armor = random.choice(armor_roll_list)
+    rolled_helmet = random.choice(helmet_roll_list)
+    rolled_backpack = random.choice(backpack_roll_list)
+    rolled_map = random.choice(map_roll_list)
+
+    if rolled_armor.category == "Armor Vest":
+        rolled_rig = random.choice(rig_roll_list)
+        rolls = [rolled_weapon, rolled_armor, rolled_rig, rolled_helmet, rolled_backpack, rolled_map]
+    else:
+        rolls = [rolled_weapon, rolled_armor, rolled_helmet, rolled_backpack, rolled_map]
+
+    return rolls
 
 
 @bot.event
@@ -83,7 +109,8 @@ async def stats(ctx: discord.ApplicationContext) -> None:
 @option("user_trader_level", description="Choose your trader levels", choices=[1, 2, 3, 4])
 @option("allow_quest_locked", description="Allow items that are quest locked?", choices=[True, False])
 @option("allow_fir_only", description="Allow rare items that are ONLY obtainable in raid?", choices=[True, False])
-@option("meta_only", description="Would you like to roll only meta items (True), or all items? (False)", choices=[True, False])
+@option("meta_only", description="Would you like to roll only meta items (True), or all items? (False)",
+        choices=[True, False])
 async def roll(
         ctx: discord.ApplicationContext,
         user_trader_level: int,
@@ -91,7 +118,6 @@ async def roll(
         allow_fir_only: bool,
         meta_only: bool,
 ):
-
     embed_msg = discord.Embed(
         title="🎲 Welcome to Tarkov Loadout Lottery! 🎰",
         url="https://github.com/x0rtex/TarkovLoadoutLottery",
@@ -103,27 +129,27 @@ async def roll(
         url="https://discord.gg/mgXmtMZgfb"
     )
 
-    weapon_roll_list = [item for item in eft_items.weapons.weapon_list]
-    armor_roll_list = [item for item in eft_items.armors.armor_list]
-    rig_roll_list = [item for item in eft_items.rigs.rig_list]
-    helmet_roll_list = [item for item in eft_items.helmets.helmet_list]
-    backpack_roll_list = [item for item in eft_items.backpacks.backpack_list]
+    rolls = roll_items(meta_only, user_trader_level, allow_quest_locked, allow_fir_only)
 
-    for item in weapon_roll_list.copy():
-        if (not item.meta and meta_only) or (item.trader_level > user_trader_level) or (item.quest_locked and not allow_quest_locked) or (item.fir_only and not allow_fir_only):
-            weapon_roll_list.remove(item)
+    await ctx.respond(
+        f"Rolled! Meta only = `{meta_only}`, "
+        f"trader levels = `{user_trader_level}`, "
+        f"quest locked items = `{allow_quest_locked}` "
+        f"and fir only items = `{allow_fir_only}`."
+    )
 
-    rolled_weapon = random.choice(weapon_roll_list)
-
-    await ctx.respond(f"Rolled! Meta only = `{meta_only}`, trader levels = `{user_trader_level}`, quest locked items = `{allow_quest_locked}` and fir only items = `{allow_fir_only}`.\nYour rolled item is `{rolled_weapon.name}`")
-    await ctx.send(f"{rolled_weapon.image_url}")
-
+    await ctx.send(embed=embed_msg)
+    for rolled_item in rolls:
+        await asyncio.sleep(1.5)
+        embed_msg.add_field(name=rolled_item.category, value=f"{rolled_item.name} at {rolled_item.trader}", inline=True)
+        await ctx.edit(embed=embed_msg)
 
 # Application command error handler
 @bot.event
 async def on_application_command_error(ctx: discord.ApplicationContext, error: discord.DiscordException):
     if isinstance(error, commands.CommandOnCooldown):
-        await ctx.respond(f":hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.")
+        await ctx.respond(
+            f":hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.")
     else:
         raise error  # Raise other errors so they aren't ignored
 
