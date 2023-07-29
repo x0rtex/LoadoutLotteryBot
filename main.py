@@ -12,7 +12,7 @@ import datetime
 import platform
 import psutil
 
-import eft_items
+import EFT
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -30,37 +30,79 @@ bot = commands.Bot(
     debug_guilds=debug_guilds,
 )
 
+example_settings = {
+    'trader_levels': {
+        EFT.Trader.PRAPOR: 1,
+        EFT.Trader.THERAPIST: 1,
+        EFT.Trader.SKIER: 1,
+        EFT.Trader.PEACEKEEPER: 1,
+        EFT.Trader.MECHANIC: 1,
+        EFT.Trader.RAGMAN: 1,
+        EFT.Trader.JAEGER: 1,
+    },
+    'flea': False,
+    'allow_quest_locked': False,
+    'allow_mod_ammo_levels': False,
+    'allow_thermals': False,
+    'meta_only': True,
+}
 
-def roll_items(meta_only, user_traders, user_trader_levels, allow_quest_locked, flea):
-    weapon_roll_list = [item for item in eft_items.all_weapons]
-    armor_roll_list = [item for item in eft_items.all_armors]
-    rig_roll_list = [item for item in eft_items.all_rigs]
-    helmet_roll_list = [item for item in eft_items.all_helmets]
-    backpack_roll_list = [item for item in eft_items.all_backpacks]
-    map_roll_list = [item for item in eft_items.all_maps]
 
-    for item in weapon_roll_list.copy():
-         if (not item.meta and meta_only) \
-                or (not item.trader) \
-                or (item.trader_level > user_trader_levels) \
-                or (item.quest_locked and not allow_quest_locked) \
-                or (item.flea and not flea):
-            weapon_roll_list.remove(item)
+def check_item(weapon, user_settings):
+    # Check if the weapon has the force flag set to True
+    if weapon.force:
+        # Check if the weapon is not meta and the user is using meta_only
+        if not weapon.meta and user_settings['meta_only']:
+            return False
+        return True
 
-    rolled_weapon = random.choice(weapon_roll_list)
-    rolled_armor = random.choice(armor_roll_list)
-    rolled_helmet = random.choice(helmet_roll_list)
-    rolled_backpack = random.choice(backpack_roll_list)
-    rolled_map = random.choice(map_roll_list)
+    # Check if the weapon is obtainable from any trader or the flea market
+    for trader, trader_info in weapon.trader_info.items():
+        # Check if the user's trader level is equal or higher than the trader's level
+        if user_settings['trader_levels'][trader] >= trader_info.level:
+            # Check if the weapon is available via barter and the user has access to the flea market,
+            # or if the weapon is not locked behind a quest or the user allows quest locked items
+            if (trader_info.barter and user_settings['flea']) or (not trader_info.quest_locked or user_settings['allow_quest_locked']):
+                # Check if the weapon is meta and the user allows meta-only items
+                if weapon.meta and user_settings['meta_only']:
+                    return True
 
-    if rolled_armor.category == "Armor Vest":
-        rolled_rig = random.choice(rig_roll_list)
-        rolls = [rolled_weapon, rolled_armor, rolled_rig, rolled_helmet, rolled_backpack, rolled_map]
-    else:
-        rolls = [rolled_weapon, rolled_armor, rolled_helmet, rolled_backpack, rolled_map]
+    # Check if the weapon is obtainable from the flea market directly
+    if weapon.flea and user_settings['flea']:
+        # Check if the weapon is meta and the user allows meta-only items
+        if weapon.meta and user_settings['meta_only']:
+            return True
 
-    return rolls
+    return False
 
+def roll_items(user_settings):
+
+    filtered_weapons = [weapon for weapon in EFT.all_weapons if check_item(weapon, user_settings)]
+    # filtered_armor = [armor for armor in EFT.all_armors if check_item(armor, user_settings)]
+    # filtered_helmets = [helmet for helmet in EFT.all_helmets if check_item(helmet, user_settings)]
+    # filtered_backpacks = [backpack for backpack in EFT.all_backpacks if check_item(backpack, user_settings)]
+
+    rolled_weapon = random.choice(filtered_weapons)
+    # rolled_armor = random.choice(filtered_armor)
+    # rolled_helmet = random.choice(filtered_helmets)
+    # rolled_backpack = random.choice(filtered_backpacks)
+    # rolled_map = random.choice(EFT.all_maps)
+    # rolled_random_modifier = random.choice(EFT.all_modifiers)
+
+    # if rolled_armor.category == "Armor Vest":
+    #     filtered_rigs = [rig for rig in EFT.all_rigs if check_item(rig, user_settings)]
+    #     rolled_rig = random.choice(filtered_rigs)
+    #     rolls = [rolled_weapon, rolled_armor, rolled_rig, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
+    # else:
+    #     rolls = [rolled_weapon, rolled_armor, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
+
+    # For testing
+    print([weapon.name for weapon in filtered_weapons])
+    print(f"Rolled Weapon: {rolled_weapon.name}")
+    return rolled_weapon
+
+# For testing
+roll_items(example_settings)
 
 @bot.event
 async def on_ready():
@@ -106,18 +148,7 @@ async def stats(ctx: discord.ApplicationContext) -> None:
 # /roll
 @bot.slash_command(name="roll", description="Loadout Lottery!")
 @commands.cooldown(1, 20, commands.BucketType.user)
-@option("user_trader_level", description="Choose your trader levels", choices=[1, 2, 3, 4])
-@option("allow_quest_locked", description="Allow items that are quest locked?", choices=[True, False])
-@option("allow_fir_only", description="Allow rare items that are ONLY obtainable in raid?", choices=[True, False])
-@option("meta_only", description="Would you like to roll only meta items (True), or all items? (False)",
-        choices=[True, False])
-async def roll(
-        ctx: discord.ApplicationContext,
-        user_trader_level: int,
-        allow_quest_locked: bool,
-        allow_fir_only: bool,
-        meta_only: bool,
-):
+async def roll(ctx: discord.ApplicationContext):
     embed_msg = discord.Embed(
         title="🎲 Welcome to Tarkov Loadout Lottery! 🎰",
         url="https://github.com/x0rtex/TarkovLoadoutLottery",
@@ -129,14 +160,9 @@ async def roll(
         url="https://discord.gg/mgXmtMZgfb"
     )
 
-    rolls = roll_items(meta_only, user_trader_level, allow_quest_locked, allow_fir_only)
+    # Not fixed yet
 
-    await ctx.respond(
-        f"Rolled! Meta only = `{meta_only}`, "
-        f"trader levels = `{user_trader_level}`, "
-        f"quest locked items = `{allow_quest_locked}` "
-        f"and fir only items = `{allow_fir_only}`."
-    )
+    rolls = roll_items(example_settings)
 
     await ctx.send(embed=embed_msg)
     for rolled_item in rolls:
