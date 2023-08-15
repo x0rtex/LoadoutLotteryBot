@@ -48,72 +48,43 @@ class UserSettings:
         self.meta_only = meta_only
 
 
-def check_traders(item, user_settings) -> bool:
+def check_item_traders(item, user_settings) -> bool:  # Check if one or more traders meets user requirements
     for trader, trader_info in item.trader_info.items():
-        print(f"Checking if {item.name}'s traders are equal or less than the user's trader levels")
-
         if user_settings.trader_levels[trader] >= trader_info.level:
             if trader_info.barter and not user_settings.flea:
-                print(f"{item.name} is at {trader_info} with a barter while user does not have Flea, breaking out")
                 break
-
             elif trader_info.quest_locked and not user_settings.allow_quest_locked:
-                print(
-                    f"{item.name} is at {trader_info} but is quest-locked and user does not allow quest-locked items, breaking out")
                 break
-
             else:
-                print(f"{item.name} is at {trader_info} and user has {user_settings.trader_levels}, returned True")
                 return True
-
-    print(f"{item.name} met no conditions while user has {user_settings.trader_levels}, returned False")
     return False
 
 
-def check_item(item, user_settings) -> bool:
-    # print(f"------ CHECKING ITEM {item.name} ------")
-    # print(f"Checking if {item.name} is not meta while user settings are meta only")
-
+def check_item(item, user_settings) -> bool:  # Check if an item is obtainable based on user settings
     if not item.meta and user_settings.meta_only:
-        # print(
-        # f"{item.name} is not meta ({item.meta}) while user settings are meta only ({user_settings.meta_only}), returned False")
         return False
 
-    # print(f"Checking if {item.name} is unlocked")
     if item.unlocked:
-        # print(f"{item.name} is unlocked ({item.unlocked}), returned True")
         return True
 
-    # print(f"Checking if {item.name} is on flea and user has flea.")
     if item.flea and user_settings.flea:
-        # print(f"{item.name} is available on flea {item.flea}, and user flea is {user_settings.flea}, returned True")
         return True
 
-    # print(f"Checking if {item.name} is a non-trader flea-banned item.")
-    # print(f"not item.flea ({item.flea}) and item.trader_info ({item.trader_info} is None) ")
-    # print(f"{not item.flea and item.trader_info is None}")
-    if not item.flea and item.trader_info == {}:
-        # print(f"{item.name} is a non-trader ({item.trader_info == {} }) flea-banned ({item.flea}) item")
-        # print("Checking if user allows fir-only items")
+    if item.trader_info == {} and not item.flea:
         if user_settings.allow_fir_only:
-            # print(f"{item.name} returned true as user has set allow fir-only items to {user_settings.allow_fir_only}")
             return True
         else:
-            # print(f"{item.name} returned false as user has set allow fir-only items to {user_settings.allow_fir_only}")
             return False
 
-    return check_traders(item, user_settings)
+    return check_item_traders(item, user_settings)
 
 
 def roll_items(user_settings) -> list:
+    # Create a fi;
     filtered_weapons = [weapon for weapon in eft.ALL_WEAPONS if check_item(weapon, user_settings)]
-    # print([i.name for i in filtered_weapons])
     filtered_armor = [armor for armor in eft.ALL_ARMORS if check_item(armor, user_settings)]
-    # print([i.name for i in filtered_armor])
     filtered_helmets = [helmet for helmet in eft.ALL_HELMETS if check_item(helmet, user_settings)]
-    # print([i.name for i in filtered_helmets])
     filtered_backpacks = [backpack for backpack in eft.ALL_BACKPACKS if check_item(backpack, user_settings)]
-    # print([i.name for i in filtered_backpacks])
 
     rolled_weapon = random.choice(filtered_weapons)
     rolled_armor = random.choice(filtered_armor)
@@ -122,6 +93,7 @@ def roll_items(user_settings) -> list:
     rolled_map = random.choice(eft.ALL_MAPS)
     rolled_random_modifier = random.choice(random.choice(eft.ALL_MODIFIERS))
 
+    # If armored rig is rolled instead of an armor vest, the user does not need a rig
     if rolled_armor.category.value == "Armor Vest":
         filtered_rigs = [rig for rig in eft.ALL_RIGS if check_item(rig, user_settings)]
         rolled_rig = random.choice(filtered_rigs)
@@ -196,10 +168,11 @@ async def roll(
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
     # Could integrate this logic into the /settings command once its made
     if (user_settings.trader_levels[eft.Trader.PRAPOR] >= 2
-            or user_settings.trader_levels[eft.Trader.SKIER].value >= 2
-            or user_settings.trader_levels[eft.Trader.MECHANIC].value >= 2
-            or user_settings.trader_levels[eft.Trader.RAGMAN].value >= 2
-            or user_settings.trader_levels[eft.Trader.JAEGER].value >= 2):
+            or user_settings.trader_levels[eft.Trader.SKIER] >= 2
+            or user_settings.trader_levels[eft.Trader.MECHANIC] >= 2
+            or user_settings.trader_levels[eft.Trader.RAGMAN] >= 2
+            or user_settings.trader_levels[eft.Trader.JAEGER] >= 2
+            and user_settings.flea is False):
         user_settings.flea = True
 
     # Roll a random selection of items for the user based on their settings
