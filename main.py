@@ -12,7 +12,7 @@ import datetime
 import platform
 import psutil
 
-import EFT
+import eft
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -21,88 +21,75 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 debug_guilds = [
-    1052251792798404719,
-    1052251792798404719,
-    489547721846423562,
+    1052251792798404719,  # bot dev
 ]
 
 bot = commands.Bot(
     debug_guilds=debug_guilds,
+    help_command=commands.DefaultHelpCommand()
 )
 
-example_settings = {
-    'trader_levels': {
-        EFT.Trader.PRAPOR: 1,
-        EFT.Trader.THERAPIST: 1,
-        EFT.Trader.SKIER: 1,
-        EFT.Trader.PEACEKEEPER: 1,
-        EFT.Trader.MECHANIC: 1,
-        EFT.Trader.RAGMAN: 1,
-        EFT.Trader.JAEGER: 1,
-    },
-    'flea': False,
-    'allow_quest_locked': False,
-    'allow_mod_ammo_levels': False,
-    'allow_thermals': False,
-    'meta_only': True,
-}
+
+class UserSettings:
+    def __init__(self, trader_levels, flea, allow_quest_locked, allow_mod_ammo_levels, allow_thermals, meta_only):
+        self.trader_levels = trader_levels
+        self.flea = flea
+        self.allow_quest_locked = allow_quest_locked
+        self.allow_mod_ammo_levels = allow_mod_ammo_levels
+        self.allow_thermals = allow_thermals
+        self.meta_only = meta_only
 
 
-def check_item(weapon, user_settings):
-    # Check if the weapon has the force flag set to True
-    if weapon.force:
-        # Check if the weapon is not meta and the user is using meta_only
-        if not weapon.meta and user_settings['meta_only']:
-            return False
-        return True
-
-    # Check if the weapon is obtainable from any trader or the flea market
-    for trader, trader_info in weapon.trader_info.items():
-        # Check if the user's trader level is equal or higher than the trader's level
-        if user_settings['trader_levels'][trader] >= trader_info.level:
-            # Check if the weapon is available via barter and the user has access to the flea market,
-            # or if the weapon is not locked behind a quest or the user allows quest locked items
-            if (trader_info.barter and user_settings['flea']) or (not trader_info.quest_locked or user_settings['allow_quest_locked']):
-                # Check if the weapon is meta and the user allows meta-only items
-                if weapon.meta and user_settings['meta_only']:
-                    return True
-
-    # Check if the weapon is obtainable from the flea market directly
-    if weapon.flea and user_settings['flea']:
-        # Check if the weapon is meta and the user allows meta-only items
-        if weapon.meta and user_settings['meta_only']:
+def check_item_trader(item, user_settings):
+    for trader, trader_info in item.trader_info.items():
+        if user_settings.trader_levels[trader] >= trader_info.level:
+            if trader_info.barter and not user_settings.flea:
+                return False
+            if trader_info.quest_locked and not user_settings.allow_quest_locked:
+                return False
             return True
 
+
+def check_item(item, user_settings):
+    if not item.meta and user_settings.meta_only:
+        return False
+    if item.force:
+        return True
+    if item.flea and user_settings.flea:
+        return True
+    check_item_trader(item, user_settings)
     return False
 
-def roll_items(user_settings):
 
-    filtered_weapons = [weapon for weapon in EFT.all_weapons if check_item(weapon, user_settings)]
-    # filtered_armor = [armor for armor in EFT.all_armors if check_item(armor, user_settings)]
-    # filtered_helmets = [helmet for helmet in EFT.all_helmets if check_item(helmet, user_settings)]
-    # filtered_backpacks = [backpack for backpack in EFT.all_backpacks if check_item(backpack, user_settings)]
+def roll_items(user_settings):
+    filtered_weapons = [weapon for weapon in eft.ALL_WEAPONS if check_item(weapon, user_settings)]
+    print([i.name for i in filtered_weapons])
+    filtered_armor = [armor for armor in eft.ALL_ARMORS if check_item(armor, user_settings)]
+    print([i.name for i in filtered_armor])
+    filtered_helmets = [helmet for helmet in eft.ALL_HELMETS if check_item(helmet, user_settings)]
+    print([i.name for i in filtered_helmets])
+    filtered_backpacks = [backpack for backpack in eft.ALL_BACKPACKS if check_item(backpack, user_settings)]
+    print([i.name for i in filtered_backpacks])
 
     rolled_weapon = random.choice(filtered_weapons)
-    # rolled_armor = random.choice(filtered_armor)
-    # rolled_helmet = random.choice(filtered_helmets)
-    # rolled_backpack = random.choice(filtered_backpacks)
-    # rolled_map = random.choice(EFT.all_maps)
-    # rolled_random_modifier = random.choice(EFT.all_modifiers)
+    rolled_armor = random.choice(filtered_armor)
+    rolled_helmet = random.choice(filtered_helmets)
+    rolled_backpack = random.choice(filtered_backpacks)
+    rolled_map = random.choice(eft.ALL_MAPS)
+    rolled_random_modifier = random.choice(random.choice(eft.ALL_MODIFIERS))
 
-    # if rolled_armor.category == "Armor Vest":
-    #     filtered_rigs = [rig for rig in EFT.all_rigs if check_item(rig, user_settings)]
-    #     rolled_rig = random.choice(filtered_rigs)
-    #     rolls = [rolled_weapon, rolled_armor, rolled_rig, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
-    # else:
-    #     rolls = [rolled_weapon, rolled_armor, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
+    if rolled_armor.category.value == "Armor Vest":
+        filtered_rigs = [rig for rig in eft.ALL_RIGS if check_item(rig, user_settings)]
+        rolled_rig = random.choice(filtered_rigs)
+        rolls = [rolled_weapon, rolled_armor, rolled_rig, rolled_helmet, rolled_backpack, rolled_map,
+                 rolled_random_modifier]
+    else:
+        rolls = [rolled_weapon, rolled_armor, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
 
-    # For testing
-    print([weapon.name for weapon in filtered_weapons])
-    print(f"Rolled Weapon: {rolled_weapon.name}")
-    return rolled_weapon
+    # testing
+    print([i.name for i in rolls])
+    return rolls
 
-# For testing
-roll_items(example_settings)
 
 @bot.event
 async def on_ready():
@@ -148,10 +135,52 @@ async def stats(ctx: discord.ApplicationContext) -> None:
 # /roll
 @bot.slash_command(name="roll", description="Loadout Lottery!")
 @commands.cooldown(1, 20, commands.BucketType.user)
-async def roll(ctx: discord.ApplicationContext):
+@option("prapor", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option("therapist", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option("skier", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option("peacekeeper", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option("mechanic", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option("ragman", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option("jaeger", description="Enter Prapor's trader level", choices=[0, 1, 2, 3, 4])
+@option("flea", description="Do you have access to the flea market?", choices=[True, False])
+@option("quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False])
+@option("meta_only", description="Only allow meta items to be rolled?", choices=[True, False])
+
+async def roll(
+        ctx: discord.ApplicationContext,
+        prapor: int,
+        therapist: int,
+        skier: int,
+        peacekeeper: int,
+        mechanic: int,
+        ragman: int,
+        jaeger: int,
+        flea: bool,
+        quest_locked: bool,
+        meta_only: bool,
+):
+
     embed_msg = discord.Embed(
         title="🎲 Welcome to Tarkov Loadout Lottery! 🎰",
         url="https://github.com/x0rtex/TarkovLoadoutLottery",
+        color=ctx.bot.user.color
+    )
+
+    user_settings = UserSettings(
+        trader_levels={
+            eft.Trader.PRAPOR: prapor,
+            eft.Trader.THERAPIST: therapist,
+            eft.Trader.SKIER: skier,
+            eft.Trader.PEACEKEEPER: peacekeeper,
+            eft.Trader.MECHANIC: mechanic,
+            eft.Trader.RAGMAN: ragman,
+            eft.Trader.JAEGER: jaeger,
+        },
+        flea=flea,
+        allow_quest_locked=quest_locked,
+        meta_only=meta_only,
+        allow_mod_ammo_levels=False,
+        allow_thermals=False,
     )
 
     embed_msg.set_author(
@@ -159,25 +188,35 @@ async def roll(ctx: discord.ApplicationContext):
         icon_url="https://i.imgur.com/ptkBfO2.png",
         url="https://discord.gg/mgXmtMZgfb"
     )
+    embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
 
-    # Not fixed yet
+    rolls = roll_items(user_settings)
 
-    rolls = roll_items(example_settings)
-
-    await ctx.send(embed=embed_msg)
+    await ctx.respond(embed=embed_msg)
     for rolled_item in rolls:
         await asyncio.sleep(1.5)
-        embed_msg.add_field(name=rolled_item.category, value=f"{rolled_item.name} at {rolled_item.trader}", inline=True)
+        embed_msg.set_image(url="")
+        embed_msg.add_field(name=f"{rolled_item.category.value}:", value="?", inline=True)
         await ctx.edit(embed=embed_msg)
+        await asyncio.sleep(1)
+        embed_msg.set_field_at(index=-1, name=f"{rolled_item.category.value}:", value=f"{rolled_item.name}")
+        embed_msg.set_image(url=rolled_item.image_url)
+        await ctx.edit(embed=embed_msg)
+    await asyncio.sleep(3)
+    embed_msg.set_image(url="")
+    embed_msg.set_footer(text="https://trello.com/b/A2xmLoBw/tarkov-loadout-lottery-discord-bot")
+    await ctx.edit(embed=embed_msg)
+
 
 # Application command error handler
 @bot.event
 async def on_application_command_error(ctx: discord.ApplicationContext, error: discord.DiscordException):
     if isinstance(error, commands.CommandOnCooldown):
-        await ctx.respond(
-            f":hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.")
+        await ctx.respond(f":hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.")
+    if isinstance(error, discord.errors.NotFound) and "Unknown Webhook" in str(error):
+        await ctx.respond("An error occurred while editing the interaction response. Please try again.")
     else:
-        raise error  # Raise other errors so they aren't ignored
+        raise error
 
 
 def run_bot() -> None:
