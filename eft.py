@@ -1,7 +1,6 @@
 from enum import Enum
 from typing import Optional, Literal, NamedTuple
 
-
 #   User-Specific Settings Idea
 #
 #   The user can specify which traders they have access to in-game.
@@ -25,13 +24,17 @@ from typing import Optional, Literal, NamedTuple
 #
 #   ------ Other Settings ------
 #
-#   Flea Market Unlocked:      [True] /  False        (Flea Market unlocks at level 15. Allow items that are only available on the Flea Market to be rolled?)
-#   Allow quest-locked Items:  [True] /  False        (Some items are locked behind quest completion. Allow these items to be rolled?)
+#   Flea Market unlocked:      [True] /  False        (Flea Market unlocks at level 15. Allow items that are only available on the Flea Market to be rolled?)
+#   Allow quest-locked items:  [True] /  False        (Some items are locked behind quest completion. Allow these items to be rolled?)
 #   Roll mod/ammo levels:      [True] /  False        (Roll gun mod trader levels and ammo trader levels?)
+#   Allow FIR-only items:       True  / [False]       (Some items are not available on the flea OR via tradres. Include these?)
 #   Allow thermals:             True  / [False]       (Can thermal scope be rolled as a random modifier?)
 #   Meta only:                  True  / [False]       (Exclusively roll for 'meta' items?)
 #
 #   [] = Default Settings
+
+you_choose_image_url = "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg"
+
 
 class Category(Enum):
     WEAPON = "Weapon"
@@ -94,7 +97,7 @@ ALL_WEAPONS = (
     Item(
         name="YOUR CHOICE",
         category=Category.WEAPON,
-        image_url="https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+        image_url=you_choose_image_url,
         unlocked=True,
         meta=True,
         flea=False,
@@ -103,7 +106,7 @@ ALL_WEAPONS = (
     Item(
         name="Melee",
         category=Category.MELEE,
-        image_url="https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+        image_url=you_choose_image_url,
         unlocked=True,
         meta=False,
         flea=False,
@@ -381,8 +384,8 @@ ALL_WEAPONS = (
         category=Category.ASSAULT_RIFLE,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/DT_MDR_308.png/revision/latest/scale-to-width-down/180?cb=20191228210602",
         unlocked=False,
-        meta=False,
-        flea=True,
+        meta=True,
+        flea=False,
         trader_info={
             Trader.PEACEKEEPER: TraderInfo(level=4, quest_locked=True, barter=False),
         },
@@ -1417,7 +1420,7 @@ ARMOR_VESTS = (
     Item(
         name="YOUR CHOICE",
         category=Category.ARMOR_VEST,
-        image_url="https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+        image_url=you_choose_image_url,
         unlocked=True,
         meta=True,
         flea=False,
@@ -1660,7 +1663,7 @@ ARMOR_VESTS = (
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/FORT_Redut-T5_body_armor.png/revision/latest/scale-to-width-down/320?cb=20190410224442",
         unlocked=False,
         meta=False,
-        flea=True,
+        flea=False,
         trader_info={
             Trader.RAGMAN: TraderInfo(level=4, quest_locked=True, barter=True),
         }
@@ -2013,7 +2016,7 @@ ALL_RIGS = (
     Item(
         name="YOUR CHOICE",
         category=Category.RIG,
-        image_url="https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+        image_url=you_choose_image_url,
         unlocked=True,
         meta=True,
         flea=False,
@@ -2341,7 +2344,7 @@ ALL_HELMETS = (
     Item(
         name="YOUR CHOICE",
         category=Category.HELMET,
-        image_url="https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+        image_url=you_choose_image_url,
         unlocked=True,
         meta=True,
         flea=False,
@@ -2707,7 +2710,7 @@ ALL_BACKPACKS = (
     Item(
         name="YOUR CHOICE",
         category=Category.BACKPACK,
-        image_url="https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+        image_url=you_choose_image_url,
         unlocked=True,
         meta=True,
         flea=False,
@@ -3048,43 +3051,43 @@ class Map:
 ALL_MAPS = (
     Map(
         name="YOUR CHOICE",
-        image_url="https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+        image_url=you_choose_image_url,
     ),
     Map(
         name="Factory",
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Factory-Day_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811153020", 
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Factory-Day_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811153020",
     ),
     Map(
         name="Woods",
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_woods.png/revision/latest/scale-to-width-down/382?cb=20171101223132", 
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_woods.png/revision/latest/scale-to-width-down/382?cb=20171101223132",
     ),
     Map(
         name="Customs",
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9f/Customs_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811151055", 
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9f/Customs_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811151055",
     ),
     Map(
         name="Interchange",
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_interchange.png/revision/latest/scale-to-width-down/382?cb=20200811153253", 
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_interchange.png/revision/latest/scale-to-width-down/382?cb=20200811153253",
     ),
     Map(
         name="Shoreline",
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/Banner_shoreline.png/revision/latest/scale-to-width-down/382?cb=20171101223501", 
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/Banner_shoreline.png/revision/latest/scale-to-width-down/382?cb=20171101223501",
     ),
     Map(
         name="Reserve",
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f4/Reserve.png/revision/latest/scale-to-width-down/382?cb=20191101214624", 
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f4/Reserve.png/revision/latest/scale-to-width-down/382?cb=20191101214624",
     ),
     Map(
         name="The Lab",
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/TheLabBanner.png/revision/latest/scale-to-width-down/382?cb=20181225171705", 
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/TheLabBanner.png/revision/latest/scale-to-width-down/382?cb=20181225171705",
     ),
     Map(
         name="Lighthouse",
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/dc/Banner_lighthouse.png/revision/latest/scale-to-width-down/382?cb=20211213001748", 
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/dc/Banner_lighthouse.png/revision/latest/scale-to-width-down/382?cb=20211213001748",
     ),
     Map(
         name="Streets of Tarkov",
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/41/Banner_streets.png/revision/latest/scale-to-width-down/382?cb=20230131205551", 
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/41/Banner_streets.png/revision/latest/scale-to-width-down/382?cb=20230131205551",
     ),
 )
 
