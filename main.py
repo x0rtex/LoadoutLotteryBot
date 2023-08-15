@@ -30,46 +30,90 @@ bot = commands.Bot(
 )
 
 
+@bot.event
+async def on_ready():
+    print(f"We have logged in as {bot.user}")
+    print(f"Guilds: {len(bot.guilds)}")
+
+
 class UserSettings:
-    def __init__(self, trader_levels, flea, allow_quest_locked, allow_mod_ammo_levels, allow_thermals, meta_only):
+    def __init__(self, trader_levels, flea, allow_quest_locked, allow_fir_only, allow_mod_ammo_levels, allow_thermals,
+                 meta_only):
         self.trader_levels = trader_levels
         self.flea = flea
         self.allow_quest_locked = allow_quest_locked
+        self.allow_fir_only = allow_fir_only
         self.allow_mod_ammo_levels = allow_mod_ammo_levels
         self.allow_thermals = allow_thermals
         self.meta_only = meta_only
 
 
-def check_item_trader(item, user_settings):
+def check_traders(item, user_settings) -> bool:
     for trader, trader_info in item.trader_info.items():
+        print(f"Checking if {item.name}'s traders are equal or less than the user's trader levels")
+
         if user_settings.trader_levels[trader] >= trader_info.level:
             if trader_info.barter and not user_settings.flea:
-                return False
-            if trader_info.quest_locked and not user_settings.allow_quest_locked:
-                return False
-            return True
+                print(f"{item.name} is at {trader_info} with a barter while user does not have Flea, breaking out")
+                break
 
+            elif trader_info.quest_locked and not user_settings.allow_quest_locked:
+                print(
+                    f"{item.name} is at {trader_info} but is quest-locked and user does not allow quest-locked items, breaking out")
+                break
 
-def check_item(item, user_settings):
-    if not item.meta and user_settings.meta_only:
-        return False
-    if item.force:
-        return True
-    if item.flea and user_settings.flea:
-        return True
-    check_item_trader(item, user_settings)
+            else:
+                print(f"{item.name} is at {trader_info} and user has {user_settings.trader_levels}, returned True")
+                return True
+
+    print(f"{item.name} met no conditions while user has {user_settings.trader_levels}, returned False")
     return False
 
 
-def roll_items(user_settings):
+def check_item(item, user_settings) -> bool:
+    # print(f"------ CHECKING ITEM {item.name} ------")
+    # print(f"Checking if {item.name} is not meta while user settings are meta only")
+
+    if not item.meta and user_settings.meta_only:
+        # print(
+        # f"{item.name} is not meta ({item.meta}) while user settings are meta only ({user_settings.meta_only}), returned False")
+        return False
+
+    # print(f"Checking if {item.name} is unlocked")
+    if item.unlocked:
+        # print(f"{item.name} is unlocked ({item.unlocked}), returned True")
+        return True
+
+    # print(f"Checking if {item.name} is on flea and user has flea.")
+    if item.flea and user_settings.flea:
+        # print(f"{item.name} is available on flea {item.flea}, and user flea is {user_settings.flea}, returned True")
+        return True
+
+    # print(f"Checking if {item.name} is a non-trader flea-banned item.")
+    # print(f"not item.flea ({item.flea}) and item.trader_info ({item.trader_info} is None) ")
+    # print(f"{not item.flea and item.trader_info is None}")
+    if not item.flea and item.trader_info == {}:
+        # print(f"{item.name} is a non-trader ({item.trader_info == {} }) flea-banned ({item.flea}) item")
+        # print("Checking if user allows fir-only items")
+        if user_settings.allow_fir_only:
+            # print(f"{item.name} returned true as user has set allow fir-only items to {user_settings.allow_fir_only}")
+            return True
+        else:
+            # print(f"{item.name} returned false as user has set allow fir-only items to {user_settings.allow_fir_only}")
+            return False
+
+    return check_traders(item, user_settings)
+
+
+def roll_items(user_settings) -> list:
     filtered_weapons = [weapon for weapon in eft.ALL_WEAPONS if check_item(weapon, user_settings)]
-    print([i.name for i in filtered_weapons])
+    # print([i.name for i in filtered_weapons])
     filtered_armor = [armor for armor in eft.ALL_ARMORS if check_item(armor, user_settings)]
-    print([i.name for i in filtered_armor])
+    # print([i.name for i in filtered_armor])
     filtered_helmets = [helmet for helmet in eft.ALL_HELMETS if check_item(helmet, user_settings)]
-    print([i.name for i in filtered_helmets])
+    # print([i.name for i in filtered_helmets])
     filtered_backpacks = [backpack for backpack in eft.ALL_BACKPACKS if check_item(backpack, user_settings)]
-    print([i.name for i in filtered_backpacks])
+    # print([i.name for i in filtered_backpacks])
 
     rolled_weapon = random.choice(filtered_weapons)
     rolled_armor = random.choice(filtered_armor)
@@ -86,15 +130,107 @@ def roll_items(user_settings):
     else:
         rolls = [rolled_weapon, rolled_armor, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
 
-    # testing
-    print([i.name for i in rolls])
     return rolls
 
 
-@bot.event
-async def on_ready():
-    print(f"We have logged in as {bot.user}")
-    print(f"Guilds: {len(bot.guilds)}")
+# /roll
+@bot.slash_command(name="roll", description="Loadout Lottery!")
+@commands.cooldown(1, 20, commands.BucketType.user)
+@option(name="prapor", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="therapist", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="skier", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="peacekeeper", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="mechanic", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="ragman", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="jaeger", description="Enter Prapor's trader level", choices=[0, 1, 2, 3, 4])
+@option(name="flea", description="Do you have access to the flea market?", choices=[True, False])
+@option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False])
+@option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False])
+@option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False])
+async def roll(
+        ctx: discord.ApplicationContext,
+        prapor: int,
+        therapist: int,
+        skier: int,
+        peacekeeper: int,
+        mechanic: int,
+        ragman: int,
+        jaeger: int,
+        flea: bool,
+        allow_quest_locked: bool,
+        allow_fir_only: bool,
+        meta_only: bool,
+):
+    # Making the embed look nice
+    embed_msg = discord.Embed(
+        title="🎲 Welcome to Tarkov Loadout Lottery! 🎰",
+        url="https://github.com/x0rtex/TarkovLoadoutLottery",
+        color=ctx.bot.user.color.value
+    )
+    embed_msg.set_author(
+        name="Support Server",
+        icon_url="https://i.imgur.com/tqtPhBA.png",
+        url="https://discord.gg/mgXmtMZgfb"
+    )
+    embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
+
+    # Defining user settings based on command arguments (temporarily)
+    user_settings = UserSettings(
+        trader_levels={
+            eft.Trader.PRAPOR: prapor,
+            eft.Trader.THERAPIST: therapist,
+            eft.Trader.SKIER: skier,
+            eft.Trader.PEACEKEEPER: peacekeeper,
+            eft.Trader.MECHANIC: mechanic,
+            eft.Trader.RAGMAN: ragman,
+            eft.Trader.JAEGER: jaeger,
+        },
+        flea=flea,
+        allow_quest_locked=allow_quest_locked,
+        allow_fir_only=allow_fir_only,
+        meta_only=meta_only,
+        allow_mod_ammo_levels=False,
+        allow_thermals=False,
+    )
+
+    # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
+    # Could integrate this logic into the /settings command once its made
+    if (user_settings.trader_levels[eft.Trader.PRAPOR] >= 2
+            or user_settings.trader_levels[eft.Trader.SKIER].value >= 2
+            or user_settings.trader_levels[eft.Trader.MECHANIC].value >= 2
+            or user_settings.trader_levels[eft.Trader.RAGMAN].value >= 2
+            or user_settings.trader_levels[eft.Trader.JAEGER].value >= 2):
+        user_settings.flea = True
+
+    # Roll a random selection of items for the user based on their settings
+    rolls = roll_items(user_settings)
+
+    # Message is finally sent
+    await ctx.respond(embed=embed_msg)
+
+    # Slowly edits the message to reveal each rolled item
+    for rolled_item in rolls:
+        embed_msg.set_image(url="")
+        embed_msg.add_field(name=f"{rolled_item.category.value}:", value="?", inline=False)
+        await ctx.edit(embed=embed_msg)
+        await asyncio.sleep(1)
+        embed_msg.set_field_at(index=-1, name=f"{rolled_item.category.value}:", value=f"{rolled_item.name}")
+        embed_msg.set_image(url=rolled_item.image_url)
+        await ctx.edit(embed=embed_msg)
+        await asyncio.sleep(1.5)
+
+    # End of the command
+    await asyncio.sleep(6)
+    embed_msg.set_image(url="")
+    embed_msg.set_footer(text="https://trello.com/b/A2xmLoBw/tarkov-loadout-lottery-discord-bot")
+    await ctx.edit(embed=embed_msg)
+
+
+# /settings
+@bot.slash_command(name="settings", description="Customise your Loadout Lottery experience.")
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def settings(ctx: discord.ApplicationContext) -> None:
+    await ctx.respond("This command has yet to do anything.")
 
 
 # /ping
@@ -132,89 +268,12 @@ async def stats(ctx: discord.ApplicationContext) -> None:
     await ctx.respond(embed=embed_msg)
 
 
-# /roll
-@bot.slash_command(name="roll", description="Loadout Lottery!")
-@commands.cooldown(1, 20, commands.BucketType.user)
-@option("prapor", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option("therapist", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option("skier", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option("peacekeeper", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option("mechanic", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option("ragman", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option("jaeger", description="Enter Prapor's trader level", choices=[0, 1, 2, 3, 4])
-@option("flea", description="Do you have access to the flea market?", choices=[True, False])
-@option("quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False])
-@option("meta_only", description="Only allow meta items to be rolled?", choices=[True, False])
-
-async def roll(
-        ctx: discord.ApplicationContext,
-        prapor: int,
-        therapist: int,
-        skier: int,
-        peacekeeper: int,
-        mechanic: int,
-        ragman: int,
-        jaeger: int,
-        flea: bool,
-        quest_locked: bool,
-        meta_only: bool,
-):
-
-    embed_msg = discord.Embed(
-        title="🎲 Welcome to Tarkov Loadout Lottery! 🎰",
-        url="https://github.com/x0rtex/TarkovLoadoutLottery",
-        color=ctx.bot.user.color
-    )
-
-    user_settings = UserSettings(
-        trader_levels={
-            eft.Trader.PRAPOR: prapor,
-            eft.Trader.THERAPIST: therapist,
-            eft.Trader.SKIER: skier,
-            eft.Trader.PEACEKEEPER: peacekeeper,
-            eft.Trader.MECHANIC: mechanic,
-            eft.Trader.RAGMAN: ragman,
-            eft.Trader.JAEGER: jaeger,
-        },
-        flea=flea,
-        allow_quest_locked=quest_locked,
-        meta_only=meta_only,
-        allow_mod_ammo_levels=False,
-        allow_thermals=False,
-    )
-
-    embed_msg.set_author(
-        name="Support & LFG Server",
-        icon_url="https://i.imgur.com/ptkBfO2.png",
-        url="https://discord.gg/mgXmtMZgfb"
-    )
-    embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
-
-    rolls = roll_items(user_settings)
-
-    await ctx.respond(embed=embed_msg)
-    for rolled_item in rolls:
-        await asyncio.sleep(1.5)
-        embed_msg.set_image(url="")
-        embed_msg.add_field(name=f"{rolled_item.category.value}:", value="?", inline=True)
-        await ctx.edit(embed=embed_msg)
-        await asyncio.sleep(1)
-        embed_msg.set_field_at(index=-1, name=f"{rolled_item.category.value}:", value=f"{rolled_item.name}")
-        embed_msg.set_image(url=rolled_item.image_url)
-        await ctx.edit(embed=embed_msg)
-    await asyncio.sleep(3)
-    embed_msg.set_image(url="")
-    embed_msg.set_footer(text="https://trello.com/b/A2xmLoBw/tarkov-loadout-lottery-discord-bot")
-    await ctx.edit(embed=embed_msg)
-
-
 # Application command error handler
 @bot.event
 async def on_application_command_error(ctx: discord.ApplicationContext, error: discord.DiscordException):
     if isinstance(error, commands.CommandOnCooldown):
-        await ctx.respond(f":hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.")
-    if isinstance(error, discord.errors.NotFound) and "Unknown Webhook" in str(error):
-        await ctx.respond("An error occurred while editing the interaction response. Please try again.")
+        await ctx.respond(
+            f":hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.")
     else:
         raise error
 
