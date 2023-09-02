@@ -11,8 +11,10 @@ import time
 import datetime
 import platform
 import psutil
+import tomllib
+import tomli_w
 
-import eft
+import eft  # contains all information about items from EFT
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -36,24 +38,12 @@ async def on_ready():
     print(f"Guilds: {len(bot.guilds)}")
 
 
-class UserSettings:
-    def __init__(self, trader_levels, flea, allow_quest_locked, allow_fir_only, allow_mod_ammo_levels, allow_thermals,
-                 meta_only):
-        self.trader_levels = trader_levels
-        self.flea = flea
-        self.allow_quest_locked = allow_quest_locked
-        self.allow_fir_only = allow_fir_only
-        self.allow_mod_ammo_levels = allow_mod_ammo_levels
-        self.allow_thermals = allow_thermals
-        self.meta_only = meta_only
-
-
 def check_item_traders(item, user_settings) -> bool:  # Check if one or more traders meets user requirements
     for trader, trader_info in item.trader_info.items():
-        if user_settings.trader_levels[trader] >= trader_info.level:
-            if trader_info.barter and not user_settings.flea:
+        if user_settings["trader_levels"][trader] >= trader_info.level:
+            if trader_info.barter and not user_settings["flea"]:
                 break
-            elif trader_info.quest_locked and not user_settings.allow_quest_locked:
+            elif trader_info.quest_locked and not user_settings["allow_quest_locked"]:
                 break
             else:
                 return True
@@ -61,17 +51,17 @@ def check_item_traders(item, user_settings) -> bool:  # Check if one or more tra
 
 
 def check_item(item, user_settings) -> bool:  # Check if an item is obtainable based on user settings
-    if not item.meta and user_settings.meta_only:
+    if not item.meta and user_settings["meta_only"]:
         return False
 
     if item.unlocked:
         return True
 
-    if item.flea and user_settings.flea:
+    if item.flea and user_settings["flea"]:
         return True
 
     if item.trader_info == {} and not item.flea:
-        if user_settings.allow_fir_only:
+        if user_settings["allow_fir_only"]:
             return True
         else:
             return False
@@ -79,8 +69,13 @@ def check_item(item, user_settings) -> bool:  # Check if an item is obtainable b
     return check_item_traders(item, user_settings)
 
 
+def check_random_modifier(random_modifier, user_settings) -> bool:
+    if random_modifier.name == "Use thermal" and not user_settings["allow_thermals"]:
+        return False
+    return True
+
+
 def roll_items(user_settings) -> list:
-    # Create a fi;
     filtered_weapons = [weapon for weapon in eft.ALL_WEAPONS if check_item(weapon, user_settings)]
     filtered_armor = [armor for armor in eft.ALL_ARMORS if check_item(armor, user_settings)]
     filtered_helmets = [helmet for helmet in eft.ALL_HELMETS if check_item(helmet, user_settings)]
@@ -91,18 +86,32 @@ def roll_items(user_settings) -> list:
     rolled_helmet = random.choice(filtered_helmets)
     rolled_backpack = random.choice(filtered_backpacks)
     rolled_map = random.choice(eft.ALL_MAPS)
-    rolled_random_modifier = random.choice(random.choice(eft.ALL_MODIFIERS))
+
+    filtered_good_modifiers = [good_modifier for good_modifier in eft.GOOD_MODIFIERS]
+    filtered_ok_modifiers = [ok_modifier for ok_modifier in eft.OK_MODIFIERS]
+    filtered_bad_modifiers = [bad_modifier for bad_modifier in eft.BAD_MODIFIERS]
+    filtered_all_modifiers = (filtered_good_modifiers, filtered_ok_modifiers, filtered_bad_modifiers)
+
+    rolled_random_modifier = random.choice(random.choice(filtered_all_modifiers))
 
     # If armored rig is rolled instead of an armor vest, the user does not need a rig
-    if rolled_armor.category.value == "Armor Vest":
+    if rolled_armor.category == "Armor Vest":
         filtered_rigs = [rig for rig in eft.ALL_RIGS if check_item(rig, user_settings)]
         rolled_rig = random.choice(filtered_rigs)
-        rolls = [rolled_weapon, rolled_armor, rolled_rig, rolled_helmet, rolled_backpack, rolled_map,
-                 rolled_random_modifier]
+        rolls = [rolled_weapon, rolled_armor, rolled_rig, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
     else:
         rolls = [rolled_weapon, rolled_armor, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
-
     return rolls
+
+
+def write_settings(user_settings, user_id):
+    with open(f'userdata/{user_id}.toml', 'wb') as f:
+        tomli_w.dump(user_settings, f)
+
+
+def read_settings(user_id):
+    with open(f'userdata/{user_id}.toml', 'rb') as f:
+        return tomllib.load(f)
 
 
 # /roll
@@ -119,7 +128,64 @@ def roll_items(user_settings) -> list:
 @option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False])
 @option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False])
 @option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False])
-async def roll(
+async def roll(ctx: discord.ApplicationContext,):
+    # Making the embed look nice
+    embed_msg = discord.Embed(
+        title="🎲 Welcome to Tarkov Loadout Lottery! 🎰",
+        url="https://github.com/x0rtex/TarkovLoadoutLottery",
+        color=ctx.bot.user.color
+    )
+    embed_msg.set_author(
+        name="Support Server",
+        icon_url="https://i.imgur.com/tqtPhBA.png",
+        url="https://discord.gg/mgXmtMZgfb"
+    )
+    embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
+
+    try:
+        user_settings = read_settings(ctx.user.id)
+    except FileNotFoundError:
+        user_settings = read_settings("default")
+
+    # Roll a random selection of items for the user based on their settings
+    rolls = roll_items(user_settings)
+
+    # Message is finally sent
+    await ctx.respond(embed=embed_msg)
+
+    # Slowly edits the message to reveal each rolled item
+    for rolled_item in rolls:
+        embed_msg.set_image(url="")
+        embed_msg.add_field(name=f"{rolled_item.category}:", value="?", inline=False)
+        await ctx.edit(embed=embed_msg)
+        await asyncio.sleep(1)
+        embed_msg.set_field_at(index=-1, name=f"{rolled_item.category}:", value=f"{rolled_item.name}")
+        embed_msg.set_image(url=rolled_item.image_url)
+        await ctx.edit(embed=embed_msg)
+        await asyncio.sleep(1.5)
+
+    # End of the command
+    await asyncio.sleep(10)
+    embed_msg.set_image(url="")
+    await ctx.edit(embed=embed_msg)
+
+
+# /settings
+@bot.slash_command(name="settings", description="Customise your Loadout Lottery experience.")
+@commands.cooldown(1, 10, commands.BucketType.user)
+@option(name="prapor", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="therapist", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="skier", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="peacekeeper", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="mechanic", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="ragman", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
+@option(name="jaeger", description="Enter Prapor's trader level", choices=[0, 1, 2, 3, 4])
+@option(name="flea", description="Do you have access to the flea market?", choices=[True, False])
+@option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False])
+@option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False])
+@option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False])
+@option(name="roll_thermals", description="Be able to roll thermals in optional random modifier?", choices=[True, False])
+async def settings(
         ctx: discord.ApplicationContext,
         prapor: int,
         therapist: int,
@@ -132,78 +198,39 @@ async def roll(
         allow_quest_locked: bool,
         allow_fir_only: bool,
         meta_only: bool,
+        roll_thermals: bool,
 ):
-    # Making the embed look nice
-    embed_msg = discord.Embed(
-        title="🎲 Welcome to Tarkov Loadout Lottery! 🎰",
-        url="https://github.com/x0rtex/TarkovLoadoutLottery",
-        color=ctx.bot.user.color.value
-    )
-    embed_msg.set_author(
-        name="Support Server",
-        icon_url="https://i.imgur.com/tqtPhBA.png",
-        url="https://discord.gg/mgXmtMZgfb"
-    )
-    embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
 
-    # Defining user settings based on command arguments (temporarily)
-    user_settings = UserSettings(
-        trader_levels={
-            eft.Trader.PRAPOR: prapor,
-            eft.Trader.THERAPIST: therapist,
-            eft.Trader.SKIER: skier,
-            eft.Trader.PEACEKEEPER: peacekeeper,
-            eft.Trader.MECHANIC: mechanic,
-            eft.Trader.RAGMAN: ragman,
-            eft.Trader.JAEGER: jaeger,
+    user_settings = {
+        "trader_levels": {
+            eft.PRAPOR: prapor,
+            eft.THERAPIST: therapist,
+            eft.SKIER: skier,
+            eft.PEACEKEEPER: peacekeeper,
+            eft.MECHANIC: mechanic,
+            eft.RAGMAN: ragman,
+            eft.JAEGER: jaeger,
         },
-        flea=flea,
-        allow_quest_locked=allow_quest_locked,
-        allow_fir_only=allow_fir_only,
-        meta_only=meta_only,
-        allow_mod_ammo_levels=False,
-        allow_thermals=False,
-    )
+        "flea": flea,
+        "allow_quest_locked": allow_quest_locked,
+        "allow_fir_only": allow_fir_only,
+        "meta_only": meta_only,
+        "roll_thermals": roll_thermals,
+    }
 
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
     # Could integrate this logic into the /settings command once its made
-    if (user_settings.trader_levels[eft.Trader.PRAPOR] >= 2
-            or user_settings.trader_levels[eft.Trader.SKIER] >= 2
-            or user_settings.trader_levels[eft.Trader.MECHANIC] >= 2
-            or user_settings.trader_levels[eft.Trader.RAGMAN] >= 2
-            or user_settings.trader_levels[eft.Trader.JAEGER] >= 2
-            and user_settings.flea is False):
-        user_settings.flea = True
+    if (user_settings["flea"] is False
+            and (user_settings["trader_levels"][eft.PRAPOR] >= 2
+                 or user_settings["trader_levels"][eft.SKIER] >= 2
+                 or user_settings["trader_levels"][eft.MECHANIC] >= 2
+                 or user_settings["trader_levels"][eft.RAGMAN] >= 2
+                 or user_settings["trader_levels"][eft.JAEGER] >= 2)):
+        user_settings["flea"] = True
 
-    # Roll a random selection of items for the user based on their settings
-    rolls = roll_items(user_settings)
+    write_settings(user_settings, ctx.user.id)
 
-    # Message is finally sent
-    await ctx.respond(embed=embed_msg)
-
-    # Slowly edits the message to reveal each rolled item
-    for rolled_item in rolls:
-        embed_msg.set_image(url="")
-        embed_msg.add_field(name=f"{rolled_item.category.value}:", value="?", inline=False)
-        await ctx.edit(embed=embed_msg)
-        await asyncio.sleep(1)
-        embed_msg.set_field_at(index=-1, name=f"{rolled_item.category.value}:", value=f"{rolled_item.name}")
-        embed_msg.set_image(url=rolled_item.image_url)
-        await ctx.edit(embed=embed_msg)
-        await asyncio.sleep(1.5)
-
-    # End of the command
-    await asyncio.sleep(6)
-    embed_msg.set_image(url="")
-    embed_msg.set_footer(text="https://trello.com/b/A2xmLoBw/tarkov-loadout-lottery-discord-bot")
-    await ctx.edit(embed=embed_msg)
-
-
-# /settings
-@bot.slash_command(name="settings", description="Customise your Loadout Lottery experience.")
-@commands.cooldown(1, 10, commands.BucketType.user)
-async def settings(ctx: discord.ApplicationContext) -> None:
-    await ctx.respond("This command has yet to do anything.")
+    await ctx.respond("Your settings have been updated.")
 
 
 # /ping
@@ -252,7 +279,7 @@ async def on_application_command_error(ctx: discord.ApplicationContext, error: d
 
 
 def run_bot() -> None:
-    if os.name != "nt":
+    if os.name != "nt":  # Use uvloop if using linux
         import uvloop
         uvloop.install()
     load_dotenv()
