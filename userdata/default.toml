@@ -2,7 +2,7 @@ flea = true
 allow_quest_locked = true
 allow_fir_only = false
 meta_only = false
-allow_thermals = false
+roll_thermals = false
 
 [trader_levels]
 Prapor = 4
