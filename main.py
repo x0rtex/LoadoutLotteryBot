@@ -70,7 +70,7 @@ def check_item(item, user_settings) -> bool:  # Check if an item is obtainable b
 
 
 def check_random_modifier(random_modifier, user_settings) -> bool:
-    if random_modifier.name == "Use thermal" and not user_settings["allow_thermals"]:
+    if random_modifier.name == "Use thermal" and not user_settings["roll_thermals"]:
         return False
     return True
 
@@ -114,6 +114,28 @@ def read_settings(user_id):
         return tomllib.load(f)
 
 
+def view_settings(user_settings, ctx):
+    embed_msg = discord.Embed()
+    embed_msg.set_author(name=eft.SUPPORT_SERVER, icon_url=eft.LOADOUT_LOTTERY_ICON, url=eft.DISCORD_SERVER)
+    embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
+
+    fields = [
+                 (trader, "Locked" if level == 0 else f"LL{level}")
+                 for trader, level in user_settings["trader_levels"].items()
+             ] + [
+                 ("Flea Market", user_settings["flea"]),
+                 ("Allow Quest Locked Items", user_settings["allow_quest_locked"]),
+                 ("Allow FIR-Only Items", user_settings["allow_fir_only"]),
+                 ("Allow thermals", user_settings["roll_thermals"]),
+                 ("Meta Only", user_settings["meta_only"]),
+             ]
+
+    for name, value in fields:
+        embed_msg.add_field(name=name, value=value)
+
+    return embed_msg
+
+
 # /roll
 @bot.slash_command(name="roll", description="Loadout Lottery!")
 @commands.cooldown(1, 20, commands.BucketType.user)
@@ -129,23 +151,22 @@ def read_settings(user_id):
 @option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False])
 @option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False])
 async def roll(ctx: discord.ApplicationContext,):
-    # Making the embed look nice
     embed_msg = discord.Embed(
         title="🎲 Welcome to Tarkov Loadout Lottery! 🎰",
         url="https://github.com/x0rtex/TarkovLoadoutLottery",
         color=ctx.bot.user.color
     )
     embed_msg.set_author(
-        name="Support Server",
-        icon_url="https://i.imgur.com/tqtPhBA.png",
-        url="https://discord.gg/mgXmtMZgfb"
+        name=eft.SUPPORT_SERVER,
+        icon_url=eft.LOADOUT_LOTTERY_ICON,
+        url=eft.DISCORD_SERVER
     )
     embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
 
     try:
         user_settings = read_settings(ctx.user.id)
     except FileNotFoundError:
-        user_settings = read_settings("default")
+        user_settings = eft.DEFAULT_SETTINGS
 
     # Roll a random selection of items for the user based on their settings
     rolls = roll_items(user_settings)
@@ -159,7 +180,7 @@ async def roll(ctx: discord.ApplicationContext,):
         embed_msg.add_field(name=f"{rolled_item.category}:", value="?", inline=False)
         await ctx.edit(embed=embed_msg)
         await asyncio.sleep(1)
-        embed_msg.set_field_at(index=-1, name=f"{rolled_item.category}:", value=f"{rolled_item.name}")
+        embed_msg.set_field_at(index=-1, name=f"{rolled_item.category}:", value=f"{rolled_item.name}", inline=False)
         embed_msg.set_image(url=rolled_item.image_url)
         await ctx.edit(embed=embed_msg)
         await asyncio.sleep(1.5)
@@ -219,7 +240,6 @@ async def settings(
     }
 
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
-    # Could integrate this logic into the /settings command once its made
     if (user_settings["flea"] is False
             and (user_settings["trader_levels"][eft.PRAPOR] >= 2
                  or user_settings["trader_levels"][eft.SKIER] >= 2
@@ -230,7 +250,38 @@ async def settings(
 
     write_settings(user_settings, ctx.user.id)
 
-    await ctx.respond("Your settings have been updated.")
+    embed_msg = view_settings(user_settings, ctx)
+    embed_msg.title = "Your settings have been updated:"
+    await ctx.respond(embed=embed_msg, ephemeral=True)
+
+
+# /viewsettings
+@bot.slash_command(name="viewsettings", description="View your currently saved Loadout Lottery settings.")
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def viewsettings(ctx: discord.ApplicationContext):
+
+    try:
+        user_settings = read_settings(ctx.user.id)
+    except FileNotFoundError:
+        user_settings = eft.DEFAULT_SETTINGS
+
+    embed_msg = view_settings(user_settings, ctx)
+    embed_msg.title = "Your currently saved settings:"
+    await ctx.respond(embed=embed_msg, ephemeral=True)
+
+
+# /resetsettings
+@bot.slash_command(name="resetsettings", description="Reset your currently saved Loadout Lottery settings to default.")
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def resetsettings(ctx: discord.ApplicationContext):
+
+    user_settings = eft.DEFAULT_SETTINGS
+
+    write_settings(user_settings, ctx.user.id)
+
+    embed_msg = view_settings(user_settings, ctx)
+    embed_msg.title = "Your settings have been reset to default:"
+    await ctx.respond(embed=embed_msg, ephemeral=True)
 
 
 # /ping
