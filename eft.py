@@ -11,13 +11,14 @@ SMG = "SMG"
 SHOTGUN = "Shotgun"
 GRENADE_LAUNCHER = "Grenade Launcher"
 MELEE = "Melee"
+
 RIG = "Rig"
 ARMOR_VEST = "Armor Vest"
 ARMORED_RIG = "Armored Rig"
 HELMET = "Helmet"
 BACKPACK = "Backpack"
 MAP = "Map"
-RANDOM_MODIFIER = "Random Modifier"
+RANDOM_MODIFIER = "Random Modifier (Button TBA)"
 
 PRAPOR = "Prapor"
 THERAPIST = "Therapist"
@@ -26,6 +27,27 @@ PEACEKEEPER = "Peacekeeper"
 MECHANIC = "Mechanic"
 RAGMAN = "Ragman"
 JAEGER = "Jaeger"
+
+SUPPORT_SERVER = "Support Server"
+DISCORD_SERVER = "https://discord.gg/mgXmtMZgfb"
+LOADOUT_LOTTERY_ICON = "https://i.imgur.com/tqtPhBA.png"
+
+DEFAULT_SETTINGS = {
+    "flea": True,
+    "allow_quest_locked": True,
+    "allow_fir_only": False,
+    "meta_only": False,
+    "roll_thermals": False,
+    "trader_levels": {
+        "Prapor": 4,
+        "Therapist": 4,
+        "Skier": 4,
+        "Peacekeeper": 4,
+        "Mechanic": 4,
+        "Ragman": 4,
+        "Jaeger": 4,
+    },
+}
 
 you_choose_image_url = "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg"
 
@@ -67,10 +89,10 @@ ALL_WEAPONS = (
         trader_info=None
     ),
     Item(
-        name="Melee",
+        name="Bars A-2607 95Kh18 knife",
         category=MELEE,
-        image_url=you_choose_image_url,
-        unlocked=True,
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/Bars_A-2607-_95x18.png/revision/latest/scale-to-width-down/320?cb=20221225020013",
+        unlocked=False,
         meta=False,
         flea=False,
         trader_info=None
@@ -3154,7 +3176,7 @@ BAD_MODIFIERS = (
     ),
     RandomModifier(
         name="Iron sights only",
-        image_url="https://i.imgur.com/oE4qQ4b.png",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4f/Kriss_FlipupRear_View.png/revision/latest/scale-to-width-down/320?cb=20201224175245",
     ),
     RandomModifier(
         name="Hip fire only (unbind aim)",
