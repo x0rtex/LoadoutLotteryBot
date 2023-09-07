@@ -287,7 +287,6 @@ def roll_items(filtered_items):
     if need_rig:
         rolled_rig = random.choice(filtered_items[eft.RIG])
         rolls.insert(2, rolled_rig)
-    print([i.name for i in rolls])
 
     return rolls, need_rig
 
@@ -341,7 +340,6 @@ async def reroll(ctx, select, embed_msg, filtered_items):
             rerolled = random.choice(eft.ALL_AMMO)
         elif category == eft.MAP:
             rerolled = random.choice(eft.ALL_MAPS)
-        print(rerolled.name)
         if ctx.command.name == 'roll':
             await reveal_roll(ctx, embed_msg, rerolled, REROLLED_PREFIX)
         elif ctx.command.name == 'fastroll':
