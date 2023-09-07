@@ -41,7 +41,7 @@ REROLLED_PREFIX: str = 'Rerolled '
 SUPPORT_SERVER: str = 'Support Server'
 DISCORD_SERVER: str = 'https://discord.gg/mgXmtMZgfb'
 LOADOUT_LOTTERY_ICON: str = 'https://i.imgur.com/tqtPhBA.png'
-GITHUB_URL: str = 'https://github.com/x0rtex/TarkovLoadoutLottery'
+GITHUB_URL: str = 'https://github.com/x0rtex/LoadoutLotteryBot'
 WELCOME_TEXT: str = '🎲 Welcome to Loadout Lottery! 🎰'
 WELCOME_TEXT_META: str = '🎲 Welcome to META Loadout Lottery! 🎰'
 REROLL_ONE: str = 'Re-roll 1 slot'
@@ -189,8 +189,11 @@ def write_user_settings(user_id: int, user_settings: dict) -> None:
 
 
 def read_user_settings(user_id: int) -> dict[str, any]:
-    with open(f'userdata/{user_id}.toml', 'rb') as f:
-        return tomllib.load(f)
+    try:
+        with open(f'userdata/{user_id}.toml', 'rb') as f:
+            return tomllib.load(f)
+    except FileNotFoundError:
+        return DEFAULT_SETTINGS
 
 
 def show_user_settings(user_settings: dict, ctx) -> discord.Embed:
@@ -370,10 +373,8 @@ async def reroll(ctx, select, embed_msg: discord.Embed, filtered_items: dict[str
 @bot.slash_command(name='roll', description='Loadout Lottery!')
 @commands.cooldown(1, 20, commands.BucketType.user)
 async def roll(ctx: discord.ApplicationContext) -> None:
-    try:
-        user_settings = read_user_settings(ctx.user.id)
-    except FileNotFoundError:
-        user_settings = DEFAULT_SETTINGS
+
+    user_settings = read_user_settings(ctx.user.id)
 
     embed_msg = discord.Embed(title=WELCOME_TEXT_META if user_settings["meta_only"] else WELCOME_TEXT, url=GITHUB_URL)
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
@@ -413,10 +414,8 @@ async def roll(ctx: discord.ApplicationContext) -> None:
 @bot.slash_command(name='fastroll', description='Loadout Lottery! (Without the waiting around)')
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def roll(ctx: discord.ApplicationContext) -> None:
-    try:
-        user_settings: dict = read_user_settings(ctx.user.id)
-    except FileNotFoundError:
-        user_settings: dict = DEFAULT_SETTINGS
+
+    user_settings = read_user_settings(ctx.user.id)
 
     embed_msg = discord.Embed(title=WELCOME_TEXT_META if user_settings["meta_only"] else WELCOME_TEXT, url=GITHUB_URL)
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
