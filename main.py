@@ -30,6 +30,7 @@ bot = commands.Bot(debug_guilds=debug_guilds, help_command=commands.DefaultHelpC
 # Bot startup message
 @bot.event
 async def on_ready():
+    await bot.change_presence(activity=discord.Game('/help'))
     bot.add_view(RandomModifierButton())
     print(f'Logged in as {bot.user}')
     print(f'Guilds: {len(bot.guilds)}')
@@ -216,7 +217,8 @@ def view_settings(user_settings: dict, ctx):
     return embed_msg
 
 
-def check_item_traders(item: eft.Item, user_settings: dict) -> bool:  # Check if one or more traders meets user requirements
+def check_item_traders(item: eft.Item,
+                       user_settings: dict) -> bool:  # Check if one or more traders meets user requirements
     if item.trader_info == {} and not item.flea:
         if user_settings['allow_fir_only']:
             return True
@@ -296,9 +298,13 @@ def check_random_modifier(random_modifier: eft.GameRule, user_settings: dict) ->
     return True
 
 
-def roll_random_modifier(user_settings: dict):
-    filtered_modifiers = [modifier for modifier in eft.ALL_MODIFIERS if check_random_modifier(modifier, user_settings)]
-    return random.choice(filtered_modifiers)
+def roll_random_modifier(user_settings: dict) -> eft.GameRule:
+    filtered_ok_modifiers = [ok_modifier for ok_modifier in eft.OK_MODIFIERS
+                             if check_random_modifier(ok_modifier, user_settings)]
+
+    filtered_modifiers = (eft.GOOD_MODIFIERS, filtered_ok_modifiers, eft.BAD_MODIFIERS)
+
+    return random.choice(random.choice(filtered_modifiers))
 
 
 async def reveal_roll(ctx, embed_msg: discord.Embed, rolled_item, prefix: str):
@@ -416,7 +422,8 @@ async def roll(ctx: discord.ApplicationContext, ):
 
     if button.value:
         rolled_random_modifier = roll_random_modifier(user_settings)
-        embed_msg.add_field(name=f'{rolled_random_modifier.category}:', value=f'{rolled_random_modifier.name}', inline=False)
+        embed_msg.add_field(name=f'{rolled_random_modifier.category}:', value=f'{rolled_random_modifier.name}',
+                            inline=False)
         await ctx.edit(embed=embed_msg)
 
         if rolled_random_modifier.name == 'Re-roll 1 slot':
