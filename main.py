@@ -31,7 +31,7 @@ bot = commands.Bot(debug_guilds=debug_guilds, help_command=commands.DefaultHelpC
 @bot.event
 async def on_ready():
     bot.add_view(RandomModifierButton())
-    print(f'We have logged in as {bot.user}')
+    print(f'Logged in as {bot.user}')
     print(f'Guilds: {len(bot.guilds)}')
 
 
@@ -370,12 +370,7 @@ async def roll(ctx: discord.ApplicationContext, ):
     await button.wait()
 
     if button.value:
-        # rolled_random_modifier = roll_random_modifier(user_settings)
-        test_list = [
-            eft.GameRule(name='Re-roll 1 slot', category=eft.RANDOM_MODIFIER, image_url=eft.DICE_IMAGE),
-            eft.GameRule(name='Re-roll 2 slots', category=eft.RANDOM_MODIFIER, image_url=eft.DICE_IMAGE)
-        ]
-        rolled_random_modifier = random.choice(test_list)
+        rolled_random_modifier = roll_random_modifier(user_settings)
         await asyncio.sleep(1)
         await reveal_roll(ctx, embed_msg, rolled_random_modifier, '')
 
@@ -420,12 +415,7 @@ async def roll(ctx: discord.ApplicationContext, ):
     await button.wait()
 
     if button.value:
-        # rolled_random_modifier = roll_random_modifier(user_settings)
-        test_list = [
-            eft.GameRule(name='Re-roll 1 slot', category=eft.RANDOM_MODIFIER, image_url=eft.DICE_IMAGE),
-            eft.GameRule(name='Re-roll 2 slots', category=eft.RANDOM_MODIFIER, image_url=eft.DICE_IMAGE)
-        ]
-        rolled_random_modifier = random.choice(test_list)
+        rolled_random_modifier = roll_random_modifier(user_settings)
         embed_msg.add_field(name=f'{rolled_random_modifier.category}:', value=f'{rolled_random_modifier.name}', inline=False)
         await ctx.edit(embed=embed_msg)
 
