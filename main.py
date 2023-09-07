@@ -34,6 +34,7 @@ async def on_ready():
     bot.add_view(RandomModifierButton())
     print(f'Logged in as {bot.user}')
     print(f'Guilds: {len(bot.guilds)}')
+    print(f'Status: {str(bot.status).capitalize()}')
 
 
 # Loadout Lottery related constants
@@ -104,7 +105,7 @@ class RerollOneRig(discord.ui.View):
             discord.SelectOption(label=eft.MAP, emoji='🗺️'),
         ]
     )
-    async def select_callback(self, select, interaction):
+    async def select_callback(self, select):
         self.value = [select.values[0]]
         self.stop()
 
@@ -129,7 +130,7 @@ class RerollOneNoRig(discord.ui.View):
             discord.SelectOption(label=eft.MAP, emoji='🗺️'),
         ]
     )
-    async def select_callback(self, select, interaction):
+    async def select_callback(self, select):
         self.value = [select.values[0]]
         self.stop()
 
@@ -155,7 +156,7 @@ class RerollTwoRig(discord.ui.View):
             discord.SelectOption(label=eft.MAP, emoji='🗺️'),
         ]
     )
-    async def select_callback(self, select, interaction):
+    async def select_callback(self, select):
         self.value = select.values
         self.stop()
 
@@ -180,7 +181,7 @@ class RerollTwoNoRig(discord.ui.View):
             discord.SelectOption(label=eft.MAP, emoji='🗺️'),
         ]
     )
-    async def select_callback(self, select, interaction):
+    async def select_callback(self, select):
         self.value = select.values
         self.stop()
 
@@ -561,7 +562,9 @@ async def stats(ctx: discord.ApplicationContext) -> None:
 async def on_application_command_error(ctx: discord.ApplicationContext, error: discord.DiscordException):
     if isinstance(error, commands.CommandOnCooldown):
         await ctx.respond(
-            f':hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.')
+            f':hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.',
+            ephemeral=True
+        )
     else:
         raise error
 
