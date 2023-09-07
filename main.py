@@ -217,8 +217,7 @@ def view_settings(user_settings: dict, ctx):
     return embed_msg
 
 
-def check_item_traders(item: eft.Item,
-                       user_settings: dict) -> bool:  # Check if one or more traders meets user requirements
+def check_item_traders(item: eft.Item, user_settings: dict) -> bool:
     if item.trader_info == {} and not item.flea:
         if user_settings['allow_fir_only']:
             return True
@@ -237,6 +236,9 @@ def check_item_traders(item: eft.Item,
 
 
 def check_item(item: eft.Item, user_settings: dict) -> bool:  # Check if an item is obtainable based on user settings
+    if not item.meta and user_settings['meta_only']:
+        return False
+
     if item.category == eft.GUN_MOD or item.category == eft.AMMO:
         return True
 
@@ -248,9 +250,6 @@ def check_item(item: eft.Item, user_settings: dict) -> bool:  # Check if an item
 
     if item.unlocked or (item.flea and user_settings['flea']):
         return True
-
-    if not item.meta and user_settings['meta_only']:
-        return False
 
     return check_item_traders(item, user_settings)
 
