@@ -16,118 +16,198 @@ import tomli_w
 
 import eft  # contains all information about items from EFT
 
+# Bot logger
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
-debug_guilds = [
-    1052251792798404719,  # bot dev
-]
-
-bot = commands.Bot(
-    debug_guilds=debug_guilds,
-    help_command=commands.DefaultHelpCommand()
-)
+debug_guilds = [1052251792798404719]
+bot = commands.Bot(debug_guilds=debug_guilds, help_command=commands.DefaultHelpCommand())
 
 
+# Bot startup message
 @bot.event
 async def on_ready():
-    print(f"We have logged in as {bot.user}")
-    print(f"Guilds: {len(bot.guilds)}")
+    bot.add_view(RandomModifierButton())
+    print(f'We have logged in as {bot.user}')
+    print(f'Guilds: {len(bot.guilds)}')
 
 
-def check_item_traders(item, user_settings) -> bool:  # Check if one or more traders meets user requirements
-    for trader, trader_info in item.trader_info.items():
-        if user_settings["trader_levels"][trader] >= trader_info.level:
-            if trader_info.barter and not user_settings["flea"]:
-                break
-            elif trader_info.quest_locked and not user_settings["allow_quest_locked"]:
-                break
-            else:
-                return True
-    return False
+# Loadout Lottery related constants
+REROLLED_PREFIX: str = 'Rerolled '
+SUPPORT_SERVER: str = 'Support Server'
+DISCORD_SERVER: str = 'https://discord.gg/mgXmtMZgfb'
+LOADOUT_LOTTERY_ICON: str = 'https://i.imgur.com/tqtPhBA.png'
+GITHUB_URL: str = 'https://github.com/x0rtex/TarkovLoadoutLottery'
+WELCOME_TEXT: str = '🎲 Welcome to Loadout Lottery! 🎰'
+DEFAULT_SETTINGS: dict = {
+    'flea': True,
+    'allow_quest_locked': True,
+    'allow_fir_only': False,
+    'meta_only': False,
+    'roll_thermals': False,
+    'trader_levels': {
+        'Prapor': 4,
+        'Therapist': 4,
+        'Skier': 4,
+        'Peacekeeper': 4,
+        'Mechanic': 4,
+        'Ragman': 4,
+        'Jaeger': 4,
+    },
+}
 
 
-def check_item(item, user_settings) -> bool:  # Check if an item is obtainable based on user settings
-    if not item.meta and user_settings["meta_only"]:
-        return False
+class RandomModifierButton(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)  # Persistent
+        self.value = None
 
-    if item.unlocked:
-        return True
+    @discord.ui.button(
+        label='Roll Random Modifier', style=discord.ButtonStyle.green, custom_id='persistent_view:roll-yes'
+    )
+    async def button_callback_yes(self, button, interaction):
+        self.value = True
+        self.stop()
+        await interaction.response.edit_message(view=None)
 
-    if item.flea and user_settings["flea"]:
-        return True
-
-    if item.trader_info == {} and not item.flea:
-        if user_settings["allow_fir_only"]:
-            return True
-        else:
-            return False
-
-    return check_item_traders(item, user_settings)
-
-
-def check_random_modifier(random_modifier, user_settings) -> bool:
-    if random_modifier.name == "Use thermal" and not user_settings["roll_thermals"]:
-        return False
-    return True
+    @discord.ui.button(
+        label='Finish', style=discord.ButtonStyle.grey, custom_id='persistent_view:roll-no'
+    )
+    async def button_callback_no(self, button, interaction):
+        self.value = False
+        self.stop()
+        await interaction.response.edit_message(view=None)
 
 
-def roll_items(user_settings) -> list:
-    filtered_weapons = [weapon for weapon in eft.ALL_WEAPONS if check_item(weapon, user_settings)]
-    filtered_armor = [armor for armor in eft.ALL_ARMORS if check_item(armor, user_settings)]
-    filtered_helmets = [helmet for helmet in eft.ALL_HELMETS if check_item(helmet, user_settings)]
-    filtered_backpacks = [backpack for backpack in eft.ALL_BACKPACKS if check_item(backpack, user_settings)]
+class RerollOneRig(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.value = None
 
-    rolled_weapon = random.choice(filtered_weapons)
-    rolled_armor = random.choice(filtered_armor)
-    rolled_helmet = random.choice(filtered_helmets)
-    rolled_backpack = random.choice(filtered_backpacks)
-    rolled_map = random.choice(eft.ALL_MAPS)
-
-    filtered_good_modifiers = [good_modifier for good_modifier in eft.GOOD_MODIFIERS]
-    filtered_ok_modifiers = [ok_modifier for ok_modifier in eft.OK_MODIFIERS]
-    filtered_bad_modifiers = [bad_modifier for bad_modifier in eft.BAD_MODIFIERS]
-    filtered_all_modifiers = (filtered_good_modifiers, filtered_ok_modifiers, filtered_bad_modifiers)
-
-    rolled_random_modifier = random.choice(random.choice(filtered_all_modifiers))
-
-    # If armored rig is rolled instead of an armor vest, the user does not need a rig
-    if rolled_armor.category == "Armor Vest":
-        filtered_rigs = [rig for rig in eft.ALL_RIGS if check_item(rig, user_settings)]
-        rolled_rig = random.choice(filtered_rigs)
-        rolls = [rolled_weapon, rolled_armor, rolled_rig, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
-    else:
-        rolls = [rolled_weapon, rolled_armor, rolled_helmet, rolled_backpack, rolled_map, rolled_random_modifier]
-    return rolls
+    @discord.ui.select(
+        custom_id='persistent_view:reroll-one-rig',
+        placeholder='Re-roll 1 slot',
+        min_values=1,
+        max_values=1,
+        options=[
+            discord.SelectOption(label=eft.WEAPON, emoji='🔫'),
+            discord.SelectOption(label=eft.ARMOR_VEST, emoji='🛡️'),
+            discord.SelectOption(label=eft.RIG, emoji='🦺'),
+            discord.SelectOption(label=eft.HELMET, emoji='🪖'),
+            discord.SelectOption(label=eft.BACKPACK, emoji='🎒'),
+            discord.SelectOption(label=eft.GUN_MOD, emoji='🔧'),
+            discord.SelectOption(label=eft.AMMO, emoji='🔍'),
+            discord.SelectOption(label=eft.MAP, emoji='🗺️'),
+        ]
+    )
+    async def select_callback(self, select, interaction):
+        self.value = [select.values[0]]
+        self.stop()
 
 
-def write_settings(user_settings, user_id):
+class RerollOneNoRig(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.value = None
+
+    @discord.ui.select(
+        custom_id='persistent_view:reroll-one-norig',
+        placeholder='Re-roll 1 slot',
+        min_values=1,
+        max_values=1,
+        options=[
+            discord.SelectOption(label=eft.WEAPON, emoji='🔫'),
+            discord.SelectOption(label=eft.ARMORED_RIG, emoji='🛡️'),
+            discord.SelectOption(label=eft.HELMET, emoji='🪖'),
+            discord.SelectOption(label=eft.BACKPACK, emoji='🎒'),
+            discord.SelectOption(label=eft.GUN_MOD, emoji='🔧'),
+            discord.SelectOption(label=eft.AMMO, emoji='🔍'),
+            discord.SelectOption(label=eft.MAP, emoji='🗺️'),
+        ]
+    )
+    async def select_callback(self, select, interaction):
+        self.value = [select.values[0]]
+        self.stop()
+
+
+class RerollTwoRig(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.value = None
+
+    @discord.ui.select(
+        custom_id='persistent_view:reroll-two-rig',
+        placeholder='Re-roll 2 slots',
+        min_values=2,
+        max_values=2,
+        options=[
+            discord.SelectOption(label=eft.WEAPON, emoji='🔫'),
+            discord.SelectOption(label=eft.ARMOR_VEST, emoji='🛡️'),
+            discord.SelectOption(label=eft.RIG, emoji='🦺'),
+            discord.SelectOption(label=eft.HELMET, emoji='🪖'),
+            discord.SelectOption(label=eft.BACKPACK, emoji='🎒'),
+            discord.SelectOption(label=eft.GUN_MOD, emoji='🔧'),
+            discord.SelectOption(label=eft.AMMO, emoji='🔍'),
+            discord.SelectOption(label=eft.MAP, emoji='🗺️'),
+        ]
+    )
+    async def select_callback(self, select, interaction):
+        self.value = select.values
+        self.stop()
+
+
+class RerollTwoNoRig(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.value = None
+
+    @discord.ui.select(
+        custom_id='persistent_view:reroll-two-norig',
+        placeholder='Re-roll 2 slots',
+        min_values=2,
+        max_values=2,
+        options=[
+            discord.SelectOption(label=eft.WEAPON, emoji='🔫'),
+            discord.SelectOption(label=eft.ARMORED_RIG, emoji='🛡️'),
+            discord.SelectOption(label=eft.HELMET, emoji='🪖'),
+            discord.SelectOption(label=eft.BACKPACK, emoji='🎒'),
+            discord.SelectOption(label=eft.GUN_MOD, emoji='🔧'),
+            discord.SelectOption(label=eft.AMMO, emoji='🔍'),
+            discord.SelectOption(label=eft.MAP, emoji='🗺️'),
+        ]
+    )
+    async def select_callback(self, select, interaction):
+        self.value = select.values
+        self.stop()
+
+
+def write_settings(user_id: int, user_settings: dict):
     with open(f'userdata/{user_id}.toml', 'wb') as f:
         tomli_w.dump(user_settings, f)
 
 
-def read_settings(user_id):
+def read_settings(user_id: int):
     with open(f'userdata/{user_id}.toml', 'rb') as f:
         return tomllib.load(f)
 
 
-def view_settings(user_settings, ctx):
+def view_settings(user_settings: dict, ctx):
     embed_msg = discord.Embed()
-    embed_msg.set_author(name=eft.SUPPORT_SERVER, icon_url=eft.LOADOUT_LOTTERY_ICON, url=eft.DISCORD_SERVER)
-    embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
+    embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
+    embed_msg.set_thumbnail(url=ctx.user.avatar.url)
 
     fields = [
-                 (trader, "Locked" if level == 0 else f"LL{level}")
-                 for trader, level in user_settings["trader_levels"].items()
+                 (trader, 'Locked' if level == 0 else f'LL{level}')
+                 for trader, level in user_settings['trader_levels'].items()
              ] + [
-                 ("Flea Market", user_settings["flea"]),
-                 ("Allow Quest Locked Items", user_settings["allow_quest_locked"]),
-                 ("Allow FIR-Only Items", user_settings["allow_fir_only"]),
-                 ("Allow thermals", user_settings["roll_thermals"]),
-                 ("Meta Only", user_settings["meta_only"]),
+                 ('Flea Market', user_settings['flea']),
+                 ('Allow Quest Locked Items', user_settings['allow_quest_locked']),
+                 ('Allow FIR-Only Items', user_settings['allow_fir_only']),
+                 ('Allow thermals', user_settings['roll_thermals']),
+                 ('Meta Only', user_settings['meta_only']),
              ]
 
     for name, value in fields:
@@ -136,76 +216,246 @@ def view_settings(user_settings, ctx):
     return embed_msg
 
 
+def check_item_traders(item: eft.Item, user_settings: dict) -> bool:  # Check if one or more traders meets user requirements
+    if item.trader_info == {} and not item.flea:
+        if user_settings['allow_fir_only']:
+            return True
+        else:
+            return False
+
+    for trader, trader_info in item.trader_info.items():
+        if user_settings['trader_levels'][trader] >= trader_info.level:
+            if trader_info.barter and not user_settings['flea']:
+                break
+            elif trader_info.quest_locked and not user_settings['allow_quest_locked']:
+                break
+            else:
+                return True
+    return False
+
+
+def check_item(item: eft.Item, user_settings: dict) -> bool:  # Check if an item is obtainable based on user settings
+    if item.category == eft.GUN_MOD or item.category == eft.AMMO:
+        return True
+
+    if item.category == eft.MAP:
+        if item.name == 'The Lab' and not user_settings['flea']:
+            return False
+        else:
+            return True
+
+    if item.unlocked or (item.flea and user_settings['flea']):
+        return True
+
+    if not item.meta and user_settings['meta_only']:
+        return False
+
+    return check_item_traders(item, user_settings)
+
+
+def filter_items(user_settings: dict):
+    filtered_items = {}
+    for category, items in {
+        eft.WEAPON: eft.ALL_WEAPONS,
+        eft.ARMOR_VEST: eft.ALL_ARMOR_VESTS,
+        eft.ARMORED_RIG: eft.ALL_ARMORED_RIGS,
+        eft.RIG: eft.ALL_RIGS,
+        eft.HELMET: eft.ALL_HELMETS,
+        eft.BACKPACK: eft.ALL_BACKPACKS,
+        eft.GUN_MOD: eft.ALL_GUN_MODS,
+        eft.AMMO: eft.ALL_AMMO,
+        eft.MAP: eft.ALL_MAPS
+    }.items():
+        filtered_items[category] = [item for item in items if check_item(item, user_settings)]
+    return filtered_items
+
+
+def roll_items(filtered_items):
+    rolls = [
+        random.choice(filtered_items[eft.WEAPON]),
+        random.choice((filtered_items[eft.ARMOR_VEST] + filtered_items[eft.ARMORED_RIG])),
+        random.choice(filtered_items[eft.HELMET]),
+        random.choice(filtered_items[eft.BACKPACK]),
+        random.choice(eft.ALL_GUN_MODS),
+        random.choice(eft.ALL_AMMO),
+        random.choice(filtered_items[eft.MAP]),
+    ]
+
+    need_rig = rolls[1].category == 'Armor Vest'
+    if need_rig:
+        rolled_rig = random.choice(filtered_items[eft.RIG])
+        rolls.insert(2, rolled_rig)
+    print([i.name for i in rolls])
+
+    return rolls, need_rig
+
+
+def check_random_modifier(random_modifier: eft.GameRule, user_settings: dict) -> bool:
+    if random_modifier.name == 'Use thermal' and not user_settings['roll_thermals']:
+        return False
+    return True
+
+
+def roll_random_modifier(user_settings: dict):
+    filtered_modifiers = [modifier for modifier in eft.ALL_MODIFIERS if check_random_modifier(modifier, user_settings)]
+    return random.choice(filtered_modifiers)
+
+
+async def reveal_roll(ctx, embed_msg: discord.Embed, rolled_item, prefix: str):
+    embed_msg.set_image(url='')
+    embed_msg.add_field(name=f'{prefix}{rolled_item.category}:', value=':grey_question:', inline=False)
+    await ctx.edit(embed=embed_msg, view=None)
+    await asyncio.sleep(1)
+    embed_msg.set_field_at(index=-1, name=f'{prefix}{rolled_item.category}:', value=f'{rolled_item.name}', inline=False)
+    embed_msg.set_image(url=rolled_item.image_url)
+    await ctx.edit(embed=embed_msg, view=None)
+    await asyncio.sleep(1.5)
+
+
+async def reroll(ctx, select, embed_msg, filtered_items):
+    await ctx.edit(embed=embed_msg, view=select)
+    await select.wait()
+    rerolled = None
+    for category in select.value:
+        if category == eft.WEAPON:
+            rerolled = random.choice(filtered_items[eft.WEAPON])
+        elif category == eft.ARMOR_VEST:
+            rerolled = random.choice(filtered_items[eft.ARMOR_VEST])
+        elif category == eft.ARMORED_RIG:
+            rerolled = random.choice(filtered_items[eft.ARMORED_RIG])
+        elif category == eft.RIG:
+            rerolled = random.choice(filtered_items[eft.RIG])
+        elif category == eft.HELMET:
+            rerolled = random.choice(filtered_items[eft.HELMET])
+        elif category == eft.BACKPACK:
+            rerolled = random.choice(filtered_items[eft.BACKPACK])
+        elif category == eft.GUN_MOD:
+            rerolled = random.choice(eft.ALL_GUN_MODS)
+        elif category == eft.AMMO:
+            rerolled = random.choice(eft.ALL_AMMO)
+        elif category == eft.MAP:
+            rerolled = random.choice(eft.ALL_MAPS)
+        print(rerolled.name)
+        if ctx.command.name == 'roll':
+            await reveal_roll(ctx, embed_msg, rerolled, REROLLED_PREFIX)
+        elif ctx.command.name == 'fastroll':
+            embed_msg.add_field(name=f'{REROLLED_PREFIX}{rerolled.category}:', value=f'{rerolled.name}', inline=False)
+
+
 # /roll
-@bot.slash_command(name="roll", description="Loadout Lottery!")
+@bot.slash_command(name='roll', description='Loadout Lottery!')
 @commands.cooldown(1, 20, commands.BucketType.user)
-@option(name="prapor", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="therapist", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="skier", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="peacekeeper", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="mechanic", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="ragman", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="jaeger", description="Enter Prapor's trader level", choices=[0, 1, 2, 3, 4])
-@option(name="flea", description="Do you have access to the flea market?", choices=[True, False])
-@option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False])
-@option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False])
-@option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False])
-async def roll(ctx: discord.ApplicationContext,):
-    embed_msg = discord.Embed(
-        title="🎲 Welcome to Tarkov Loadout Lottery! 🎰",
-        url="https://github.com/x0rtex/TarkovLoadoutLottery",
-        color=ctx.bot.user.color
-    )
-    embed_msg.set_author(
-        name=eft.SUPPORT_SERVER,
-        icon_url=eft.LOADOUT_LOTTERY_ICON,
-        url=eft.DISCORD_SERVER
-    )
+async def roll(ctx: discord.ApplicationContext, ):
+    embed_msg = discord.Embed(title=WELCOME_TEXT, url=GITHUB_URL)
+    embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
     embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
 
     try:
         user_settings = read_settings(ctx.user.id)
     except FileNotFoundError:
-        user_settings = eft.DEFAULT_SETTINGS
+        user_settings = DEFAULT_SETTINGS
 
     # Roll a random selection of items for the user based on their settings
-    rolls = roll_items(user_settings)
-
-    # Message is finally sent
     await ctx.respond(embed=embed_msg)
+    filtered_items = filter_items(user_settings)
+    rolls, need_rig = roll_items(filtered_items)
 
-    # Slowly edits the message to reveal each rolled item
     for rolled_item in rolls:
-        embed_msg.set_image(url="")
-        embed_msg.add_field(name=f"{rolled_item.category}:", value="?", inline=False)
-        await ctx.edit(embed=embed_msg)
+        await reveal_roll(ctx, embed_msg, rolled_item, '')
+
+    # Asks user if they want to roll an optional random modifier
+    embed_msg.set_image(url='')
+    button = RandomModifierButton()
+    await ctx.edit(embed=embed_msg, view=button)
+    await button.wait()
+
+    if button.value:
+        # rolled_random_modifier = roll_random_modifier(user_settings)
+        test_list = [
+            eft.GameRule(name='Re-roll 1 slot', category=eft.RANDOM_MODIFIER, image_url=eft.DICE_IMAGE),
+            eft.GameRule(name='Re-roll 2 slots', category=eft.RANDOM_MODIFIER, image_url=eft.DICE_IMAGE)
+        ]
+        rolled_random_modifier = random.choice(test_list)
         await asyncio.sleep(1)
-        embed_msg.set_field_at(index=-1, name=f"{rolled_item.category}:", value=f"{rolled_item.name}", inline=False)
-        embed_msg.set_image(url=rolled_item.image_url)
-        await ctx.edit(embed=embed_msg)
-        await asyncio.sleep(1.5)
+        await reveal_roll(ctx, embed_msg, rolled_random_modifier, '')
+
+        if rolled_random_modifier.name == 'Re-roll 1 slot':
+            select = RerollOneRig() if need_rig else RerollOneNoRig()
+            await reroll(ctx, select, embed_msg, filtered_items)
+
+        elif rolled_random_modifier.name == 'Re-roll 2 slots':
+            select = RerollTwoRig() if need_rig else RerollTwoNoRig()
+            await reroll(ctx, select, embed_msg, filtered_items)
 
     # End of the command
-    await asyncio.sleep(10)
-    embed_msg.set_image(url="")
+    await asyncio.sleep(5)
+    embed_msg.set_image(url='')
+    embed_msg.set_footer(text='Enjoy!')
     await ctx.edit(embed=embed_msg)
 
 
+# /fastroll
+@bot.slash_command(name='fastroll', description='Loadout Lottery! (Without the waiting around)')
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def roll(ctx: discord.ApplicationContext, ):
+    embed_msg = discord.Embed(title=WELCOME_TEXT, url=GITHUB_URL)
+    embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
+    embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
+
+    try:
+        user_settings = read_settings(ctx.user.id)
+    except FileNotFoundError:
+        user_settings = DEFAULT_SETTINGS
+
+    # Roll a random selection of items for the user based on their settings
+    filtered_items = filter_items(user_settings)
+    rolls, need_rig = roll_items(filtered_items)
+
+    for rolled_item in rolls:
+        embed_msg.add_field(name=f'{rolled_item.category}:', value=f'{rolled_item.name}', inline=False)
+
+    # Asks user if they want to roll an optional random modifier
+    button = RandomModifierButton()
+    await ctx.respond(embed=embed_msg, view=button)
+    await button.wait()
+
+    if button.value:
+        # rolled_random_modifier = roll_random_modifier(user_settings)
+        test_list = [
+            eft.GameRule(name='Re-roll 1 slot', category=eft.RANDOM_MODIFIER, image_url=eft.DICE_IMAGE),
+            eft.GameRule(name='Re-roll 2 slots', category=eft.RANDOM_MODIFIER, image_url=eft.DICE_IMAGE)
+        ]
+        rolled_random_modifier = random.choice(test_list)
+        embed_msg.add_field(name=f'{rolled_random_modifier.category}:', value=f'{rolled_random_modifier.name}', inline=False)
+        await ctx.edit(embed=embed_msg)
+
+        if rolled_random_modifier.name == 'Re-roll 1 slot':
+            select = RerollOneRig() if need_rig else RerollOneNoRig()
+            await reroll(ctx, select, embed_msg, filtered_items)
+        elif rolled_random_modifier.name == 'Re-roll 2 slots':
+            select = RerollTwoRig() if need_rig else RerollTwoNoRig()
+            await reroll(ctx, select, embed_msg, filtered_items)
+
+    # End of the command
+    embed_msg.set_footer(text='Enjoy!')
+    await ctx.edit(embed=embed_msg, view=None)
+
+
 # /settings
-@bot.slash_command(name="settings", description="Customise your Loadout Lottery experience.")
+@bot.slash_command(name='settings', description='Customise your Loadout Lottery experience.')
 @commands.cooldown(1, 10, commands.BucketType.user)
-@option(name="prapor", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="therapist", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="skier", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="peacekeeper", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="mechanic", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="ragman", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
-@option(name="jaeger", description="Enter Prapor's trader level", choices=[0, 1, 2, 3, 4])
-@option(name="flea", description="Do you have access to the flea market?", choices=[True, False])
-@option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False])
-@option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False])
-@option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False])
-@option(name="roll_thermals", description="Be able to roll thermals in optional random modifier?", choices=[True, False])
+@option(name='prapor', description='Enter Prapor\'s trader level', choices=[1, 2, 3, 4])
+@option(name='therapist', description='Enter Prapor\'s trader level', choices=[1, 2, 3, 4])
+@option(name='skier', description='Enter Prapor\'s trader level', choices=[1, 2, 3, 4])
+@option(name='peacekeeper', description='Enter Prapor\'s trader level', choices=[1, 2, 3, 4])
+@option(name='mechanic', description='Enter Prapor\'s trader level', choices=[1, 2, 3, 4])
+@option(name='ragman', description='Enter Prapor\'s trader level', choices=[1, 2, 3, 4])
+@option(name='jaeger', description='Enter Prapor\'s trader level', choices=[0, 1, 2, 3, 4])
+@option(name='flea', description='Do you have access to the flea market?', choices=[True, False])
+@option(name='allow_quest_locked', description='Allow quest locked items to be rolled?', choices=[True, False])
+@option(name='allow_fir_only', description='Allow non-trader flea-banned items to be rolled?', choices=[True, False])
+@option(name='meta_only', description='Only allow meta items to be rolled?', choices=[True, False])
+@option(name='roll_thermals', description='Be able to roll thermal as a random modifier?', choices=[True, False])
 async def settings(
         ctx: discord.ApplicationContext,
         prapor: int,
@@ -221,9 +471,8 @@ async def settings(
         meta_only: bool,
         roll_thermals: bool,
 ):
-
     user_settings = {
-        "trader_levels": {
+        'trader_levels': {
             eft.PRAPOR: prapor,
             eft.THERAPIST: therapist,
             eft.SKIER: skier,
@@ -232,72 +481,65 @@ async def settings(
             eft.RAGMAN: ragman,
             eft.JAEGER: jaeger,
         },
-        "flea": flea,
-        "allow_quest_locked": allow_quest_locked,
-        "allow_fir_only": allow_fir_only,
-        "meta_only": meta_only,
-        "roll_thermals": roll_thermals,
+        'flea': flea,
+        'allow_quest_locked': allow_quest_locked,
+        'allow_fir_only': allow_fir_only,
+        'meta_only': meta_only,
+        'roll_thermals': roll_thermals,
     }
 
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
-    if (user_settings["flea"] is False
-            and (user_settings["trader_levels"][eft.PRAPOR] >= 2
-                 or user_settings["trader_levels"][eft.SKIER] >= 2
-                 or user_settings["trader_levels"][eft.MECHANIC] >= 2
-                 or user_settings["trader_levels"][eft.RAGMAN] >= 2
-                 or user_settings["trader_levels"][eft.JAEGER] >= 2)):
-        user_settings["flea"] = True
+    if (user_settings['flea'] is False
+            and (user_settings['trader_levels'][eft.PRAPOR] >= 2
+                 or user_settings['trader_levels'][eft.SKIER] >= 2
+                 or user_settings['trader_levels'][eft.MECHANIC] >= 2
+                 or user_settings['trader_levels'][eft.RAGMAN] >= 2
+                 or user_settings['trader_levels'][eft.JAEGER] >= 2)):
+        user_settings['flea'] = True
 
-    write_settings(user_settings, ctx.user.id)
+    write_settings(ctx.user.id, user_settings)
 
     embed_msg = view_settings(user_settings, ctx)
-    embed_msg.title = "Your settings have been updated:"
+    embed_msg.title = 'Your settings have been updated:'
     await ctx.respond(embed=embed_msg, ephemeral=True)
 
 
 # /viewsettings
-@bot.slash_command(name="viewsettings", description="View your currently saved Loadout Lottery settings.")
+@bot.slash_command(name='viewsettings', description='View your currently saved Loadout Lottery settings.')
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def viewsettings(ctx: discord.ApplicationContext):
-
     try:
         user_settings = read_settings(ctx.user.id)
     except FileNotFoundError:
-        user_settings = eft.DEFAULT_SETTINGS
-
+        user_settings = DEFAULT_SETTINGS
     embed_msg = view_settings(user_settings, ctx)
-    embed_msg.title = "Your currently saved settings:"
+    embed_msg.title = 'Your currently saved settings:'
     await ctx.respond(embed=embed_msg, ephemeral=True)
 
 
 # /resetsettings
-@bot.slash_command(name="resetsettings", description="Reset your currently saved Loadout Lottery settings to default.")
+@bot.slash_command(name='resetsettings', description='Reset your currently saved Loadout Lottery settings to default.')
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def resetsettings(ctx: discord.ApplicationContext):
-
-    user_settings = eft.DEFAULT_SETTINGS
-
-    write_settings(user_settings, ctx.user.id)
-
-    embed_msg = view_settings(user_settings, ctx)
-    embed_msg.title = "Your settings have been reset to default:"
+    write_settings(ctx.user.id, DEFAULT_SETTINGS)
+    embed_msg = view_settings(DEFAULT_SETTINGS, ctx)
+    embed_msg.title = 'Your settings have been reset to default:'
     await ctx.respond(embed=embed_msg, ephemeral=True)
 
 
 # /ping
-@bot.slash_command(name="ping", description="Check the bot's latency.")
+@bot.slash_command(name='ping', description='Check the bot\'s latency.')
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def ping(ctx: discord.ApplicationContext):
-    await ctx.respond(f":ping_pong: **Ping:** {round(bot.latency * 100, 2)} ms")
+    await ctx.respond(f':ping_pong: **Ping:** {round(bot.latency * 100, 2)} ms')
 
 
 # /stats
-@bot.slash_command(name="stats", description="Displays the bot's statistics")
+@bot.slash_command(name='stats', description='Displays the bot\'s statistics')
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def stats(ctx: discord.ApplicationContext) -> None:
-    embed_msg = discord.Embed(title=":robot: Bot Statistics")
-    embed_msg.set_thumbnail(url="https://i.imgur.com/vCdkZal.png")
-
+    embed_msg = discord.Embed(title=':robot: Bot Statistics')
+    embed_msg.set_thumbnail(url='https://i.imgur.com/vCdkZal.png')
     proc = psutil.Process()
     with proc.oneshot():
         uptime = datetime.timedelta(seconds=time.time() - proc.create_time())
@@ -307,12 +549,12 @@ async def stats(ctx: discord.ApplicationContext) -> None:
         mem_of_total = proc.memory_percent()
         mem_usage = mem_total * (mem_of_total / 100)
     fields = [
-        ("Python version", platform.python_version(), True),
-        ("Pycord version", discord.__version__, True),
-        ("Uptime", uptime, True),
-        ("CPU time", cpu_time, True),
-        ("Memory usage", f"{mem_usage:,.0f} MiB / {mem_total:,.0f} MiB ({mem_of_total:,.0f}%)", True),
-        ("Servers", len(bot.guilds), True)
+        ('Python version', platform.python_version(), True),
+        ('Pycord version', discord.__version__, True),
+        ('Uptime', uptime, True),
+        ('CPU time', cpu_time, True),
+        ('Memory usage', f'{mem_usage:,.0f} MiB / {mem_total:,.0f} MiB ({mem_of_total:,.0f}%)', True),
+        ('Servers', len(bot.guilds), True)
     ]
     for name, value, inline in fields:
         embed_msg.add_field(name=name, value=value, inline=inline)
@@ -324,17 +566,17 @@ async def stats(ctx: discord.ApplicationContext) -> None:
 async def on_application_command_error(ctx: discord.ApplicationContext, error: discord.DiscordException):
     if isinstance(error, commands.CommandOnCooldown):
         await ctx.respond(
-            f":hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.")
+            f':hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.')
     else:
         raise error
 
 
 def run_bot() -> None:
-    if os.name != "nt":  # Use uvloop if using linux
+    if os.name != 'nt':  # Use uvloop if using linux
         import uvloop
         uvloop.install()
     load_dotenv()
-    bot.run(os.getenv("TOKEN"))
+    bot.run(os.getenv('TOKEN'))
 
 
 if __name__ == '__main__':
