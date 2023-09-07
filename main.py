@@ -23,8 +23,7 @@ handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w'
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
-debug_guilds = [1052251792798404719]
-bot = commands.Bot(debug_guilds=debug_guilds, help_command=commands.DefaultHelpCommand())
+bot = commands.Bot(help_command=commands.DefaultHelpCommand())
 
 
 # Bot startup message
