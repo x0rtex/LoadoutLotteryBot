@@ -3246,19 +3246,19 @@ OK_MODIFIERS = (
     GameRule(
         name="Use highest flesh damage round available",
         category=RANDOM_MODIFIER,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/.45_RIP_View.png/revision/latest/scale-to-width-down/211?cb=20200508230152",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/.45_RIP_View.png/revision/latest?cb=20200508230152",
         meta=True,
     ),
     GameRule(
         name="Use highest penetration round available",
         category=RANDOM_MODIFIER,
-        image_url="https://i.imgur.com/l2Zb9aH.png",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f0/338ap.png/revision/latest/scale-to-width-down/320?cb=20210102070935",
         meta=True,
     ),
     GameRule(
         name="Use thermal scope",
         category=RANDOM_MODIFIER,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f0/FLIR_RS-32.png/revision/latest/scale-to-width-down/320?cb=20191029134010",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/Sig_ECHO1_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064714",
         meta=True,
     ),
 )
