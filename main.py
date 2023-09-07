@@ -440,6 +440,7 @@ async def roll(ctx: discord.ApplicationContext) -> None:
             value=f'{rolled_random_modifier.name}',
             inline=False
         )
+        await asyncio.sleep(1)
         await ctx.edit(embed=embed_msg)
 
         # Check if random modifier requires further action
