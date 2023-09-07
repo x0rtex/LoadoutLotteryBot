@@ -70,12 +70,12 @@ class RandomModifierButton(discord.ui.View):
         self.value: bool = False
 
     @discord.ui.button(label='Roll Random Modifier', style=discord.ButtonStyle.green, custom_id='persistent_view:roll')
-    async def button_callback_yes(self, _, interaction: discord.Interaction):
+    async def button_callback_yes(self, _, __):
         self.value: bool = True
         self.stop()
 
     @discord.ui.button(label='Finish', style=discord.ButtonStyle.grey, custom_id='persistent_view:no-roll')
-    async def button_callback_no(self, _, interaction: discord.Interaction):
+    async def button_callback_no(self, _, __):
         self.stop()
 
 
@@ -257,7 +257,6 @@ def check_item(item: eft.Item, user_settings: dict) -> bool:
 def filter_items(user_settings: dict) -> dict[str, list]:
 
     filtered_items = {}
-
     for category, items in {
         eft.WEAPON: eft.ALL_WEAPONS,
         eft.ARMOR_VEST: eft.ALL_ARMOR_VESTS,
