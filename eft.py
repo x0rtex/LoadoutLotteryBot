@@ -3347,7 +3347,13 @@ BAD_MODIFIERS = (
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6a/X400image.png/revision/latest/scale-to-width-down/320?cb=20190628034042",
         meta=False,
-    )
+    ),
+    GameRule(
+        name="Use helmet flashlight and keep it always turned on",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/tbmab5X.png",
+        meta=False,
+    ),
 )
 
 ALL_MODIFIERS = (GOOD_MODIFIERS, OK_MODIFIERS, BAD_MODIFIERS)
