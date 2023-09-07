@@ -100,7 +100,7 @@ class RerollOneSlotWithRig(discord.ui.View):
             discord.SelectOption(label=eft.MAP, emoji='🗺️'),
         ]
     )
-    async def select_callback(self, select: discord.ui.Select):
+    async def select_callback(self, select, _):
         self.value = [select.values[0]]
         self.stop()
 
@@ -125,7 +125,7 @@ class RerollOneSlotNoRig(discord.ui.View):
             discord.SelectOption(label=eft.MAP, emoji='🗺️'),
         ]
     )
-    async def select_callback(self, select: discord.ui.Select):
+    async def select_callback(self, select, _):
         self.value = [select.values[0]]
         self.stop()
 
@@ -151,7 +151,7 @@ class RerollTwoSlotsWithRig(discord.ui.View):
             discord.SelectOption(label=eft.MAP, emoji='🗺️'),
         ]
     )
-    async def select_callback(self, select: discord.ui.Select):
+    async def select_callback(self, select, _):
         self.value = select.values
         self.stop()
 
@@ -176,7 +176,7 @@ class RerollTwoSlotsNoRig(discord.ui.View):
             discord.SelectOption(label=eft.MAP, emoji='🗺️'),
         ]
     )
-    async def select_callback(self, select: discord.ui.Select):
+    async def select_callback(self, select, _):
         self.value = select.values
         self.stop()
 
