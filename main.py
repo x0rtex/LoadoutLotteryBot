@@ -73,12 +73,10 @@ class RandomModifierButton(discord.ui.View):
     async def button_callback_yes(self, _, interaction: discord.Interaction):
         self.value: bool = True
         self.stop()
-        await interaction.response.edit_message(view=None)
 
     @discord.ui.button(label='Finish', style=discord.ButtonStyle.grey, custom_id='persistent_view:no-roll')
     async def button_callback_no(self, _, interaction: discord.Interaction):
         self.stop()
-        await interaction.response.edit_message(view=None)
 
 
 class RerollOneSlotWithRig(discord.ui.View):
@@ -314,7 +312,10 @@ def check_random_modifier(random_modifier: eft.GameRule, user_settings: dict) ->
 async def reveal_roll(ctx, embed_msg: discord.Embed, rolled_item, prefix: str) -> None:
     embed_msg.set_image(url='')
     embed_msg.add_field(name=f'{prefix}{rolled_item.category}:', value=':grey_question:', inline=False)
-    await ctx.edit(embed=embed_msg, view=None)
+    if not ctx.response.is_done():
+        await ctx.respond(embed=embed_msg)
+    else:
+        await ctx.edit(embed=embed_msg, view=None)
     await asyncio.sleep(1)
     embed_msg.set_field_at(index=-1, name=f'{prefix}{rolled_item.category}:', value=f'{rolled_item.name}', inline=False)
     embed_msg.set_image(url=rolled_item.image_url)
@@ -381,7 +382,6 @@ async def roll(ctx: discord.ApplicationContext) -> None:
     embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
 
     # Roll a random selection of items for the user based on their settings
-    await ctx.respond(embed=embed_msg)
     filtered_items = filter_items(user_settings)
     rolls, need_rig = roll_items(filtered_items)
 
@@ -407,7 +407,7 @@ async def roll(ctx: discord.ApplicationContext) -> None:
     await asyncio.sleep(5)
     embed_msg.set_image(url='')
     embed_msg.set_footer(text='Enjoy!')
-    await ctx.edit(embed=embed_msg)
+    await ctx.edit(embed=embed_msg, view=None)
 
 
 # /fastroll
@@ -440,14 +440,11 @@ async def roll(ctx: discord.ApplicationContext) -> None:
             value=f'{rolled_random_modifier.name}',
             inline=False
         )
-        await asyncio.sleep(1)
-        await ctx.edit(embed=embed_msg)
 
         # Check if random modifier requires further action
         await is_random_modifier_special(rolled_random_modifier, need_rig, ctx, embed_msg, filtered_items)
 
     # End of the command
-    await asyncio.sleep(1)
     embed_msg.set_footer(text='Enjoy!')
     await ctx.edit(embed=embed_msg, view=None)
 
