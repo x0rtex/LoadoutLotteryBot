@@ -3151,30 +3151,6 @@ ALL_MAPS = (
 
 GOOD_MODIFIERS = (
     GameRule(
-        name="Weapon of your choice",
-        category=RANDOM_MODIFIER,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
-        meta=True,
-    ),
-    GameRule(
-        name="Helmet of your choice",
-        category=RANDOM_MODIFIER,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/14/Skill_mental_perception.png/revision/latest/scale-to-width-down/70?cb=20170329164851",
-        meta=True,
-    ),
-    GameRule(
-        name="Backpack of your choice",
-        category=RANDOM_MODIFIER,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/63/Skill_physical_endurance.png/revision/latest/scale-to-width-down/70?cb=20170329164840",
-        meta=True,
-    ),
-    GameRule(
-        name="Map of your choice",
-        category=RANDOM_MODIFIER,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/43/Map.png/revision/latest/scale-to-width-down/662?cb=20220102134631",
-        meta=True,
-    ),
-    GameRule(
         name="Ask your scav for some loot",
         category=RANDOM_MODIFIER,
         image_url="https://pbs.twimg.com/media/DlXnlRvXoAAhOv2.jpg",
