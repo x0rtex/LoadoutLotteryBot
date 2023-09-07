@@ -3018,37 +3018,43 @@ ALL_BACKPACKS = (
 
 
 class GameRule:
-    def __init__(self, name: str, category: str, image_url: str):
+    def __init__(self, name: str, category: str, image_url: str, meta: bool):
         self.name = name
         self.category = category
         self.image_url = image_url
+        self.meta = meta
 
 
 ALL_GUN_MODS = (
     GameRule(
         name=LL1_TRADERS,
         category=GUN_MOD,
-        image_url=LL1_TRADERS_IMAGE
+        image_url=LL1_TRADERS_IMAGE,
+        meta=False,
     ),
     GameRule(
         name=LL2_TRADERS,
         category=GUN_MOD,
-        image_url=LL2_TRADERS_IMAGE
+        image_url=LL2_TRADERS_IMAGE,
+        meta=False,
     ),
     GameRule(
         name=LL3_TRADERS,
         category=GUN_MOD,
-        image_url=LL3_TRADERS_IMAGE
+        image_url=LL3_TRADERS_IMAGE,
+        meta=False,
     ),
     GameRule(
         name=LL4_TRADERS,
         category=GUN_MOD,
-        image_url=LL4_TRADERS_IMAGE
+        image_url=LL4_TRADERS_IMAGE,
+        meta=False,
     ),
     GameRule(
         name=NO_RESTRICTIONS,
         category=GUN_MOD,
-        image_url=NO_RESTRICTIONS_IMAGE
+        image_url=NO_RESTRICTIONS_IMAGE,
+        meta=True,
     )
 )
 
@@ -3056,76 +3062,90 @@ ALL_AMMO = (
     GameRule(
         name=LL1_TRADERS,
         category=AMMO,
-        image_url=LL1_TRADERS_IMAGE
+        image_url=LL1_TRADERS_IMAGE,
+        meta=False,
     ),
     GameRule(
         name=LL2_TRADERS,
         category=AMMO,
-        image_url=LL2_TRADERS_IMAGE
+        image_url=LL2_TRADERS_IMAGE,
+        meta=False,
     ),
     GameRule(
         name=LL3_TRADERS,
         category=AMMO,
-        image_url=LL3_TRADERS_IMAGE
+        image_url=LL3_TRADERS_IMAGE,
+        meta=False,
     ),
     GameRule(
         name=LL4_TRADERS,
         category=AMMO,
-        image_url=LL4_TRADERS_IMAGE
+        image_url=LL4_TRADERS_IMAGE,
+        meta=False,
     ),
     GameRule(
         name=NO_RESTRICTIONS,
         category=AMMO,
-        image_url=NO_RESTRICTIONS_IMAGE
+        image_url=NO_RESTRICTIONS_IMAGE,
+        meta=True,
     )
 )
 
 ALL_MAPS = (
-    GameRule(name="YOUR CHOICE", category=MAP, image_url=YOU_CHOOSE_IMAGE),
+    GameRule(name="YOUR CHOICE", category=MAP, image_url=YOU_CHOOSE_IMAGE, meta=True,),
     GameRule(
         name="Factory",
         category=MAP,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Factory-Day_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811153020",
+        meta=True,
     ),
     GameRule(
         name="Woods",
         category=MAP,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_woods.png/revision/latest/scale-to-width-down/382?cb=20171101223132",
+        meta=True,
     ),
     GameRule(
         name="Customs",
         category=MAP,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9f/Customs_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811151055",
+        meta=True,
     ),
     GameRule(
         name="Interchange",
         category=MAP,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_interchange.png/revision/latest/scale-to-width-down/382?cb=20200811153253",
+        meta=True,
     ),
     GameRule(
         name="Shoreline",
         category=MAP,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/Banner_shoreline.png/revision/latest/scale-to-width-down/382?cb=20171101223501",
+        meta=True,
     ),
     GameRule(
         name="Reserve",
         category=MAP,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f4/Reserve.png/revision/latest/scale-to-width-down/382?cb=20191101214624",
+        meta=True,
     ),
     GameRule(
         name="The Lab",
         category=MAP,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/TheLabBanner.png/revision/latest/scale-to-width-down/382?cb=20181225171705",
+        meta=True,
     ),
     GameRule(
         name="Lighthouse",
         category=MAP,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/dc/Banner_lighthouse.png/revision/latest/scale-to-width-down/382?cb=20211213001748",
+        meta=True,
     ),
     GameRule(
         name="Streets of Tarkov",
         category=MAP,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/41/Banner_streets.png/revision/latest/scale-to-width-down/382?cb=20230131205551",
+        meta=True,
     ),
 )
 
@@ -3134,51 +3154,61 @@ GOOD_MODIFIERS = (
         name="Weapon of your choice",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/Skill_special_bear_aksystems.png/revision/latest/scale-to-width-down/70?cb=20170329164605",
+        meta=True,
     ),
     GameRule(
         name="Helmet of your choice",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/14/Skill_mental_perception.png/revision/latest/scale-to-width-down/70?cb=20170329164851",
+        meta=True,
     ),
     GameRule(
         name="Backpack of your choice",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/63/Skill_physical_endurance.png/revision/latest/scale-to-width-down/70?cb=20170329164840",
+        meta=True,
     ),
     GameRule(
         name="Map of your choice",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/43/Map.png/revision/latest/scale-to-width-down/662?cb=20220102134631",
+        meta=True,
     ),
     GameRule(
         name="Ask your scav for some loot",
         category=RANDOM_MODIFIER,
         image_url="https://pbs.twimg.com/media/DlXnlRvXoAAhOv2.jpg",
+        meta=True,
     ),
     GameRule(
         name="Pop any 3 stimulants at start of raid",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/lYmpWWL.png",
+        meta=True,
     ),
     GameRule(
         name="Pistol secondary",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/pIIl7j1.png",
+        meta=True,
     ),
     GameRule(
         name="Impact grenades only",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/RGN_View.png/revision/latest?cb=20211212210251",
+        meta=True,
     ),
     GameRule(
         name="Re-roll 1 slot",
         category=RANDOM_MODIFIER,
         image_url=DICE_IMAGE,
+        meta=True,
     ),
     GameRule(
         name="Re-roll 2 slots",
         category=RANDOM_MODIFIER,
         image_url=DICE_IMAGE,
+        meta=True,
     ),
 )
 
@@ -3187,46 +3217,49 @@ OK_MODIFIERS = (
         name="Use highest capacity magazine",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/MAG5-100.png/revision/latest/scale-to-width-down/1200?cb=20190414152250",
+        meta=True,
     ),
     GameRule(
         name="Attempt to befriend one random player",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/i3KRTCc.png",
+        meta=True,
     ),
     GameRule(
         name="Night raid (NVG if applicable)",
         category=RANDOM_MODIFIER,
         image_url="https://i.redd.it/juv50kmkgm941.png",
+        meta=True,
     ),
     GameRule(
         name="Flash grenades only",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fc/Model_7290_Flash_Bang.png/revision/latest?cb=20211212182627",
+        meta=True,
     ),
     GameRule(
         name="M67 Hand grenades only",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e2/M67.png/revision/latest/scale-to-width-down/320?cb=20200216033043",
+        meta=True,
     ),
     GameRule(
         name="Use highest flesh damage round available",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/.45_RIP_View.png/revision/latest/scale-to-width-down/211?cb=20200508230152",
+        meta=True,
     ),
     GameRule(
         name="Use highest penetration round available",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/l2Zb9aH.png",
-    ),
-    GameRule(
-        name="Have 800m+ sighting range",
-        category=RANDOM_MODIFIER,
-        image_url="https://www.bestgamingsettings.com/wp-content/uploads/2020/02/EscapeFromTarkovSniping1.jpg",
+        meta=True,
     ),
     GameRule(
         name="Use thermal scope",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f0/FLIR_RS-32.png/revision/latest/scale-to-width-down/320?cb=20191029134010",
+        meta=True,
     ),
 )
 
@@ -3235,71 +3268,85 @@ BAD_MODIFIERS = (
         name="Only smoke grenades",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/M18_Green_View.png/revision/latest?cb=20211212211007",
+        meta=False,
     ),
     GameRule(
         name="No suppressors",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/Otrn9Xc.png",
+        meta=False,
     ),
     GameRule(
         name="No insurance",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/E5xueS0.png",
+        meta=False,
     ),
     GameRule(
         name="Iron sights only",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4f/Kriss_FlipupRear_View.png/revision/latest/scale-to-width-down/320?cb=20201224175245",
+        meta=False,
     ),
     GameRule(
         name="Hip fire only (unbind aim)",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/xh2Z6eT.jpg",
+        meta=False,
     ),
     GameRule(
         name="No surgery kits",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/ZLf9udj.png",
+        meta=False,
     ),
     GameRule(
         name="No docs/sicc/keytool/keycard holder",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/5Rusxe3.png",
+        meta=False,
     ),
     GameRule(
         name="Weapon must be stock",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/j3RShdo.png",
+        meta=False,
     ),
     GameRule(
         name="Single-fire only",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/yhRZB5H.png",
+        meta=False,
     ),
     GameRule(
         name="Hatchlings must be fought with a melee",
         category=RANDOM_MODIFIER,
         image_url="https://academyoffencingmasters.com/blog/wp-content/uploads/2017/02/Valentine%E2%80%99s-Day-Love-and-Swordfighting-Duels.jpg",
+        meta=True,
     ),
     GameRule(
         name="No headphones",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/FOrgqJm.png",
+        meta=False,
     ),
     GameRule(
         name="Level 1 Meds",
         category=RANDOM_MODIFIER,
         image_url=LL1_TRADERS_IMAGE,
+        meta=False,
     ),
     GameRule(
         name="No grenades",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/8d22sUW.png",
+        meta=False,
     ),
     GameRule(
         name="Flashlight always on",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6a/X400image.png/revision/latest/scale-to-width-down/320?cb=20190628034042",
+        meta=False,
     )
 )
 
