@@ -447,6 +447,7 @@ async def roll(ctx: discord.ApplicationContext) -> None:
         await is_random_modifier_special(rolled_random_modifier, need_rig, ctx, embed_msg, filtered_items)
 
     # End of the command
+    await asyncio.sleep(1)
     embed_msg.set_footer(text='Enjoy!')
     await ctx.edit(embed=embed_msg, view=None)
 
