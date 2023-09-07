@@ -782,7 +782,7 @@ ALL_WEAPONS = (
         },
     ),
     Item(
-        name="Baikal MP-43-1C 12ga",
+        name="Baikal MP-43-1C 12ga double-barrel",
         category=SHOTGUN,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MP-43-1C_12ga_double-barrel_shotgun.jpg/revision/latest/scale-to-width-down/180?cb=20211213051714",
         unlocked=True,
@@ -790,6 +790,17 @@ ALL_WEAPONS = (
         flea=True,
         trader_info={
             JAEGER: TraderInfo(level=1, quest_locked=False, barter=False),
+        },
+    ),
+    Item(
+        name="MP-43 12ga sawed-off double-barrel",
+        category=SHOTGUN,
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/60/MP-43_Sawed_Off_Image.png/revision/latest/scale-to-width-down/320?cb=20230822003753",
+        unlocked=False,
+        meta=False,
+        flea=True,
+        trader_info={
+            JAEGER: TraderInfo(level=2, quest_locked=False, barter=False),
         },
     ),
     Item(
@@ -3092,7 +3103,7 @@ ALL_AMMO = (
 )
 
 ALL_MAPS = (
-    GameRule(name="YOUR CHOICE", category=MAP, image_url=YOU_CHOOSE_IMAGE, meta=True,),
+    GameRule(name="YOUR CHOICE", category=MAP, image_url=YOU_CHOOSE_IMAGE, meta=True, ),
     GameRule(
         name="Factory",
         category=MAP,
@@ -3186,6 +3197,12 @@ GOOD_MODIFIERS = (
         image_url=DICE_IMAGE,
         meta=True,
     ),
+    GameRule(
+        name="Carry at least 4 grenades, and use them liberally during the raid",
+        category=RANDOM_MODIFIER,
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7d/Vog25.png/revision/latest?cb=20200316073837",
+        meta=True,
+    ),
 )
 
 OK_MODIFIERS = (
@@ -3236,6 +3253,18 @@ OK_MODIFIERS = (
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/Sig_ECHO1_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064714",
         meta=True,
+    ),
+    GameRule(
+        name="Swap weapons with a teammate at the start of the raid",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/scq6eWt.png",
+        meta=False,
+    ),
+    GameRule(
+        name="Attempt to dress up as a scav",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/yJcVKMJ.png",
+        meta=False,
     ),
 )
 
@@ -3328,6 +3357,48 @@ BAD_MODIFIERS = (
         name="Use helmet flashlight and keep it always turned on",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/tbmab5X.png",
+        meta=False,
+    ),
+    GameRule(
+        name="Only use stimulants for healing",
+        category=RANDOM_MODIFIER,
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/72/ETG_change.png/revision/latest?cb=20181228104842",
+        meta=False,
+    ),
+    GameRule(
+        name="Must attempt to extract camp one player",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/uMBkzX3.png",
+        meta=False,
+    ),
+    GameRule(
+        name="Scavs must be killed with a sawed-off double barrel as secondary",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/uMBkzX3.png",
+        meta=False,
+    ),
+    GameRule(
+        name="Must use \"Scav Down\" voice line every time you kill a scav",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/IrlJOQL.png",
+        meta=False,
+    ),
+    GameRule(
+        name="Must swap backpacks with teammate at the end of the raid (including the loot inside)",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/PB7E1Gf.jpeg",
+        meta=False,
+    ),
+    GameRule(
+        name="Fire your weapon into the air to signal your presence at the beginning of the raids",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/GcpDk0I.png",
+        meta=False,
+    ),
+    GameRule(
+        name="Change your interface language to Русский for the true Tarkovian experience",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/xjUtGIM.png",
         meta=False,
     ),
 )
