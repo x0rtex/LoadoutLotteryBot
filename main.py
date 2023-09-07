@@ -44,6 +44,8 @@ LOADOUT_LOTTERY_ICON: str = 'https://i.imgur.com/tqtPhBA.png'
 GITHUB_URL: str = 'https://github.com/x0rtex/TarkovLoadoutLottery'
 WELCOME_TEXT: str = '🎲 Welcome to Loadout Lottery! 🎰'
 WELCOME_TEXT_META: str = '🎲 Welcome to META Loadout Lottery! 🎰'
+REROLL_ONE: str = 'Re-roll 1 slot'
+REROLL_TWO: str = 'Re-roll 2 slots'
 DEFAULT_SETTINGS: dict = {
     'flea': True,
     'allow_quest_locked': True,
@@ -86,7 +88,7 @@ class RerollOneSlotWithRig(discord.ui.View):
 
     @discord.ui.select(
         custom_id='persistent_view:reroll-one-rig',
-        placeholder='Re-roll 1 slot',
+        placeholder=REROLL_ONE,
         min_values=1,
         max_values=1,
         options=[
@@ -112,7 +114,7 @@ class RerollOneSlotNoRig(discord.ui.View):
 
     @discord.ui.select(
         custom_id='persistent_view:reroll-one-norig',
-        placeholder='Re-roll 1 slot',
+        placeholder=REROLL_ONE,
         min_values=1,
         max_values=1,
         options=[
@@ -137,7 +139,7 @@ class RerollTwoSlotsWithRig(discord.ui.View):
 
     @discord.ui.select(
         custom_id='persistent_view:reroll-two-rig',
-        placeholder='Re-roll 2 slots',
+        placeholder=REROLL_TWO,
         min_values=2,
         max_values=2,
         options=[
@@ -163,7 +165,7 @@ class RerollTwoSlotsNoRig(discord.ui.View):
 
     @discord.ui.select(
         custom_id='persistent_view:reroll-two-norig',
-        placeholder='Re-roll 2 slots',
+        placeholder=REROLL_TWO,
         min_values=2,
         max_values=2,
         options=[
@@ -324,11 +326,11 @@ async def is_random_modifier_special(
         embed_msg,
         filtered_items: dict[str, list]
 ) -> None:
-    if rolled_random_modifier.name == 'Re-roll 1 slot':
+    if rolled_random_modifier.name == REROLL_ONE:
         select = RerollOneSlotWithRig() if need_rig else RerollOneSlotNoRig()
         await reroll(ctx, select, embed_msg, filtered_items)
 
-    elif rolled_random_modifier.name == 'Re-roll 2 slots':
+    elif rolled_random_modifier.name == REROLL_TWO:
         select = RerollTwoSlotsWithRig() if need_rig else RerollTwoSlotsNoRig()
         await reroll(ctx, select, embed_msg, filtered_items)
 
