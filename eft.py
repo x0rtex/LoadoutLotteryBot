@@ -1,6 +1,6 @@
 from typing import Optional, Literal, NamedTuple
 
-ASSAULT_CARBINE: str = " Assault Carbine"
+ASSAULT_CARBINE: str = "Assault Carbine"
 ASSAULT_RIFLE: str = "Assault Rifle"
 SNIPER_RIFLE: str = "Bolt-Action Rifle"
 MACHINE_GUN: str = "Machine Gun"
@@ -60,8 +60,7 @@ class Item:
                  unlocked: bool,  # Whether an item should be forced to be roll-able
                  meta: bool,  # Whether an item is considered 'meta' or not
                  flea: bool,  # Whether an item is obtainable from the flea market or not
-                 trader_info: Optional[dict[str, TraderInfo]],
-                 # Dict because item can be obtained from multiple traders
+                 trader_info: Optional[dict[str, TraderInfo]],  # Item can be obtained from multiple traders
                  ) -> None:
         self.name = name
         self.category = category
@@ -3028,7 +3027,7 @@ ALL_BACKPACKS = (
 )
 
 
-class GameRule:
+class TraderModifier:
     def __init__(self, name: str, category: str, image_url: str, meta: bool):
         self.name = name
         self.category = category
@@ -3037,31 +3036,31 @@ class GameRule:
 
 
 ALL_GUN_MODS = (
-    GameRule(
+    TraderModifier(
         name=LL1_TRADERS,
         category=GUN_MOD,
         image_url=LL1_TRADERS_IMAGE,
         meta=False,
     ),
-    GameRule(
+    TraderModifier(
         name=LL2_TRADERS,
         category=GUN_MOD,
         image_url=LL2_TRADERS_IMAGE,
         meta=False,
     ),
-    GameRule(
+    TraderModifier(
         name=LL3_TRADERS,
         category=GUN_MOD,
         image_url=LL3_TRADERS_IMAGE,
         meta=False,
     ),
-    GameRule(
+    TraderModifier(
         name=LL4_TRADERS,
         category=GUN_MOD,
         image_url=LL4_TRADERS_IMAGE,
         meta=False,
     ),
-    GameRule(
+    TraderModifier(
         name=NO_RESTRICTIONS,
         category=GUN_MOD,
         image_url=NO_RESTRICTIONS_IMAGE,
@@ -3070,37 +3069,46 @@ ALL_GUN_MODS = (
 )
 
 ALL_AMMO = (
-    GameRule(
+    TraderModifier(
         name=LL1_TRADERS,
         category=AMMO,
         image_url=LL1_TRADERS_IMAGE,
         meta=False,
     ),
-    GameRule(
+    TraderModifier(
         name=LL2_TRADERS,
         category=AMMO,
         image_url=LL2_TRADERS_IMAGE,
         meta=False,
     ),
-    GameRule(
+    TraderModifier(
         name=LL3_TRADERS,
         category=AMMO,
         image_url=LL3_TRADERS_IMAGE,
         meta=False,
     ),
-    GameRule(
+    TraderModifier(
         name=LL4_TRADERS,
         category=AMMO,
         image_url=LL4_TRADERS_IMAGE,
         meta=False,
     ),
-    GameRule(
+    TraderModifier(
         name=NO_RESTRICTIONS,
         category=AMMO,
         image_url=NO_RESTRICTIONS_IMAGE,
         meta=True,
     )
 )
+
+
+class GameRule:
+    def __init__(self, name: str, category: str, image_url: str, meta: bool):
+        self.name = name
+        self.category = category
+        self.image_url = image_url
+        self.meta = meta
+
 
 ALL_MAPS = (
     GameRule(name="YOUR CHOICE", category=MAP, image_url=YOU_CHOOSE_IMAGE, meta=True, ),
