@@ -6,7 +6,6 @@ import platform
 import random
 import time
 import tomllib
-
 import discord
 import psutil
 import tomli_w
