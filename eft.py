@@ -3027,7 +3027,7 @@ ALL_BACKPACKS = (
 )
 
 
-class TraderModifier:
+class GameRule:
     def __init__(self, name: str, category: str, image_url: str, meta: bool):
         self.name = name
         self.category = category
@@ -3036,31 +3036,31 @@ class TraderModifier:
 
 
 ALL_GUN_MODS = (
-    TraderModifier(
+    GameRule(
         name=LL1_TRADERS,
         category=GUN_MOD,
         image_url=LL1_TRADERS_IMAGE,
         meta=False,
     ),
-    TraderModifier(
+    GameRule(
         name=LL2_TRADERS,
         category=GUN_MOD,
         image_url=LL2_TRADERS_IMAGE,
         meta=False,
     ),
-    TraderModifier(
+    GameRule(
         name=LL3_TRADERS,
         category=GUN_MOD,
         image_url=LL3_TRADERS_IMAGE,
         meta=False,
     ),
-    TraderModifier(
+    GameRule(
         name=LL4_TRADERS,
         category=GUN_MOD,
         image_url=LL4_TRADERS_IMAGE,
         meta=False,
     ),
-    TraderModifier(
+    GameRule(
         name=NO_RESTRICTIONS,
         category=GUN_MOD,
         image_url=NO_RESTRICTIONS_IMAGE,
@@ -3069,45 +3069,37 @@ ALL_GUN_MODS = (
 )
 
 ALL_AMMO = (
-    TraderModifier(
+    GameRule(
         name=LL1_TRADERS,
         category=AMMO,
         image_url=LL1_TRADERS_IMAGE,
         meta=False,
     ),
-    TraderModifier(
+    GameRule(
         name=LL2_TRADERS,
         category=AMMO,
         image_url=LL2_TRADERS_IMAGE,
         meta=False,
     ),
-    TraderModifier(
+    GameRule(
         name=LL3_TRADERS,
         category=AMMO,
         image_url=LL3_TRADERS_IMAGE,
         meta=False,
     ),
-    TraderModifier(
+    GameRule(
         name=LL4_TRADERS,
         category=AMMO,
         image_url=LL4_TRADERS_IMAGE,
         meta=False,
     ),
-    TraderModifier(
+    GameRule(
         name=NO_RESTRICTIONS,
         category=AMMO,
         image_url=NO_RESTRICTIONS_IMAGE,
         meta=True,
     )
 )
-
-
-class GameRule:
-    def __init__(self, name: str, category: str, image_url: str, meta: bool):
-        self.name = name
-        self.category = category
-        self.image_url = image_url
-        self.meta = meta
 
 
 ALL_MAPS = (
