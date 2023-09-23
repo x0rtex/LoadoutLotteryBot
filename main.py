@@ -3,6 +3,7 @@ import datetime
 import logging
 import os
 import platform
+import pprint
 import random
 import time
 import tomllib
@@ -278,9 +279,14 @@ def roll_random_modifier(user_settings: dict) -> eft.GameRule:
 
 
 def check_trader_modifier(trader_modifier: eft.GameRule, user_settings: dict) -> bool:
-    for level in range(1, 5):
+    if trader_modifier.name == eft.NO_RESTRICTIONS and not user_settings["flea"]:
+        return False
+
+    for level in range(2, 5):
         if trader_modifier.name == getattr(eft, f"LL{level}_TRADERS"):
             return all(trader_level >= level for trader_level in user_settings["trader_levels"].values())
+
+    return True
 
 
 def check_gamerule(gamerule: eft.GameRule, user_settings: dict) -> bool:
@@ -293,8 +299,7 @@ def check_gamerule(gamerule: eft.GameRule, user_settings: dict) -> bool:
     if not user_settings["roll_thermals"] and gamerule.name == "Use thermal":
         return False
 
-    else:
-        return True
+    return True
 
 
 async def reveal_roll(ctx, embed_msg: discord.Embed, rolled_item, prefix: str) -> None:
@@ -361,16 +366,16 @@ def create_embed(ctx: discord.ApplicationContext, user_settings: dict) -> discor
 
 
 def print_command_timestamp(ctx):
-    print(f"{time.ctime(time.time())} - {ctx.command.name}")
+    print(f"*️⃣️ {time.ctime(time.time())} *️⃣️ /{ctx.command.name} *️⃣")
 
 
 # /roll
 @bot.slash_command(name="roll", description="Loadout Lottery!")
-@commands.cooldown(1, 20, commands.BucketType.user)
+@commands.cooldown(1, 20, commands.BucketType.channel)
 async def roll(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
-
     user_settings = read_user_settings(ctx.user.id)
+
     embed_msg = create_embed(ctx, user_settings)
     filtered_items, rolls, need_rig = roll_items(user_settings)
 
@@ -382,13 +387,7 @@ async def roll(ctx: discord.ApplicationContext) -> None:
     await ctx.edit(embed=embed_msg, view=button)
     await button.wait()
     if button.value:
-        # rolled_random_modifier = roll_random_modifier(user_settings)
-        rolled_random_modifier = eft.GameRule(  # temp
-            name=REROLL_ONE,
-            category=eft.RANDOM_MODIFIER,
-            image_url=eft.DICE_IMAGE,
-            meta=True,
-        )
+        rolled_random_modifier = roll_random_modifier(user_settings)
         await asyncio.sleep(1)
         await reveal_roll(ctx, embed_msg, rolled_random_modifier, "")
 
@@ -406,8 +405,8 @@ async def roll(ctx: discord.ApplicationContext) -> None:
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def fastroll(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
-
     user_settings = read_user_settings(ctx.user.id)
+
     embed_msg = create_embed(ctx, user_settings)
     filtered_items, rolls, need_rig = roll_items(user_settings)
 
@@ -418,14 +417,7 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
     await ctx.respond(embed=embed_msg, view=button)
     await button.wait()
     if button.value:
-        # rolled_random_modifier = roll_random_modifier(user_settings)
-        rolled_random_modifier = eft.GameRule(
-            name=REROLL_ONE,
-            category=eft.RANDOM_MODIFIER,
-            image_url=eft.DICE_IMAGE,
-            meta=True,
-        )
-
+        rolled_random_modifier = roll_random_modifier(user_settings)
         embed_msg.add_field(
             name=f"{rolled_random_modifier.category}:",
             value=f"{rolled_random_modifier.name}",
@@ -487,6 +479,7 @@ async def settings(
         "roll_thermals": roll_thermals,
     }
 
+
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
     if user_settings["flea"] is False and (
         user_settings["trader_levels"][eft.PRAPOR] >= 2
@@ -496,6 +489,7 @@ async def settings(
         or user_settings["trader_levels"][eft.JAEGER] >= 2
     ):
         user_settings["flea"] = True
+        print("user_settings[\"flea\"] = True")
 
     write_user_settings(ctx.user.id, user_settings)
 
@@ -515,6 +509,7 @@ async def viewsettings(ctx: discord.ApplicationContext) -> None:
     except FileNotFoundError:
         user_settings = DEFAULT_SETTINGS
 
+
     embed_msg = show_user_settings(user_settings, ctx)
     embed_msg.title = "Your currently saved settings:"
     await ctx.respond(embed=embed_msg, ephemeral=True)
@@ -525,7 +520,6 @@ async def viewsettings(ctx: discord.ApplicationContext) -> None:
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def resetsettings(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
-
     write_user_settings(ctx.user.id, DEFAULT_SETTINGS)
     embed_msg = show_user_settings(DEFAULT_SETTINGS, ctx)
     embed_msg.title = "Your settings have been reset to default:"
@@ -537,7 +531,6 @@ async def resetsettings(ctx: discord.ApplicationContext) -> None:
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def ping(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
-
     await ctx.respond(f":ping_pong: **Ping:** {round(bot.latency * 100, 2)} ms")
 
 
