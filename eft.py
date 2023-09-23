@@ -370,7 +370,7 @@ def print_command_timestamp(ctx):
 
 # /roll
 @bot.slash_command(name="roll", description="Loadout Lottery!")
-@commands.cooldown(1, 20, commands.BucketType.user)
+@commands.cooldown(1, 20, commands.BucketType.channel)
 async def roll(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
 
