@@ -5,10 +5,10 @@ import os
 import platform
 import random
 import time
-import tomllib
 import discord
 import psutil
-import tomli_w
+import sqlite3
+import pprint
 from discord import option
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -35,6 +35,7 @@ async def on_ready() -> None:
 
 
 # Loadout Lottery related constants
+USER_SETTINGS_DB: str = "user_settings.db"
 REROLLED_PREFIX: str = "Rerolled "
 SUPPORT_SERVER: str = "Support Server"
 DISCORD_SERVER: str = "https://discord.gg/mgXmtMZgfb"
@@ -72,13 +73,13 @@ DEFAULT_SETTINGS: dict = {
     "meta_only": False,
     "roll_thermals": False,
     "trader_levels": {
-        "Prapor": 4,
-        "Therapist": 4,
-        "Skier": 4,
-        "Peacekeeper": 4,
-        "Mechanic": 4,
-        "Ragman": 4,
-        "Jaeger": 4,
+        eft.PRAPOR: 4,
+        eft.THERAPIST: 4,
+        eft.SKIER: 4,
+        eft.PEACEKEEPER: 4,
+        eft.MECHANIC: 4,
+        eft.RAGMAN: 4,
+        eft.JAEGER: 4,
     },
 }
 
@@ -168,34 +169,138 @@ class RerollTwoSlotsNoRig(discord.ui.View):
         self.stop()
 
 
+def initialize_database() -> None:
+    with sqlite3.connect(USER_SETTINGS_DB) as con:
+        c = con.cursor()
+        c.execute('''CREATE TABLE IF NOT EXISTS user_settings (
+                        user_id INTEGER PRIMARY KEY,
+                        flea INTEGER,
+                        allow_quest_locked INTEGER,
+                        allow_fir_only INTEGER,
+                        meta_only INTEGER,
+                        roll_thermals INTEGER,
+                        prapor INTEGER,
+                        therapist INTEGER,
+                        skier INTEGER,
+                        peacekeeper INTEGER,
+                        mechanic INTEGER,
+                        ragman INTEGER,
+                        jaeger INTEGER
+                    )''')
+        con.commit()
+
+
+def user_exists(cursor, user_id):
+    cursor.execute("SELECT COUNT(*) FROM user_settings WHERE user_id = ?", (user_id,))
+    return cursor.fetchone()[0] > 0
+
+
 def write_user_settings(user_id: int, user_settings: dict) -> None:
-    with open(f"userdata/{user_id}.toml", "wb") as f:
-        tomli_w.dump(user_settings, f)
+    with sqlite3.connect(USER_SETTINGS_DB) as con:
+        c = con.cursor()
+
+        if user_exists(c, user_id):
+            c.execute('''UPDATE user_settings SET
+                            flea = ?,
+                            allow_quest_locked = ?,
+                            allow_fir_only = ?,
+                            meta_only = ?,
+                            roll_thermals = ?,
+                            prapor = ?,
+                            therapist = ?,
+                            skier = ?,
+                            peacekeeper = ?,
+                            mechanic = ?,
+                            ragman = ?,
+                            jaeger = ?
+                        WHERE user_id = ?''',
+                      (user_settings["flea"],
+                       user_settings["allow_quest_locked"],
+                       user_settings["allow_fir_only"],
+                       user_settings["meta_only"],
+                       user_settings["roll_thermals"],
+                       user_settings["trader_levels"][eft.PRAPOR],
+                       user_settings["trader_levels"][eft.THERAPIST],
+                       user_settings["trader_levels"][eft.SKIER],
+                       user_settings["trader_levels"][eft.PEACEKEEPER],
+                       user_settings["trader_levels"][eft.MECHANIC],
+                       user_settings["trader_levels"][eft.RAGMAN],
+                       user_settings["trader_levels"][eft.JAEGER],
+                       user_id))
+        else:
+            c.execute('''INSERT INTO user_settings (
+                            user_id,
+                            flea,
+                            allow_quest_locked,
+                            allow_fir_only,
+                            meta_only,
+                            roll_thermals,
+                            prapor,
+                            therapist,
+                            skier,
+                            peacekeeper,
+                            mechanic,
+                            ragman,
+                            jaeger
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                      (user_id,
+                       user_settings["flea"],
+                       user_settings["allow_quest_locked"],
+                       user_settings["allow_fir_only"],
+                       user_settings["meta_only"],
+                       user_settings["roll_thermals"],
+                       user_settings["trader_levels"][eft.PRAPOR],
+                       user_settings["trader_levels"][eft.THERAPIST],
+                       user_settings["trader_levels"][eft.SKIER],
+                       user_settings["trader_levels"][eft.PEACEKEEPER],
+                       user_settings["trader_levels"][eft.MECHANIC],
+                       user_settings["trader_levels"][eft.RAGMAN],
+                       user_settings["trader_levels"][eft.JAEGER]))
+
+        con.commit()
 
 
 def read_user_settings(user_id: int) -> dict:
-    try:
-        with open(f"userdata/{user_id}.toml", "rb") as f:
-            return tomllib.load(f)
-    except FileNotFoundError:
-        return DEFAULT_SETTINGS
+    with sqlite3.connect(USER_SETTINGS_DB) as con:
+        c = con.cursor()
+        c.execute('SELECT * FROM user_settings WHERE user_id = ?', (user_id,))
+        row = c.fetchone()
+        if row is None:
+            return DEFAULT_SETTINGS
+        else:
+            return {
+                "flea": bool(row[1]),
+                "allow_quest_locked": bool(row[2]),
+                "allow_fir_only": bool(row[3]),
+                "meta_only": bool(row[4]),
+                "roll_thermals": bool(row[5]),
+                "trader_levels": {
+                    eft.PRAPOR: row[6],
+                    eft.THERAPIST: row[7],
+                    eft.SKIER: row[8],
+                    eft.PEACEKEEPER: row[9],
+                    eft.MECHANIC: row[10],
+                    eft.RAGMAN: row[11],
+                    eft.JAEGER: row[12],
+                }
+            }
 
 
-def show_user_settings(user_settings: dict, ctx) -> discord.Embed:
+def show_user_settings(user_settings, ctx):
     embed_msg = discord.Embed()
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
     embed_msg.set_thumbnail(url=ctx.user.avatar.url)
 
     fields: list = [
-        (trader, "Locked" if level == 0 else f"LL{level}")
-        for trader, level in user_settings["trader_levels"].items()
-    ] + [
-        ("Flea Market", user_settings["flea"]),
-        ("Allow Quest Locked Items", user_settings["allow_quest_locked"]),
-        ("Allow FIR-Only Items", user_settings["allow_fir_only"]),
-        ("Allow thermals", user_settings["roll_thermals"]),
-        ("Meta Only", user_settings["meta_only"]),
-    ]
+                       (trader, "Locked" if level == 0 else f"LL{level}")
+                       for trader, level in user_settings["trader_levels"].items()
+                   ] + [
+                       ("Flea Market", user_settings["flea"]),
+                       ("Allow Quest Locked Items", user_settings["allow_quest_locked"]),
+                       ("Allow FIR-Only Items", user_settings["allow_fir_only"]),
+                       ("Allow thermals", user_settings["roll_thermals"]),
+                       ("Meta Only", user_settings["meta_only"]),
+                   ]
 
     for name, value in fields:
         embed_msg.add_field(name=name, value=value)
@@ -239,32 +344,45 @@ def filter_items(user_settings: dict) -> dict:
 
 
 def check_item(item: eft.Item, user_settings: dict) -> bool:
+    if item.category in {eft.GUN_MOD, eft.AMMO}:
+        return True
+
     if not item.meta and user_settings["meta_only"]:
         return False
 
-    elif item.category in {eft.GUN_MOD, eft.AMMO}:
+    if item.unlocked:
         return True
 
-    elif item.unlocked:
+    if user_settings["flea"] and item.flea:
         return True
 
-    elif user_settings["flea"] and item.flea:
-        return True
+    if not user_settings["flea"] and not item.trader_info:
+        return user_settings["allow_fir_only"]
 
-    else:
-        return check_item_traders(item, user_settings)
+    return check_item_traders(item, user_settings)
 
 
 def check_item_traders(item: eft.Item, user_settings: dict) -> bool:
-    if not item.trader_info and not item.flea:
-        return user_settings["allow_fir_only"]
 
-    return all(
-        user_settings["trader_levels"].get(trader, 0) <= trader_info.level
-        or (not trader_info.barter or user_settings["flea"])
-        and (not trader_info.quest_locked or user_settings["allow_quest_locked"])
-        for trader, trader_info in item.trader_info.items()
-    )
+    for trader, trader_info in item.trader_info.items():
+
+        user_level_high_enough = True
+        user_not_quest_locked = True
+        user_not_barter_locked = True
+
+        if user_settings["trader_levels"].get(trader, 0) < trader_info.level:
+            user_level_high_enough = False
+
+        if trader_info.quest_locked and not user_settings["allow_quest_locked"]:
+            user_not_quest_locked = False
+
+        if trader_info.barter and not user_settings["flea"]:
+            user_not_barter_locked = False
+
+        if user_level_high_enough and user_not_quest_locked and user_not_barter_locked:
+            return True
+
+    return False
 
 
 def roll_random_modifier(user_settings: dict) -> eft.GameRule:
@@ -323,13 +441,12 @@ async def reveal_roll(ctx, embed_msg: discord.Embed, rolled_item, prefix: str) -
 
 
 async def is_random_modifier_special(
-    rolled_random_modifier: eft.GameRule,
-    need_rig: bool,
-    ctx,
-    embed_msg,
-    filtered_items: dict[str, list],
+        rolled_random_modifier: eft.GameRule,
+        need_rig: bool,
+        ctx,
+        embed_msg,
+        filtered_items: dict[str, list],
 ) -> None:
-
     if rolled_random_modifier.name == REROLL_ONE:
         select = RerollOneSlotWithRig() if need_rig else RerollOneSlotNoRig()
         await reroll(ctx, select, embed_msg, filtered_items)
@@ -372,6 +489,7 @@ def print_command_timestamp(ctx):
 @commands.cooldown(1, 20, commands.BucketType.channel)
 async def roll(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
+    initialize_database()
     user_settings = read_user_settings(ctx.user.id)
 
     embed_msg = create_embed(ctx, user_settings)
@@ -403,7 +521,9 @@ async def roll(ctx: discord.ApplicationContext) -> None:
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def fastroll(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
+    initialize_database()
     user_settings = read_user_settings(ctx.user.id)
+    pprint.pprint(user_settings)
 
     embed_msg = create_embed(ctx, user_settings)
     filtered_items, rolls, need_rig = roll_items(user_settings)
@@ -438,25 +558,25 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
 @option(name="mechanic", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
 @option(name="ragman", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
 @option(name="jaeger", description="Enter Prapor's trader level", choices=[0, 1, 2, 3, 4])
-@option(name="flea", description="Do you have access to the flea market?", choices=[True, False],)
-@option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False],)
-@option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False],)
-@option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False],)
-@option(name="roll_thermals", description="Be able to roll thermal as a random modifier?", choices=[True, False],)
+@option(name="flea", description="Do you have access to the flea market?", choices=[True, False], )
+@option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False], )
+@option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False], )
+@option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False], )
+@option(name="roll_thermals", description="Be able to roll thermal as a random modifier?", choices=[True, False], )
 async def settings(
-    ctx: discord.ApplicationContext,
-    prapor: int,
-    therapist: int,
-    skier: int,
-    peacekeeper: int,
-    mechanic: int,
-    ragman: int,
-    jaeger: int,
-    flea: bool,
-    allow_quest_locked: bool,
-    allow_fir_only: bool,
-    meta_only: bool,
-    roll_thermals: bool,
+        ctx: discord.ApplicationContext,
+        prapor: int,
+        therapist: int,
+        skier: int,
+        peacekeeper: int,
+        mechanic: int,
+        ragman: int,
+        jaeger: int,
+        flea: bool,
+        allow_quest_locked: bool,
+        allow_fir_only: bool,
+        meta_only: bool,
+        roll_thermals: bool,
 ) -> None:
     print_command_timestamp(ctx)
 
@@ -479,15 +599,16 @@ async def settings(
 
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
     if user_settings["flea"] is False and (
-        user_settings["trader_levels"][eft.PRAPOR] >= 2
-        or user_settings["trader_levels"][eft.SKIER] >= 2
-        or user_settings["trader_levels"][eft.MECHANIC] >= 2
-        or user_settings["trader_levels"][eft.RAGMAN] >= 2
-        or user_settings["trader_levels"][eft.JAEGER] >= 2
+            user_settings["trader_levels"][eft.PRAPOR] >= 2
+            or user_settings["trader_levels"][eft.SKIER] >= 2
+            or user_settings["trader_levels"][eft.MECHANIC] >= 2
+            or user_settings["trader_levels"][eft.RAGMAN] >= 2
+            or user_settings["trader_levels"][eft.JAEGER] >= 2
     ):
         user_settings["flea"] = True
         print("user_settings[\"flea\"] = True")
 
+    initialize_database()
     write_user_settings(ctx.user.id, user_settings)
 
     embed_msg = show_user_settings(user_settings, ctx)
@@ -502,6 +623,7 @@ async def viewsettings(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
 
     try:
+        initialize_database()
         user_settings = read_user_settings(ctx.user.id)
     except FileNotFoundError:
         user_settings = DEFAULT_SETTINGS
@@ -516,6 +638,8 @@ async def viewsettings(ctx: discord.ApplicationContext) -> None:
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def resetsettings(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
+
+    initialize_database()
     write_user_settings(ctx.user.id, DEFAULT_SETTINGS)
     embed_msg = show_user_settings(DEFAULT_SETTINGS, ctx)
     embed_msg.title = "Your settings have been reset to default:"
@@ -527,6 +651,7 @@ async def resetsettings(ctx: discord.ApplicationContext) -> None:
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def ping(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
+
     await ctx.respond(f":ping_pong: **Ping:** {round(bot.latency * 100, 2)} ms")
 
 
@@ -544,7 +669,7 @@ async def stats(ctx: discord.ApplicationContext) -> None:
         uptime = datetime.timedelta(seconds=time.time() - proc.create_time())
         cpu = proc.cpu_times()
         cpu_time = datetime.timedelta(seconds=cpu.system + cpu.user)
-        mem_total = psutil.virtual_memory().total / (1024**2)
+        mem_total = psutil.virtual_memory().total / (1024 ** 2)
         mem_of_total = proc.memory_percent()
         mem_usage = mem_total * (mem_of_total / 100)
 
