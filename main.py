@@ -360,10 +360,16 @@ def create_embed(ctx: discord.ApplicationContext, user_settings: dict) -> discor
     return embed_msg
 
 
+def print_command_timestamp(ctx):
+    print(f"{time.ctime(time.time())} - {ctx.command.name}")
+
+
 # /roll
 @bot.slash_command(name="roll", description="Loadout Lottery!")
 @commands.cooldown(1, 20, commands.BucketType.user)
 async def roll(ctx: discord.ApplicationContext) -> None:
+    print_command_timestamp(ctx)
+
     user_settings = read_user_settings(ctx.user.id)
     embed_msg = create_embed(ctx, user_settings)
     filtered_items, rolls, need_rig = roll_items(user_settings)
@@ -399,6 +405,8 @@ async def roll(ctx: discord.ApplicationContext) -> None:
 @bot.slash_command(name="fastroll", description="Loadout Lottery! (Without the waiting around)")
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def fastroll(ctx: discord.ApplicationContext) -> None:
+    print_command_timestamp(ctx)
+
     user_settings = read_user_settings(ctx.user.id)
     embed_msg = create_embed(ctx, user_settings)
     filtered_items, rolls, need_rig = roll_items(user_settings)
@@ -460,6 +468,7 @@ async def settings(
     meta_only: bool,
     roll_thermals: bool,
 ) -> None:
+    print_command_timestamp(ctx)
 
     user_settings = {
         "trader_levels": {
@@ -499,6 +508,8 @@ async def settings(
 @bot.slash_command(name="viewsettings", description="View your currently saved Loadout Lottery settings.")
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def viewsettings(ctx: discord.ApplicationContext) -> None:
+    print_command_timestamp(ctx)
+
     try:
         user_settings = read_user_settings(ctx.user.id)
     except FileNotFoundError:
@@ -513,6 +524,8 @@ async def viewsettings(ctx: discord.ApplicationContext) -> None:
 @bot.slash_command(name="resetsettings", description="Reset your currently saved Loadout Lottery settings to default.")
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def resetsettings(ctx: discord.ApplicationContext) -> None:
+    print_command_timestamp(ctx)
+
     write_user_settings(ctx.user.id, DEFAULT_SETTINGS)
     embed_msg = show_user_settings(DEFAULT_SETTINGS, ctx)
     embed_msg.title = "Your settings have been reset to default:"
@@ -523,6 +536,8 @@ async def resetsettings(ctx: discord.ApplicationContext) -> None:
 @bot.slash_command(name="ping", description="Check the bot's latency.")
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def ping(ctx: discord.ApplicationContext) -> None:
+    print_command_timestamp(ctx)
+
     await ctx.respond(f":ping_pong: **Ping:** {round(bot.latency * 100, 2)} ms")
 
 
@@ -530,6 +545,8 @@ async def ping(ctx: discord.ApplicationContext) -> None:
 @bot.slash_command(name="stats", description="Displays the bot's statistics")
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def stats(ctx: discord.ApplicationContext) -> None:
+    print_command_timestamp(ctx)
+
     embed_msg = discord.Embed(title=":robot: Bot Statistics")
     embed_msg.set_thumbnail(url="https://i.imgur.com/vCdkZal.png")
 
