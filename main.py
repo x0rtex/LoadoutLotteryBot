@@ -277,7 +277,7 @@ def roll_random_modifier(user_settings: dict) -> eft.GameRule:
     return random.choice(modifiers)
 
 
-def check_trader_modifier(trader_modifier: eft.TraderModifier, user_settings: dict) -> bool:
+def check_trader_modifier(trader_modifier: eft.GameRule, user_settings: dict) -> bool:
     for level in range(1, 5):
         if trader_modifier.name == getattr(eft, f"LL{level}_TRADERS"):
             return all(trader_level >= level for trader_level in user_settings["trader_levels"].values())
