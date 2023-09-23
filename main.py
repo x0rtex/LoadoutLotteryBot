@@ -3,7 +3,6 @@ import datetime
 import logging
 import os
 import platform
-import pprint
 import random
 import time
 import tomllib
@@ -479,7 +478,6 @@ async def settings(
         "roll_thermals": roll_thermals,
     }
 
-
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
     if user_settings["flea"] is False and (
         user_settings["trader_levels"][eft.PRAPOR] >= 2
@@ -508,7 +506,6 @@ async def viewsettings(ctx: discord.ApplicationContext) -> None:
         user_settings = read_user_settings(ctx.user.id)
     except FileNotFoundError:
         user_settings = DEFAULT_SETTINGS
-
 
     embed_msg = show_user_settings(user_settings, ctx)
     embed_msg.title = "Your currently saved settings:"
