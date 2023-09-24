@@ -8,7 +8,6 @@ import time
 import discord
 import psutil
 import sqlite3
-import pprint
 from discord import option
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -47,7 +46,7 @@ REROLL_ONE: str = "Re-roll 1 slot"
 REROLL_TWO: str = "Re-roll 2 slots"
 REROLL_ONE_PLACEHOLDER: str = "Select slot to re-roll"
 REROLL_TWO_PLACEHOLDER: str = "Select slots to re-roll"
-REROLL_OPTIONS_NO_RIG: list = [
+REROLL_OPTIONS_NO_RIG: list[discord.SelectOption] = [
     discord.SelectOption(label=eft.WEAPON, emoji="🔫"),
     discord.SelectOption(label=eft.ARMORED_RIG, emoji="🛡️"),
     discord.SelectOption(label=eft.HELMET, emoji="🪖"),
@@ -56,7 +55,7 @@ REROLL_OPTIONS_NO_RIG: list = [
     discord.SelectOption(label=eft.AMMO, emoji="🔍"),
     discord.SelectOption(label=eft.MAP, emoji="🗺️"),
 ]
-REROLL_OPTIONS_RIG: list = [
+REROLL_OPTIONS_RIG: list[discord.SelectOption] = [
     discord.SelectOption(label=eft.WEAPON, emoji="🔫"),
     discord.SelectOption(label=eft.ARMOR_VEST, emoji="🛡️"),
     discord.SelectOption(label=eft.RIG, emoji="🦺"),
@@ -66,7 +65,10 @@ REROLL_OPTIONS_RIG: list = [
     discord.SelectOption(label=eft.AMMO, emoji="🔍"),
     discord.SelectOption(label=eft.MAP, emoji="🗺️"),
 ]
-DEFAULT_SETTINGS: dict = {
+
+UserSettings = dict[str, bool | dict[str, int]]
+
+DEFAULT_SETTINGS: UserSettings = {
     "flea": True,
     "allow_quest_locked": True,
     "allow_fir_only": False,
@@ -195,7 +197,7 @@ def user_exists(cursor, user_id):
     return cursor.fetchone()[0] > 0
 
 
-def write_user_settings(user_id: int, user_settings: dict) -> None:
+def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
     with sqlite3.connect(USER_SETTINGS_DB) as con:
         c = con.cursor()
 
@@ -308,7 +310,7 @@ def show_user_settings(user_settings, ctx):
     return embed_msg
 
 
-def roll_items(user_settings: dict) -> (list, bool):
+def roll_items(user_settings: UserSettings) -> (list, bool):
     filtered_items = filter_items(user_settings)
 
     weapon = random.choice(filtered_items[eft.WEAPON])
@@ -329,7 +331,7 @@ def roll_items(user_settings: dict) -> (list, bool):
     return filtered_items, rolls, need_rig
 
 
-def filter_items(user_settings: dict) -> dict:
+def filter_items(user_settings: UserSettings) -> dict:
     return {
         eft.WEAPON: tuple(item for item in eft.ALL_WEAPONS if check_item(item, user_settings)),
         eft.ARMOR_VEST: tuple(item for item in eft.ALL_ARMOR_VESTS if check_item(item, user_settings)),
@@ -343,10 +345,7 @@ def filter_items(user_settings: dict) -> dict:
     }
 
 
-def check_item(item: eft.Item, user_settings: dict) -> bool:
-    if item.category in {eft.GUN_MOD, eft.AMMO}:
-        return True
-
+def check_item(item: eft.Item, user_settings: UserSettings) -> bool:
     if not item.meta and user_settings["meta_only"]:
         return False
 
@@ -362,7 +361,7 @@ def check_item(item: eft.Item, user_settings: dict) -> bool:
     return check_item_traders(item, user_settings)
 
 
-def check_item_traders(item: eft.Item, user_settings: dict) -> bool:
+def check_item_traders(item: eft.Item, user_settings: UserSettings) -> bool:
 
     for trader, trader_info in item.trader_info.items():
 
@@ -385,7 +384,7 @@ def check_item_traders(item: eft.Item, user_settings: dict) -> bool:
     return False
 
 
-def roll_random_modifier(user_settings: dict) -> eft.GameRule:
+def roll_random_modifier(user_settings: UserSettings) -> eft.GameRule:
     filtered_good_modifiers = eft.GOOD_MODIFIERS  # May need to filter these later
     filtered_ok_modifiers = tuple(ok_mod for ok_mod in eft.OK_MODIFIERS if check_gamerule(ok_mod, user_settings))
     filtered_bad_modifiers = eft.BAD_MODIFIERS  # May need to filter these later
@@ -394,7 +393,7 @@ def roll_random_modifier(user_settings: dict) -> eft.GameRule:
     return random.choice(modifiers)
 
 
-def check_trader_modifier(trader_modifier: eft.GameRule, user_settings: dict) -> bool:
+def check_trader_modifier(trader_modifier: eft.GameRule, user_settings: UserSettings) -> bool:
     if trader_modifier.name == eft.NO_RESTRICTIONS and not user_settings["flea"]:
         return False
 
@@ -405,7 +404,7 @@ def check_trader_modifier(trader_modifier: eft.GameRule, user_settings: dict) ->
     return True
 
 
-def check_gamerule(gamerule: eft.GameRule, user_settings: dict) -> bool:
+def check_gamerule(gamerule: eft.GameRule, user_settings: UserSettings) -> bool:
     if user_settings["meta_only"] and not gamerule.meta:
         return False
 
@@ -473,7 +472,7 @@ async def reroll(ctx, select, embed_msg: discord.Embed, filtered_items: dict[str
             )
 
 
-def create_embed(ctx: discord.ApplicationContext, user_settings: dict) -> discord.Embed:
+def create_embed(ctx: discord.ApplicationContext, user_settings: UserSettings) -> discord.Embed:
     embed_msg = discord.Embed(title=WELCOME_TEXT_META if user_settings["meta_only"] else WELCOME_TEXT, url=GITHUB_URL)
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
     embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
@@ -523,7 +522,6 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
     print_command_timestamp(ctx)
     initialize_database()
     user_settings = read_user_settings(ctx.user.id)
-    pprint.pprint(user_settings)
 
     embed_msg = create_embed(ctx, user_settings)
     filtered_items, rolls, need_rig = roll_items(user_settings)
@@ -606,7 +604,6 @@ async def settings(
             or user_settings["trader_levels"][eft.JAEGER] >= 2
     ):
         user_settings["flea"] = True
-        print("user_settings[\"flea\"] = True")
 
     initialize_database()
     write_user_settings(ctx.user.id, user_settings)
