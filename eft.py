@@ -1,5 +1,7 @@
-from typing import Optional, Literal, NamedTuple
+from typing import NamedTuple
+from dataclasses import dataclass
 
+# Weapon Types
 ASSAULT_CARBINE: str = "Assault Carbine"
 ASSAULT_RIFLE: str = "Assault Rifle"
 SNIPER_RIFLE: str = "Bolt-Action Rifle"
@@ -11,6 +13,7 @@ SHOTGUN: str = "Shotgun"
 GRENADE_LAUNCHER: str = "Grenade Launcher"
 MELEE: str = "Melee"
 
+# Item Categories
 WEAPON: str = "Weapon"
 ARMOR_VEST: str = "Armor Vest"
 ARMORED_RIG: str = "Armored Rig"
@@ -22,6 +25,7 @@ AMMO: str = "Ammo"
 MAP: str = "Map"
 RANDOM_MODIFIER: str = "Random Modifier"
 
+# Trader Names
 PRAPOR: str = "Prapor"
 THERAPIST: str = "Therapist"
 SKIER: str = "Skier"
@@ -30,48 +34,43 @@ MECHANIC: str = "Mechanic"
 RAGMAN: str = "Ragman"
 JAEGER: str = "Jaeger"
 
+# Trader Level Modifiers
 LL1_TRADERS: str = "Up to level 1 traders"
 LL2_TRADERS: str = "Up to level 2 traders"
 LL3_TRADERS: str = "Up to level 3 traders"
 LL4_TRADERS: str = "Up to level 4 traders"
 NO_RESTRICTIONS: str = "No Restrictions"
 
+# Trader Level Modifier Images
 LL1_TRADERS_IMAGE: str = "https://i.imgur.com/I71LsPN.png"
 LL2_TRADERS_IMAGE: str = "https://i.imgur.com/qmB6NSH.png"
 LL3_TRADERS_IMAGE: str = "https://i.imgur.com/vupz2Hi.png"
 LL4_TRADERS_IMAGE: str = "https://i.imgur.com/tROE6zs.png"
 NO_RESTRICTIONS_IMAGE: str = "https://i.imgur.com/r5VRNUB.png"
 
+# Images
 DICE_IMAGE: str = "https://w7.pngwing.com/pngs/56/672/png-transparent-gurps-customer-service-dice-dice-throw-game-service-dice.png"
 YOU_CHOOSE_IMAGE: str = "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg"
 
 
 class TraderInfo(NamedTuple):
-    level: Optional[Literal[0, 1, 2, 3, 4]]  # Trader loyalty level (0 = locked)
+    level: 1 | 2 | 3 | 4  # Trader loyalty level
     quest_locked: bool  # Whether an item is locked behind a trader's quest or not
     barter: bool  # Whether an item is only obtainable via barter or not
 
 
+@dataclass(slots=True, frozen=True)
 class Item:
-    def __init__(self,
-                 name: str,
-                 category: Optional[str],
-                 image_url: str,
-                 unlocked: bool,  # Whether an item should be forced to be roll-able
-                 meta: bool,  # Whether an item is considered 'meta' or not
-                 flea: bool,  # Whether an item is obtainable from the flea market or not
-                 trader_info: Optional[dict[str, TraderInfo]],  # Item can be obtained from multiple traders
-                 ) -> None:
-        self.name = name
-        self.category = category
-        self.image_url = image_url
-        self.unlocked = unlocked
-        self.meta = meta
-        self.flea = flea
-        self.trader_info = trader_info if trader_info is not None else {}
+    name: str
+    category: str
+    image_url: str
+    unlocked: bool
+    meta: bool
+    flea: bool
+    trader_info: dict[str, TraderInfo]
 
 
-ALL_WEAPONS = (
+ALL_WEAPONS: tuple = (
     Item(
         name="YOUR CHOICE",
         category=WEAPON,
@@ -79,7 +78,7 @@ ALL_WEAPONS = (
         unlocked=True,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Bars A-2607 95Kh18 knife",
@@ -88,7 +87,7 @@ ALL_WEAPONS = (
         unlocked=False,
         meta=False,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="ADAR 2-15 5.56x45",
@@ -104,7 +103,7 @@ ALL_WEAPONS = (
     Item(
         name="Steyr AUG A1 5.56x45",
         category=ASSAULT_RIFLE,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f9/Steyr_AUG_A1_5.56x45_assault_rifle.png/revision/latest/scale-to-width-down/320?cb=20221231014107",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f9/Steyr_AUG_A1_5.56x45_Weapon.ASSAULT_RIFLE.png/revision/latest/scale-to-width-down/320?cb=20221231014107",
         unlocked=False,
         meta=False,
         flea=True,
@@ -266,7 +265,7 @@ ALL_WEAPONS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None,
+        trader_info={},
     ),
     Item(
         name="Kalashnikov AKS-74N 5.45x39",
@@ -349,7 +348,7 @@ ALL_WEAPONS = (
     Item(
         name="Desert Tech MDR 5.56x45",
         category=ASSAULT_RIFLE,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/DT_MDR_5.56x45_ASSAULT_RIFLE.png/revision/latest/scale-to-width-down/180?cb=20190411211744",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/DT_MDR_5.56x45_Weapon.ASSAULT_RIFLE.png/revision/latest/scale-to-width-down/180?cb=20190411211744",
         unlocked=False,
         meta=False,
         flea=True,
@@ -584,7 +583,7 @@ ALL_WEAPONS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None,
+        trader_info={},
     ),
     Item(
         name="SIG MPX 9x19",
@@ -783,7 +782,7 @@ ALL_WEAPONS = (
     Item(
         name="Baikal MP-43-1C 12ga double-barrel",
         category=SHOTGUN,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MP-43-1C_12ga_double-barrel_shotgun.jpg/revision/latest/scale-to-width-down/180?cb=20211213051714",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MP-43-1C_12ga_double-barrel_Weapon.SHOTGUN.jpg/revision/latest/scale-to-width-down/180?cb=20211213051714",
         unlocked=True,
         meta=False,
         flea=True,
@@ -878,7 +877,7 @@ ALL_WEAPONS = (
         unlocked=False,
         meta=True,
         flea=False,
-        trader_info=None,
+        trader_info={},
     ),
     Item(
         name="Kel-Tec RFB 7.62x51",
@@ -1042,7 +1041,7 @@ ALL_WEAPONS = (
     Item(
         name="Stechkin APS 9x18PM",
         category=PISTOL,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Stechkin_Automatic_Pistol_9x18PM.png/revision/latest/scale-to-width-down/200?cb=20200216021943",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Stechkin_Automatic_Weapon.PISTOL_9x18PM.png/revision/latest/scale-to-width-down/200?cb=20200216021943",
         unlocked=False,
         meta=False,
         flea=True,
@@ -1112,7 +1111,7 @@ ALL_WEAPONS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None,
+        trader_info={},
     ),
     Item(
         name="Beretta M9A3 9x19",
@@ -1176,7 +1175,7 @@ ALL_WEAPONS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None,
+        trader_info={},
     ),
     Item(
         name="Makarov PM 9x18PM",
@@ -1215,11 +1214,11 @@ ALL_WEAPONS = (
     Item(
         name="TT-33 7.62x25 (Golden)",
         category=PISTOL,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Weapon.PISTOL_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203",
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None,
+        trader_info={},
     ),
     Item(
         name="Chiappa Rhino 200DS 9x19",
@@ -1339,7 +1338,7 @@ ALL_WEAPONS = (
         unlocked=False,
         meta=False,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Tokarev SVT-40 7.62x54R",
@@ -1370,7 +1369,7 @@ ALL_WEAPONS = (
         unlocked=False,
         meta=False,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Kalashikov PKP 7.62x54R",
@@ -1379,33 +1378,11 @@ ALL_WEAPONS = (
         unlocked=False,
         meta=False,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
-
 )
 
-
-class Armor:
-    def __init__(self,
-                 name: str,
-                 category: Optional[str],
-                 image_url: str,
-                 force: bool,  # Whether an item should be forced to be roll-able
-                 meta: bool,  # Whether an item is considered 'meta' or not
-                 flea: bool,  # Whether an item is obtainable from the flea market or not
-                 trader_info: Optional[dict[str, TraderInfo]],
-                 # Dict because item can be obtained from multiple traders
-                 ) -> None:
-        self.name = name
-        self.category = category
-        self.image_url = image_url
-        self.force = force
-        self.meta = meta
-        self.flea = flea
-        self.trader_info = trader_info if trader_info is not None else {}
-
-
-ALL_ARMOR_VESTS = (
+ALL_ARMOR_VESTS: tuple = (
     Item(
         name="YOUR CHOICE",
         category=ARMOR_VEST,
@@ -1413,7 +1390,7 @@ ALL_ARMOR_VESTS = (
         unlocked=True,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="BNTI Module-3M body armor",
@@ -1422,7 +1399,7 @@ ALL_ARMOR_VESTS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="PACA Soft Armor",
@@ -1442,7 +1419,7 @@ ALL_ARMOR_VESTS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="6B2 body armor (Flora)",
@@ -1496,7 +1473,7 @@ ALL_ARMOR_VESTS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="BNTI Kirasa-N body armor",
@@ -1527,7 +1504,7 @@ ALL_ARMOR_VESTS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="6B13 assault armor",
@@ -1591,7 +1568,7 @@ ALL_ARMOR_VESTS = (
         unlocked=False,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="IOTV Gen4 body armor (High Mobility Kit)",
@@ -1633,7 +1610,7 @@ ALL_ARMOR_VESTS = (
         unlocked=False,
         meta=False,
         flea=False,
-        trader_info=None,
+        trader_info={},
     ),
     Item(
         name="IOTV Gen4 body armor (Full Protection Kit)",
@@ -1664,7 +1641,7 @@ ALL_ARMOR_VESTS = (
         unlocked=False,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="LBT-6094A Slick Plate Carrier",
@@ -1684,7 +1661,7 @@ ALL_ARMOR_VESTS = (
         unlocked=False,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="NFM THOR Integrated Carrier body armor",
@@ -1739,11 +1716,11 @@ ALL_ARMOR_VESTS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
 )
 
-ALL_ARMORED_RIGS = (
+ALL_ARMORED_RIGS: tuple = (
     Item(
         name="WARTECH TV-115 plate carrier",
         category=ARMORED_RIG,
@@ -1751,7 +1728,7 @@ ALL_ARMORED_RIGS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Eagle Allied Industries MBSS plate carrier",
@@ -1760,7 +1737,7 @@ ALL_ARMORED_RIGS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Eagle Industries MMAC plate carrier (Ranger Green)",
@@ -1923,7 +1900,7 @@ ALL_ARMORED_RIGS = (
         unlocked=False,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="S&S Precision PlateFrame plate carrier (Goons Edition)",
@@ -1932,7 +1909,7 @@ ALL_ARMORED_RIGS = (
         unlocked=False,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="CQC Osprey MK4A plate carrier (Protection, MTP)",
@@ -1974,34 +1951,14 @@ ALL_ARMORED_RIGS = (
         unlocked=False,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
 )
 
 ALL_ARMORS = ALL_ARMOR_VESTS + ALL_ARMORED_RIGS
 
 
-class Rig:
-    def __init__(self,
-                 name: str,
-                 category: Optional[str],
-                 image_url: str,
-                 force: bool,  # Whether an item should be forced to be roll-able
-                 meta: bool,  # Whether an item is considered 'meta' or not
-                 flea: bool,  # Whether an item is obtainable from the flea market or not
-                 trader_info: Optional[dict[str, TraderInfo]],
-                 # Dict because item can be obtained from multiple traders
-                 ) -> None:
-        self.name = name
-        self.category = category
-        self.image_url = image_url
-        self.force = force
-        self.meta = meta
-        self.flea = flea
-        self.trader_info = trader_info if trader_info is not None else {}
-
-
-ALL_RIGS = (
+ALL_RIGS: tuple = (
     Item(
         name="YOUR CHOICE",
         category=RIG,
@@ -2009,7 +1966,7 @@ ALL_RIGS = (
         unlocked=True,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Scav Vest",
@@ -2029,7 +1986,7 @@ ALL_RIGS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Zulu Nylon Gear M4 Reduced Signature Chest Rig",
@@ -2049,7 +2006,7 @@ ALL_RIGS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Spiritus Systems Bank Robber chest rig",
@@ -2125,7 +2082,7 @@ ALL_RIGS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Splav Tarzan M22 chest rig",
@@ -2178,7 +2135,7 @@ ALL_RIGS = (
         unlocked=False,
         meta=True,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Gear Craft GC-BSS-MK1 chest rig",
@@ -2209,7 +2166,7 @@ ALL_RIGS = (
         unlocked=False,
         meta=True,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="LBT-1961A Load Bearing Chest Rig (Goons Edition)",
@@ -2218,7 +2175,7 @@ ALL_RIGS = (
         unlocked=False,
         meta=True,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Stich Profi Chest Rig MK2 (Recon, A-TACS FG)",
@@ -2293,7 +2250,7 @@ ALL_RIGS = (
         unlocked=False,
         meta=True,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Belt-A + Belt-B gear rig",
@@ -2308,28 +2265,7 @@ ALL_RIGS = (
     ),
 )
 
-
-class Helmet:
-    def __init__(self,
-                 name: str,
-                 category: Optional[str],
-                 image_url: str,
-                 unlocked: bool,  # Whether an item should be forced to be roll-able
-                 meta: bool,  # Whether an item is considered 'meta' or not
-                 flea: bool,  # Whether an item is obtainable from the flea market or not
-                 trader_info: Optional[dict[str, TraderInfo]],
-                 # Dict because item can be obtained from multiple traders
-                 ) -> None:
-        self.name = name
-        self.category = category
-        self.image_url = image_url
-        self.force = unlocked
-        self.meta = meta
-        self.flea = flea
-        self.trader_info = trader_info if trader_info is not None else {}
-
-
-ALL_HELMETS = (
+ALL_HELMETS: tuple = (
     Item(
         name="YOUR CHOICE",
         category=HELMET,
@@ -2337,7 +2273,7 @@ ALL_HELMETS = (
         unlocked=True,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Armasight NVG head strap",
@@ -2370,7 +2306,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Tac-Kek FAST MT helmet (Replica)",
@@ -2379,7 +2315,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="TSh-4M-L soft tank crew helmet",
@@ -2388,7 +2324,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Kolpak-1S riot helmet",
@@ -2408,7 +2344,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="PSh-97 DJETA riot helmet",
@@ -2417,7 +2353,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="LShZ light helmet",
@@ -2448,7 +2384,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=False,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="NFM HJELM helmet",
@@ -2457,7 +2393,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="UNTAR helmet",
@@ -2557,7 +2493,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Diamond Age Bastion helmet",
@@ -2566,7 +2502,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=True,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Ops-Core FAST MT Super High Cut helmet",
@@ -2652,7 +2588,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Rys-T bulletproof helmet",
@@ -2661,7 +2597,7 @@ ALL_HELMETS = (
         unlocked=False,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Vulkan-5 (LShZ-5) bulletproof helmet",
@@ -2670,32 +2606,11 @@ ALL_HELMETS = (
         unlocked=False,
         meta=False,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
 )
 
-
-class Backpack:
-    def __init__(self,
-                 name: str,
-                 category: Optional[str],
-                 image_url: str,
-                 force: bool,  # Whether an item should be forced to be roll-able
-                 meta: bool,  # Whether an item is considered 'meta' or not
-                 flea: bool,  # Whether an item is obtainable from the flea market or not
-                 trader_info: Optional[dict[str, TraderInfo]],
-                 # Dict because item can be obtained from multiple traders
-                 ) -> None:
-        self.name = name
-        self.category = category
-        self.image_url = image_url
-        self.force = force
-        self.meta = meta
-        self.flea = flea
-        self.trader_info = trader_info if trader_info is not None else {}
-
-
-ALL_BACKPACKS = (
+ALL_BACKPACKS: tuple = (
     Item(
         name="YOUR CHOICE",
         category=BACKPACK,
@@ -2703,7 +2618,7 @@ ALL_BACKPACKS = (
         unlocked=True,
         meta=True,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="6Sh118 raid backpack",
@@ -2778,7 +2693,7 @@ ALL_BACKPACKS = (
         unlocked=False,
         meta=False,
         flea=False,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="3V Gear Paratus 3-Day Operator's Tactical backpack",
@@ -2919,7 +2834,7 @@ ALL_BACKPACKS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="WARTECH Berkut BB-102 backpack",
@@ -2950,7 +2865,7 @@ ALL_BACKPACKS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Flyye MBSS backpack",
@@ -2971,7 +2886,7 @@ ALL_BACKPACKS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Duffle bag",
@@ -2980,7 +2895,7 @@ ALL_BACKPACKS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="LolKek 3F Transfer tourist backpack",
@@ -2989,7 +2904,7 @@ ALL_BACKPACKS = (
         unlocked=False,
         meta=False,
         flea=True,
-        trader_info=None
+        trader_info={}
     ),
     Item(
         name="Transformer Bag",
@@ -3027,15 +2942,15 @@ ALL_BACKPACKS = (
 )
 
 
+@dataclass(slots=True, frozen=True)
 class GameRule:
-    def __init__(self, name: str, category: str, image_url: str, meta: bool):
-        self.name = name
-        self.category = category
-        self.image_url = image_url
-        self.meta = meta
+    name: str
+    category: str
+    image_url: str
+    meta: bool
 
 
-ALL_GUN_MODS = (
+ALL_GUN_MODS: tuple = (
     GameRule(
         name=LL1_TRADERS,
         category=GUN_MOD,
@@ -3068,7 +2983,7 @@ ALL_GUN_MODS = (
     )
 )
 
-ALL_AMMO = (
+ALL_AMMO: tuple = (
     GameRule(
         name=LL1_TRADERS,
         category=AMMO,
@@ -3101,9 +3016,13 @@ ALL_AMMO = (
     )
 )
 
-
-ALL_MAPS = (
-    GameRule(name="YOUR CHOICE", category=MAP, image_url=YOU_CHOOSE_IMAGE, meta=True, ),
+ALL_MAPS: tuple = (
+    GameRule(
+        name="YOUR CHOICE",
+        category=MAP,
+        image_url=YOU_CHOOSE_IMAGE,
+        meta=True,
+    ),
     GameRule(
         name="Factory",
         category=MAP,
@@ -3160,7 +3079,7 @@ ALL_MAPS = (
     ),
 )
 
-GOOD_MODIFIERS = (
+GOOD_MODIFIERS: tuple = (
     GameRule(
         name="Ask your scav for some loot",
         category=RANDOM_MODIFIER,
@@ -3174,7 +3093,7 @@ GOOD_MODIFIERS = (
         meta=True,
     ),
     GameRule(
-        name="Pistol secondary",
+        name="Weapon.PISTOL secondary",
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/pIIl7j1.png",
         meta=True,
@@ -3205,7 +3124,7 @@ GOOD_MODIFIERS = (
     ),
 )
 
-OK_MODIFIERS = (
+OK_MODIFIERS: tuple = (
     GameRule(
         name="Use highest capacity magazine",
         category=RANDOM_MODIFIER,
@@ -3268,7 +3187,7 @@ OK_MODIFIERS = (
     ),
 )
 
-BAD_MODIFIERS = (
+BAD_MODIFIERS: tuple = (
     GameRule(
         name="Only smoke grenades",
         category=RANDOM_MODIFIER,
@@ -3324,7 +3243,7 @@ BAD_MODIFIERS = (
         meta=False,
     ),
     GameRule(
-        name="Hatchlings must be fought with a melee",
+        name="Hatchlings must be fought with a Weapon.MELEE",
         category=RANDOM_MODIFIER,
         image_url="https://academyoffencingmasters.com/blog/wp-content/uploads/2017/02/Valentine%E2%80%99s-Day-Love-and-Swordfighting-Duels.jpg",
         meta=True,
@@ -3403,4 +3322,4 @@ BAD_MODIFIERS = (
     ),
 )
 
-ALL_MODIFIERS = (GOOD_MODIFIERS, OK_MODIFIERS, BAD_MODIFIERS)
+ALL_MODIFIERS: tuple = (GOOD_MODIFIERS, OK_MODIFIERS, BAD_MODIFIERS)
