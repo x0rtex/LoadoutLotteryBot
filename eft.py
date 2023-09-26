@@ -103,7 +103,7 @@ ALL_WEAPONS: tuple = (
     Item(
         name="Steyr AUG A1 5.56x45",
         category=ASSAULT_RIFLE,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f9/Steyr_AUG_A1_5.56x45_Weapon.ASSAULT_RIFLE.png/revision/latest/scale-to-width-down/320?cb=20221231014107",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f9/Steyr_AUG_A1_5.56x45_assault_rifle.png/revision/latest/scale-to-width-down/320?cb=20221231014107",
         unlocked=False,
         meta=False,
         flea=True,
@@ -348,7 +348,7 @@ ALL_WEAPONS: tuple = (
     Item(
         name="Desert Tech MDR 5.56x45",
         category=ASSAULT_RIFLE,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/DT_MDR_5.56x45_Weapon.ASSAULT_RIFLE.png/revision/latest/scale-to-width-down/180?cb=20190411211744",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/DT_MDR_5.56x45_assault_rifle.png/revision/latest/scale-to-width-down/180?cb=20190411211744",
         unlocked=False,
         meta=False,
         flea=True,
@@ -782,7 +782,7 @@ ALL_WEAPONS: tuple = (
     Item(
         name="Baikal MP-43-1C 12ga double-barrel",
         category=SHOTGUN,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MP-43-1C_12ga_double-barrel_Weapon.SHOTGUN.jpg/revision/latest/scale-to-width-down/180?cb=20211213051714",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MP-43-1C_12ga_double-barrel_shotgun.jpg/revision/latest/scale-to-width-down/180?cb=20211213051714",
         unlocked=True,
         meta=False,
         flea=True,
@@ -1041,7 +1041,7 @@ ALL_WEAPONS: tuple = (
     Item(
         name="Stechkin APS 9x18PM",
         category=PISTOL,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Stechkin_Automatic_Weapon.PISTOL_9x18PM.png/revision/latest/scale-to-width-down/200?cb=20200216021943",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Stechkin_Automatic_Pistol_9x18PM.png/revision/latest/scale-to-width-down/200?cb=20200216021943",
         unlocked=False,
         meta=False,
         flea=True,
@@ -1214,7 +1214,7 @@ ALL_WEAPONS: tuple = (
     Item(
         name="TT-33 7.62x25 (Golden)",
         category=PISTOL,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Weapon.PISTOL_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203",
+        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Weapon.Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203",
         unlocked=False,
         meta=False,
         flea=True,
@@ -3243,7 +3243,7 @@ BAD_MODIFIERS: tuple = (
         meta=False,
     ),
     GameRule(
-        name="Hatchlings must be fought with a Weapon.MELEE",
+        name="Hatchlings must be fought with a melee",
         category=RANDOM_MODIFIER,
         image_url="https://academyoffencingmasters.com/blog/wp-content/uploads/2017/02/Valentine%E2%80%99s-Day-Love-and-Swordfighting-Duels.jpg",
         meta=True,
