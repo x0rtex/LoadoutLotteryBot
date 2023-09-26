@@ -33,8 +33,10 @@ async def on_ready() -> None:
     print(f"Guilds: {len(bot.guilds)}")
 
 
-# Loadout Lottery related constants
+# Database name
 USER_SETTINGS_DB: str = "user_settings.db"
+
+# Embed Strings
 REROLLED_PREFIX: str = "Rerolled "
 SUPPORT_SERVER: str = "Support Server"
 DISCORD_SERVER: str = "https://discord.gg/mgXmtMZgfb"
@@ -42,6 +44,8 @@ LOADOUT_LOTTERY_ICON: str = "https://i.imgur.com/tqtPhBA.png"
 GITHUB_URL: str = "https://github.com/x0rtex/LoadoutLotteryBot"
 WELCOME_TEXT: str = "🎲 Welcome to Loadout Lottery! 🎰"
 WELCOME_TEXT_META: str = "🎲 Welcome to META Loadout Lottery! 🎰"
+
+# Reroll Slots Random Modifiers
 REROLL_ONE: str = "Re-roll 1 slot"
 REROLL_TWO: str = "Re-roll 2 slots"
 REROLL_ONE_PLACEHOLDER: str = "Select slot to re-roll"
@@ -66,8 +70,8 @@ REROLL_OPTIONS_RIG: list[discord.SelectOption] = [
     discord.SelectOption(label=eft.MAP, emoji="🗺️"),
 ]
 
+# User Settings
 UserSettings = dict[str, bool | dict[str, int]]
-
 DEFAULT_SETTINGS: UserSettings = {
     "flea": True,
     "allow_quest_locked": True,
@@ -229,6 +233,7 @@ def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
                        user_settings["trader_levels"][eft.RAGMAN],
                        user_settings["trader_levels"][eft.JAEGER],
                        user_id))
+
         else:
             c.execute('''INSERT INTO user_settings (
                             user_id,
