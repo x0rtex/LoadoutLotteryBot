@@ -296,7 +296,7 @@ def read_user_settings(user_id: int) -> dict:
 def show_user_settings(user_settings, ctx):
     embed_msg = discord.Embed()
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
-    embed_msg.set_thumbnail(url=ctx.user.avatar.url)
+    embed_msg.set_thumbnail(url=ctx.interaction.user.display_avatar.url)
 
     fields: list = [
                        (trader, "Locked" if level == 0 else f"LL{level}")
@@ -351,13 +351,11 @@ def filter_items(user_settings: UserSettings) -> dict:
 
 
 def check_item(item: eft.Item, user_settings: UserSettings) -> bool:
+
     if not item.meta and user_settings["meta_only"]:
         return False
 
-    if item.unlocked:
-        return True
-
-    if user_settings["flea"] and item.flea:
+    if item.unlocked or (user_settings["flea"] and item.flea):
         return True
 
     if not user_settings["flea"] and not item.trader_info:
@@ -367,26 +365,12 @@ def check_item(item: eft.Item, user_settings: UserSettings) -> bool:
 
 
 def check_item_traders(item: eft.Item, user_settings: UserSettings) -> bool:
-
     for trader, trader_info in item.trader_info.items():
-
-        user_level_high_enough = True
-        user_not_quest_locked = True
-        user_not_barter_locked = True
-
-        if user_settings["trader_levels"].get(trader, 0) < trader_info.level:
-            user_level_high_enough = False
-
-        if trader_info.quest_locked and not user_settings["allow_quest_locked"]:
-            user_not_quest_locked = False
-
-        if trader_info.barter and not user_settings["flea"]:
-            user_not_barter_locked = False
-
-        if user_level_high_enough and user_not_quest_locked and user_not_barter_locked:
-            return True
-
-    return False
+        if ((user_settings["trader_levels"].get(trader, 0) < trader_info.level)
+                or (trader_info.quest_locked and not user_settings["allow_quest_locked"])
+                or (trader_info.barter and not user_settings["flea"])):
+            return False
+    return True
 
 
 def roll_random_modifier(user_settings: UserSettings) -> eft.GameRule:
@@ -480,7 +464,7 @@ async def reroll(ctx, select, embed_msg: discord.Embed, filtered_items: dict[str
 def create_embed(ctx: discord.ApplicationContext, user_settings: UserSettings) -> discord.Embed:
     embed_msg = discord.Embed(title=WELCOME_TEXT_META if user_settings["meta_only"] else WELCOME_TEXT, url=GITHUB_URL)
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
-    embed_msg.set_thumbnail(url=ctx.interaction.user.avatar.url)
+    embed_msg.set_thumbnail(url=ctx.interaction.user.display_avatar.url)
     return embed_msg
 
 
