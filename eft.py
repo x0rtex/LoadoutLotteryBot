@@ -24,6 +24,7 @@ GUN_MOD: str = "Gun Mods"
 AMMO: str = "Ammo"
 MAP: str = "Map"
 RANDOM_MODIFIER: str = "Random Modifier"
+YOUR_CHOICE: str = "YOUR CHOICE!"
 
 # Trader Names
 PRAPOR: str = "Prapor"
@@ -72,7 +73,7 @@ class Item:
 
 ALL_WEAPONS: tuple = (
     Item(
-        name="YOUR CHOICE",
+        name=YOUR_CHOICE,
         category=WEAPON,
         image_url=YOU_CHOOSE_IMAGE,
         unlocked=True,
@@ -1384,7 +1385,7 @@ ALL_WEAPONS: tuple = (
 
 ALL_ARMOR_VESTS: tuple = (
     Item(
-        name="YOUR CHOICE",
+        name=YOUR_CHOICE,
         category=ARMOR_VEST,
         image_url=YOU_CHOOSE_IMAGE,
         unlocked=True,
@@ -1960,7 +1961,7 @@ ALL_ARMORS = ALL_ARMOR_VESTS + ALL_ARMORED_RIGS
 
 ALL_RIGS: tuple = (
     Item(
-        name="YOUR CHOICE",
+        name=YOUR_CHOICE,
         category=RIG,
         image_url=YOU_CHOOSE_IMAGE,
         unlocked=True,
@@ -2267,7 +2268,7 @@ ALL_RIGS: tuple = (
 
 ALL_HELMETS: tuple = (
     Item(
-        name="YOUR CHOICE",
+        name=YOUR_CHOICE,
         category=HELMET,
         image_url=YOU_CHOOSE_IMAGE,
         unlocked=True,
@@ -2612,7 +2613,7 @@ ALL_HELMETS: tuple = (
 
 ALL_BACKPACKS: tuple = (
     Item(
-        name="YOUR CHOICE",
+        name=YOUR_CHOICE,
         category=BACKPACK,
         image_url=YOU_CHOOSE_IMAGE,
         unlocked=True,
@@ -3018,7 +3019,7 @@ ALL_AMMO: tuple = (
 
 ALL_MAPS: tuple = (
     GameRule(
-        name="YOUR CHOICE",
+        name=YOUR_CHOICE,
         category=MAP,
         image_url=YOU_CHOOSE_IMAGE,
         meta=True,
