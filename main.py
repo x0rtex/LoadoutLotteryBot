@@ -351,11 +351,10 @@ def filter_items(user_settings: UserSettings) -> dict:
 
 
 def check_item(item: eft.Item, user_settings: UserSettings) -> bool:
-
     if not item.meta and user_settings["meta_only"]:
         return False
 
-    if item.unlocked or (user_settings["flea"] and item.flea):
+    if item.always_obtainable or (user_settings["flea"] and item.flea):
         return True
 
     if not user_settings["flea"] and not item.trader_info:
@@ -365,11 +364,13 @@ def check_item(item: eft.Item, user_settings: UserSettings) -> bool:
 
 
 def check_item_traders(item: eft.Item, user_settings: UserSettings) -> bool:
-    for trader, trader_info in item.trader_info.items():
-        if ((user_settings["trader_levels"].get(trader, 0) < trader_info.level)
-                or (trader_info.quest_locked and not user_settings["allow_quest_locked"])
-                or (trader_info.barter and not user_settings["flea"])):
-            return False
+    for trader_name, obtains in item.trader_info.items():
+        for obtain in obtains:
+            trader_level = user_settings["trader_levels"].get(trader_name)
+            if ((trader_level < obtain.level)
+                    or (obtain.quest_locked and not user_settings["allow_quest_locked"])
+                    or (obtain.barter and not user_settings["flea"])):
+                return False
     return True
 
 
@@ -394,16 +395,10 @@ def check_trader_modifier(trader_modifier: eft.GameRule, user_settings: UserSett
 
 
 def check_gamerule(gamerule: eft.GameRule, user_settings: UserSettings) -> bool:
-    if user_settings["meta_only"] and not gamerule.meta:
-        return False
-
-    if not user_settings["flea"] and gamerule.name == "The Lab":
-        return False
-
-    if not user_settings["roll_thermals"] and gamerule.name == "Use thermal":
-        return False
-
-    return True
+    return not (user_settings["meta_only"] and not gamerule.meta
+                or gamerule.name == "The Lab" and not user_settings["flea"]
+                or gamerule.name == "Ground Zero" and user_settings["flea"]
+                or gamerule.name == "Use thermal" and not user_settings["roll_thermals"])
 
 
 async def reveal_roll(ctx, embed_msg: discord.Embed, rolled_item, prefix: str) -> None:
