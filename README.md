@@ -6,7 +6,7 @@
 - Support server: https://discord.gg/mgXmtMZgfb
 
 List of commands: 
-- **/roll** - Classic Tarkov Loadout Lottery uses a super quantum algorithm to generate a random loadout and map for you to play with.
+- **/roll** - Classic Tarkov Loadout Lottery uses a super quantum mega swag algorithm to generate a random loadout and map for you to play with.
 - **/fastroll** - Same as classic loadout lottery, but with less waiting around.
 - **/settings** - Customise your Loadout Lottery experience. (trader levels, flea market, etc...)
 - **/viewsettings** - View your currently saved Loadout Lottery settings.
