@@ -1,13 +1,16 @@
+from __future__ import annotations
+
 import asyncio
 import datetime
 import logging
 import os
 import platform
 import random
+import sqlite3
 import time
+
 import discord
 import psutil
-import sqlite3
 from discord import option
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -29,8 +32,8 @@ bot = commands.Bot(help_command=commands.DefaultHelpCommand())
 async def on_ready() -> None:
     await bot.change_presence(activity=discord.Game("/help"))
     bot.add_view(RandomModifierButton())
-    print(f"Logged in as {bot.user}")
-    print(f"Guilds: {len(bot.guilds)}")
+    logging.info(f"Logged in as {bot.user}")
+    logging.info(f"Guilds: {len(bot.guilds)}")
 
 
 # Database name
@@ -71,7 +74,23 @@ REROLL_OPTIONS_RIG: list[discord.SelectOption] = [
 ]
 
 # User Settings
-UserSettings = dict[str, bool | dict[str, int]]
+UserSettings = dict[
+               str: bool,
+               str: bool,
+               str: bool,
+               str: bool,
+               str: bool,
+               str: {
+                   eft.PRAPOR: 1 | 2 | 3 | 4,
+                   eft.THERAPIST: 1 | 2 | 3 | 4,
+                   eft.SKIER: 1 | 2 | 3 | 4,
+                   eft.PEACEKEEPER: 1 | 2 | 3 | 4,
+                   eft.MECHANIC: 1 | 2 | 3 | 4,
+                   eft.RAGMAN: 1 | 2 | 3 | 4,
+                   eft.JAEGER: 0 | 1 | 2 | 3 | 4,
+               },
+               ]
+
 DEFAULT_SETTINGS: UserSettings = {
     "flea": True,
     "allow_quest_locked": True,
@@ -91,24 +110,24 @@ DEFAULT_SETTINGS: UserSettings = {
 
 
 class RandomModifierButton(discord.ui.View):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(timeout=None)
         self.value: bool = False
 
     @discord.ui.button(label="Roll Random Modifier", style=discord.ButtonStyle.green, custom_id="persistent_view:roll")
-    async def button_callback_yes(self, _, interaction: discord.Interaction):
+    async def button_callback_yes(self, _, interaction: discord.Interaction) -> None:
         await interaction.response.edit_message(view=None)
         self.value: bool = True
         self.stop()
 
     @discord.ui.button(label="Finish", style=discord.ButtonStyle.grey, custom_id="persistent_view:no-roll")
-    async def button_callback_no(self, _, interaction):
+    async def button_callback_no(self, _, interaction: discord.Interaction) -> None:
         await interaction.response.edit_message(view=None)
         self.stop()
 
 
 class RerollOneSlotWithRig(discord.ui.View):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(timeout=None)
         self.value = None
 
@@ -119,13 +138,13 @@ class RerollOneSlotWithRig(discord.ui.View):
         max_values=1,
         options=REROLL_OPTIONS_RIG,
     )
-    async def select_callback(self, select, _):
-        self.value = [select.values[0]]
+    async def select_callback(self, select: discord.ui.select, _) -> None:
+        self.value = [select.to_numpy()[0]]
         self.stop()
 
 
 class RerollOneSlotNoRig(discord.ui.View):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(timeout=None)
         self.value = None
 
@@ -136,13 +155,13 @@ class RerollOneSlotNoRig(discord.ui.View):
         max_values=1,
         options=REROLL_OPTIONS_NO_RIG,
     )
-    async def select_callback(self, select, _):
-        self.value = [select.values[0]]
+    async def select_callback(self, select: discord.ui.select, _) -> None:
+        self.value = [select.to_numpy()[0]]
         self.stop()
 
 
 class RerollTwoSlotsWithRig(discord.ui.View):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(timeout=None)
         self.value = None
 
@@ -153,13 +172,13 @@ class RerollTwoSlotsWithRig(discord.ui.View):
         max_values=2,
         options=REROLL_OPTIONS_RIG,
     )
-    async def select_callback(self, select, _):
-        self.value = select.values
+    async def select_callback(self, select: discord.ui.select, _) -> None:
+        self.value = select.to_numpy()
         self.stop()
 
 
 class RerollTwoSlotsNoRig(discord.ui.View):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(timeout=None)
         self.value = None
 
@@ -170,15 +189,15 @@ class RerollTwoSlotsNoRig(discord.ui.View):
         max_values=2,
         options=REROLL_OPTIONS_NO_RIG,
     )
-    async def select_callback(self, select, _):
-        self.value = select.values
+    async def select_callback(self, select: discord.ui.select, _) -> None:
+        self.value = select.to_numpy()
         self.stop()
 
 
 def initialize_database() -> None:
     with sqlite3.connect(USER_SETTINGS_DB) as con:
         c = con.cursor()
-        c.execute('''CREATE TABLE IF NOT EXISTS user_settings (
+        c.execute("""CREATE TABLE IF NOT EXISTS user_settings (
                         user_id INTEGER PRIMARY KEY,
                         flea INTEGER,
                         allow_quest_locked INTEGER,
@@ -190,13 +209,13 @@ def initialize_database() -> None:
                         skier INTEGER,
                         peacekeeper INTEGER,
                         mechanic INTEGER,
-                        ragman INTEGER,
+                        ragman INTEGER
                         jaeger INTEGER
-                    )''')
+                    )""")
         con.commit()
 
 
-def user_exists(cursor, user_id):
+def user_exists(cursor, user_id: int) -> bool:
     cursor.execute("SELECT COUNT(*) FROM user_settings WHERE user_id = ?", (user_id,))
     return cursor.fetchone()[0] > 0
 
@@ -206,7 +225,7 @@ def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
         c = con.cursor()
 
         if user_exists(c, user_id):
-            c.execute('''UPDATE user_settings SET
+            c.execute("""UPDATE user_settings SET
                             flea = ?,
                             allow_quest_locked = ?,
                             allow_fir_only = ?,
@@ -219,7 +238,7 @@ def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
                             mechanic = ?,
                             ragman = ?,
                             jaeger = ?
-                        WHERE user_id = ?''',
+                        WHERE user_id = ?""",
                       (user_settings["flea"],
                        user_settings["allow_quest_locked"],
                        user_settings["allow_fir_only"],
@@ -235,7 +254,7 @@ def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
                        user_id))
 
         else:
-            c.execute('''INSERT INTO user_settings (
+            c.execute("""INSERT INTO user_settings (
                             user_id,
                             flea,
                             allow_quest_locked,
@@ -249,7 +268,7 @@ def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
                             mechanic,
                             ragman,
                             jaeger
-                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                       (user_id,
                        user_settings["flea"],
                        user_settings["allow_quest_locked"],
@@ -270,30 +289,29 @@ def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
 def read_user_settings(user_id: int) -> dict:
     with sqlite3.connect(USER_SETTINGS_DB) as con:
         c = con.cursor()
-        c.execute('SELECT * FROM user_settings WHERE user_id = ?', (user_id,))
+        c.execute("SELECT * FROM user_settings WHERE user_id = ?", (user_id,))
         row = c.fetchone()
         if row is None:
             return DEFAULT_SETTINGS
-        else:
-            return {
-                "flea": bool(row[1]),
-                "allow_quest_locked": bool(row[2]),
-                "allow_fir_only": bool(row[3]),
-                "meta_only": bool(row[4]),
-                "roll_thermals": bool(row[5]),
-                "trader_levels": {
-                    eft.PRAPOR: row[6],
-                    eft.THERAPIST: row[7],
-                    eft.SKIER: row[8],
-                    eft.PEACEKEEPER: row[9],
-                    eft.MECHANIC: row[10],
-                    eft.RAGMAN: row[11],
-                    eft.JAEGER: row[12],
-                }
-            }
+        return {
+            "flea": bool(row[1]),
+            "allow_quest_locked": bool(row[2]),
+            "allow_fir_only": bool(row[3]),
+            "meta_only": bool(row[4]),
+            "roll_thermals": bool(row[5]),
+            "trader_levels": {
+                eft.PRAPOR: row[6],
+                eft.THERAPIST: row[7],
+                eft.SKIER: row[8],
+                eft.PEACEKEEPER: row[9],
+                eft.MECHANIC: row[10],
+                eft.RAGMAN: row[11],
+                eft.JAEGER: row[12],
+            },
+        }
 
 
-def show_user_settings(user_settings, ctx):
+def show_user_settings(user_settings: UserSettings, ctx: discord.ApplicationContext) -> discord.Embed:
     embed_msg = discord.Embed()
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
     embed_msg.set_thumbnail(url=ctx.interaction.user.display_avatar.url)
@@ -401,7 +419,12 @@ def check_gamerule(gamerule: eft.GameRule, user_settings: UserSettings) -> bool:
                 or gamerule.name == "Use thermal" and not user_settings["roll_thermals"])
 
 
-async def reveal_roll(ctx, embed_msg: discord.Embed, rolled_item, prefix: str) -> None:
+async def reveal_roll(
+        ctx: discord.ApplicationContext,
+        embed_msg: discord.Embed,
+        rolled_item: eft.Item | eft.GameRule,
+        prefix: str,
+) -> None:
     embed_msg.set_image(url="")
     embed_msg.add_field(name=f"{prefix}{rolled_item.category}:", value=":grey_question:", inline=False)
 
@@ -415,7 +438,7 @@ async def reveal_roll(ctx, embed_msg: discord.Embed, rolled_item, prefix: str) -
         index=-1,
         name=f"{prefix}{rolled_item.category}:",
         value=f"{rolled_item.name}",
-        inline=False
+        inline=False,
     )
 
     embed_msg.set_image(url=rolled_item.image_url)
@@ -426,8 +449,8 @@ async def reveal_roll(ctx, embed_msg: discord.Embed, rolled_item, prefix: str) -
 async def is_random_modifier_special(
         rolled_random_modifier: eft.GameRule,
         need_rig: bool,
-        ctx,
-        embed_msg,
+        ctx: discord.ApplicationContext,
+        embed_msg: discord.Embed,
         filtered_items: dict[str, list],
 ) -> None:
     if rolled_random_modifier.name == REROLL_ONE:
@@ -439,7 +462,12 @@ async def is_random_modifier_special(
         await reroll(ctx, select, embed_msg, filtered_items)
 
 
-async def reroll(ctx, select, embed_msg: discord.Embed, filtered_items: dict[str, list]) -> None:
+async def reroll(
+        ctx: discord.ApplicationContext,
+        select: discord.ui.select,
+        embed_msg: discord.Embed,
+        filtered_items: dict[str, list],
+) -> None:
     await ctx.edit(embed=embed_msg, view=select)
     await select.wait()
 
@@ -463,8 +491,8 @@ def create_embed(ctx: discord.ApplicationContext, user_settings: UserSettings) -
     return embed_msg
 
 
-def print_command_timestamp(ctx):
-    print(f"*️⃣️ {time.ctime(time.time())} *️⃣️ /{ctx.command.name} *️⃣")
+def print_command_timestamp(ctx: discord.ApplicationContext) -> None:
+    logging.info(f"*️⃣️ {time.ctime(time.time())} *️⃣️ /{ctx.command.name} *️⃣")
 
 
 # /roll
@@ -521,7 +549,7 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
         embed_msg.add_field(
             name=f"{rolled_random_modifier.category}:",
             value=f"{rolled_random_modifier.name}",
-            inline=False
+            inline=False,
         )
 
         await is_random_modifier_special(rolled_random_modifier, need_rig, ctx, embed_msg, filtered_items)
@@ -540,11 +568,11 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
 @option(name="mechanic", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
 @option(name="ragman", description="Enter Prapor's trader level", choices=[1, 2, 3, 4])
 @option(name="jaeger", description="Enter Prapor's trader level", choices=[0, 1, 2, 3, 4])
-@option(name="flea", description="Do you have access to the flea market?", choices=[True, False], )
-@option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False], )
-@option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False], )
-@option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False], )
-@option(name="roll_thermals", description="Be able to roll thermal as a random modifier?", choices=[True, False], )
+@option(name="flea", description="Do you have access to the flea market?", choices=[True, False])
+@option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", choices=[True, False])
+@option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", choices=[True, False])
+@option(name="meta_only", description="Only allow meta items to be rolled?", choices=[True, False])
+@option(name="roll_thermals", description="Be able to roll thermal as a random modifier?", choices=[True, False])
 async def settings(
         ctx: discord.ApplicationContext,
         prapor: int,
@@ -580,12 +608,13 @@ async def settings(
     }
 
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
+    ll2: int = 2
     if user_settings["flea"] is False and (
-            user_settings["trader_levels"][eft.PRAPOR] >= 2
-            or user_settings["trader_levels"][eft.SKIER] >= 2
-            or user_settings["trader_levels"][eft.MECHANIC] >= 2
-            or user_settings["trader_levels"][eft.RAGMAN] >= 2
-            or user_settings["trader_levels"][eft.JAEGER] >= 2
+            user_settings["trader_levels"][eft.PRAPOR] >= ll2
+            or user_settings["trader_levels"][eft.SKIER] >= ll2
+            or user_settings["trader_levels"][eft.MECHANIC] >= ll2
+            or user_settings["trader_levels"][eft.RAGMAN] >= ll2
+            or user_settings["trader_levels"][eft.JAEGER] >= ll2
     ):
         user_settings["flea"] = True
 
@@ -679,7 +708,7 @@ async def on_application_command_error(ctx: discord.ApplicationContext, error: d
 
     elif isinstance(error, commands.DisabledCommand):
         await ctx.respond(
-            f'{ctx.command} has been disabled.',
+            f"{ctx.command} has been disabled.",
             ephemeral=True,
         )
 
