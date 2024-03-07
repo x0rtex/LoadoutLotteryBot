@@ -209,7 +209,7 @@ def initialize_database() -> None:
                         skier INTEGER,
                         peacekeeper INTEGER,
                         mechanic INTEGER,
-                        ragman INTEGER
+                        ragman INTEGER,
                         jaeger INTEGER
                     )""")
         con.commit()
