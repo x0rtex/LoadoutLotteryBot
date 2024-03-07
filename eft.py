@@ -1,5 +1,7 @@
-from typing import NamedTuple
+from __future__ import annotations
+
 from dataclasses import dataclass
+from typing import NamedTuple
 
 # Weapon Types
 ASSAULT_CARBINE: str = "Assault Carbine"
@@ -70,7 +72,6 @@ class Item:
     flea: bool
     trader_info: dict[str, list[Obtain]]
 
-# Replace all 'dict[str, Obtain]' with 'dict[str, list[Obtain]]' to match class Item above:
 
 ALL_WEAPONS: tuple = (
     Item(
@@ -80,7 +81,7 @@ ALL_WEAPONS: tuple = (
         always_obtainable=True,
         meta=True,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Bars A-2607 95Kh18 knife",
@@ -89,7 +90,7 @@ ALL_WEAPONS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="ADAR 2-15 5.56x45",
@@ -99,7 +100,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=1, quest_locked=False, barter=False),],
+            SKIER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -110,8 +111,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True),],
+            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -123,7 +124,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=3, quest_locked=False, barter=True),
-                     Obtain(level=4, quest_locked=False, barter=False),],
+                     Obtain(level=4, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -134,7 +135,7 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False),],
+            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -145,7 +146,7 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=False),],
+            MECHANIC: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -156,7 +157,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=False),],
+            MECHANIC: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -167,7 +168,7 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -178,8 +179,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=True, barter=True),],
+            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=True, barter=True)],
         },
     ),
     Item(
@@ -190,7 +191,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -201,7 +202,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -213,8 +214,8 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=2, quest_locked=False, barter=True),
-                     Obtain(level=3, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True),],
+                     Obtain(level=3, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -225,9 +226,9 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=2, quest_locked=False, barter=False),],
-            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=True),],
+            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=2, quest_locked=False, barter=False)],
+            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -239,7 +240,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=2, quest_locked=False, barter=False),
-                     Obtain(level=1, quest_locked=False, barter=True),],
+                     Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -250,8 +251,8 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -262,7 +263,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -273,7 +274,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -293,7 +294,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -304,8 +305,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=True, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=1, quest_locked=True, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -317,7 +318,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=1, quest_locked=True, barter=False),
-                     Obtain(level=1, quest_locked=False, barter=True),],
+                     Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -328,7 +329,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -339,7 +340,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=4, quest_locked=False, barter=True),],
+            PRAPOR: [Obtain(level=4, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -350,7 +351,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=4, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=4, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -361,7 +362,7 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            SKIER: [Obtain(level=4, quest_locked=True, barter=False),],
+            SKIER: [Obtain(level=4, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -372,7 +373,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False),],
+            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -383,7 +384,7 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=False),],
+            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -394,8 +395,8 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=3, quest_locked=True, barter=False),],
-            MECHANIC: [Obtain(level=4, quest_locked=False, barter=False),],
+            PEACEKEEPER: [Obtain(level=3, quest_locked=True, barter=False)],
+            MECHANIC: [Obtain(level=4, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -408,12 +409,12 @@ ALL_WEAPONS: tuple = (
         trader_info={
             PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=True),
                           Obtain(level=2, quest_locked=False, barter=False),
-                          Obtain(level=4, quest_locked=False, barter=True),],
+                          Obtain(level=4, quest_locked=False, barter=True)],
             MECHANIC: [Obtain(level=2, quest_locked=False, barter=False),
                        Obtain(level=2, quest_locked=False, barter=True),
                        Obtain(level=2, quest_locked=True, barter=True),
                        Obtain(level=3, quest_locked=False, barter=True),
-                       Obtain(level=3, quest_locked=True, barter=False),],
+                       Obtain(level=3, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -427,7 +428,7 @@ ALL_WEAPONS: tuple = (
             MECHANIC: [Obtain(level=2, quest_locked=False, barter=False),
                        Obtain(level=2, quest_locked=True, barter=True)],
             PEACEKEEPER: [Obtain(level=2, quest_locked=True, barter=False),
-                          Obtain(level=3, quest_locked=False, barter=False),],
+                          Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -438,9 +439,9 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            PEACEKEEPER: [Obtain(level=4, quest_locked=False, barter=False),],
+            PEACEKEEPER: [Obtain(level=4, quest_locked=False, barter=False)],
             MECHANIC: [Obtain(level=3, quest_locked=False, barter=True),
-                       Obtain(level=4, quest_locked=False, barter=False),],
+                       Obtain(level=4, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -452,7 +453,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             SKIER: [Obtain(level=2, quest_locked=False, barter=True),
-                    Obtain(level=3, quest_locked=False, barter=False),],
+                    Obtain(level=3, quest_locked=False, barter=False)],
 
         },
     ),
@@ -466,10 +467,10 @@ ALL_WEAPONS: tuple = (
         trader_info={
             PEACEKEEPER: [Obtain(level=2, quest_locked=True, barter=True),
                           Obtain(level=3, quest_locked=False, barter=False),
-                          Obtain(level=4, quest_locked=False, barter=False),],
+                          Obtain(level=4, quest_locked=False, barter=False)],
             MECHANIC: [Obtain(level=4, quest_locked=False, barter=False),
                        Obtain(level=3, quest_locked=False, barter=True),
-                       Obtain(level=4, quest_locked=False, barter=True),],
+                       Obtain(level=4, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -480,8 +481,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True),],
-            SKIER: [Obtain(level=3, quest_locked=True, barter=False),],
+            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True)],
+            SKIER: [Obtain(level=3, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -492,13 +493,13 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=1, quest_locked=False, barter=False),],
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=2, quest_locked=False, barter=False),],
+            SKIER: [Obtain(level=1, quest_locked=False, barter=False)],
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
-        name="Molot VPO-136 \"Vepr KM\" 7.62x39",
+        name='Molot VPO-136 "Vepr KM" 7.62x39',
         category=ASSAULT_CARBINE,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/Vpo136.png/revision/latest/scale-to-width-down/180?cb=20181028171300",
         always_obtainable=True,
@@ -506,7 +507,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             SKIER: [Obtain(level=1, quest_locked=False, barter=False),
-                    Obtain(level=1, quest_locked=False, barter=True),],
+                    Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -517,8 +518,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True),],
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -529,19 +530,19 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
-        name="Molot Arms VPO-101 \"Vepr-Hunter\" 7.62x51",
+        name='Molot Arms VPO-101 "Vepr-Hunter" 7.62x51',
         category=ASSAULT_CARBINE,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f0/VeprHunterImage.png/revision/latest/scale-to-width-down/180?cb=20190410211507",
         always_obtainable=False,
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=2, quest_locked=False, barter=False),],
+            JAEGER: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -554,8 +555,8 @@ ALL_WEAPONS: tuple = (
         trader_info={
             PRAPOR: [Obtain(level=2, quest_locked=True, barter=True),
                      Obtain(level=3, quest_locked=False, barter=True),
-                     Obtain(level=4, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True),],
+                     Obtain(level=4, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -566,8 +567,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
-            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False),],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
+            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -580,8 +581,8 @@ ALL_WEAPONS: tuple = (
         trader_info={
             PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False),
                           Obtain(level=1, quest_locked=False, barter=True),
-                          Obtain(level=2, quest_locked=True, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
+                          Obtain(level=2, quest_locked=True, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -592,8 +593,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
-            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False),],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
+            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -604,7 +605,7 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=4, quest_locked=False, barter=True),],
+            PEACEKEEPER: [Obtain(level=4, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -615,7 +616,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=1, quest_locked=True, barter=False),],
+            PEACEKEEPER: [Obtain(level=1, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -636,8 +637,8 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False),
-                          Obtain(level=3, quest_locked=True, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
+                          Obtain(level=3, quest_locked=True, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -650,11 +651,11 @@ ALL_WEAPONS: tuple = (
         trader_info={
             PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=True),
                           Obtain(level=3, quest_locked=False, barter=False)],
-            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True),],
+            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True)],
         },
     ),
     Item(
-        name="PP-19-01 \"Vityaz\" 9x19",
+        name='PP-19-01 "Vityaz" 9x19',
         category=SMG,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fb/Pp19.png/revision/latest/scale-to-width-down/180?cb=20180219121911",
         always_obtainable=False,
@@ -662,12 +663,12 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=1, quest_locked=False, barter=True),
-                     Obtain(level=2, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=True, barter=True),],
+                     Obtain(level=2, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=True, barter=True)],
         },
     ),
     Item(
-        name="PP-9 \"Klin\" 9x18PMM",
+        name='PP-9 "Klin" 9x18PMM',
         category=SMG,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/48/Klin.png/revision/latest/scale-to-width-down/180?cb=20180219121903",
         always_obtainable=False,
@@ -679,18 +680,18 @@ ALL_WEAPONS: tuple = (
         },
     ),
     Item(
-        name="PP-91 \"Kedr\" 9x18PM",
+        name='PP-91 "Kedr" 9x18PM',
         category=SMG,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/Kedr.png/revision/latest/scale-to-width-down/180?cb=20180219121901",
         always_obtainable=True,
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
-        name="PP-91-01 \"Kedr-B\" 9x18PM",
+        name='PP-91-01 "Kedr-B" 9x18PM',
         category=SMG,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a4/Kedrb.png/revision/latest/scale-to-width-down/180?cb=20180219121902",
         always_obtainable=True,
@@ -698,7 +699,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),
-                     Obtain(level=1, quest_locked=False, barter=True),],
+                     Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -709,7 +710,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -720,7 +721,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=1, quest_locked=True, barter=False),],
+            SKIER: [Obtain(level=1, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -731,7 +732,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=2, quest_locked=False, barter=False),],
+            SKIER: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -743,8 +744,8 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=True),
-                          Obtain(level=2, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
+                          Obtain(level=2, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -755,7 +756,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=3, quest_locked=True, barter=False),],
+            SKIER: [Obtain(level=3, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -766,7 +767,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=3, quest_locked=True, barter=False),],
+            SKIER: [Obtain(level=3, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -777,7 +778,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False),],
+            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -788,8 +789,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=1, quest_locked=True, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
+            SKIER: [Obtain(level=1, quest_locked=True, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -801,8 +802,8 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             JAEGER: [Obtain(level=1, quest_locked=False, barter=False),
-                     Obtain(level=1, quest_locked=False, barter=True),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
+                     Obtain(level=1, quest_locked=False, barter=True)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -813,9 +814,9 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=1, quest_locked=False, barter=True),],
+            SKIER: [Obtain(level=1, quest_locked=False, barter=True)],
             JAEGER: [Obtain(level=1, quest_locked=False, barter=True),
-                     Obtain(level=2, quest_locked=False, barter=False),],
+                     Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -826,7 +827,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=2, quest_locked=False, barter=False),],
+            JAEGER: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -837,7 +838,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=False),],
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -848,7 +849,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=2, quest_locked=False, barter=False),],
+            JAEGER: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -859,7 +860,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=False),],
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -871,7 +872,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             JAEGER: [Obtain(level=2, quest_locked=False, barter=False),
-                     Obtain(level=3, quest_locked=False, barter=True),],
+                     Obtain(level=3, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -882,8 +883,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=1, quest_locked=False, barter=False),],
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=False),],
+            SKIER: [Obtain(level=1, quest_locked=False, barter=False)],
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -895,7 +896,7 @@ ALL_WEAPONS: tuple = (
         flea=False,
         trader_info={
             PRAPOR: [Obtain(level=3, quest_locked=False, barter=True),
-                     Obtain(level=4, quest_locked=False, barter=True),],
+                     Obtain(level=4, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -906,8 +907,8 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=True),],
-            JAEGER: [Obtain(level=4, quest_locked=True, barter=False),],
+            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=True)],
+            JAEGER: [Obtain(level=4, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -920,11 +921,11 @@ ALL_WEAPONS: tuple = (
         trader_info={
             PEACEKEEPER: [Obtain(level=2, quest_locked=True, barter=True),
                           Obtain(level=3, quest_locked=False, barter=False),
-                          Obtain(level=4, quest_locked=False, barter=False),],
+                          Obtain(level=4, quest_locked=False, barter=False)],
             MECHANIC: [Obtain(level=2, quest_locked=False, barter=True),
                        Obtain(level=3, quest_locked=False, barter=False),
                        Obtain(level=3, quest_locked=False, barter=True),
-                       Obtain(level=4, quest_locked=False, barter=False),],
+                       Obtain(level=4, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -935,7 +936,7 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            JAEGER: [Obtain(level=4, quest_locked=True, barter=False),],
+            JAEGER: [Obtain(level=4, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -959,7 +960,7 @@ ALL_WEAPONS: tuple = (
         flea=False,
         trader_info={
             PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=True),
-                          Obtain(level=4, quest_locked=True, barter=False),],
+                          Obtain(level=4, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -970,7 +971,7 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False),],
+            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -981,7 +982,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -993,7 +994,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=3, quest_locked=False, barter=True),
-                     Obtain(level=4, quest_locked=False, barter=True),],
+                     Obtain(level=4, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1006,7 +1007,7 @@ ALL_WEAPONS: tuple = (
         trader_info={
             SKIER: [Obtain(level=3, quest_locked=True, barter=False),
                     Obtain(level=3, quest_locked=False, barter=True),
-                    Obtain(level=4, quest_locked=False, barter=True),],
+                    Obtain(level=4, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1017,11 +1018,11 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True),],
-            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False),],
+            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True)],
+            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False)],
             JAEGER: [Obtain(level=2, quest_locked=False, barter=True),
                      Obtain(level=3, quest_locked=True, barter=False),
-                     Obtain(level=4, quest_locked=True, barter=False),],
+                     Obtain(level=4, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -1033,8 +1034,8 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=1, quest_locked=False, barter=True),
-                     Obtain(level=2, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True),],
+                     Obtain(level=2, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=2, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1045,7 +1046,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1057,8 +1058,8 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=2, quest_locked=False, barter=True),
-                     Obtain(level=3, quest_locked=True, barter=False),],
-            JAEGER: [Obtain(level=3, quest_locked=False, barter=False),],
+                     Obtain(level=3, quest_locked=True, barter=False)],
+            JAEGER: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1069,18 +1070,18 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=3, quest_locked=True, barter=False),],
+            SKIER: [Obtain(level=3, quest_locked=True, barter=False)],
         },
     ),
     Item(
-        name="Molot VPO-215 \"Gornostay\" .366 TKM",
+        name='Molot VPO-215 "Gornostay" .366 TKM',
         category=SNIPER_RIFLE,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4e/VPO-215_View.png/revision/latest/scale-to-width-down/180?cb=20200216013459",
         always_obtainable=False,
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=False),],
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1091,9 +1092,9 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False),],
+            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False)],
             MECHANIC: [Obtain(level=2, quest_locked=False, barter=False),
-                       Obtain(level=3, quest_locked=True, barter=False),],
+                       Obtain(level=3, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -1104,7 +1105,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1116,7 +1117,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=1, quest_locked=False, barter=True),
-                     Obtain(level=2, quest_locked=False, barter=False),],
+                     Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1129,7 +1130,7 @@ ALL_WEAPONS: tuple = (
         trader_info={
             PEACEKEEPER: [Obtain(level=2, quest_locked=True, barter=False),
                           Obtain(level=2, quest_locked=False, barter=True),
-                          Obtain(level=3, quest_locked=False, barter=False),],
+                          Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1142,7 +1143,7 @@ ALL_WEAPONS: tuple = (
         trader_info={
             MECHANIC: [Obtain(level=1, quest_locked=False, barter=False),
                        Obtain(level=1, quest_locked=True, barter=True),
-                       Obtain(level=2, quest_locked=False, barter=True),],
+                       Obtain(level=2, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1153,7 +1154,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=False),],
+            MECHANIC: [Obtain(level=3, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1164,7 +1165,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=2, quest_locked=False, barter=False),],
+            SKIER: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1175,7 +1176,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False),],
+            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1195,7 +1196,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False),],
+            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1207,7 +1208,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),
-                     Obtain(level=1, quest_locked=False, barter=True),],
+                     Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1219,8 +1220,8 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False),
-                          Obtain(level=1, quest_locked=False, barter=True),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=False),],
+                          Obtain(level=1, quest_locked=False, barter=True)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1231,7 +1232,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),],
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1243,7 +1244,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=1, quest_locked=True, barter=False),
-                     Obtain(level=1, quest_locked=False, barter=True),],
+                     Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1254,8 +1255,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=False),],
-            JAEGER: [Obtain(level=3, quest_locked=False, barter=True),],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=False)],
+            JAEGER: [Obtain(level=3, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1267,7 +1268,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),
-                     Obtain(level=1, quest_locked=False, barter=True),],
+                     Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1280,7 +1281,7 @@ ALL_WEAPONS: tuple = (
         trader_info={
             PRAPOR: [Obtain(level=2, quest_locked=False, barter=True),
                      Obtain(level=3, quest_locked=False, barter=False),
-                     Obtain(level=4, quest_locked=True, barter=True),],
+                     Obtain(level=4, quest_locked=True, barter=True)],
         },
     ),
     Item(
@@ -1291,8 +1292,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1312,7 +1313,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=False),],
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1323,8 +1324,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=2, quest_locked=False, barter=False),],
-            SKIER: [Obtain(level=2, quest_locked=True, barter=False),],
+            JAEGER: [Obtain(level=2, quest_locked=False, barter=False)],
+            SKIER: [Obtain(level=2, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -1337,7 +1338,7 @@ ALL_WEAPONS: tuple = (
         trader_info={
             PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False),
                           Obtain(level=3, quest_locked=False, barter=False),
-                          Obtain(level=4, quest_locked=False, barter=False),],
+                          Obtain(level=4, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1348,7 +1349,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=2, quest_locked=True, barter=False),],
+            JAEGER: [Obtain(level=2, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -1359,7 +1360,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            JAEGER: [Obtain(level=4, quest_locked=True, barter=False),],
+            JAEGER: [Obtain(level=4, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -1370,7 +1371,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=False),],
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1381,7 +1382,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            MECHANIC: [Obtain(level=4, quest_locked=False, barter=False),],
+            MECHANIC: [Obtain(level=4, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1392,7 +1393,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=2, quest_locked=False, barter=False),],
+            SKIER: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1403,7 +1404,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=2, quest_locked=False, barter=False),],
+            SKIER: [Obtain(level=2, quest_locked=False, barter=False)],
         },
     ),
     Item(
@@ -1414,7 +1415,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=True),],
+            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=True)],
         },
     ),
     Item(
@@ -1424,7 +1425,7 @@ ALL_WEAPONS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Tokarev SVT-40 7.62x54R",
@@ -1435,7 +1436,7 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),
-                     Obtain(level=3, quest_locked=False, barter=True),],
+                     Obtain(level=3, quest_locked=False, barter=True)],
         },
     ),
     Item(
@@ -1446,7 +1447,7 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=True, barter=True),],
+            PRAPOR: [Obtain(level=3, quest_locked=True, barter=True)],
         },
     ),
     Item(
@@ -1456,7 +1457,7 @@ ALL_WEAPONS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Kalashikov PKP 7.62x54R",
@@ -1465,7 +1466,7 @@ ALL_WEAPONS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="ZiD SP-81 26x75",
@@ -1475,8 +1476,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            JAEGER: [Obtain(level=3, quest_locked=False, barter=True),],
-        }
+            JAEGER: [Obtain(level=3, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Degtyarev RPD 7.62x39",
@@ -1486,8 +1487,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Degtyarev RPDN 7.62x39",
@@ -1497,8 +1498,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True),],
-        }
+            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Degtyarev RPDN 7.62x39",
@@ -1508,11 +1509,11 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True),],
-        }
+            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True)],
+        },
     ),
     Item(
-        name="SR-2M \"Veresk\" 9x21",
+        name='SR-2M "Veresk" 9x21',
         category=SMG,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/SR2M_View.png/revision/latest/scale-to-width-down/320?cb=20231025202344",
         always_obtainable=False,
@@ -1520,8 +1521,8 @@ ALL_WEAPONS: tuple = (
         flea=True,
         trader_info={
             PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),
-                     Obtain(level=4, quest_locked=True, barter=True),],
-        }
+                     Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="SIG MCX SPEAR 6.8x51",
@@ -1531,8 +1532,8 @@ ALL_WEAPONS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=False),],
-        }
+            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="RSh-12 12.7x55",
@@ -1542,8 +1543,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=False, barter=True),],
-        }
+            PRAPOR: [Obtain(level=3, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="KBP 9A-91 9x39",
@@ -1553,8 +1554,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            PRAPOR: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="KBP VSK-94 9x39",
@@ -1564,8 +1565,8 @@ ALL_WEAPONS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            PRAPOR: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Cultist knife",
@@ -1574,7 +1575,7 @@ ALL_WEAPONS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
 )
 
@@ -1586,7 +1587,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=True,
         meta=True,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="BNTI Module-3M body armor",
@@ -1596,8 +1597,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=1, quest_locked=False, barter=False),]
-        }
+            SKIER: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="PACA Soft Armor",
@@ -1608,8 +1609,8 @@ ALL_ARMOR_VESTS: tuple = (
         flea=True,
         trader_info={
             RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),
-                     Obtain(level=1, quest_locked=False, barter=True),],
-        }
+                     Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="PACA Soft Armor (Rivals Edition)",
@@ -1618,7 +1619,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="6B2 body armor (Flora)",
@@ -1628,8 +1629,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="MF-UNTAR body armor",
@@ -1639,9 +1640,9 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False),],
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=True),],
-        }
+            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False)],
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="BNTI Zhuk body armor (Press)",
@@ -1651,8 +1652,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            SKIER: [Obtain(level=1, quest_locked=False, barter=True),],
-        }
+            SKIER: [Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="6B23-1 body armor (Digital Flora)",
@@ -1662,9 +1663,9 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="DRD body armor",
@@ -1673,7 +1674,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="BNTI Kirasa-N body armor",
@@ -1683,8 +1684,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="NFM THOR Concealable Reinforced Vest body armor",
@@ -1694,8 +1695,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=True, barter=True),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="HighCom Trooper TFO body armor (Multicam)",
@@ -1704,7 +1705,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="6B13 assault armor",
@@ -1715,8 +1716,8 @@ ALL_ARMOR_VESTS: tuple = (
         flea=True,
         trader_info={
             RAGMAN: [Obtain(level=2, quest_locked=True, barter=False),
-                     Obtain(level=3, quest_locked=False, barter=False),],
-        }
+                     Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="6B23-2 body armor (Mountain Flora)",
@@ -1725,7 +1726,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Hexatac HPC Plate Carrier (Multicam Black)",
@@ -1735,8 +1736,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="NPP KlASS Korund-VM body armor",
@@ -1746,8 +1747,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            PRAPOR: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="FORT Redut-M body armor",
@@ -1757,8 +1758,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="6B13 M assault armor (Killa Edition)",
@@ -1767,7 +1768,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=False,
         meta=True,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="IOTV Gen4 body armor (High Mobility Kit, MultiCam)",
@@ -1777,8 +1778,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="BNTI Gzhel-K body armor",
@@ -1787,7 +1788,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=False,
         meta=True,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="FORT Defender-2 body armor",
@@ -1797,8 +1798,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="IOTV Gen4 body armor (Assault Kit, MultiCam)",
@@ -1808,7 +1809,7 @@ ALL_ARMOR_VESTS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=False),],
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=False)],
         },
     ),
     Item(
@@ -1818,7 +1819,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=False,
         meta=True,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="FORT Redut-T5 body armor (Smog)",
@@ -1828,8 +1829,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="5.11 Tactical Hexgrid plate carrier",
@@ -1838,7 +1839,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="LBT-6094A Slick Plate Carrier",
@@ -1848,8 +1849,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="BNTI Zhuk body armor (Digital Flora)",
@@ -1858,7 +1859,7 @@ ALL_ARMOR_VESTS: tuple = (
         always_obtainable=False,
         meta=True,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="NFM THOR Integrated Carrier body armor",
@@ -1868,8 +1869,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="6B43 Zabralo-Sh body armor (Digital Flora)",
@@ -1879,8 +1880,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            PRAPOR: [Obtain(level=4, quest_locked=True, barter=True),],
-        }
+            PRAPOR: [Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="NPP KlASS Kora-Kulon body armor",
@@ -1890,9 +1891,9 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=True, barter=False),],
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=True),],
-        }
+            PRAPOR: [Obtain(level=1, quest_locked=True, barter=False)],
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Interceptor OTV body armor (UCP)",
@@ -1902,8 +1903,8 @@ ALL_ARMOR_VESTS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=True, barter=True),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=True, barter=True)],
+        },
     ),
 )
 
@@ -1915,7 +1916,7 @@ ALL_ARMORED_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Eagle Allied Industries MBSS plate carrier (Coyote Brown)",
@@ -1924,7 +1925,7 @@ ALL_ARMORED_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Eagle Industries MMAC plate carrier (Ranger Green)",
@@ -1934,8 +1935,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Shellback Tactical Banshee plate carrier (A-TACS AU)",
@@ -1945,8 +1946,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Ars Arma A18 Skanda plate carrier (MultiCam)",
@@ -1955,7 +1956,7 @@ ALL_ARMORED_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="WARTECH TV-110 plate carrier (Coyote)",
@@ -1965,8 +1966,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="FirstSpear Strandhogg plate carrier (Ranger Green)",
@@ -1976,8 +1977,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="ECLiPSE RBAV-AF plate carrier (Ranger Green)",
@@ -1987,8 +1988,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="CQC Osprey MK4A plate carrier (Assault, MTP)",
@@ -1998,8 +1999,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=True, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="6B3TM-01M armored rig (Khaki)",
@@ -2010,8 +2011,8 @@ ALL_ARMORED_RIGS: tuple = (
         flea=True,
         trader_info={
             RAGMAN: [Obtain(level=2, quest_locked=False, barter=True),
-                     Obtain(level=2, quest_locked=True, barter=True),],
-        }
+                     Obtain(level=2, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="6B5-15 Zh-86 Uley armored rig (Flora)",
@@ -2021,8 +2022,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=True, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="ANA Tactical M2 plate carrier (Digital Flora)",
@@ -2032,8 +2033,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="ANA Tactical M1 plate carrier (Olive Drab)",
@@ -2042,7 +2043,7 @@ ALL_ARMORED_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Crye Precision AVS plate carrier (Ranger Green)",
@@ -2052,8 +2053,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="5.11 Tactical TacTec plate carrier (Ranger Green)",
@@ -2062,7 +2063,7 @@ ALL_ARMORED_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Ars Arma CPC MOD.1 plate carrier (A-TACS FG)",
@@ -2071,7 +2072,7 @@ ALL_ARMORED_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Crye Precision CPC plate carrier (Goons Edition)",
@@ -2080,7 +2081,7 @@ ALL_ARMORED_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="S&S Precision PlateFrame plate carrier (Goons Edition)",
@@ -2089,7 +2090,7 @@ ALL_ARMORED_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="CQC Osprey MK4A plate carrier (Protection, MTP)",
@@ -2099,8 +2100,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=4, quest_locked=False, barter=True),],
-        }
+            PEACEKEEPER: [Obtain(level=4, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="NPP KlASS Bagariy armored rig (Digital Flora)",
@@ -2110,8 +2111,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Tasmanian Tiger SK plate carrier (Multicam Black)",
@@ -2121,8 +2122,8 @@ ALL_ARMORED_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="Crye Precision AVS plate carrier (Tagilla Edition)",
@@ -2131,7 +2132,7 @@ ALL_ARMORED_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
 )
 
@@ -2145,7 +2146,7 @@ ALL_RIGS: tuple = (
         always_obtainable=True,
         meta=True,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Scav Vest",
@@ -2155,8 +2156,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=True),],
-        }
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Security vest",
@@ -2165,7 +2166,7 @@ ALL_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Zulu Nylon Gear M4 Reduced Signature Chest Rig",
@@ -2175,8 +2176,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="DIY IDEA chest rig",
@@ -2185,7 +2186,7 @@ ALL_RIGS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Spiritus Systems Bank Robber chest rig",
@@ -2195,8 +2196,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="SOE Micro Rig",
@@ -2206,8 +2207,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Type 56 Chicom chest harness",
@@ -2217,8 +2218,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="WARTECH TV-109 + TV-106 chest rig",
@@ -2228,8 +2229,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="CSA chest rig",
@@ -2239,8 +2240,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="UMTBS 6sh112 Scout-Sniper",
@@ -2250,18 +2251,18 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=True),],
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=True)],
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
-        name="Azimut SS \"Khamelion\" chest harness (Olive)",
+        name='Azimut SS "Khamelion" chest harness (Olive)',
         category=RIG,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/17/Azimut_SS_%22Khamelion%22_chest_harness_%28Olive%29_image.png/revision/latest/scale-to-width-down/320?cb=20221230000547",
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Splav Tarzan M22 chest rig",
@@ -2271,8 +2272,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=2, quest_locked=False, barter=True),],
-        }
+            JAEGER: [Obtain(level=2, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Haley Strategic D3CRX Chest Harness",
@@ -2282,8 +2283,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Dynaforce Triton M43-A chest harness",
@@ -2293,8 +2294,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="BlackHawk! Commando chest harness",
@@ -2304,8 +2305,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Direct Action Thunderbolt compact chest rig",
@@ -2314,7 +2315,7 @@ ALL_RIGS: tuple = (
         always_obtainable=False,
         meta=True,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Gear Craft GC-BSS-MK1 chest rig",
@@ -2324,8 +2325,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Umka M33-SET1 hunter vest",
@@ -2335,8 +2336,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="LBT-1961A Load Bearing Chest Rig",
@@ -2345,7 +2346,7 @@ ALL_RIGS: tuple = (
         always_obtainable=False,
         meta=True,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="LBT-1961A Load Bearing Chest Rig (Goons Edition)",
@@ -2354,7 +2355,7 @@ ALL_RIGS: tuple = (
         always_obtainable=False,
         meta=True,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Stich Profi Chest Rig MK2 (Recon, A-TACS FG)",
@@ -2364,8 +2365,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Stich Profi Chest Rig MK2 (Assault, A-TACS FG)",
@@ -2375,8 +2376,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="BlackRock chest rig",
@@ -2386,8 +2387,8 @@ ALL_RIGS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="WARTECH MK3 TV-104 chest rig",
@@ -2397,8 +2398,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="ANA Tactical Alpha chest rig",
@@ -2408,19 +2409,19 @@ ALL_RIGS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
-        name="Azimut SS \"Zhuk\" chest harness",
+        name='Azimut SS "Zhuk" chest harness',
         category=RIG,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/Azimut_SS_Jhuk_Chest_Harness.gif/revision/latest/scale-to-width-down/320?cb=20210331130740",
         always_obtainable=False,
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Velocity Systems MPPV Multi-Purpose Patrol Vest",
@@ -2429,7 +2430,7 @@ ALL_RIGS: tuple = (
         always_obtainable=False,
         meta=True,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Belt-A + Belt-B gear rig",
@@ -2439,8 +2440,8 @@ ALL_RIGS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=True)],
+        },
     ),
 )
 
@@ -2452,7 +2453,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=True,
         meta=True,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Shattered lightweight armored mask",
@@ -2462,8 +2463,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Glorious E lightweight armored mask",
@@ -2472,7 +2473,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Death Shadow lightweight armored mask (ANY HELMET!)",
@@ -2482,8 +2483,8 @@ ALL_HELMETS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False),]
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Atomic Defense CQCM ballistic mask (Black)",
@@ -2493,8 +2494,8 @@ ALL_HELMETS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=False),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="Tagilla's welding mask \"Gorilla\"",
@@ -2503,7 +2504,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Tagilla's welding mask \"UBEY\"",
@@ -2512,7 +2513,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Diamond Age NeoSteel High Cut helmet (Black)",
@@ -2522,8 +2523,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="NPP KlASS Tor-2 helmet (Olive Drab)",
@@ -2533,8 +2534,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Armasight NVG head strap",
@@ -2544,8 +2545,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            PEACEKEEPER: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Wilcox Skull Lock head mount",
@@ -2555,10 +2556,10 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False),],
-            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False)],
+            MECHANIC: [Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Bomber beanie",
@@ -2567,7 +2568,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Tac-Kek FAST MT helmet (Replica)",
@@ -2576,7 +2577,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="TSh-4M-L soft tank crew helmet",
@@ -2585,7 +2586,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Kolpak-1S riot helmet",
@@ -2595,8 +2596,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="ShPM Firefighter helmet",
@@ -2605,7 +2606,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="PSh-97 DJETA riot helmet",
@@ -2614,7 +2615,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="LShZ light helmet (Olive Drab)",
@@ -2624,8 +2625,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="SSh-68 steel helmet (Olive Drab)",
@@ -2635,8 +2636,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Galvion Caiman Hybrid helmet (Grey)",
@@ -2646,8 +2647,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            PEACEKEEPER: [Obtain(level=2, quest_locked=True, barter=False),],
-        }
+            PEACEKEEPER: [Obtain(level=2, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="NFM HJELM helmet (Hellhound Grey)",
@@ -2656,7 +2657,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="UNTAR helmet",
@@ -2666,9 +2667,9 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=True),],
-            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=True)],
+            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="6B47 Ratnik-BSh helmet",
@@ -2678,9 +2679,9 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=2, quest_locked=True, barter=False),],
-            RAGMAN: [Obtain(level=2, quest_locked=True, barter=True),],
-        }
+            PRAPOR: [Obtain(level=2, quest_locked=True, barter=False)],
+            RAGMAN: [Obtain(level=2, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="FORT Kiver-M bulletproof helmet",
@@ -2690,8 +2691,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="SSSh-94 SFERA-S helmet",
@@ -2701,8 +2702,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=True, barter=False),],
-        }
+            PRAPOR: [Obtain(level=1, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="DevTac Ronin ballistic helmet",
@@ -2712,8 +2713,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            MECHANIC: [Obtain(level=2, quest_locked=True, barter=False),],
-        }
+            MECHANIC: [Obtain(level=2, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="MSA ACH TC-2001 MICH Series helmet (Olive Drab)",
@@ -2723,8 +2724,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=2, quest_locked=True, barter=False),],
-        }
+            PEACEKEEPER: [Obtain(level=2, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="MSA ACH TC-2002 MICH Series helmet (Olive Drab)",
@@ -2733,7 +2734,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="HighCom Striker ACHHC IIIA helmet",
@@ -2743,8 +2744,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="MSA Gallet TC 800 High Cut combat helmet (Black)",
@@ -2754,8 +2755,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=True),],
-        }
+            PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Diamond Age Bastion helmet (Black)",
@@ -2765,8 +2766,8 @@ ALL_HELMETS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Ops-Core FAST MT Super High Cut helmet",
@@ -2776,8 +2777,8 @@ ALL_HELMETS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=False),],
-        }
+            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="Crye Precision AirFrame helmet (Tan)",
@@ -2787,8 +2788,8 @@ ALL_HELMETS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=False),],
-        }
+            PEACEKEEPER: [Obtain(level=4, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="Team Wendy EXFIL Ballistic Helmet",
@@ -2799,8 +2800,8 @@ ALL_HELMETS: tuple = (
         flea=False,
         trader_info={
             RAGMAN: [Obtain(level=4, quest_locked=False, barter=False),
-                     Obtain(level=4, quest_locked=True, barter=False),],
-        }
+                     Obtain(level=4, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="ZSh-1-2M helmet",
@@ -2811,8 +2812,8 @@ ALL_HELMETS: tuple = (
         flea=True,
         trader_info={
             RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),
-                     Obtain(level=3, quest_locked=False, barter=False),],
-        }
+                     Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="HighCom Striker ULACH IIIA helmet",
@@ -2822,8 +2823,8 @@ ALL_HELMETS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=False),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="BNTI LShZ-2DTM helmet (Black)",
@@ -2833,8 +2834,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Maska-1SCh bulletproof helmet",
@@ -2844,8 +2845,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            PRAPOR: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Altyn bulletproof helmet (Olive Drab)",
@@ -2855,8 +2856,8 @@ ALL_HELMETS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="Rys-T bulletproof helmet",
@@ -2865,7 +2866,7 @@ ALL_HELMETS: tuple = (
         always_obtainable=False,
         meta=True,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Vulkan-5 (LShZ-5) bulletproof helmet",
@@ -2875,8 +2876,8 @@ ALL_HELMETS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True)],
+        },
     ),
 )
 
@@ -2888,7 +2889,7 @@ ALL_BACKPACKS: tuple = (
         always_obtainable=True,
         meta=True,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="6Sh118 raid backpack (Digital Flora)",
@@ -2898,8 +2899,8 @@ ALL_BACKPACKS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            PRAPOR: [Obtain(level=4, quest_locked=True, barter=True),],
-        }
+            PRAPOR: [Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="LBT-2670 Slim Field Med Pack (Black)",
@@ -2909,8 +2910,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            THERAPIST: [Obtain(level=3, quest_locked=False, barter=True),],
-        }
+            THERAPIST: [Obtain(level=3, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Mystery Ranch Blackjack 50 backpack (Multicam)",
@@ -2920,8 +2921,8 @@ ALL_BACKPACKS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=True, barter=True)],
+        },
     ),
     Item(
         name="Eberlestock F4 Terminator load bearing backpack (Tiger Stripe)",
@@ -2931,8 +2932,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="SSO Attack 2 raid backpack (Khaki)",
@@ -2942,8 +2943,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Tasmanian Tiger Trooper 35 backpack",
@@ -2953,8 +2954,8 @@ ALL_BACKPACKS: tuple = (
         meta=True,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Pilgrim tourist backpack",
@@ -2963,7 +2964,7 @@ ALL_BACKPACKS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=False,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="3V Gear Paratus 3-Day Operator's Tactical backpack (Foliage Grey)",
@@ -2973,8 +2974,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            PEACEKEEPER: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            PEACEKEEPER: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Eberlestock G2 Gunslinger II backpack (Dry Earth)",
@@ -2984,8 +2985,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=False,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=True, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="Oakley Mechanism heavy duty backpack (Black)",
@@ -2995,8 +2996,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="ANA Tactical Beta 2 Battle backpack (Olive Drab)",
@@ -3006,8 +3007,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Gruppa 99 T30 backpack",
@@ -3017,8 +3018,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Eberlestock F5 Switchblade backpack (Dry Earth)",
@@ -3027,7 +3028,7 @@ ALL_BACKPACKS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Camelbak Tri-Zip assault backpack (Foliage)",
@@ -3037,8 +3038,8 @@ ALL_BACKPACKS: tuple = (
         meta=True,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=True, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=True, barter=False)],
+        },
     ),
     Item(
         name="LBT-1476A 3Day Pack (Woodland)",
@@ -3048,8 +3049,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Gruppa 99 T20 backpack",
@@ -3059,8 +3060,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Hazard 4 Drawbridge backpack (Coyote Tan)",
@@ -3070,8 +3071,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Hazard 4 Takedown sling backpack",
@@ -3082,8 +3083,8 @@ ALL_BACKPACKS: tuple = (
         flea=True,
         trader_info={
             RAGMAN: [Obtain(level=2, quest_locked=True, barter=False),
-                     Obtain(level=3, quest_locked=False, barter=False),],
-        }
+                     Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Hazard 4 Pillbox backpack (Black)",
@@ -3093,8 +3094,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Scav backpack",
@@ -3103,7 +3104,7 @@ ALL_BACKPACKS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="WARTECH Berkut BB-102 backpack (A-TACS FG)",
@@ -3113,8 +3114,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="LBT-8005A Day Pack backpack (MultiCam Black)",
@@ -3125,8 +3126,8 @@ ALL_BACKPACKS: tuple = (
         flea=True,
         trader_info={
             PEACEKEEPER: [Obtain(level=2, quest_locked=False, barter=False),
-                          Obtain(level=2, quest_locked=False, barter=True),],
-        }
+                          Obtain(level=2, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Sanitar's bag",
@@ -3135,7 +3136,7 @@ ALL_BACKPACKS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Flyye MBSS backpack",
@@ -3145,9 +3146,9 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=True),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+            PEACEKEEPER: [Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Mystery Ranch NICE COMM 3 BVS frame system (Coyote)",
@@ -3156,7 +3157,7 @@ ALL_BACKPACKS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Duffle bag",
@@ -3165,7 +3166,7 @@ ALL_BACKPACKS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="LolKek 3F Transfer tourist backpack",
@@ -3174,7 +3175,7 @@ ALL_BACKPACKS: tuple = (
         always_obtainable=False,
         meta=False,
         flea=True,
-        trader_info={}
+        trader_info={},
     ),
     Item(
         name="Transformer Bag",
@@ -3184,8 +3185,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="VKBO army bag",
@@ -3195,9 +3196,9 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False),],
-            JAEGER: [Obtain(level=1, quest_locked=False, barter=True),],
-        }
+            PRAPOR: [Obtain(level=1, quest_locked=False, barter=False)],
+            JAEGER: [Obtain(level=1, quest_locked=False, barter=True)],
+        },
     ),
     Item(
         name="Tactical sling bag (khaki)",
@@ -3207,8 +3208,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=1, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Mystery Ranch SATL Bridger Assault Pack (Foliage)",
@@ -3218,8 +3219,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=4, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Tehinkom RK-PT-25 patrol backpack (Digital Flora)",
@@ -3229,8 +3230,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=2, quest_locked=False, barter=False)],
+        },
     ),
     Item(
         name="Direct Action Dragon Egg Mark II backpack (Black)",
@@ -3240,8 +3241,8 @@ ALL_BACKPACKS: tuple = (
         meta=False,
         flea=True,
         trader_info={
-            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False),],
-        }
+            RAGMAN: [Obtain(level=3, quest_locked=False, barter=False)],
+        },
     ),
 )
 
@@ -3284,7 +3285,7 @@ ALL_GUN_MODS: tuple = (
         category=GUN_MOD,
         image_url=NO_RESTRICTIONS_IMAGE,
         meta=True,
-    )
+    ),
 )
 
 ALL_AMMO: tuple = (
@@ -3317,7 +3318,7 @@ ALL_AMMO: tuple = (
         category=AMMO,
         image_url=NO_RESTRICTIONS_IMAGE,
         meta=True,
-    )
+    ),
 )
 
 ALL_MAPS: tuple = (
@@ -3607,7 +3608,7 @@ BAD_MODIFIERS: tuple = (
         meta=False,
     ),
     GameRule(
-        name="Must use \"Scav Down\" voice line every time you kill a scav",
+        name='Must use "Scav Down" voice line every time you kill a scav',
         category=RANDOM_MODIFIER,
         image_url="https://i.imgur.com/IrlJOQL.png",
         meta=False,
