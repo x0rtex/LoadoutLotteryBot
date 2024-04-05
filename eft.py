@@ -3392,6 +3392,18 @@ ALL_MAPS: tuple = (
 
 GOOD_MODIFIERS: tuple = (
     GameRule(
+        name="Re-roll 1 slot",
+        category=RANDOM_MODIFIER,
+        image_url=DICE_IMAGE,
+        meta=True,
+    ),
+    GameRule(
+        name="Re-roll 2 slots",
+        category=RANDOM_MODIFIER,
+        image_url=DICE_IMAGE,
+        meta=True,
+    ),
+    GameRule(
         name="Ask your scav for some loot",
         category=RANDOM_MODIFIER,
         image_url="https://pbs.twimg.com/media/DlXnlRvXoAAhOv2.jpg",
@@ -3413,18 +3425,6 @@ GOOD_MODIFIERS: tuple = (
         name="Impact grenades only",
         category=RANDOM_MODIFIER,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/RGN_View.png/revision/latest?cb=20211212210251",
-        meta=True,
-    ),
-    GameRule(
-        name="Re-roll 1 slot",
-        category=RANDOM_MODIFIER,
-        image_url=DICE_IMAGE,
-        meta=True,
-    ),
-    GameRule(
-        name="Re-roll 2 slots",
-        category=RANDOM_MODIFIER,
-        image_url=DICE_IMAGE,
         meta=True,
     ),
     GameRule(
@@ -3499,6 +3499,12 @@ OK_MODIFIERS: tuple = (
 )
 
 BAD_MODIFIERS: tuple = (
+    GameRule(
+        name="No face cover or glasses",
+        category=RANDOM_MODIFIER,
+        image_url="https://i.imgur.com/AQ7ntWE.png",
+        meta=False,
+    ),
     GameRule(
         name="Only smoke grenades",
         category=RANDOM_MODIFIER,
