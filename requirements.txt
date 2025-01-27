@@ -1,5 +1,4 @@
-py-cord==2.4.1
-psutil==5.9.5
-python-dotenv==1.0.0
-tomli-w==1.0.0
-uvloop==0.17.0
+py-cord~=2.6.1
+psutil~=6.1.1
+python-dotenv~=1.0.1
+uvloop~=0.21.0
