@@ -1,9 +1,9 @@
 ## Discord bot for generating a completely random loadout, map, and optional random modifier for Escape from Tarkov. 
 
-#### It's advanced AI will ensure the best loadout for any given person, map, and time! You must believe in the system- whether you get a drum mag Makarov with a Slick on labs or a Mk47 with a PACA- and it will reward you. :)
+#### It's advanced AI* will ensure the best loadout for any given person, map, and time! You must believe in the system- whether you get a drum mag Makarov with a Slick on labs or a Mk47 with a PACA- and it will reward you. :)
 
-- Invite me to your server: https://discord.com/api/oauth2/authorize?client_id=917846908075139083&permissions=414464666688&scope=bot%20applications.commands
-- Support server: https://discord.gg/mgXmtMZgfb
+- [Invite the bot to your server](https://discord.com/api/oauth2/authorize?client_id=917846908075139083&permissions=414464666688&scope=bot%20applications.commands)
+- [Support server](https://discord.gg/mgXmtMZgfb)
 
 List of commands: 
 - **/roll** - Classic Tarkov Loadout Lottery uses a super quantum mega swag algorithm to generate a random loadout and map for you to play with.
@@ -21,4 +21,4 @@ Example 1                             |  Example 2
 Example 3                             |  Example 4
 ![](https://i.imgur.com/DgPfPfF.png)  |  ![](https://i.imgur.com/TXThfe1.png)
 
-p.s. beginner project))
+* It's random.
