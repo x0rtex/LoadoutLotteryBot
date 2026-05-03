@@ -1,2676 +1,3140 @@
 [
-  {
-    "name": "YOUR CHOICE!",
-    "category": "Weapon",
-    "image_url": "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
-    "always_obtainable": true,
-    "meta": true,
-    "flea": false,
-    "trader_info": {}
-  },
-  {
-    "name": "Bars A-2607 95Kh18 knife",
-    "category": "Melee",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/Bars_A-2607-_95x18.png/revision/latest/scale-to-width-down/320?cb=20221225020013",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "ADAR 2-15 5.56x45",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/ADAR2-15Image.png/revision/latest/scale-to-width-down/180?cb=20190226190907",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
+    {
+        "name": "YOUR CHOICE!",
+        "category": "Weapon",
+        "image_url": "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+        "always_obtainable": true,
+        "meta": true,
+        "flea": false,
+        "trader_info": {}
+    },
+    {
+        "name": "Bars A-2607 95Kh18 knife",
+        "category": "Melee",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/Bars_A-2607-_95x18.png/revision/latest/scale-to-width-down/320?cb=20221225020013",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "ADAR 2-15 5.56x45",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/ADAR2-15Image.png/revision/latest/scale-to-width-down/180?cb=20190226190907",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Steyr AUG A1 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f9/Steyr_AUG_A1_5.56x45_assault_rifle.png/revision/latest/scale-to-width-down/320?cb=20221231014107",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-12 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/df/AK-12_Image.png/revision/latest/scale-to-width-down/320?cb=20231017095127",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-308 7.62x51",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b6/AK-308_Image.png/revision/latest/scale-to-width-down/320?cb=20251202114556",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Steyr AUG A3 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4a/AUG_A3_Image.png/revision/latest/scale-to-width-down/320?cb=20221231014349",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-101 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/AK101_Image.png/revision/latest/scale-to-width-down/180?cb=20180502204454",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-102 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ca/Ak102image.png/revision/latest/scale-to-width-down/180?cb=20180506001257",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-103 7.62x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/AK-103_7.62x39.png/revision/latest/scale-to-width-down/180?cb=20180429234506",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-104 7.62x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b2/AK-104Image.png/revision/latest/scale-to-width-down/180?cb=20180503235112",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-105 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8b/AK-105_5.45x39.png/revision/latest/scale-to-width-down/180?cb=20180429234412",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-74 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/AK-74Image.png/revision/latest/scale-to-width-down/180?cb=20181226154054",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-74M 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/AK-74M.png/revision/latest/scale-to-width-down/180?cb=20180513014125",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AK-74N 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Akn.png/revision/latest/scale-to-width-down/180?cb=20181028171233",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AKM 7.62x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/Akm.png/revision/latest/scale-to-width-down/180?cb=20180206133400",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AKMN 7.62x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/55/Akmn.png/revision/latest/scale-to-width-down/180?cb=20180206133117",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AKMS 7.62x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/Akms.png/revision/latest/scale-to-width-down/180?cb=20180427005729",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AKMSN 7.62x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e6/Akmsn.png/revision/latest/scale-to-width-down/180?cb=20180503233021",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AKS-74 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/AKS-74.png/revision/latest/scale-to-width-down/180?cb=20181230153732",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Kalashnikov AKS-74N 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4f/AKS-74N.png/revision/latest/scale-to-width-down/180?cb=20180426173339",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AKS-74U 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Aks74u.png/revision/latest/scale-to-width-down/180?cb=20181028171406",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AKS-74UB 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/Aks74ub.png/revision/latest/scale-to-width-down/180?cb=20181028171415",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kalashnikov AKS-74UN 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/Aks74un.png/revision/latest/scale-to-width-down/180?cb=20181028171353",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "ASh-12 12.7x55",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f1/ASh_12.png/revision/latest/scale-to-width-down/180?cb=20211206013813",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "AS VAL 9x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/08/VAL_MOD_4_Image.png/revision/latest/scale-to-width-down/320?cb=20251202114404",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "SR-3M 9x39",
+        "category": "Assault Rifle",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "AS VAL MOD.4 9x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Asval.png/revision/latest/scale-to-width-down/180?cb=20190305220933",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "CMMG Mk47 Mutant 7.62x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/Mk47_Mutant_View.png/revision/latest/scale-to-width-down/180?cb=20211203223357",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Custom Guns NL545 (DI) 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4e/NL545DI_Image.png/revision/latest/scale-to-width-down/320?cb=20251202115502",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Custom Guns NL545 (GP) 5.45x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/52/NL545GP_Image.png/revision/latest/scale-to-width-down/320?cb=20251202115506",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Radian Weapons Model 1 FA 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b6/Radian_Weapons_Model_1_FA_5.56x45_assault_rifle_image.png/revision/latest/scale-to-width-down/320?cb=20251023141240",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Desert Tech MDR 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/DT_MDR_5.56x45_assault_rifle.png/revision/latest/scale-to-width-down/180?cb=20190411211744",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Desert Tech MDR 7.62x51",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/DT_MDR_308.png/revision/latest/scale-to-width-down/180?cb=20191228210602",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HK 416A5 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/HK416Image.png/revision/latest/scale-to-width-down/180?cb=20181226145352",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Colt M4A1 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/29/M4a1.png/revision/latest/scale-to-width-down/180?cb=20181028172147",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Colt M16A1 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/20/M16A1_M16A1E1_Image.png/revision/latest/scale-to-width-down/320?cb=20251202115012",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Colt M16A2 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/M16A2_Image.png/revision/latest/scale-to-width-down/320?cb=20251202115148",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "FN SCAR-L (Mk 16) 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/SCAR-L_Insp.gif/revision/latest/scale-to-width-down/180?cb=20220101204420",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ],
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Aklys Defense Velociraptor .300 Blackout",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/52/Aklys_Defense_Velociraptor_image.png/revision/latest/scale-to-width-down/320?cb=20250106104458",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "FN SCAR-H (Mk 17) 7.62x51",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a8/ScarH_Image.gif/revision/latest/scale-to-width-down/180?cb=20220220215829",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "SIG MCX .300 BLK",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/08/-92ucz5kq_Y.jpg/revision/latest/scale-to-width-down/180?cb=20201226014736",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "DS Arms SA-58 7.62x51",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ae/DS_Arms_SA-58_OSW_Para_7.62x51.png/revision/latest/scale-to-width-down/180?cb=20181028172156",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Lone Star TX-15 DML 5.56x45",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/TX-15_View.PNG/revision/latest/scale-to-width-down/180?cb=20191103030150",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Skier": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Molot Arms VPO-209 .366 TKM",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b0/Vpo209.png/revision/latest/scale-to-width-down/180?cb=20181028171328",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Molot VPO-136 \"Vepr KM\" 7.62x39",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/Vpo136.png/revision/latest/scale-to-width-down/180?cb=20181028171300",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Molot Arms Simonov OP-SKS 7.62x39",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/08/Opsks.png/revision/latest/scale-to-width-down/180?cb=20190414112410",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "TOZ Simonov SKS 7.62x39 (No Dovetail)",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/72/Sks.png/revision/latest/scale-to-width-down/180?cb=20190414112401",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Molot Arms VPO-101 \"Vepr-Hunter\" 7.62x51",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f0/VeprHunterImage.png/revision/latest/scale-to-width-down/180?cb=20190410211507",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "RPK-16 5.45x39",
+        "category": "Machine Gun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/RPK-16.png/revision/latest/scale-to-width-down/180?cb=20181226153306",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "RShG-2 72.5mm",
+        "category": "Rocket Launcher",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6d/RShG-2_72.5mm_rocket_launcher_image.png/revision/latest?cb=20250713180142",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HK MP5 9x19",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/54/Mp5.png/revision/latest/scale-to-width-down/180?cb=20180507221414",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HK MP5K 9x19 (Navy 3 Round Burst)",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/45/HK_MP5K-N.png/revision/latest/scale-to-width-down/180?cb=20211206013958",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "HK MP7A1 4.6x30",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/HKMP7A1Image.png/revision/latest/scale-to-width-down/180?cb=20181111215340",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HK MP7A2 4.6x30",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/52/HKMP7A2Image.png/revision/latest/scale-to-width-down/180?cb=20181111214757",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "B&T MP9 9x19",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0e/MP9_View.png/revision/latest/scale-to-width-down/180?cb=20211206014311",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "B&T MP9-N 9x19",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fd/B%26T_MP9-N_9x19_Submachinegun.png/revision/latest/scale-to-width-down/180?cb=20211206014309",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "SIG MPX 9x19",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f7/Mpx.png/revision/latest/scale-to-width-down/180?cb=20180219121907",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "FN P90 5.7x28",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/P90Image.png/revision/latest/scale-to-width-down/180?cb=20191109011038",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "PP-19-01 \"Vityaz\" 9x19",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fb/Pp19.png/revision/latest/scale-to-width-down/180?cb=20180219121911",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "PP-9 \"Klin\" 9x18PMM",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/48/Klin.png/revision/latest/scale-to-width-down/180?cb=20180219121903",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "PP-91 \"Kedr\" 9x18PM",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/Kedr.png/revision/latest/scale-to-width-down/180?cb=20180219121901",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "PP-91-01 \"Kedr-B\" 9x18PM",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a4/Kedrb.png/revision/latest/scale-to-width-down/180?cb=20180219121902",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "PPSh-41 7.62x25",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d0/PPSH-41_View.png/revision/latest/scale-to-width-down/180?cb=20211206010213",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Saiga-9 9x19",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/70/Saiga9.png/revision/latest/scale-to-width-down/180?cb=20180219121912",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Soyuz-TM STM-9 Gen.2 9x19",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cd/STM-9_Base_View.png/revision/latest/scale-to-width-down/180?cb=20211206010453",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HK UMP .45 ACP",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/UMP45_View.png/revision/latest/scale-to-width-down/180?cb=20211206010703",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "IWI UZI 9x19",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/59/UZI_Image.png/revision/latest/scale-to-width-down/320?cb=20240825192245",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "IWI UZI PRO Pistol",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/UZIPROPistol_image.png/revision/latest/scale-to-width-down/320?cb=20240825193053",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "IWI UZI PRO SMG",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8e/UZIPROSMG_image.png/revision/latest/scale-to-width-down/320?cb=20240825193103",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "TDI KRISS Vector Gen.2 .45 ACP",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bf/Vector45_fir_unloaded_view.png/revision/latest/scale-to-width-down/180?cb=20211206011407",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "TDI KRISS Vector Gen.2 9x19",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9e/Vector_9x19_View.png/revision/latest/scale-to-width-down/180?cb=20211206011601",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Mossberg 590A1 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/56/M590A1_View.png/revision/latest/scale-to-width-down/180?cb=20211206014100",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Remington Model 870 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/91/M870.png/revision/latest/scale-to-width-down/180?cb=20180426140946",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "MP-133 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/Mr133.png/revision/latest/scale-to-width-down/180?cb=20180219121908",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "MP-153 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/Mp153.png/revision/latest/scale-to-width-down/180?cb=20180219121906",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "MP-155 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/MP-155.png/revision/latest/scale-to-width-down/180?cb=20211205210153",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "MP-43-1C 12ga double-barrel",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MP-43-1C_12ga_double-barrel_shotgun.jpg/revision/latest/scale-to-width-down/180?cb=20211213051714",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "MP-43 12ga sawed-off double-barrel",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/60/MP-43_Sawed_Off_Image.png/revision/latest/scale-to-width-down/320?cb=20230822003753",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "MTs-255-12 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2d/EFT_UpcomingMTs255.png/revision/latest/scale-to-width-down/180?cb=20190515021208",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Saiga-12 12ga ver.10 12/76",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cd/Saiga12.png/revision/latest/scale-to-width-down/180?cb=20180219121914",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "TOZ-106 20ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/Toz.png/revision/latest/scale-to-width-down/180?cb=20180219121918",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "MPS Auto Assault-12 Gen 1 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/06/AA-12_Gen_1_image.png/revision/latest/scale-to-width-down/320?cb=20241109094528",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "MPS Auto Assault-12 Gen 2 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/51/AA-12_Gen_2_image.png/revision/latest/scale-to-width-down/320?cb=20241109094656",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Saiga-12K 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/75/Saiga-12K_12ga_automatic_shotgun_image.png/revision/latest/scale-to-width-down/320?cb=20251004141604",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Saiga-12K 12ga (Redline)",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/S12K_FA-RL_Image.png/revision/latest/scale-to-width-down/320?cb=20260423180520",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "TOZ KS-23M 23x75mm",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/85/KS-23M.png/revision/latest/scale-to-width-down/180?cb=20201019145716",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "TheAKGuy AK-50 .50 BMG",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/38/AK-50_View.png/revision/latest/scale-to-width-down/320?cb=20250716225603",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "HK G28 7.62x51",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/18/G28_Full.png/revision/latest/scale-to-width-down/180?cb=20211214013521",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Jaeger": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Springfield Armory M1A 7.62x51",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/M1A_Icon.png/revision/latest/scale-to-width-down/180?cb=20180503234958",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "SWORD International Mk-18 .338 LM",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a2/Mk18.png/revision/latest/scale-to-width-down/180?cb=20210102132503",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Kel-Tec RFB 7.62x51",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/KT_RFB.png/revision/latest/scale-to-width-down/180?cb=20201019134602",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Remington R11 RSASS 7.62x51",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9b/Rsass.png/revision/latest/scale-to-width-down/180?cb=20181122021513",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Knight's Armament Company SR-25 7.62x51",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/69/SR-25_View.png/revision/latest/scale-to-width-down/180?cb=20191227220256",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "SVDS 7.62x54R",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8f/SVD-S.png/revision/latest/scale-to-width-down/180?cb=20190411211731",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "TKPD 9.3x64",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/da/TKPD_Image.png/revision/latest/scale-to-width-down/320?cb=20251202115721",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "VSS Vintorez 9x39",
+        "category": "Marksman Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/Vss.png/revision/latest/scale-to-width-down/180?cb=20210114170659",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "LOBAEV Arms DVL-10 7.62x51",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/Dvl10.png/revision/latest/scale-to-width-down/180?cb=20180219121859",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Remington Model 700 7.62x51",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/26/M700Image.png/revision/latest/scale-to-width-down/180?cb=20181226171021",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                },
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Marlin MXLR .308 ME",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/92/Marlin_MXLR_Image.png/revision/latest/scale-to-width-down/320?cb=20251202120100",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Mosin 7.62x54R (Sniper)",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/MosinInspect.png/revision/latest/scale-to-width-down/180?cb=20180918200314",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Mosin 7.62x54R (Infantry)",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d4/MosinInfantryImage.png/revision/latest/scale-to-width-down/180?cb=20181226165344",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "SV-98 7.62x54R",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7d/Sv98.png/revision/latest/scale-to-width-down/180?cb=20180427101420",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ],
+            "Jaeger": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Orsis T-5000M 7.62x51",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/T-5000_View.png/revision/latest/scale-to-width-down/180?cb=20200216013517",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Sako TRG M10 .338 LM",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/28/Sako_TRG_M10_.338_LM_bolt-action_sniper_rifle_image.png/revision/latest/scale-to-width-down/320?cb=20250106104858",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Molot VPO-215 \"Gornostay\" .366 TKM",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4e/VPO-215_View.png/revision/latest/scale-to-width-down/180?cb=20200216013459",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HK USP .45 ACP",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ad/Usp1.png/revision/latest/scale-to-width-down/180?cb=20220118221605",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "APB 9x18PM",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/APBImage.png/revision/latest/scale-to-width-down/400?cb=20200216023044",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Stechkin APS 9x18PM",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Stechkin_Automatic_Pistol_9x18PM.png/revision/latest/scale-to-width-down/200?cb=20200216021943",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "20x1mm toy gun",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/54/Blicky_pistol_image.png/revision/latest/scale-to-width-down/320?cb=20240404083905",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Magnum Research Desert Eagle L5 .357",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/47/DEagle_L5_.357.png/revision/latest/scale-to-width-down/320?cb=20240826164144",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Magnum Research Desert Eagle L5 .50 AE",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/DEagle_L5_50AE_Image.png/revision/latest/scale-to-width-down/320?cb=20240826164156",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Magnum Research Desert Eagle L6 .50 AE",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/DEagle_L6_Image.png/revision/latest/scale-to-width-down/320?cb=20240826164159",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Magnum Research Desert Eagle L6 .50 AE (WTS)",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/DEagle_L6_.50_WTS.png/revision/latest/scale-to-width-down/320?cb=20240826164356",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Magnum Research Desert Eagle Mk XIX .50 AE",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e0/DEagle_XIX_.50.png/revision/latest/scale-to-width-down/320?cb=20240825193913",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "FN Five-seveN MK2 5.7x28",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/de/Five-seveN.gif/revision/latest/scale-to-width-down/200?cb=20191109004734",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Glock 17 9x19",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/54/Glock17.png/revision/latest/scale-to-width-down/200?cb=20200216022006",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": true
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Glock 18C 9x19",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Glock18CImage.png/revision/latest/scale-to-width-down/200?cb=20200216022017",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Glock 19X 9x19",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/G19X_View.png/revision/latest?cb=20221231013454",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Colt M1911A1 .45 ACP",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bd/M1911A1_View.png/revision/latest/scale-to-width-down/200?cb=20200508214809",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Colt M45A1 .45 ACP",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c3/M45A1.png/revision/latest/scale-to-width-down/200?cb=20201019153037",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Beretta M9A3 9x19",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/86/EFT_UpcomingM9A3.png/revision/latest/scale-to-width-down/200?cb=20200216022039",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Yarygin MP-443 'Grach' 9x19",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0b/Grach.png/revision/latest/scale-to-width-down/200?cb=20200216022052",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "SIG P226R 9x19",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c6/P226.png/revision/latest/scale-to-width-down/200?cb=20200216022104",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "PB 9x18PM",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c4/Pb.png/revision/latest/scale-to-width-down/200?cb=20200216023013",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Lebedev PL-15 9x19",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/38/PL-15image.png/revision/latest/scale-to-width-down/200?cb=20211206010342",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Makarov PM (t) 9x18PM",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/Makarovt.png/revision/latest/scale-to-width-down/200?cb=20200216022116",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Jaeger": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Makarov PM 9x18PM",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4c/Makarov.png/revision/latest/scale-to-width-down/200?cb=20200216022127",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Serdyukov SR-1MP Gyurza 9x21",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cc/Sr1mp.png/revision/latest/scale-to-width-down/200?cb=20200216022136",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "TT-33 7.62x25",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/Tt.png/revision/latest/scale-to-width-down/200?cb=20200216022150",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "TT-33 7.62x25 (Golden)",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Weapon.Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Chiappa Rhino 200DS 9x19",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7a/CR_200DS_1.png/revision/latest/scale-to-width-down/180?cb=20220416231853",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Chiappa Rhino 50DS .357",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9c/CR_50DS_.357_1.png/revision/latest/scale-to-width-down/180?cb=20220417132057",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Skier": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HK G36 5.56x45",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/G36_View.png/revision/latest/scale-to-width-down/180?cb=20220705223014",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Benelli M3 Super 90 dual-mode 12ga",
+        "category": "Shotgun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/55/Benelli_M3_Super_90.png/revision/latest/scale-to-width-down/180?cb=20220703180524",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Accuracy International AXMC .338 LM",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c5/AXMC_.338_LM.png/revision/latest/scale-to-width-down/180?cb=20220705212920",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "MP-18 7.62x54R",
+        "category": "Bolt-Action Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9d/MP18_VIew.png/revision/latest/scale-to-width-down/180?cb=20220629224646",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Rifle Dynamics RD-704 7.62x39",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ce/RD-704.jpg/revision/latest/scale-to-width-down/180?cb=20220702095109",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "SAG AK-545 5.45x39",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/SAG.545.png/revision/latest/scale-to-width-down/180?cb=20220701160057",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "SAG AK-545 Short 5.45x39",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/70/AK-545Short_View.png/revision/latest/scale-to-width-down/180?cb=202206292156099",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Skier": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "FN40GL Mk2 40mm",
+        "category": "Grenade Launcher",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b8/FNGL40inspect.png/revision/latest/scale-to-width-down/180?cb=20211206014144",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Milkor M32A1 MSGL 40mm",
+        "category": "Grenade Launcher",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7a/M32A1inspect.png/revision/latest/scale-to-width-down/180?cb=20220704113236",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {}
+    },
+    {
+        "name": "Tokarev SVT-40 7.62x54R",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c2/SVT-40_STD_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064627",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Tokarev AVT-40 7.62x54R",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/AVT-40_STD_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064626",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "U.S. Ordnance M60E4 7.62x51",
+        "category": "Machine Gun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ec/M60E4_Image.png/revision/latest/scale-to-width-down/320?cb=20240825191202",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {}
+    },
+    {
+        "name": "U.S. Ordnance M60E6 7.62x51",
+        "category": "Machine Gun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/34/M60E6_Image.gif/revision/latest/scale-to-width-down/320?cb=20240826161649",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {}
+    },
+    {
+        "name": "Kalashikov PKM 7.62x54R",
+        "category": "Machine Gun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/PKM_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064623",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Kalashikov PKP 7.62x54R",
+        "category": "Machine Gun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/be/Pkp-full.png/revision/latest/scale-to-width-down/320?cb=20230811193939",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {}
+    },
+    {
+        "name": "ZiD SP-81 26x75",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7e/ZiD_SP-81_26x75_signal_pistol.png/revision/latest/scale-to-width-down/320?cb=20231025174626",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Degtyarev RPDN 7.62x39",
+        "category": "Machine Gun",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Degtyarev_rpdn_lmg.png/revision/latest/scale-to-width-down/320?cb=20240114131549",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Mechanic": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "SR-2M \"Veresk\" 9x21",
+        "category": "SMG",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/SR2M_View.png/revision/latest/scale-to-width-down/320?cb=20231025202344",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                },
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "SIG MCX SPEAR 6.8x51",
+        "category": "Assault Rifle",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/59/Sig_mcx_image_rot.png/revision/latest/scale-to-width-down/320?cb=20240101220219",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "RSh-12 12.7x55",
+        "category": "Pistol",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cb/RSh-12_Image.png/revision/latest/scale-to-width-down/320?cb=20231025014041",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "KBP 9A-91 9x39",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/64/Kbp_9a91_car.png/revision/latest/scale-to-width-down/320?cb=20240101214721",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "KBP VSK-94 9x39",
+        "category": "Assault Carbine",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d2/Kbp_vsk94_ac.png/revision/latest/scale-to-width-down/320?cb=20240101214601",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Cultist knife",
+        "category": "Melee",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/Cultist_Knife_View.png/revision/latest/scale-to-width-down/320?cb=20231017155835",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
     }
-  },
-  {
-    "name": "Steyr AUG A1 5.56x45",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f9/Steyr_AUG_A1_5.56x45_assault_rifle.png/revision/latest/scale-to-width-down/320?cb=20221231014107",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AK-12 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/df/AK-12_Image.png/revision/latest/scale-to-width-down/320?cb=20231017095127",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Steyr AUG A3 5.56x45",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4a/AUG_A3_Image.png/revision/latest/scale-to-width-down/320?cb=20221231014349",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AK-101 5.56x45",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/AK101_Image.png/revision/latest/scale-to-width-down/180?cb=20180502204454",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AK-102 5.56x45",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ca/Ak102image.png/revision/latest/scale-to-width-down/180?cb=20180506001257",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AK-103 7.62x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/AK-103_7.62x39.png/revision/latest/scale-to-width-down/180?cb=20180429234506",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AK-104 7.62x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b2/AK-104Image.png/revision/latest/scale-to-width-down/180?cb=20180503235112",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AK-105 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8b/AK-105_5.45x39.png/revision/latest/scale-to-width-down/180?cb=20180429234412",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AK-74 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/AK-74Image.png/revision/latest/scale-to-width-down/180?cb=20181226154054",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AK-74M 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/AK-74M.png/revision/latest/scale-to-width-down/180?cb=20180513014125",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AK-74N 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Akn.png/revision/latest/scale-to-width-down/180?cb=20181028171233",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Peacekeeper": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AKM 7.62x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0f/Akm.png/revision/latest/scale-to-width-down/180?cb=20180206133400",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AKMN 7.62x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/55/Akmn.png/revision/latest/scale-to-width-down/180?cb=20180206133117",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AKMS 7.62x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/Akms.png/revision/latest/scale-to-width-down/180?cb=20180427005729",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AKMSN 7.62x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e6/Akmsn.png/revision/latest/scale-to-width-down/180?cb=20180503233021",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AKS-74 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/AKS-74.png/revision/latest/scale-to-width-down/180?cb=20181230153732",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "Kalashnikov AKS-74N 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4f/AKS-74N.png/revision/latest/scale-to-width-down/180?cb=20180426173339",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AKS-74U 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/84/Aks74u.png/revision/latest/scale-to-width-down/180?cb=20181028171406",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AKS-74UB 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/Aks74ub.png/revision/latest/scale-to-width-down/180?cb=20181028171415",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashnikov AKS-74UN 5.45x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/Aks74un.png/revision/latest/scale-to-width-down/180?cb=20181028171353",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "ASh-12 12.7x55",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f1/ASh_12.png/revision/latest/scale-to-width-down/180?cb=20211206013813",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "AS VAL 9x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Asval.png/revision/latest/scale-to-width-down/180?cb=20190305220933",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "CMMG Mk47 Mutant 7.62x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/Mk47_Mutant_View.png/revision/latest/scale-to-width-down/180?cb=20211203223357",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": false,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Desert Tech MDR 5.56x45",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/13/DT_MDR_5.56x45_assault_rifle.png/revision/latest/scale-to-width-down/180?cb=20190411211744",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Desert Tech MDR 7.62x51",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/33/DT_MDR_308.png/revision/latest/scale-to-width-down/180?cb=20191228210602",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": false,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "HK 416A5 5.56x45",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/HK416Image.png/revision/latest/scale-to-width-down/180?cb=20181226145352",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Colt M4A1 5.56x45",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/29/M4a1.png/revision/latest/scale-to-width-down/180?cb=20181028172147",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "FN SCAR-L (Mk 16) 5.56x45",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/SCAR-L_Insp.gif/revision/latest/scale-to-width-down/180?cb=20220101204420",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": true
-        }
-      ],
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": false
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "FN SCAR-H (Mk 17) 7.62x51",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a8/ScarH_Image.gif/revision/latest/scale-to-width-down/180?cb=20220220215829",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "SIG MCX .300 BLK",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/08/-92ucz5kq_Y.jpg/revision/latest/scale-to-width-down/180?cb=20201226014736",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "DS Arms SA-58 7.62x51",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ae/DS_Arms_SA-58_OSW_Para_7.62x51.png/revision/latest/scale-to-width-down/180?cb=20181028172156",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Lone Star TX-15 DML 5.56x45",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/TX-15_View.PNG/revision/latest/scale-to-width-down/180?cb=20191103030150",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Skier": [
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Molot Arms VPO-209 .366 TKM",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b0/Vpo209.png/revision/latest/scale-to-width-down/180?cb=20181028171328",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Molot VPO-136 \"Vepr KM\" 7.62x39",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/Vpo136.png/revision/latest/scale-to-width-down/180?cb=20181028171300",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Molot Arms Simonov OP-SKS 7.62x39",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/08/Opsks.png/revision/latest/scale-to-width-down/180?cb=20190414112410",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "TOZ Simonov SKS 7.62x39 (No Dovetail)",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/72/Sks.png/revision/latest/scale-to-width-down/180?cb=20190414112401",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Molot Arms VPO-101 \"Vepr-Hunter\" 7.62x51",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f0/VeprHunterImage.png/revision/latest/scale-to-width-down/180?cb=20190410211507",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "RPK-16 5.45x39",
-    "category": "Machine Gun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/RPK-16.png/revision/latest/scale-to-width-down/180?cb=20181226153306",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "HK MP5 9x19",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/54/Mp5.png/revision/latest/scale-to-width-down/180?cb=20180507221414",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "HK MP5K 9x19 (Navy 3 Round Burst)",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/45/HK_MP5K-N.png/revision/latest/scale-to-width-down/180?cb=20211206013958",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "HK MP7A1 4.6x30",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/HKMP7A1Image.png/revision/latest/scale-to-width-down/180?cb=20181111215340",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Peacekeeper": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "HK MP7A2 4.6x30",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/52/HKMP7A2Image.png/revision/latest/scale-to-width-down/180?cb=20181111214757",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "B&T MP9 9x19",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0e/MP9_View.png/revision/latest/scale-to-width-down/180?cb=20211206014311",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "B&T MP9-N 9x19",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fd/B%26T_MP9-N_9x19_Submachinegun.png/revision/latest/scale-to-width-down/180?cb=20211206014309",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "SIG MPX 9x19",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f7/Mpx.png/revision/latest/scale-to-width-down/180?cb=20180219121907",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "FN P90 5.7x28",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/P90Image.png/revision/latest/scale-to-width-down/180?cb=20191109011038",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "PP-19-01 \"Vityaz\" 9x19",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fb/Pp19.png/revision/latest/scale-to-width-down/180?cb=20180219121911",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "PP-9 \"Klin\" 9x18PMM",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/48/Klin.png/revision/latest/scale-to-width-down/180?cb=20180219121903",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "PP-91 \"Kedr\" 9x18PM",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/Kedr.png/revision/latest/scale-to-width-down/180?cb=20180219121901",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "PP-91-01 \"Kedr-B\" 9x18PM",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a4/Kedrb.png/revision/latest/scale-to-width-down/180?cb=20180219121902",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "PPSh-41 7.62x25",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d0/PPSH-41_View.png/revision/latest/scale-to-width-down/180?cb=20211206010213",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Saiga-9 9x19",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/70/Saiga9.png/revision/latest/scale-to-width-down/180?cb=20180219121912",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Soyuz-TM STM-9 Gen.2 9x19",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cd/STM-9_Base_View.png/revision/latest/scale-to-width-down/180?cb=20211206010453",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "HK UMP .45 ACP",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/42/UMP45_View.png/revision/latest/scale-to-width-down/180?cb=20211206010703",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "TDI KRISS Vector Gen.2 .45 ACP",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bf/Vector45_fir_unloaded_view.png/revision/latest/scale-to-width-down/180?cb=20211206011407",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "TDI KRISS Vector Gen.2 9x19",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9e/Vector_9x19_View.png/revision/latest/scale-to-width-down/180?cb=20211206011601",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Mossberg 590A1 12ga",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/56/M590A1_View.png/revision/latest/scale-to-width-down/180?cb=20211206014100",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Remington Model 870 12ga",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/91/M870.png/revision/latest/scale-to-width-down/180?cb=20180426140946",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "MP-133 12ga",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/Mr133.png/revision/latest/scale-to-width-down/180?cb=20180219121908",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "MP-153 12ga",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/Mp153.png/revision/latest/scale-to-width-down/180?cb=20180219121906",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "MP-155 12ga",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/MP-155.png/revision/latest/scale-to-width-down/180?cb=20211205210153",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "MP-43-1C 12ga double-barrel",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/MP-43-1C_12ga_double-barrel_shotgun.jpg/revision/latest/scale-to-width-down/180?cb=20211213051714",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "MP-43 12ga sawed-off double-barrel",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/60/MP-43_Sawed_Off_Image.png/revision/latest/scale-to-width-down/320?cb=20230822003753",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "MTs-255-12 12ga",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2d/EFT_UpcomingMTs255.png/revision/latest/scale-to-width-down/180?cb=20190515021208",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Saiga-12 12ga ver.10 12/76",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cd/Saiga12.png/revision/latest/scale-to-width-down/180?cb=20180219121914",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "TOZ-106 20ga",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/Toz.png/revision/latest/scale-to-width-down/180?cb=20180219121918",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "TOZ KS-23M 23x75mm",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/85/KS-23M.png/revision/latest/scale-to-width-down/180?cb=20201019145716",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "HK G28 7.62x51",
-    "category": "Marksman Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/18/G28_Full.png/revision/latest/scale-to-width-down/180?cb=20211214013521",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": false,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Jaeger": [
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Springfield Armory M1A 7.62x51",
-    "category": "Marksman Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5f/M1A_Icon.png/revision/latest/scale-to-width-down/180?cb=20180503234958",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": false,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "SWORD International Mk-18 .338 LM",
-    "category": "Marksman Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a2/Mk18.png/revision/latest/scale-to-width-down/180?cb=20210102132503",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": false,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kel-Tec RFB 7.62x51",
-    "category": "Marksman Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/KT_RFB.png/revision/latest/scale-to-width-down/180?cb=20201019134602",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Remington R11 RSASS 7.62x51",
-    "category": "Marksman Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9b/Rsass.png/revision/latest/scale-to-width-down/180?cb=20181122021513",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": false,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Knight's Armament Company SR-25 7.62x51",
-    "category": "Marksman Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/69/SR-25_View.png/revision/latest/scale-to-width-down/180?cb=20191227220256",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": false,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "SVDS 7.62x54R",
-    "category": "Marksman Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8f/SVD-S.png/revision/latest/scale-to-width-down/180?cb=20190411211731",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "VSS Vintorez 9x39",
-    "category": "Marksman Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/Vss.png/revision/latest/scale-to-width-down/180?cb=20210114170659",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "LOBAEV Arms DVL-10 7.62x51",
-    "category": "Bolt-Action Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6c/Dvl10.png/revision/latest/scale-to-width-down/180?cb=20180219121859",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Remington Model 700 7.62x51",
-    "category": "Bolt-Action Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/26/M700Image.png/revision/latest/scale-to-width-down/180?cb=20181226171021",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Peacekeeper": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Jaeger": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        },
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Mosin 7.62x54R (Sniper)",
-    "category": "Bolt-Action Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/MosinInspect.png/revision/latest/scale-to-width-down/180?cb=20180918200314",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Mosin 7.62x54R (Infantry)",
-    "category": "Bolt-Action Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d4/MosinInfantryImage.png/revision/latest/scale-to-width-down/180?cb=20181226165344",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "SV-98 7.62x54R",
-    "category": "Bolt-Action Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7d/Sv98.png/revision/latest/scale-to-width-down/180?cb=20180427101420",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        }
-      ],
-      "Jaeger": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Orsis T-5000M 7.62x51",
-    "category": "Bolt-Action Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/T-5000_View.png/revision/latest/scale-to-width-down/180?cb=20200216013517",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Molot VPO-215 \"Gornostay\" .366 TKM",
-    "category": "Bolt-Action Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4e/VPO-215_View.png/revision/latest/scale-to-width-down/180?cb=20200216013459",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "HK USP .45 ACP",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ad/Usp1.png/revision/latest/scale-to-width-down/180?cb=20220118221605",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "APB 9x18PM",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/ba/APBImage.png/revision/latest/scale-to-width-down/400?cb=20200216023044",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Stechkin APS 9x18PM",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Stechkin_Automatic_Pistol_9x18PM.png/revision/latest/scale-to-width-down/200?cb=20200216021943",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "FN Five-seveN MK2 5.7x28",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/de/Five-seveN.gif/revision/latest/scale-to-width-down/200?cb=20191109004734",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": false
-        },
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Glock 17 9x19",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/54/Glock17.png/revision/latest/scale-to-width-down/200?cb=20200216022006",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": true
-        },
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Glock 18C 9x19",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Glock18CImage.png/revision/latest/scale-to-width-down/200?cb=20200216022017",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Glock 19X 9x19",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/G19X_View.png/revision/latest?cb=20221231013454",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Colt M1911A1 .45 ACP",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bd/M1911A1_View.png/revision/latest/scale-to-width-down/200?cb=20200508214809",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Colt M45A1 .45 ACP",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c3/M45A1.png/revision/latest/scale-to-width-down/200?cb=20201019153037",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "Beretta M9A3 9x19",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/86/EFT_UpcomingM9A3.png/revision/latest/scale-to-width-down/200?cb=20200216022039",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Yarygin MP-443 'Grach' 9x19",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0b/Grach.png/revision/latest/scale-to-width-down/200?cb=20200216022052",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "SIG P226R 9x19",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c6/P226.png/revision/latest/scale-to-width-down/200?cb=20200216022104",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "PB 9x18PM",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c4/Pb.png/revision/latest/scale-to-width-down/200?cb=20200216023013",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Lebedev PL-15 9x19",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/38/PL-15image.png/revision/latest/scale-to-width-down/200?cb=20211206010342",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": true,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Makarov PM (t) 9x18PM",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c7/Makarovt.png/revision/latest/scale-to-width-down/200?cb=20200216022116",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Jaeger": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Makarov PM 9x18PM",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4c/Makarov.png/revision/latest/scale-to-width-down/200?cb=20200216022127",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Serdyukov SR-1MP Gyurza 9x21",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cc/Sr1mp.png/revision/latest/scale-to-width-down/200?cb=20200216022136",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "TT-33 7.62x25",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/Tt.png/revision/latest/scale-to-width-down/200?cb=20200216022150",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Mechanic": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "TT-33 7.62x25 (Golden)",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/46/TT_Weapon.Pistol_7.62x25_TT_gold_2.png/revision/latest/scale-to-width-down/200?cb=20200216022203",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "Chiappa Rhino 200DS 9x19",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7a/CR_200DS_1.png/revision/latest/scale-to-width-down/180?cb=20220416231853",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Chiappa Rhino 50DS .357",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9c/CR_50DS_.357_1.png/revision/latest/scale-to-width-down/180?cb=20220417132057",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ],
-      "Skier": [
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "HK G36 5.56x45",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/G36_View.png/revision/latest/scale-to-width-down/180?cb=20220705223014",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Benelli M3 Super 90 dual-mode 12ga",
-    "category": "Shotgun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/55/Benelli_M3_Super_90.png/revision/latest/scale-to-width-down/180?cb=20220703180524",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 2,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Accuracy International AXMC .338 LM",
-    "category": "Bolt-Action Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c5/AXMC_.338_LM.png/revision/latest/scale-to-width-down/180?cb=20220705212920",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "MP-18 7.62x54R",
-    "category": "Bolt-Action Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9d/MP18_VIew.png/revision/latest/scale-to-width-down/180?cb=20220629224646",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Rifle Dynamics RD-704 7.62x39",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ce/RD-704.jpg/revision/latest/scale-to-width-down/180?cb=20220702095109",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "SAG AK-545 5.45x39",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/SAG.545.png/revision/latest/scale-to-width-down/180?cb=20220701160057",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "SAG AK-545 Short 5.45x39",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/70/AK-545Short_View.png/revision/latest/scale-to-width-down/180?cb=202206292156099",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Skier": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "FN40GL Mk2 40mm",
-    "category": "Grenade Launcher",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b8/FNGL40inspect.png/revision/latest/scale-to-width-down/180?cb=20211206014144",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Milkor M32A1 MSGL 40mm",
-    "category": "Grenade Launcher",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7a/M32A1inspect.png/revision/latest/scale-to-width-down/180?cb=20220704113236",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {}
-  },
-  {
-    "name": "Tokarev SVT-40 7.62x54R",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c2/SVT-40_STD_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064627",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Tokarev AVT-40 7.62x54R",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/AVT-40_STD_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064626",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": true,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Kalashikov PKM 7.62x54R",
-    "category": "Machine Gun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/PKM_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064623",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {}
-  },
-  {
-    "name": "Kalashikov PKP 7.62x54R",
-    "category": "Machine Gun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/be/Pkp-full.png/revision/latest/scale-to-width-down/320?cb=20230811193939",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {}
-  },
-  {
-    "name": "ZiD SP-81 26x75",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7e/ZiD_SP-81_26x75_signal_pistol.png/revision/latest/scale-to-width-down/320?cb=20231025174626",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Degtyarev RPDN 7.62x39",
-    "category": "Machine Gun",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Degtyarev_rpdn_lmg.png/revision/latest/scale-to-width-down/320?cb=20240114131549",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": false,
-    "trader_info": {
-      "Mechanic": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "SR-2M \"Veresk\" 9x21",
-    "category": "SMG",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/SR2M_View.png/revision/latest/scale-to-width-down/320?cb=20231025202344",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        },
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "SIG MCX SPEAR 6.8x51",
-    "category": "Assault Rifle",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/59/Sig_mcx_image_rot.png/revision/latest/scale-to-width-down/320?cb=20240101220219",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 4,
-          "quest_locked": true,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "RSh-12 12.7x55",
-    "category": "Pistol",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cb/RSh-12_Image.png/revision/latest/scale-to-width-down/320?cb=20231025014041",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "KBP 9A-91 9x39",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/64/Kbp_9a91_car.png/revision/latest/scale-to-width-down/320?cb=20240101214721",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "KBP VSK-94 9x39",
-    "category": "Assault Carbine",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d2/Kbp_vsk94_ac.png/revision/latest/scale-to-width-down/320?cb=20240101214601",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 4,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Cultist knife",
-    "category": "Melee",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/Cultist_Knife_View.png/revision/latest/scale-to-width-down/320?cb=20231017155835",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {}
-  }
 ]
