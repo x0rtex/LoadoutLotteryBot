@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+from enum import Enum
 from pathlib import Path
 from typing import NamedTuple
 
@@ -26,15 +27,21 @@ MAP: str = "Map"
 RANDOM_MODIFIER: str = "Random Modifier"
 YOUR_CHOICE: str = "YOUR CHOICE!"
 
-# Trader Names
-PRAPOR: str = "Prapor"
-THERAPIST: str = "Therapist"
-SKIER: str = "Skier"
-PEACEKEEPER: str = "Peacekeeper"
-MECHANIC: str = "Mechanic"
-RAGMAN: str = "Ragman"
-JAEGER: str = "Jaeger"
-REF: str = "Ref"
+
+class Trader(str, Enum):
+    PRAPOR = "prapor"
+    THERAPIST = "therapist"
+    SKIER = "skier"
+    PEACEKEEPER = "peacekeeper"
+    MECHANIC = "mechanic"
+    RAGMAN = "ragman"
+    JAEGER = "jaeger"
+    REF = "ref"
+
+    @property
+    def display_name(self) -> str:
+        return self.value.capitalize()
+
 
 # Trader Level Modifiers
 LL1_TRADERS: str = "Up to level 1 traders"

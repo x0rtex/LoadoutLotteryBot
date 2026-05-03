@@ -1,6 +1,5 @@
 import asyncio
 import random
-from dataclasses import asdict
 
 import discord
 

@@ -1,4 +1,5 @@
 from dataclasses import asdict, dataclass, field
+from typing import Self
 
 
 @dataclass(frozen=True)
@@ -12,10 +13,10 @@ class TraderLevels:
     jaeger: int = 4
     ref: int = 4
 
-    def get_level(self, trader_name: str) -> int | None:
-        return getattr(self, trader_name.lower(), None)
+    def get_level(self: Self, trader_name: str) -> int | None:
+        return getattr(self, trader_name, None)
 
-    def all_levels(self) -> list[int]:
+    def all_levels(self: Self) -> list[int]:
         return [self.prapor, self.therapist, self.skier, self.peacekeeper, self.mechanic, self.ragman, self.jaeger, self.ref]
 
 
@@ -28,7 +29,7 @@ class UserSettings:
     roll_thermals: bool = False
     trader_levels: TraderLevels = field(default_factory=TraderLevels)
 
-    def to_dict(self) -> dict:
+    def to_dict(self: Self) -> dict:
         return asdict(self)
 
     @classmethod
