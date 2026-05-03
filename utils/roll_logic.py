@@ -4,7 +4,7 @@ import random
 import discord
 
 from utils import eft, msgs, views
-from utils.eft import Category, GameRule, GameRules, Item, Items
+from utils.eft import Category, GameRule, GameRules, Item, Items, TraderLevelRule
 from utils.users import UserSettings
 
 
@@ -79,14 +79,15 @@ def roll_random_modifier(user_settings: UserSettings) -> GameRule:
 
 
 def check_trader_modifier(trader_modifier: GameRule, user_settings: UserSettings) -> bool:
-    if trader_modifier.name == eft.NO_RESTRICTIONS and not user_settings.flea:
-        return False
+    rule = TraderLevelRule.from_name(trader_modifier.name)
 
-    for level in range(2, 5):
-        if trader_modifier.name == getattr(eft, f"LL{level}_TRADERS"):
-            return all(trader_level >= level for trader_level in user_settings.trader_levels.all_levels())
+    if rule is None:
+        return True
 
-    return True
+    if rule is TraderLevelRule.NO_RESTRICTIONS:
+        return user_settings.flea
+
+    return any(level >= rule.level for level in user_settings.trader_levels.all_levels())
 
 
 def check_gamerule(gamerule: GameRule, user_settings: UserSettings) -> bool:

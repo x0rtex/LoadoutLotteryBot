@@ -16,20 +16,6 @@ from typing_extensions import Literal
 _ITEMS_DIR = Path(__file__).parent.parent / "data" / "items"
 _GAMERULES_DIR = Path(__file__).parent.parent / "data" / "gamerules"
 
-# Trader Level Modifiers
-LL1_TRADERS: str = "Up to level 1 traders"
-LL2_TRADERS: str = "Up to level 2 traders"
-LL3_TRADERS: str = "Up to level 3 traders"
-LL4_TRADERS: str = "Up to level 4 traders"
-NO_RESTRICTIONS: str = "No Restrictions"
-
-# Trader Level Modifier Images
-LL1_TRADERS_IMAGE: str = "https://i.imgur.com/I71LsPN.png"
-LL2_TRADERS_IMAGE: str = "https://i.imgur.com/qmB6NSH.png"
-LL3_TRADERS_IMAGE: str = "https://i.imgur.com/vupz2Hi.png"
-LL4_TRADERS_IMAGE: str = "https://i.imgur.com/tROE6zs.png"
-NO_RESTRICTIONS_IMAGE: str = "https://i.imgur.com/r5VRNUB.png"
-
 # Images
 DICE_IMAGE: str = (
     "https://w7.pngwing.com/pngs/56/672/png-transparent-gurps-customer-service-dice-dice-throw-game-service-dice.png"
@@ -55,6 +41,29 @@ class Trader(str, Enum):
     @property
     def display_name(self: Self) -> str:
         return self.value.capitalize()
+
+
+class TraderLevelRule(str, Enum):
+    LL1 = ("Up to level 1 traders", 1)
+    LL2 = ("Up to level 2 traders", 2)
+    LL3 = ("Up to level 3 traders", 3)
+    LL4 = ("Up to level 4 traders", 4)
+    NO_RESTRICTIONS = ("No Restrictions", 0)
+
+    level: int
+
+    def __new__(cls, value: str, level: int):
+        obj = str.__new__(cls, value)
+        obj._value_ = value
+        obj.level = level
+        return obj
+
+    @classmethod
+    def from_name(cls, name: str) -> "TraderLevelRule | None":
+        try:
+            return cls(name)
+        except ValueError:
+            return None
 
 
 class Category(str, Enum):
