@@ -15,4 +15,5 @@ dependencies = [
 dev = [
     "ruff>=0.15.12",
     "taskipy>=1.2.1",
+    "ty>=0.0.34",
 ]
