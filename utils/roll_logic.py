@@ -4,6 +4,7 @@ import random
 import discord
 
 from utils import eft, users, views, msgs
+from utils.eft import Items, GameRules
 
 
 def roll_items(user_settings: users.UserSettings) -> (list, bool):
@@ -29,15 +30,15 @@ def roll_items(user_settings: users.UserSettings) -> (list, bool):
 
 def filter_items(user_settings: users.UserSettings) -> dict:
     return {
-        eft.WEAPON: tuple(item for item in eft.ALL_WEAPONS if check_item(item, user_settings)),
-        eft.ARMOR_VEST: tuple(item for item in eft.ALL_ARMOR_VESTS if check_item(item, user_settings)),
-        eft.ARMORED_RIG: tuple(item for item in eft.ALL_ARMORED_RIGS if check_item(item, user_settings)),
-        eft.HELMET: tuple(item for item in eft.ALL_HELMETS if check_item(item, user_settings)),
-        eft.RIG: tuple(item for item in eft.ALL_RIGS if check_item(item, user_settings)),
-        eft.BACKPACK: tuple(item for item in eft.ALL_BACKPACKS if check_item(item, user_settings)),
-        eft.GUN_MOD: tuple(trader for trader in eft.ALL_GUN_MODS if check_trader_modifier(trader, user_settings)),
-        eft.AMMO: tuple(trader for trader in eft.ALL_AMMO if check_trader_modifier(trader, user_settings)),
-        eft.MAP: tuple(gamerule for gamerule in eft.ALL_MAPS if check_gamerule(gamerule, user_settings)),
+        eft.WEAPON: tuple(item for item in Items.Weapons if check_item(item, user_settings)),
+        eft.ARMOR_VEST: tuple(item for item in Items.ArmorVests if check_item(item, user_settings)),
+        eft.ARMORED_RIG: tuple(item for item in Items.ArmoredRigs if check_item(item, user_settings)),
+        eft.HELMET: tuple(item for item in Items.Helmets if check_item(item, user_settings)),
+        eft.RIG: tuple(item for item in Items.Rigs if check_item(item, user_settings)),
+        eft.BACKPACK: tuple(item for item in Items.Backpacks if check_item(item, user_settings)),
+        eft.GUN_MOD: tuple(trader for trader in GameRules.GunMods if check_trader_modifier(trader, user_settings)),
+        eft.AMMO: tuple(trader for trader in GameRules.Ammo if check_trader_modifier(trader, user_settings)),
+        eft.MAP: tuple(gamerule for gamerule in GameRules.Maps if check_gamerule(gamerule, user_settings)),
     }
 
 
@@ -66,9 +67,9 @@ def check_item_traders(item: eft.Item, user_settings: users.UserSettings) -> boo
 
 
 def roll_random_modifier(user_settings: users.UserSettings) -> eft.GameRule:
-    filtered_good_modifiers = eft.GOOD_MODIFIERS  # May need to filter these later
-    filtered_ok_modifiers = tuple(ok_mod for ok_mod in eft.OK_MODIFIERS if check_gamerule(ok_mod, user_settings))
-    filtered_bad_modifiers = eft.BAD_MODIFIERS  # May need to filter these later
+    filtered_good_modifiers = GameRules.GoodModifiers  # May need to filter these later
+    filtered_ok_modifiers = tuple(ok_mod for ok_mod in GameRules.OkModifiers if check_gamerule(ok_mod, user_settings))
+    filtered_bad_modifiers = GameRules.BadModifiers  # May need to filter these later
 
     modifiers = random.choice((filtered_good_modifiers, filtered_ok_modifiers, filtered_bad_modifiers))
     return random.choice(modifiers)

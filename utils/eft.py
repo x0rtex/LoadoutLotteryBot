@@ -137,18 +137,23 @@ def _load_rules(path: Path) -> tuple[GameRule, ...]:
 
 
 #############################
-# Data                      #
+# Weapons & Gamerules       #
 #############################
 
-ALL_WEAPONS = _load_items(_ITEMS_DIR / "weapons.json")
-ALL_ARMOR_VESTS = _load_items(_ITEMS_DIR / "armor_vests.json")
-ALL_ARMORED_RIGS = _load_items(_ITEMS_DIR / "armored_rigs.json")
-ALL_RIGS = _load_items(_ITEMS_DIR / "rigs.json")
-ALL_HELMETS = _load_items(_ITEMS_DIR / "helmets.json")
-ALL_BACKPACKS = _load_items(_ITEMS_DIR / "backpacks.json")
-ALL_GUN_MODS = _load_rules(_GAMERULES_DIR / "gun_mods.json")
-ALL_AMMO = _load_rules(_GAMERULES_DIR / "ammo.json")
-ALL_MAPS = _load_rules(_GAMERULES_DIR / "maps.json")
-GOOD_MODIFIERS = _load_rules(_GAMERULES_DIR / "good_modifiers.json")
-OK_MODIFIERS = _load_rules(_GAMERULES_DIR / "ok_modifiers.json")
-BAD_MODIFIERS = _load_rules(_GAMERULES_DIR / "bad_modifiers.json")
+
+class Items:
+    Weapons = _load_items(_ITEMS_DIR / "weapons.json")
+    ArmorVests = _load_items(_ITEMS_DIR / "armor_vests.json")
+    ArmoredRigs = _load_items(_ITEMS_DIR / "armored_rigs.json")
+    Rigs = _load_items(_ITEMS_DIR / "rigs.json")
+    Helmets = _load_items(_ITEMS_DIR / "helmets.json")
+    Backpacks = _load_items(_ITEMS_DIR / "backpacks.json")
+
+
+class GameRules:
+    GunMods = _load_rules(_GAMERULES_DIR / "gun_mods.json")
+    Ammo = _load_rules(_GAMERULES_DIR / "ammo.json")
+    Maps = _load_rules(_GAMERULES_DIR / "maps.json")
+    GoodModifiers = _load_rules(_GAMERULES_DIR / "good_modifiers.json")
+    OkModifiers = _load_rules(_GAMERULES_DIR / "ok_modifiers.json")
+    BadModifiers = _load_rules(_GAMERULES_DIR / "bad_modifiers.json")
