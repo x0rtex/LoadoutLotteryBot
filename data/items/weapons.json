@@ -25,7 +25,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -42,14 +42,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -66,7 +66,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -78,7 +78,7 @@
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -95,7 +95,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -112,7 +112,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -129,7 +129,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -146,7 +146,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -163,7 +163,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -180,14 +180,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": true,
@@ -204,14 +204,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -228,7 +228,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -245,7 +245,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -257,7 +257,7 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -274,28 +274,28 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 3,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -312,7 +312,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -324,7 +324,7 @@
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -341,14 +341,14 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -365,7 +365,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -382,7 +382,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -408,7 +408,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -425,14 +425,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -449,7 +449,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": true,
@@ -471,7 +471,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -488,14 +488,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 4,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -512,7 +512,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -529,7 +529,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -551,14 +551,14 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 4,
                     "quest_locked": true,
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -575,14 +575,14 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 4,
                     "quest_locked": true,
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -599,7 +599,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -621,7 +621,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -643,7 +643,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ref": [
+            "ref": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -660,7 +660,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -677,14 +677,14 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 4,
                     "quest_locked": true,
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -701,14 +701,14 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 3,
                     "quest_locked": true,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -725,7 +725,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -742,7 +742,7 @@
                     "barter": true
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -759,7 +759,7 @@
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -776,7 +776,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": true,
@@ -793,7 +793,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -810,7 +810,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -822,7 +822,7 @@
                     "barter": true
                 }
             ],
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": true,
@@ -834,7 +834,7 @@
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -851,7 +851,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -868,14 +868,14 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 4,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -887,7 +887,7 @@
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -904,7 +904,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -926,7 +926,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": true,
@@ -943,7 +943,7 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -960,7 +960,7 @@
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -977,14 +977,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Skier": [
+            "skier": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -1001,21 +1001,21 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1032,7 +1032,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1054,21 +1054,21 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1085,14 +1085,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1109,7 +1109,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1126,7 +1126,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": true,
@@ -1143,7 +1143,7 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -1160,7 +1160,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -1177,21 +1177,21 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1208,7 +1208,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1225,7 +1225,7 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1242,14 +1242,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -1266,14 +1266,14 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 4,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1290,7 +1290,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": true,
@@ -1307,7 +1307,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ref": [
+            "ref": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1324,7 +1324,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1336,14 +1336,14 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1360,7 +1360,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1372,14 +1372,14 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1396,7 +1396,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1408,14 +1408,14 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": true,
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1432,7 +1432,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1454,7 +1454,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1471,7 +1471,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1493,7 +1493,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1510,7 +1510,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 1,
                     "quest_locked": true,
@@ -1527,7 +1527,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1544,7 +1544,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1556,7 +1556,7 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1573,14 +1573,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1597,7 +1597,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1628,7 +1628,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -1645,7 +1645,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -1662,7 +1662,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1679,14 +1679,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 1,
                     "quest_locked": true,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1703,7 +1703,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1715,7 +1715,7 @@
                     "barter": true
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1732,14 +1732,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1761,7 +1761,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1778,7 +1778,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1795,7 +1795,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1812,7 +1812,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1829,7 +1829,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -1841,7 +1841,7 @@
                     "barter": true
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -1858,14 +1858,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -1882,7 +1882,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -1899,7 +1899,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -1925,7 +1925,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Ref": [
+            "ref": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -1942,7 +1942,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -1964,7 +1964,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -1981,14 +1981,14 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 3,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -2005,7 +2005,7 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": true,
@@ -2022,7 +2022,7 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2054,14 +2054,14 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 4,
                     "quest_locked": true,
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -2078,7 +2078,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2100,7 +2100,7 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -2112,7 +2112,7 @@
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -2129,14 +2129,14 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 3,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2153,7 +2153,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -2170,7 +2170,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -2187,7 +2187,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -2209,7 +2209,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -2236,21 +2236,21 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": true
                 }
             ],
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2272,7 +2272,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2289,7 +2289,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2301,7 +2301,7 @@
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2318,7 +2318,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2335,7 +2335,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2347,7 +2347,7 @@
                     "barter": false
                 }
             ],
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -2364,7 +2364,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -2381,7 +2381,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -2398,7 +2398,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2415,14 +2415,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2444,7 +2444,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2461,7 +2461,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2483,7 +2483,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2500,7 +2500,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2517,7 +2517,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -2561,7 +2561,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": true,
@@ -2588,7 +2588,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2615,7 +2615,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -2632,7 +2632,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2649,7 +2649,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2675,7 +2675,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2692,7 +2692,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2714,7 +2714,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2726,7 +2726,7 @@
                     "barter": true
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2743,7 +2743,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2760,7 +2760,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": true,
@@ -2782,14 +2782,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -2806,7 +2806,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2828,7 +2828,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2855,14 +2855,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2888,7 +2888,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -2905,14 +2905,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 2,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Skier": [
+            "skier": [
                 {
                     "level": 2,
                     "quest_locked": true,
@@ -2929,7 +2929,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -2956,7 +2956,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 2,
                     "quest_locked": true,
@@ -2973,7 +2973,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -2990,7 +2990,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -3007,14 +3007,14 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 4,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -3031,7 +3031,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -3048,7 +3048,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Skier": [
+            "skier": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -3065,14 +3065,14 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 4,
                     "quest_locked": true,
                     "barter": true
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -3098,7 +3098,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -3120,7 +3120,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -3173,7 +3173,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -3190,7 +3190,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Mechanic": [
+            "mechanic": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -3207,7 +3207,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -3229,14 +3229,14 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 4,
                     "quest_locked": true,
                     "barter": false
                 }
             ],
-            "Ref": [
+            "ref": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -3253,7 +3253,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -3270,7 +3270,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -3287,7 +3287,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 4,
                     "quest_locked": false,

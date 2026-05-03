@@ -16,7 +16,7 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -33,7 +33,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Therapist": [
+            "therapist": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -50,7 +50,7 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -67,7 +67,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -84,7 +84,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -101,7 +101,7 @@
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -127,7 +127,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -144,7 +144,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -161,7 +161,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -178,7 +178,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -195,7 +195,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -221,7 +221,7 @@
         "meta": true,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 3,
                     "quest_locked": true,
@@ -238,7 +238,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -255,7 +255,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -272,7 +272,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -289,7 +289,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -306,7 +306,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -323,7 +323,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 2,
                     "quest_locked": true,
@@ -345,7 +345,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -371,7 +371,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -388,7 +388,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -419,14 +419,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Peacekeeper": [
+            "peacekeeper": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -470,7 +470,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -487,14 +487,14 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "prapor": [
                 {
                     "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
-            "Jaeger": [
+            "jaeger": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -511,7 +511,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 1,
                     "quest_locked": false,
@@ -528,7 +528,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -545,7 +545,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 2,
                     "quest_locked": false,
@@ -562,7 +562,7 @@
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 3,
                     "quest_locked": false,
@@ -579,7 +579,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Ragman": [
+            "ragman": [
                 {
                     "level": 3,
                     "quest_locked": false,
