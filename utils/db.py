@@ -94,8 +94,9 @@ def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
                             peacekeeper,
                             mechanic,
                             ragman,
-                            jaeger
-                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                            jaeger,
+                            ref
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     user_id,
                     user_settings.flea,
