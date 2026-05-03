@@ -198,3 +198,6 @@ class GameRules:
     GoodModifiers = _load_rules(_GAMERULES_DIR / "good_modifiers.json")
     OkModifiers = _load_rules(_GAMERULES_DIR / "ok_modifiers.json")
     BadModifiers = _load_rules(_GAMERULES_DIR / "bad_modifiers.json")
+
+
+logger.info("Loaded items and game rules!")

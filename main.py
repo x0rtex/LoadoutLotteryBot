@@ -251,12 +251,14 @@ async def on_application_command_error(ctx: discord.ApplicationContext, error: d
         )
 
     elif isinstance(error, commands.BotMissingPermissions):
+        logger.error(f"Bot is missing permissions: {error.missing_permissions}")
         await ctx.respond(
             f":warning: **Bot is missing permissions:** {error.missing_permissions}. ",
             ephemeral=True,
         )
 
     elif isinstance(error, commands.BotMissingAnyRole):
+        logger.error(f"Bot is missing roles: {error.missing_roles}")
         await ctx.respond(
             f":warning: **Bot is missing roles:** {error.missing_roles}.",
             ephemeral=True,

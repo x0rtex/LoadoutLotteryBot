@@ -3,7 +3,7 @@ import random
 
 import discord
 
-from utils import eft, msgs, views
+from utils import msgs, views
 from utils.eft import Category, GameRule, GameRules, Item, Items, TraderLevelRule
 from utils.users import UserSettings
 

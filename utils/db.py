@@ -1,5 +1,6 @@
 import sqlite3
 
+from logger.logger import logger
 from utils.users import TraderLevels, UserSettings
 
 # Database name
@@ -30,6 +31,7 @@ def initialize_database() -> None:
         c.execute("PRAGMA table_info(user_settings)")
         columns = [row[1] for row in c.fetchall()]
         if "ref" not in columns:
+            logger.info("Adding ref column to user_settings table")
             c.execute("ALTER TABLE user_settings ADD COLUMN ref TINYINT DEFAULT 4")
 
         con.commit()
