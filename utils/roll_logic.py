@@ -3,8 +3,8 @@ import random
 
 import discord
 
-from utils import eft, users, views, msgs
-from utils.eft import Items, GameRules
+from utils import eft, msgs, users, views
+from utils.eft import GameRules, Items
 
 
 def roll_items(user_settings: users.UserSettings) -> (list, bool):
@@ -59,9 +59,11 @@ def check_item_traders(item: eft.Item, user_settings: users.UserSettings) -> boo
     for trader_name, obtains in item.trader_info.items():
         for obtain in obtains:
             trader_level = user_settings["trader_levels"].get(trader_name)
-            if ((trader_level < obtain.level)
-                    or (obtain.quest_locked and not user_settings["allow_quest_locked"])
-                    or (obtain.barter and not user_settings["flea"])):
+            if (
+                (trader_level < obtain.level)
+                or (obtain.quest_locked and not user_settings["allow_quest_locked"])
+                or (obtain.barter and not user_settings["flea"])
+            ):
                 return False
     return True
 
@@ -87,17 +89,23 @@ def check_trader_modifier(trader_modifier: eft.GameRule, user_settings: users.Us
 
 
 def check_gamerule(gamerule: eft.GameRule, user_settings: users.UserSettings) -> bool:
-    return not (user_settings["meta_only"] and not gamerule.meta
-                or gamerule.name == "The Lab" and not user_settings["flea"]
-                or gamerule.name == "Ground Zero" and user_settings["flea"]
-                or gamerule.name == "Use thermal" and not user_settings["roll_thermals"])
+    return not (
+        user_settings["meta_only"]
+        and not gamerule.meta
+        or gamerule.name == "The Lab"
+        and not user_settings["flea"]
+        or gamerule.name == "Ground Zero"
+        and user_settings["flea"]
+        or gamerule.name == "Use thermal"
+        and not user_settings["roll_thermals"]
+    )
 
 
 async def reveal_roll(
-        ctx: discord.ApplicationContext,
-        embed_msg: discord.Embed,
-        rolled_item: eft.Item | eft.GameRule,
-        prefix: str,
+    ctx: discord.ApplicationContext,
+    embed_msg: discord.Embed,
+    rolled_item: eft.Item | eft.GameRule,
+    prefix: str,
 ) -> None:
     embed_msg.set_image(url="")
     embed_msg.add_field(name=f"{prefix}{rolled_item.category}:", value=":grey_question:", inline=False)
@@ -121,11 +129,11 @@ async def reveal_roll(
 
 
 async def is_random_modifier_special(
-        rolled_random_modifier: eft.GameRule,
-        need_rig: bool,
-        ctx: discord.ApplicationContext,
-        embed_msg: discord.Embed,
-        filtered_items: dict[str, list],
+    rolled_random_modifier: eft.GameRule,
+    need_rig: bool,
+    ctx: discord.ApplicationContext,
+    embed_msg: discord.Embed,
+    filtered_items: dict[str, list],
 ) -> None:
     if rolled_random_modifier.name == views.REROLL_ONE:
         select = views.RerollOneSlotWithRig() if need_rig else views.RerollOneSlotNoRig()
@@ -137,10 +145,10 @@ async def is_random_modifier_special(
 
 
 async def reroll(
-        ctx: discord.ApplicationContext,
-        select: discord.ui.select,
-        embed_msg: discord.Embed,
-        filtered_items: dict[str, list],
+    ctx: discord.ApplicationContext,
+    select: discord.ui.select,
+    embed_msg: discord.Embed,
+    filtered_items: dict[str, list],
 ) -> None:
     await ctx.edit(embed=embed_msg, view=select)
     await select.wait()

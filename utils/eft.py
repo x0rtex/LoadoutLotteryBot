@@ -13,18 +13,6 @@ from typing import NamedTuple
 _ITEMS_DIR = Path(__file__).parent.parent / "data" / "items"
 _GAMERULES_DIR = Path(__file__).parent.parent / "data" / "gamerules"
 
-# Weapon Types
-ASSAULT_CARBINE: str = "Assault Carbine"
-ASSAULT_RIFLE: str = "Assault Rifle"
-SNIPER_RIFLE: str = "Bolt-Action Rifle"
-MACHINE_GUN: str = "Machine Gun"
-MARKSMAN_RIFLE: str = "Marksman Rifle"
-PISTOL: str = "Pistol"
-SMG: str = "SMG"
-SHOTGUN: str = "Shotgun"
-GRENADE_LAUNCHER: str = "Grenade Launcher"
-MELEE: str = "Melee"
-
 # Item Categories
 WEAPON: str = "Weapon"
 ARMOR_VEST: str = "Armor Vest"
@@ -62,10 +50,10 @@ LL4_TRADERS_IMAGE: str = "https://i.imgur.com/tROE6zs.png"
 NO_RESTRICTIONS_IMAGE: str = "https://i.imgur.com/r5VRNUB.png"
 
 # Images
-DICE_IMAGE: str = "https://w7.pngwing.com/pngs/56/672/png-transparent-gurps-customer-service-dice-dice-throw-game-service-dice.png"
-YOU_CHOOSE_IMAGE: str = (
-    "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg"
+DICE_IMAGE: str = (
+    "https://w7.pngwing.com/pngs/56/672/png-transparent-gurps-customer-service-dice-dice-throw-game-service-dice.png"
 )
+YOU_CHOOSE_IMAGE: str = "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg"
 
 
 #############################
@@ -112,10 +100,7 @@ def _load_items(path: Path) -> tuple[Item, ...]:
         data = json.load(f)
     items = []
     for d in data:
-        trader_info = {
-            trader: _parse_obtain(obtains)
-            for trader, obtains in d["trader_info"].items()
-        }
+        trader_info = {trader: _parse_obtain(obtains) for trader, obtains in d["trader_info"].items()}
         items.append(
             Item(
                 name=d["name"],

@@ -1,6 +1,8 @@
 import logging
 import time
+
 import discord
+
 from utils import users
 
 logger = logging.getLogger("discord")
@@ -32,15 +34,14 @@ def show_user_settings(user_settings: users.UserSettings, ctx: discord.Applicati
     embed_msg.set_thumbnail(url=ctx.interaction.user.display_avatar.url)
 
     fields: list = [
-                       (trader, "Locked" if level == 0 else f"LL{level}")
-                       for trader, level in user_settings["trader_levels"].items()
-                   ] + [
-                       ("Flea Market", user_settings["flea"]),
-                       ("Allow Quest Locked Items", user_settings["allow_quest_locked"]),
-                       ("Allow FIR-Only Items", user_settings["allow_fir_only"]),
-                       ("Allow thermals", user_settings["roll_thermals"]),
-                       ("Meta Only", user_settings["meta_only"]),
-                   ]
+        (trader, "Locked" if level == 0 else f"LL{level}") for trader, level in user_settings["trader_levels"].items()
+    ] + [
+        ("Flea Market", user_settings["flea"]),
+        ("Allow Quest Locked Items", user_settings["allow_quest_locked"]),
+        ("Allow FIR-Only Items", user_settings["allow_fir_only"]),
+        ("Allow thermals", user_settings["roll_thermals"]),
+        ("Meta Only", user_settings["meta_only"]),
+    ]
 
     for name, value in fields:
         embed_msg.add_field(name=name, value=value)

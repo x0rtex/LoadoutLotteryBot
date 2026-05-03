@@ -14,10 +14,12 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from rich.logging import RichHandler
 
-from utils import eft, roll_logic, users, db, msgs, views
+from utils import db, eft, msgs, roll_logic, users, views
 
 # Logger
-logging.basicConfig(level=logging.INFO, format="%(message)s", handlers=[RichHandler(rich_tracebacks=True, show_path=False, markup=True)])
+logging.basicConfig(
+    level=logging.INFO, format="%(message)s", handlers=[RichHandler(rich_tracebacks=True, show_path=False, markup=True)]
+)
 logger = logging.getLogger("discord")
 file_handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="w")
 file_handler.setFormatter(logging.Formatter("%(asctime)s:%(levelname)s:%(name)s: %(message)s"))
@@ -115,19 +117,19 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
 @option(name="meta_only", description="Only allow meta items to be rolled?", type=bool, choices=[True, False])
 @option(name="roll_thermals", description="Be able to roll thermal as a random modifier?", type=bool, choices=[True, False])
 async def settings(
-        ctx: discord.ApplicationContext,
-        prapor: int,
-        therapist: int,
-        skier: int,
-        peacekeeper: int,
-        mechanic: int,
-        ragman: int,
-        jaeger: int,
-        flea: bool,
-        allow_quest_locked: bool,
-        allow_fir_only: bool,
-        meta_only: bool,
-        roll_thermals: bool,
+    ctx: discord.ApplicationContext,
+    prapor: int,
+    therapist: int,
+    skier: int,
+    peacekeeper: int,
+    mechanic: int,
+    ragman: int,
+    jaeger: int,
+    flea: bool,
+    allow_quest_locked: bool,
+    allow_fir_only: bool,
+    meta_only: bool,
+    roll_thermals: bool,
 ) -> None:
     msgs.print_command_timestamp(ctx)
 
@@ -151,11 +153,11 @@ async def settings(
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
     ll2: int = 2
     if user_settings["flea"] is False and (
-            user_settings["trader_levels"][eft.PRAPOR] >= ll2
-            or user_settings["trader_levels"][eft.SKIER] >= ll2
-            or user_settings["trader_levels"][eft.MECHANIC] >= ll2
-            or user_settings["trader_levels"][eft.RAGMAN] >= ll2
-            or user_settings["trader_levels"][eft.JAEGER] >= ll2
+        user_settings["trader_levels"][eft.PRAPOR] >= ll2
+        or user_settings["trader_levels"][eft.SKIER] >= ll2
+        or user_settings["trader_levels"][eft.MECHANIC] >= ll2
+        or user_settings["trader_levels"][eft.RAGMAN] >= ll2
+        or user_settings["trader_levels"][eft.JAEGER] >= ll2
     ):
         user_settings["flea"] = True
 
@@ -220,7 +222,7 @@ async def stats(ctx: discord.ApplicationContext) -> None:
         uptime = datetime.timedelta(seconds=time.time() - proc.create_time())
         cpu = proc.cpu_times()
         cpu_time = datetime.timedelta(seconds=cpu.system + cpu.user)
-        mem_total = psutil.virtual_memory().total / (1024 ** 2)
+        mem_total = psutil.virtual_memory().total / (1024**2)
         mem_of_total = proc.memory_percent()
         mem_usage = mem_total * (mem_of_total / 100)
 
@@ -285,6 +287,7 @@ def run_bot() -> None:
     logger.info("Bot is starting...")
     if os.name != "nt":  # Use uvloop if using linux
         import uvloop
+
         uvloop.install()
     load_dotenv()
     bot.run(os.getenv("TOKEN"))

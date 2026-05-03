@@ -37,7 +37,8 @@ def write_user_settings(user_id: int, user_settings: users.UserSettings) -> None
         c = con.cursor()
 
         if user_exists(c, user_id):
-            c.execute("""UPDATE user_settings SET
+            c.execute(
+                """UPDATE user_settings SET
                             flea = ?,
                             allow_quest_locked = ?,
                             allow_fir_only = ?,
@@ -51,22 +52,26 @@ def write_user_settings(user_id: int, user_settings: users.UserSettings) -> None
                             ragman = ?,
                             jaeger = ?
                         WHERE user_id = ?""",
-                      (user_settings["flea"],
-                       user_settings["allow_quest_locked"],
-                       user_settings["allow_fir_only"],
-                       user_settings["meta_only"],
-                       user_settings["roll_thermals"],
-                       user_settings["trader_levels"][eft.PRAPOR],
-                       user_settings["trader_levels"][eft.THERAPIST],
-                       user_settings["trader_levels"][eft.SKIER],
-                       user_settings["trader_levels"][eft.PEACEKEEPER],
-                       user_settings["trader_levels"][eft.MECHANIC],
-                       user_settings["trader_levels"][eft.RAGMAN],
-                       user_settings["trader_levels"][eft.JAEGER],
-                       user_id))
+                (
+                    user_settings["flea"],
+                    user_settings["allow_quest_locked"],
+                    user_settings["allow_fir_only"],
+                    user_settings["meta_only"],
+                    user_settings["roll_thermals"],
+                    user_settings["trader_levels"][eft.PRAPOR],
+                    user_settings["trader_levels"][eft.THERAPIST],
+                    user_settings["trader_levels"][eft.SKIER],
+                    user_settings["trader_levels"][eft.PEACEKEEPER],
+                    user_settings["trader_levels"][eft.MECHANIC],
+                    user_settings["trader_levels"][eft.RAGMAN],
+                    user_settings["trader_levels"][eft.JAEGER],
+                    user_id,
+                ),
+            )
 
         else:
-            c.execute("""INSERT INTO user_settings (
+            c.execute(
+                """INSERT INTO user_settings (
                             user_id,
                             flea,
                             allow_quest_locked,
@@ -81,19 +86,22 @@ def write_user_settings(user_id: int, user_settings: users.UserSettings) -> None
                             ragman,
                             jaeger
                         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                      (user_id,
-                       user_settings["flea"],
-                       user_settings["allow_quest_locked"],
-                       user_settings["allow_fir_only"],
-                       user_settings["meta_only"],
-                       user_settings["roll_thermals"],
-                       user_settings["trader_levels"][eft.PRAPOR],
-                       user_settings["trader_levels"][eft.THERAPIST],
-                       user_settings["trader_levels"][eft.SKIER],
-                       user_settings["trader_levels"][eft.PEACEKEEPER],
-                       user_settings["trader_levels"][eft.MECHANIC],
-                       user_settings["trader_levels"][eft.RAGMAN],
-                       user_settings["trader_levels"][eft.JAEGER]))
+                (
+                    user_id,
+                    user_settings["flea"],
+                    user_settings["allow_quest_locked"],
+                    user_settings["allow_fir_only"],
+                    user_settings["meta_only"],
+                    user_settings["roll_thermals"],
+                    user_settings["trader_levels"][eft.PRAPOR],
+                    user_settings["trader_levels"][eft.THERAPIST],
+                    user_settings["trader_levels"][eft.SKIER],
+                    user_settings["trader_levels"][eft.PEACEKEEPER],
+                    user_settings["trader_levels"][eft.MECHANIC],
+                    user_settings["trader_levels"][eft.RAGMAN],
+                    user_settings["trader_levels"][eft.JAEGER],
+                ),
+            )
 
         con.commit()
 
