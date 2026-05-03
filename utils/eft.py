@@ -107,7 +107,7 @@ def _parse_obtain(raw: list[dict]) -> list[Obtain]:
     return [Obtain(o["level"], o["quest_locked"], o["barter"]) for o in raw]
 
 
-def load_items(path: Path) -> tuple[Item, ...]:
+def _load_items(path: Path) -> tuple[Item, ...]:
     with open(path) as f:
         data = json.load(f)
     items = []
@@ -130,7 +130,7 @@ def load_items(path: Path) -> tuple[Item, ...]:
     return tuple(items)
 
 
-def load_rules(path: Path) -> tuple[GameRule, ...]:
+def _load_rules(path: Path) -> tuple[GameRule, ...]:
     with open(path) as f:
         data = json.load(f)
     return tuple(GameRule(**d) for d in data)
@@ -140,15 +140,15 @@ def load_rules(path: Path) -> tuple[GameRule, ...]:
 # Data                      #
 #############################
 
-ALL_WEAPONS = load_items(_ITEMS_DIR / "weapons.json")
-ALL_ARMOR_VESTS = load_items(_ITEMS_DIR / "armor_vests.json")
-ALL_ARMORED_RIGS = load_items(_ITEMS_DIR / "armored_rigs.json")
-ALL_RIGS = load_items(_ITEMS_DIR / "rigs.json")
-ALL_HELMETS = load_items(_ITEMS_DIR / "helmets.json")
-ALL_BACKPACKS = load_items(_ITEMS_DIR / "backpacks.json")
-ALL_GUN_MODS = load_rules(_GAMERULES_DIR / "gun_mods.json")
-ALL_AMMO = load_rules(_GAMERULES_DIR / "ammo.json")
-ALL_MAPS = load_rules(_GAMERULES_DIR / "maps.json")
-GOOD_MODIFIERS = load_rules(_GAMERULES_DIR / "good_modifiers.json")
-OK_MODIFIERS = load_rules(_GAMERULES_DIR / "ok_modifiers.json")
-BAD_MODIFIERS = load_rules(_GAMERULES_DIR / "bad_modifiers.json")
+ALL_WEAPONS = _load_items(_ITEMS_DIR / "weapons.json")
+ALL_ARMOR_VESTS = _load_items(_ITEMS_DIR / "armor_vests.json")
+ALL_ARMORED_RIGS = _load_items(_ITEMS_DIR / "armored_rigs.json")
+ALL_RIGS = _load_items(_ITEMS_DIR / "rigs.json")
+ALL_HELMETS = _load_items(_ITEMS_DIR / "helmets.json")
+ALL_BACKPACKS = _load_items(_ITEMS_DIR / "backpacks.json")
+ALL_GUN_MODS = _load_rules(_GAMERULES_DIR / "gun_mods.json")
+ALL_AMMO = _load_rules(_GAMERULES_DIR / "ammo.json")
+ALL_MAPS = _load_rules(_GAMERULES_DIR / "maps.json")
+GOOD_MODIFIERS = _load_rules(_GAMERULES_DIR / "good_modifiers.json")
+OK_MODIFIERS = _load_rules(_GAMERULES_DIR / "ok_modifiers.json")
+BAD_MODIFIERS = _load_rules(_GAMERULES_DIR / "bad_modifiers.json")
