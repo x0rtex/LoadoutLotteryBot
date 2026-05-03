@@ -233,11 +233,11 @@ async def stats(ctx: discord.ApplicationContext) -> None:
 
     fields = [
         ("Python version", platform.python_version(), True),
-        ("Pycord version", discord.__version__, True),
-        ("Uptime", uptime, True),
-        ("CPU time", cpu_time, True),
+        ("Pycord version", discord.__version__ or "Unknown", True),
+        ("Uptime", str(uptime), True),
+        ("CPU time", str(cpu_time), True),
         ("Memory usage", f"{mem_usage:,.0f} MiB / {mem_total:,.0f} MiB ({mem_of_total:,.0f}%)", True),
-        ("Servers", len(bot.guilds), True),
+        ("Servers", str(len(bot.guilds)), True),
     ]
 
     for name, value, inline in fields:
