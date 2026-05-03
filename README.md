@@ -65,7 +65,3 @@ python main.py
 | ![](https://i.imgur.com/DgPfPfF.png) | ![](https://i.imgur.com/TXThfe1.png)  |
 
 \* It's random.
-
-```
-
-```
