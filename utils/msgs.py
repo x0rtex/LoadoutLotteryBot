@@ -1,5 +1,6 @@
 import logging
 import time
+from dataclasses import asdict
 
 import discord
 
@@ -18,7 +19,7 @@ WELCOME_TEXT_META: str = "🎲 Welcome to META Loadout Lottery! 🎰"
 
 
 def create_embed(ctx: discord.ApplicationContext, user_settings: users.UserSettings) -> discord.Embed:
-    embed_msg = discord.Embed(title=WELCOME_TEXT_META if user_settings["meta_only"] else WELCOME_TEXT, url=GITHUB_URL)
+    embed_msg = discord.Embed(title=WELCOME_TEXT_META if user_settings.meta_only else WELCOME_TEXT, url=GITHUB_URL)
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
     embed_msg.set_thumbnail(url=ctx.interaction.user.display_avatar.url)
     return embed_msg
@@ -34,13 +35,13 @@ def show_user_settings(user_settings: users.UserSettings, ctx: discord.Applicati
     embed_msg.set_thumbnail(url=ctx.interaction.user.display_avatar.url)
 
     fields: list = [
-        (trader, "Locked" if level == 0 else f"LL{level}") for trader, level in user_settings["trader_levels"].items()
+        (trader, "Locked" if level == 0 else f"LL{level}") for trader, level in asdict(user_settings.trader_levels).items()
     ] + [
-        ("Flea Market", user_settings["flea"]),
-        ("Allow Quest Locked Items", user_settings["allow_quest_locked"]),
-        ("Allow FIR-Only Items", user_settings["allow_fir_only"]),
-        ("Allow thermals", user_settings["roll_thermals"]),
-        ("Meta Only", user_settings["meta_only"]),
+        ("Flea Market", user_settings.flea),
+        ("Allow Quest Locked Items", user_settings.allow_quest_locked),
+        ("Allow FIR-Only Items", user_settings.allow_fir_only),
+        ("Allow thermals", user_settings.roll_thermals),
+        ("Meta Only", user_settings.meta_only),
     ]
 
     for name, value in fields:

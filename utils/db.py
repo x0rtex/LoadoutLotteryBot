@@ -1,6 +1,6 @@
 import sqlite3
 
-from utils import eft, users
+from utils.users import TraderLevels, UserSettings
 
 # Database name
 USER_SETTINGS_DB: str = "user_settings.db"
@@ -40,7 +40,7 @@ def user_exists(cursor, user_id: int) -> bool:
     return cursor.fetchone()[0] > 0
 
 
-def write_user_settings(user_id: int, user_settings: users.UserSettings) -> None:
+def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
     with sqlite3.connect(USER_SETTINGS_DB) as con:
         c = con.cursor()
 
@@ -62,19 +62,19 @@ def write_user_settings(user_id: int, user_settings: users.UserSettings) -> None
                             ref = ?
                         WHERE user_id = ?""",
                 (
-                    user_settings["flea"],
-                    user_settings["allow_quest_locked"],
-                    user_settings["allow_fir_only"],
-                    user_settings["meta_only"],
-                    user_settings["roll_thermals"],
-                    user_settings["trader_levels"][eft.PRAPOR],
-                    user_settings["trader_levels"][eft.THERAPIST],
-                    user_settings["trader_levels"][eft.SKIER],
-                    user_settings["trader_levels"][eft.PEACEKEEPER],
-                    user_settings["trader_levels"][eft.MECHANIC],
-                    user_settings["trader_levels"][eft.RAGMAN],
-                    user_settings["trader_levels"][eft.JAEGER],
-                    user_settings["trader_levels"][eft.REF],
+                    user_settings.flea,
+                    user_settings.allow_quest_locked,
+                    user_settings.allow_fir_only,
+                    user_settings.meta_only,
+                    user_settings.roll_thermals,
+                    user_settings.trader_levels.prapor,
+                    user_settings.trader_levels.therapist,
+                    user_settings.trader_levels.skier,
+                    user_settings.trader_levels.peacekeeper,
+                    user_settings.trader_levels.mechanic,
+                    user_settings.trader_levels.ragman,
+                    user_settings.trader_levels.jaeger,
+                    user_settings.trader_levels.ref,
                     user_id,
                 ),
             )
@@ -98,46 +98,46 @@ def write_user_settings(user_id: int, user_settings: users.UserSettings) -> None
                         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     user_id,
-                    user_settings["flea"],
-                    user_settings["allow_quest_locked"],
-                    user_settings["allow_fir_only"],
-                    user_settings["meta_only"],
-                    user_settings["roll_thermals"],
-                    user_settings["trader_levels"][eft.PRAPOR],
-                    user_settings["trader_levels"][eft.THERAPIST],
-                    user_settings["trader_levels"][eft.SKIER],
-                    user_settings["trader_levels"][eft.PEACEKEEPER],
-                    user_settings["trader_levels"][eft.MECHANIC],
-                    user_settings["trader_levels"][eft.RAGMAN],
-                    user_settings["trader_levels"][eft.JAEGER],
-                    user_settings["trader_levels"][eft.REF],
+                    user_settings.flea,
+                    user_settings.allow_quest_locked,
+                    user_settings.allow_fir_only,
+                    user_settings.meta_only,
+                    user_settings.roll_thermals,
+                    user_settings.trader_levels.prapor,
+                    user_settings.trader_levels.therapist,
+                    user_settings.trader_levels.skier,
+                    user_settings.trader_levels.peacekeeper,
+                    user_settings.trader_levels.mechanic,
+                    user_settings.trader_levels.ragman,
+                    user_settings.trader_levels.jaeger,
+                    user_settings.trader_levels.ref,
                 ),
             )
 
         con.commit()
 
 
-def read_user_settings(user_id: int) -> dict:
+def read_user_settings(user_id: int) -> UserSettings:
     with sqlite3.connect(USER_SETTINGS_DB) as con:
         c = con.cursor()
         c.execute("SELECT * FROM user_settings WHERE user_id = ?", (user_id,))
         row = c.fetchone()
         if row is None:
-            return users.DEFAULT_SETTINGS
-        return {
-            "flea": bool(row[1]),
-            "allow_quest_locked": bool(row[2]),
-            "allow_fir_only": bool(row[3]),
-            "meta_only": bool(row[4]),
-            "roll_thermals": bool(row[5]),
-            "trader_levels": {
-                eft.PRAPOR: row[6],
-                eft.THERAPIST: row[7],
-                eft.SKIER: row[8],
-                eft.PEACEKEEPER: row[9],
-                eft.MECHANIC: row[10],
-                eft.RAGMAN: row[11],
-                eft.JAEGER: row[12],
-                eft.REF: row[13],
-            },
-        }
+            return UserSettings()
+        return UserSettings(
+            flea=bool(row[1]),
+            allow_quest_locked=bool(row[2]),
+            allow_fir_only=bool(row[3]),
+            meta_only=bool(row[4]),
+            roll_thermals=bool(row[5]),
+            trader_levels=TraderLevels(
+                prapor=row[6],
+                therapist=row[7],
+                skier=row[8],
+                peacekeeper=row[9],
+                mechanic=row[10],
+                ragman=row[11],
+                jaeger=row[12],
+                ref=row[13],
+            ),
+        )

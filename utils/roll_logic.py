@@ -1,24 +1,26 @@
 import asyncio
 import random
+from dataclasses import asdict
 
 import discord
 
-from utils import eft, msgs, users, views
-from utils.eft import GameRules, Items
+from utils import eft, msgs, views
+from utils.eft import GameRule, GameRules, Item, Items
+from utils.users import UserSettings
 
 
-def roll_items(user_settings: users.UserSettings) -> (list, bool):
-    filtered_items = filter_items(user_settings)
+def roll_items(user_settings: UserSettings) -> tuple[dict, list, bool]:
+    filtered_items: dict = filter_items(user_settings)
 
-    weapon = random.choice(filtered_items[eft.WEAPON])
-    armor = random.choice(filtered_items[eft.ARMOR_VEST] + filtered_items[eft.ARMORED_RIG])
-    helmet = random.choice(filtered_items[eft.HELMET])
-    backpack = random.choice(filtered_items[eft.BACKPACK])
-    gun_mods = random.choice(filtered_items[eft.GUN_MOD])
-    ammo = random.choice(filtered_items[eft.AMMO])
-    map_ = random.choice(filtered_items[eft.MAP])
+    weapon: Item = random.choice(filtered_items[eft.WEAPON])
+    armor: Item = random.choice(filtered_items[eft.ARMOR_VEST] + filtered_items[eft.ARMORED_RIG])
+    helmet: Item = random.choice(filtered_items[eft.HELMET])
+    backpack: Item = random.choice(filtered_items[eft.BACKPACK])
+    gun_mods: GameRule = random.choice(filtered_items[eft.GUN_MOD])
+    ammo: GameRule = random.choice(filtered_items[eft.AMMO])
+    map: GameRule = random.choice(filtered_items[eft.MAP])
 
-    rolls: list = [weapon, armor, helmet, backpack, gun_mods, ammo, map_]
+    rolls: list[Item | GameRule] = [weapon, armor, helmet, backpack, gun_mods, ammo, map]
 
     need_rig: bool = armor.category == eft.ARMOR_VEST
     if need_rig:
@@ -28,7 +30,7 @@ def roll_items(user_settings: users.UserSettings) -> (list, bool):
     return filtered_items, rolls, need_rig
 
 
-def filter_items(user_settings: users.UserSettings) -> dict:
+def filter_items(user_settings: UserSettings) -> dict:
     return {
         eft.WEAPON: tuple(item for item in Items.Weapons if check_item(item, user_settings)),
         eft.ARMOR_VEST: tuple(item for item in Items.ArmorVests if check_item(item, user_settings)),
@@ -42,71 +44,71 @@ def filter_items(user_settings: users.UserSettings) -> dict:
     }
 
 
-def check_item(item: eft.Item, user_settings: users.UserSettings) -> bool:
-    if not item.meta and user_settings["meta_only"]:
+def check_item(item: Item, user_settings: UserSettings) -> bool:
+    if not item.meta and user_settings.meta_only:
         return False
 
-    if item.always_obtainable or (user_settings["flea"] and item.flea):
+    if item.always_obtainable or (user_settings.flea and item.flea):
         return True
 
-    if not user_settings["flea"] and not item.trader_info:
-        return user_settings["allow_fir_only"]
+    if not user_settings.flea and not item.trader_info:
+        return user_settings.allow_fir_only
 
     return check_item_traders(item, user_settings)
 
 
-def check_item_traders(item: eft.Item, user_settings: users.UserSettings) -> bool:
+def check_item_traders(item: Item, user_settings: UserSettings) -> bool:
     for trader_name, obtains in item.trader_info.items():
         for obtain in obtains:
-            trader_level = user_settings["trader_levels"].get(trader_name)
+            trader_level = user_settings.trader_levels.get_level(trader_name)
             if trader_level is None:
                 continue
             if (
-                (trader_level < obtain.level)
-                or (obtain.quest_locked and not user_settings["allow_quest_locked"])
-                or (obtain.barter and not user_settings["flea"])
+                (trader_level >= obtain.level)
+                and not (obtain.quest_locked and not user_settings.allow_quest_locked)
+                and not (obtain.barter and not user_settings.flea)
             ):
-                return False
-    return True
+                return True
+    return False
 
 
-def roll_random_modifier(user_settings: users.UserSettings) -> eft.GameRule:
-    filtered_good_modifiers = GameRules.GoodModifiers  # May need to filter these later
+def roll_random_modifier(user_settings: UserSettings) -> eft.GameRule:
+    filtered_good_modifiers = GameRules.GoodModifiers  # TODO: May need to filter these later
     filtered_ok_modifiers = tuple(ok_mod for ok_mod in GameRules.OkModifiers if check_gamerule(ok_mod, user_settings))
-    filtered_bad_modifiers = GameRules.BadModifiers  # May need to filter these later
+    filtered_bad_modifiers = GameRules.BadModifiers  # TODO: May need to filter these later
 
     modifiers = random.choice((filtered_good_modifiers, filtered_ok_modifiers, filtered_bad_modifiers))
     return random.choice(modifiers)
 
 
-def check_trader_modifier(trader_modifier: eft.GameRule, user_settings: users.UserSettings) -> bool:
-    if trader_modifier.name == eft.NO_RESTRICTIONS and not user_settings["flea"]:
+def check_trader_modifier(trader_modifier: GameRule, user_settings: UserSettings) -> bool:
+    if trader_modifier.name == eft.NO_RESTRICTIONS and not user_settings.flea:
         return False
 
     for level in range(2, 5):
         if trader_modifier.name == getattr(eft, f"LL{level}_TRADERS"):
-            return all(trader_level >= level for trader_level in user_settings["trader_levels"].values())
+            return all(trader_level >= level for trader_level in user_settings.trader_levels.all_levels())
 
     return True
 
 
-def check_gamerule(gamerule: eft.GameRule, user_settings: users.UserSettings) -> bool:
+def check_gamerule(gamerule: GameRule, user_settings: UserSettings) -> bool:
     return not (
-        user_settings["meta_only"]
+        user_settings.meta_only
         and not gamerule.meta
         or gamerule.name == "The Lab"
-        and not user_settings["flea"]
+        and not user_settings.flea
         or gamerule.name == "Ground Zero"
-        and user_settings["flea"]
+        and user_settings.flea
         or gamerule.name == "Use thermal"
-        and not user_settings["roll_thermals"]
+        and not user_settings.roll_thermals
     )
 
 
 async def reveal_roll(
     ctx: discord.ApplicationContext,
     embed_msg: discord.Embed,
-    rolled_item: eft.Item | eft.GameRule,
+    rolled_item: Item | GameRule,
     prefix: str,
 ) -> None:
     embed_msg.set_image(url="")
@@ -131,7 +133,7 @@ async def reveal_roll(
 
 
 async def is_random_modifier_special(
-    rolled_random_modifier: eft.GameRule,
+    rolled_random_modifier: GameRule,
     need_rig: bool,
     ctx: discord.ApplicationContext,
     embed_msg: discord.Embed,
@@ -148,14 +150,14 @@ async def is_random_modifier_special(
 
 async def reroll(
     ctx: discord.ApplicationContext,
-    select: discord.ui.select,
+    view: discord.ui.View,
     embed_msg: discord.Embed,
-    filtered_items: dict[str, list],
+    filtered_items: dict,
 ) -> None:
-    await ctx.edit(embed=embed_msg, view=select)
-    await select.wait()
+    await ctx.edit(embed=embed_msg, view=view)
+    await view.wait()
 
-    for category in select.value:
+    for category in view.value:
         rerolled = random.choice(filtered_items[category])
 
         if ctx.command.name == "roll":

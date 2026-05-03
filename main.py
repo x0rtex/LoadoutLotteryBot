@@ -6,6 +6,7 @@ import logging
 import os
 import platform
 import time
+from dataclasses import replace
 
 import discord
 import psutil
@@ -14,7 +15,8 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from rich.logging import RichHandler
 
-from utils import db, eft, msgs, roll_logic, users, views
+from utils import db, msgs, roll_logic, views
+from utils.users import TraderLevels, UserSettings
 
 # Logger
 logging.basicConfig(
@@ -135,34 +137,34 @@ async def settings(
 ) -> None:
     msgs.print_command_timestamp(ctx)
 
-    user_settings = {
-        "trader_levels": {
-            eft.PRAPOR: prapor,
-            eft.THERAPIST: therapist,
-            eft.SKIER: skier,
-            eft.PEACEKEEPER: peacekeeper,
-            eft.MECHANIC: mechanic,
-            eft.RAGMAN: ragman,
-            eft.JAEGER: jaeger,
-            eft.REF: ref,
-        },
-        "flea": flea,
-        "allow_quest_locked": allow_quest_locked,
-        "allow_fir_only": allow_fir_only,
-        "meta_only": meta_only,
-        "roll_thermals": roll_thermals,
-    }
+    user_settings = UserSettings(
+        flea=flea,
+        allow_quest_locked=allow_quest_locked,
+        allow_fir_only=allow_fir_only,
+        meta_only=meta_only,
+        roll_thermals=roll_thermals,
+        trader_levels=TraderLevels(
+            prapor=prapor,
+            therapist=therapist,
+            skier=skier,
+            peacekeeper=peacekeeper,
+            mechanic=mechanic,
+            ragman=ragman,
+            jaeger=jaeger,
+            ref=ref,
+        ),
+    )
 
     # Cannot unlock Prapor, Skier, Mechanic, Ragman, or Jaeger LL2 without unlocking Flea market
     ll2: int = 2
-    if user_settings["flea"] is False and (
-        user_settings["trader_levels"][eft.PRAPOR] >= ll2
-        or user_settings["trader_levels"][eft.SKIER] >= ll2
-        or user_settings["trader_levels"][eft.MECHANIC] >= ll2
-        or user_settings["trader_levels"][eft.RAGMAN] >= ll2
-        or user_settings["trader_levels"][eft.JAEGER] >= ll2
+    if user_settings.flea is False and (
+        user_settings.trader_levels.prapor >= ll2
+        or user_settings.trader_levels.skier >= ll2
+        or user_settings.trader_levels.mechanic >= ll2
+        or user_settings.trader_levels.ragman >= ll2
+        or user_settings.trader_levels.jaeger >= ll2
     ):
-        user_settings["flea"] = True
+        user_settings = replace(user_settings, flea=True)
 
     db.initialize_database()
     db.write_user_settings(ctx.user.id, user_settings)
@@ -182,7 +184,7 @@ async def viewsettings(ctx: discord.ApplicationContext) -> None:
         db.initialize_database()
         user_settings = db.read_user_settings(ctx.user.id)
     except FileNotFoundError:
-        user_settings = users.DEFAULT_SETTINGS
+        user_settings = UserSettings()
 
     embed_msg = msgs.show_user_settings(user_settings, ctx)
     embed_msg.title = "Your currently saved settings:"
@@ -196,8 +198,8 @@ async def resetsettings(ctx: discord.ApplicationContext) -> None:
     msgs.print_command_timestamp(ctx)
 
     db.initialize_database()
-    db.write_user_settings(ctx.user.id, users.DEFAULT_SETTINGS)
-    embed_msg = msgs.show_user_settings(users.DEFAULT_SETTINGS, ctx)
+    db.write_user_settings(ctx.user.id, UserSettings())
+    embed_msg = msgs.show_user_settings(UserSettings(), ctx)
     embed_msg.title = "Your settings have been reset to default:"
     await ctx.respond(embed=embed_msg, ephemeral=True)
 
