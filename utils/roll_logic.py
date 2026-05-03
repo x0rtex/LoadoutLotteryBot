@@ -98,7 +98,7 @@ def check_gamerule(gamerule: GameRule, user_settings: UserSettings) -> bool:
         and not user_settings.flea
         or gamerule.name == "Ground Zero"
         and user_settings.flea
-        or gamerule.name == "Use thermal"
+        or gamerule.name == "Use thermal scope"
         and not user_settings.roll_thermals
     )
 
