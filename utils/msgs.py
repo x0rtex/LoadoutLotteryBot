@@ -26,7 +26,7 @@ def create_embed(ctx: discord.ApplicationContext, user_settings: UserSettings) -
 
 
 def print_command_timestamp(ctx: discord.ApplicationContext) -> None:
-    logger.info(f"*️⃣️ {time.ctime(time.time())} *️⃣️ /{ctx.command.name} *️⃣")
+    logger.info(f"/{ctx.command.name} invoked")
 
 
 def show_user_settings(user_settings: UserSettings, ctx: discord.ApplicationContext) -> discord.Embed:

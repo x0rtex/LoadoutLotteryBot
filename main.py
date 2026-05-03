@@ -239,6 +239,7 @@ async def stats(ctx: discord.ApplicationContext) -> None:
 @bot.event  # Application command error handler
 async def on_application_command_error(ctx: discord.ApplicationContext, error: discord.DiscordException) -> None:
     if isinstance(error, commands.CommandOnCooldown):
+        logger.info(f"/{ctx.command.name} is on cooldown ({round(error.retry_after, 1)}s remaining)")
         await ctx.respond(
             f":hourglass: **This command is currently on cooldown.** Try again in {round(error.retry_after, 1)}s.",
             ephemeral=True,
@@ -265,12 +266,14 @@ async def on_application_command_error(ctx: discord.ApplicationContext, error: d
         )
 
     elif isinstance(error, commands.TooManyArguments):
+        logger.info(f"/{ctx.command.name} invoked with too many arguments: {error.args}")
         await ctx.respond(
             f"::warning: **Too many arguments:** {error.args}.",
             ephemeral=True,
         )
 
     elif isinstance(error, commands.BadArgument):
+        logger.info(f"/{ctx.command.name} invoked with an invalid argument: {error.args}")
         await ctx.respond(
             f"::warning: **Invalid argument:** {error.args}.",
             ephemeral=True,
