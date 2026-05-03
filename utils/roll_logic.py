@@ -57,11 +57,9 @@ def check_item(item: Item, user_settings: UserSettings) -> bool:
 
 
 def check_item_traders(item: Item, user_settings: UserSettings) -> bool:
-    for trader_name, obtains in item.trader_info.items():
+    for trader, obtains in item.trader_info.items():
         for obtain in obtains:
-            trader_level = user_settings.trader_levels.get_level(trader_name)
-            if trader_level is None:
-                continue
+            trader_level = user_settings.trader_levels.get_level(trader)
             if (
                 (trader_level >= obtain.level)
                 and not (obtain.quest_locked and not user_settings.allow_quest_locked)

@@ -1,6 +1,8 @@
 from dataclasses import asdict, dataclass, field
 from typing import Self
 
+from utils.eft import Trader
+
 
 @dataclass(frozen=True)
 class TraderLevels:
@@ -13,8 +15,8 @@ class TraderLevels:
     jaeger: int = 4
     ref: int = 4
 
-    def get_level(self: Self, trader_name: str) -> int | None:
-        return getattr(self, trader_name, None)
+    def get_level(self: Self, trader: Trader) -> int:
+        return getattr(self, trader.value)
 
     def all_levels(self: Self) -> list[int]:
         return [self.prapor, self.therapist, self.skier, self.peacekeeper, self.mechanic, self.ragman, self.jaeger, self.ref]

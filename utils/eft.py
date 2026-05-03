@@ -6,6 +6,8 @@ from enum import Enum
 from pathlib import Path
 from typing import NamedTuple, Self
 
+from typing_extensions import Literal
+
 #############################
 # Constants                 #
 #############################
@@ -70,7 +72,7 @@ YOU_CHOOSE_IMAGE: str = "https://clipartix.com/wp-content/uploads/2018/03/you-cl
 
 
 class Obtain(NamedTuple):
-    level: 1 | 2 | 3 | 4  # Trader loyalty level
+    level: Literal[1, 2, 3, 4]  # Trader loyalty level
     quest_locked: bool  # Whether an item is locked behind a trader's quest or not
     barter: bool  # Whether an item is only obtainable via barter or not
 
@@ -83,7 +85,7 @@ class Item:
     always_obtainable: bool
     meta: bool
     flea: bool
-    trader_info: dict[str, list[Obtain]]
+    trader_info: dict[Trader, list[Obtain]]
 
 
 @dataclass(slots=True, frozen=True)
@@ -108,7 +110,7 @@ def _load_items(path: Path) -> tuple[Item, ...]:
         data = json.load(f)
     items = []
     for d in data:
-        trader_info = {trader: _parse_obtain(obtains) for trader, obtains in d["trader_info"].items()}
+        trader_info = {Trader(trader): _parse_obtain(obtains) for trader, obtains in d["trader_info"].items() if trader}
         items.append(
             Item(
                 name=d["name"],
