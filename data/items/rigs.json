@@ -1,438 +1,438 @@
 [
-  {
-    "name": "YOUR CHOICE!",
-    "category": "Rig",
-    "image_url": "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
-    "always_obtainable": true,
-    "meta": true,
-    "flea": false,
-    "trader_info": {}
-  },
-  {
-    "name": "Scav Vest",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/ScavVest.png/revision/latest/scale-to-width-down/320?cb=20190517215830",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
+    {
+        "name": "YOUR CHOICE!",
+        "category": "Rig",
+        "image_url": "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+        "always_obtainable": true,
+        "meta": true,
+        "flea": false,
+        "trader_info": {}
+    },
+    {
+        "name": "Scav Vest",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/ScavVest.png/revision/latest/scale-to-width-down/320?cb=20190517215830",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
         }
-      ]
+    },
+    {
+        "name": "Security vest",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9f/Securityvest.png/revision/latest?cb=20201224194010",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Zulu Nylon Gear M4 Reduced Signature Chest Rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/Zulu_M4_RSCR_Image.png/revision/latest?cb=20230813064822",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "DIY IDEA chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/63/DIY_IDEA_chest_rig.png/revision/latest/scale-to-width-down/320?cb=20211206005252",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Spiritus Systems Bank Robber chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/Bank_Robber_ins.png/revision/latest/scale-to-width-down/320?cb=20200315233111",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "SOE Micro Rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fb/SOE.png/revision/latest/scale-to-width-down/320?cb=20191028034055",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Type 56 Chicom chest harness",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/86/Type_56_Chicom_Image.png/revision/latest?cb=20230813064823",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "WARTECH TV-109 + TV-106 chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/95/Wartech_gear_rig.png/revision/latest/scale-to-width-down/320?cb=20200624184927",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "CSA chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0e/CSAImage.png/revision/latest?cb=20210330190914",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "UMTBS 6sh112 Scout-Sniper",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/82/Scout_Sniper_rig.png/revision/latest/scale-to-width-down/301?cb=20171107182903",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Azimut SS \"Khamelion\" chest harness (Olive)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/17/Azimut_SS_%22Khamelion%22_chest_harness_%28Olive%29_image.png/revision/latest/scale-to-width-down/320?cb=20221230000547",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Splav Tarzan M22 chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/Tarzan.png/revision/latest?cb=20200314180047",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Haley Strategic D3CRX Chest Harness",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/D3CRX.PNG/revision/latest/scale-to-width-down/320?cb=20191030042338",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Dynaforce Triton M43-A chest harness",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/Triton_M43-A_Chest_Harness_ins.png/revision/latest/scale-to-width-down/320?cb=20190410162933",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "BlackHawk! Commando chest harness",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3f/Blackhawk%21_commando.gif/revision/latest/scale-to-width-down/320?cb=20190615175249",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Direct Action Thunderbolt compact chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7c/Direct_Action_Thunderbolt_compact_chest_rig.png/revision/latest/scale-to-width-down/320?cb=20201020141605",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Gear Craft GC-BSS-MK1 chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/12/BSS_Mk1_View.png/revision/latest/scale-to-width-down/320?cb=20201226004117",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Umka M33-SET1 hunter vest",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b7/M33-SET1_vest.png/revision/latest/scale-to-width-down/320?cb=20210330132527",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Jaeger": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "LBT-1961A Load Bearing Chest Rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/be/LBT_1961_View.png/revision/latest/scale-to-width-down/320?cb=20200528221933",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "LBT-1961A Load Bearing Chest Rig (Goons Edition)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b5/LBT-1961A_GE.png/revision/latest/scale-to-width-down/320?cb=20220705233654",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Stich Profi Chest Rig MK2 (Recon, A-TACS FG)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e6/StichMk2Recon_View.png/revision/latest/scale-to-width-down/320?cb=20211206001744",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Stich Profi Chest Rig MK2 (Assault, A-TACS FG)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cb/StichMk2Assault_View_.png/revision/latest/scale-to-width-down/320?cb=20211206002034",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "BlackRock chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/79/BlackRock.png/revision/latest/scale-to-width-down/320?cb=20190517215730",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "WARTECH MK3 TV-104 chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/Mk3inspect.PNG/revision/latest/scale-to-width-down/320?cb=20190305205103",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "ANA Tactical Alpha chest rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/Alpha_Rig.png/revision/latest/scale-to-width-down/320?cb=20190517215939",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Azimut SS \"Zhuk\" chest harness",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/Azimut_SS_Jhuk_Chest_Harness.gif/revision/latest/scale-to-width-down/320?cb=20210331130740",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Velocity Systems MPPV Multi-Purpose Patrol Vest",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/de/MPPV_view.png/revision/latest/scale-to-width-down/320?cb=20191230104438",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Belt-A + Belt-B gear rig",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f5/Belt-A_Belt-B_gear_rig.png/revision/latest/scale-to-width-down/320?cb=20181227112944",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
     }
-  },
-  {
-    "name": "Security vest",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9f/Securityvest.png/revision/latest?cb=20201224194010",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "Zulu Nylon Gear M4 Reduced Signature Chest Rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/Zulu_M4_RSCR_Image.png/revision/latest?cb=20230813064822",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "DIY IDEA chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/63/DIY_IDEA_chest_rig.png/revision/latest/scale-to-width-down/320?cb=20211206005252",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "Spiritus Systems Bank Robber chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/Bank_Robber_ins.png/revision/latest/scale-to-width-down/320?cb=20200315233111",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "SOE Micro Rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fb/SOE.png/revision/latest/scale-to-width-down/320?cb=20191028034055",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Peacekeeper": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Type 56 Chicom chest harness",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/86/Type_56_Chicom_Image.png/revision/latest?cb=20230813064823",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "WARTECH TV-109 + TV-106 chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/95/Wartech_gear_rig.png/revision/latest/scale-to-width-down/320?cb=20200624184927",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "CSA chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0e/CSAImage.png/revision/latest?cb=20210330190914",
-    "always_obtainable": true,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "UMTBS 6sh112 Scout-Sniper",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/82/Scout_Sniper_rig.png/revision/latest/scale-to-width-down/301?cb=20171107182903",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Prapor": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": true
-        }
-      ],
-      "Ragman": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Azimut SS \"Khamelion\" chest harness (Olive)",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/17/Azimut_SS_%22Khamelion%22_chest_harness_%28Olive%29_image.png/revision/latest/scale-to-width-down/320?cb=20221230000547",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "Splav Tarzan M22 chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/Tarzan.png/revision/latest?cb=20200314180047",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  },
-  {
-    "name": "Haley Strategic D3CRX Chest Harness",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/D3CRX.PNG/revision/latest/scale-to-width-down/320?cb=20191030042338",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Dynaforce Triton M43-A chest harness",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/Triton_M43-A_Chest_Harness_ins.png/revision/latest/scale-to-width-down/320?cb=20190410162933",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "BlackHawk! Commando chest harness",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3f/Blackhawk%21_commando.gif/revision/latest/scale-to-width-down/320?cb=20190615175249",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Direct Action Thunderbolt compact chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7c/Direct_Action_Thunderbolt_compact_chest_rig.png/revision/latest/scale-to-width-down/320?cb=20201020141605",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "Gear Craft GC-BSS-MK1 chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/12/BSS_Mk1_View.png/revision/latest/scale-to-width-down/320?cb=20201226004117",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Umka M33-SET1 hunter vest",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b7/M33-SET1_vest.png/revision/latest/scale-to-width-down/320?cb=20210330132527",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Jaeger": [
-        {
-          "level": 1,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "LBT-1961A Load Bearing Chest Rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/be/LBT_1961_View.png/revision/latest/scale-to-width-down/320?cb=20200528221933",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "LBT-1961A Load Bearing Chest Rig (Goons Edition)",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b5/LBT-1961A_GE.png/revision/latest/scale-to-width-down/320?cb=20220705233654",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "Stich Profi Chest Rig MK2 (Recon, A-TACS FG)",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e6/StichMk2Recon_View.png/revision/latest/scale-to-width-down/320?cb=20211206001744",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Stich Profi Chest Rig MK2 (Assault, A-TACS FG)",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cb/StichMk2Assault_View_.png/revision/latest/scale-to-width-down/320?cb=20211206002034",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "BlackRock chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/79/BlackRock.png/revision/latest/scale-to-width-down/320?cb=20190517215730",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "WARTECH MK3 TV-104 chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/Mk3inspect.PNG/revision/latest/scale-to-width-down/320?cb=20190305205103",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "ANA Tactical Alpha chest rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/Alpha_Rig.png/revision/latest/scale-to-width-down/320?cb=20190517215939",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Azimut SS \"Zhuk\" chest harness",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/Azimut_SS_Jhuk_Chest_Harness.gif/revision/latest/scale-to-width-down/320?cb=20210331130740",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 2,
-          "quest_locked": false,
-          "barter": false
-        }
-      ]
-    }
-  },
-  {
-    "name": "Velocity Systems MPPV Multi-Purpose Patrol Vest",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/de/MPPV_view.png/revision/latest/scale-to-width-down/320?cb=20191230104438",
-    "always_obtainable": false,
-    "meta": true,
-    "flea": true,
-    "trader_info": {}
-  },
-  {
-    "name": "Belt-A + Belt-B gear rig",
-    "category": "Rig",
-    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f5/Belt-A_Belt-B_gear_rig.png/revision/latest/scale-to-width-down/320?cb=20181227112944",
-    "always_obtainable": false,
-    "meta": false,
-    "flea": true,
-    "trader_info": {
-      "Ragman": [
-        {
-          "level": 3,
-          "quest_locked": false,
-          "barter": true
-        }
-      ]
-    }
-  }
 ]
