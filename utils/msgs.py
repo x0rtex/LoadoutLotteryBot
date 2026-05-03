@@ -1,8 +1,9 @@
 import logging
 import time
-
 import discord
 from utils import users
+
+logger = logging.getLogger("discord")
 
 # Embed Strings
 REROLLED_PREFIX: str = "Rerolled "
@@ -22,7 +23,7 @@ def create_embed(ctx: discord.ApplicationContext, user_settings: users.UserSetti
 
 
 def print_command_timestamp(ctx: discord.ApplicationContext) -> None:
-    logging.info(f"*️⃣️ {time.ctime(time.time())} *️⃣️ /{ctx.command.name} *️⃣")
+    logger.info(f"*️⃣️ {time.ctime(time.time())} *️⃣️ /{ctx.command.name} *️⃣")
 
 
 def show_user_settings(user_settings: users.UserSettings, ctx: discord.ApplicationContext) -> discord.Embed:

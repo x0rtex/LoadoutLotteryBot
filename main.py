@@ -12,15 +12,16 @@ import psutil
 from discord import option
 from discord.ext import commands
 from dotenv import load_dotenv
+from rich.logging import RichHandler
 
 from utils import eft, roll_logic, users, db, msgs, views
 
-# Bot logger
+# Logger
+logging.basicConfig(level=logging.INFO, format="%(message)s", handlers=[RichHandler(rich_tracebacks=True, show_path=False, markup=True)])
 logger = logging.getLogger("discord")
-logger.setLevel(logging.DEBUG)
-handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="w")
-handler.setFormatter(logging.Formatter("%(asctime)s:%(levelname)s:%(name)s: %(message)s"))
-logger.addHandler(handler)
+file_handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="w")
+file_handler.setFormatter(logging.Formatter("%(asctime)s:%(levelname)s:%(name)s: %(message)s"))
+logger.addHandler(file_handler)
 
 asyncio.set_event_loop(asyncio.new_event_loop())
 bot = commands.Bot(help_command=commands.DefaultHelpCommand())
@@ -31,8 +32,8 @@ bot = commands.Bot(help_command=commands.DefaultHelpCommand())
 async def on_ready() -> None:
     await bot.change_presence(activity=discord.Game("/help"))
     bot.add_view(views.RandomModifierButton())
-    logging.info(f"Logged in as {bot.user}")
-    logging.info(f"Guilds: {len(bot.guilds)}")
+    logger.info(f"Logged in as {bot.user}")
+    logger.info(f"Guilds: {len(bot.guilds)}")
 
 
 # /roll
@@ -281,6 +282,7 @@ async def on_application_command_error(ctx: discord.ApplicationContext, error: d
 
 
 def run_bot() -> None:
+    logger.info("Bot is starting...")
     if os.name != "nt":  # Use uvloop if using linux
         import uvloop
         uvloop.install()
