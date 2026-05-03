@@ -1,4 +1,4 @@
 :START
 timeout 3
-venv\Scripts\python.exe main.py
+uv run main.py
 GOTO START
