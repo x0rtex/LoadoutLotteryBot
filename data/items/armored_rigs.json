@@ -279,7 +279,7 @@
         "meta": false,
         "flea": false,
         "trader_info": {
-            "Red": [
+            "ref": [
                 {
                     "level": 3,
                     "quest_locked": true,
