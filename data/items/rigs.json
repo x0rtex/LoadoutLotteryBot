@@ -61,9 +61,26 @@
         "trader_info": {}
     },
     {
-        "name": "Spiritus Systems Bank Robber chest rig",
+        "name": "Spiritus Systems Bank Robber chest rig (MultiCam Black)",
         "category": "Rig",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/Bank_Robber_ins.png/revision/latest/scale-to-width-down/320?cb=20200315233111",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e7/Spiritus_Systems_Bank_Robber_chest_rig_%28MultiCam_Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20250415134145",
+        "always_obtainable": true,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Spiritus Systems Bank Robber chest rig (MultiCam Alpine)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Spiritus_Systems_Bank_Robber_chest_rig_%28MultiCam_Alpine%29_image.png/revision/latest/scale-to-width-down/320?cb=20250415134117",
         "always_obtainable": true,
         "meta": false,
         "flea": true,
@@ -146,9 +163,9 @@
         }
     },
     {
-        "name": "UMTBS 6sh112 Scout-Sniper",
+        "name": "UMTBS 6sh112 Scout-Sniper chest rig (EMR)",
         "category": "Rig",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/82/Scout_Sniper_rig.png/revision/latest/scale-to-width-down/301?cb=20171107182903",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/82/Scout_Sniper_rig.png/revision/latest/scale-to-width-down/320?cb=20251116131301",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
@@ -247,13 +264,30 @@
         }
     },
     {
-        "name": "Direct Action Thunderbolt compact chest rig",
+        "name": "Direct Action Thunderbolt compact chest rig (Shadow Gray)",
         "category": "Rig",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7c/Direct_Action_Thunderbolt_compact_chest_rig.png/revision/latest/scale-to-width-down/320?cb=20201020141605",
         "always_obtainable": false,
         "meta": true,
         "flea": true,
         "trader_info": {}
+    },
+    {
+        "name": "Direct Action Thunderbolt compact chest rig (Ranger Green)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/11/Direct_Action_Thunderbolt_compact_chest_rig_%28Ranger_Green%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430003240",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
     },
     {
         "name": "Gear Craft GC-BSS-MK1 chest rig",
@@ -290,13 +324,21 @@
         }
     },
     {
-        "name": "LBT-1961A Load Bearing Chest Rig",
+        "name": "LBT-1961A Load Bearing Chest Rig (MAS Grey)",
         "category": "Rig",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/be/LBT_1961_View.png/revision/latest/scale-to-width-down/320?cb=20200528221933",
         "always_obtainable": false,
         "meta": true,
         "flea": true,
-        "trader_info": {}
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
     },
     {
         "name": "LBT-1961A Load Bearing Chest Rig (Goons Edition)",
@@ -306,6 +348,57 @@
         "meta": true,
         "flea": true,
         "trader_info": {}
+    },
+    {
+        "name": "LBT-1961A Load Bearing Chest Rig (AOR1)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ed/LBT-1961A_Load_Bearing_Chest_Rig_%28AOR1%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024220745",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "LBT-1961A Load Bearing Chest Rig (MultiCam)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/64/LBT-1961A_Load_Bearing_Chest_Rig_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20260429215608",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "LBT-1961A Load Bearing Chest Rig (DNC)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/98/LBT-1961A_Load_Bearing_Chest_Rig_%28DNC%29_image.png/revision/latest/scale-to-width-down/320?cb=20260429215521",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
     },
     {
         "name": "Stich Profi Chest Rig MK2 (Recon, A-TACS FG)",
@@ -319,6 +412,23 @@
                 {
                     "level": 2,
                     "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Stich Profi Chest Rig MK2 (Recon, EMR)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cc/Stich_Profi_Chest_Rig_MK2_%28Recon%2C_EMR%29_image.png/revision/latest/scale-to-width-down/320?cb=20260429222934",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
                     "barter": false
                 }
             ]
@@ -342,7 +452,7 @@
         }
     },
     {
-        "name": "BlackRock chest rig",
+        "name": "BlackRock chest rig (Gray)",
         "category": "Rig",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/79/BlackRock.png/revision/latest/scale-to-width-down/320?cb=20190517215730",
         "always_obtainable": false,
@@ -359,7 +469,24 @@
         }
     },
     {
-        "name": "WARTECH MK3 TV-104 chest rig",
+        "name": "BlackRock chest rig (Khaki)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fc/BlackRock_chest_rig_%28Khaki%29_image.png/revision/latest/scale-to-width-down/320?cb=20250418134547",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "WARTECH MK3 TV-104 chest rig (MultiCam)",
         "category": "Rig",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/Mk3inspect.PNG/revision/latest/scale-to-width-down/320?cb=20190305205103",
         "always_obtainable": false,
@@ -376,7 +503,24 @@
         }
     },
     {
-        "name": "ANA Tactical Alpha chest rig",
+        "name": "WARTECH MK3 TV-104 chest rig (Moss)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/WARTECH_MK3_TV-104_chest_rig_%28Moss%29_image.png/revision/latest/scale-to-width-down/319?cb=20251024205613",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "ANA Tactical Alpha chest rig (Olive Drab)",
         "category": "Rig",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/Alpha_Rig.png/revision/latest/scale-to-width-down/320?cb=20190517215939",
         "always_obtainable": false,
@@ -388,14 +532,53 @@
                     "level": 3,
                     "quest_locked": false,
                     "barter": false
+                },
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
                 }
             ]
         }
     },
     {
-        "name": "Azimut SS \"Zhuk\" chest harness",
+        "name": "ANA Tactical Alpha chest rig (MultiCam)",
         "category": "Rig",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/31/Azimut_SS_Jhuk_Chest_Harness.gif/revision/latest/scale-to-width-down/320?cb=20210331130740",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/48/ANA_Tactical_Alpha_chest_rig_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/299?cb=20250418114926",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "ANA Tactical Alpha chest rig (A-TACS AU)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ab/ANA_Tactical_Alpha_chest_rig_%28A-TACS_AU%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024212728",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Azimut SS \"Zhuk\" chest harness (Black)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/aa/Azimut_SS_Zhuk_chest_harness_%28Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20250412221543",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
@@ -408,6 +591,15 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Azimut SS \"Zhuk\" chest harness (SURPAT)",
+        "category": "Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d2/Azimut_SS_Zhuk_chest_harness_%28SURPAT%29_image.png/revision/latest/scale-to-width-down/320?cb=20250412221521",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
     },
     {
         "name": "Velocity Systems MPPV Multi-Purpose Patrol Vest",

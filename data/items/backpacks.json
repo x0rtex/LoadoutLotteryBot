@@ -248,9 +248,43 @@
         }
     },
     {
-        "name": "Gruppa 99 T20 backpack",
+        "name": "LBT-1476A 3Day Pack (MultiCam Alpine)",
         "category": "Backpack",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/be/Gruppa_99_T20_Image.gif/revision/latest/scale-to-width-down/320?cb=20220220203102",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7f/LBT-1476A_3Day_Pack_%28MultiCam_Alpine%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413200049",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Gruppa 99 T20 backpack (Umber Brown)",
+        "category": "Backpack",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Gruppa_99_T20_backpack_%28Umber_Brown%29_image.png/revision/latest/scale-to-width-down/319?cb=20250413135438",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Gruppa 99 T20 backpack (MultiCam)",
+        "category": "Backpack",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/20/Gruppa_99_T20_backpack_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413135417",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
@@ -504,7 +538,7 @@
         }
     },
     {
-        "name": "Tehinkom RK-PT-25 patrol backpack (Digital Flora)",
+        "name": "Tehinkom RK-PT-25 patrol backpack (EMR)",
         "category": "Backpack",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/Tehinkom_RK-PT-25_Image.png/revision/latest/scale-to-width-down/278?cb=20240123002648",
         "always_obtainable": false,
@@ -531,6 +565,75 @@
             "Ragman": [
                 {
                     "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "5.11 Tactical RUSH 100 backpack (Black)",
+        "category": "Backpack",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e8/5.11_Tactical_RUSH_100_backpack_%28Black%29_image.png/revision/latest/scale-to-width-down/303?cb=20241231200552",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Mystery Ranch Terraframe backpack (Olive Drab)",
+        "category": "Backpack",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Mystery_Ranch_Terraframe_backpack_%28Olive_Drab%29_image.png/revision/latest/scale-to-width-down/320?cb=20250415145513",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Partisan's bag",
+        "category": "Backpack",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c3/Partizans_Bag.png/revision/latest/scale-to-width-down/320?cb=20240901124619",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "",
+        "category": "Backpack",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "",
+        "category": "Backpack",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 1,
                     "quest_locked": false,
                     "barter": false
                 }

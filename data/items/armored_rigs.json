@@ -78,7 +78,7 @@
         }
     },
     {
-        "name": "FirstSpear Strandhogg plate carrier (Ranger Green)",
+        "name": "First Spear Strandhogg plate carrier (Ranger Green)",
         "category": "Armored Rig",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/Strandhogg.png/revision/latest/scale-to-width-down/253?cb=20211229223415",
         "always_obtainable": false,
@@ -90,6 +90,40 @@
                     "level": 3,
                     "quest_locked": false,
                     "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "First Spear Strandhogg plate carrier (ABUPAT)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/30/First_Spear_Strandhogg_plate_carrier_%28ABUPAT%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024212533",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "First Spear Strandhogg plate carrier (MultiCam Black)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3d/First_Spear_Strandhogg_plate_carrier_%28MultiCam_Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430195122",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
                 }
             ]
         }
@@ -141,11 +175,6 @@
                     "level": 2,
                     "quest_locked": false,
                     "barter": true
-                },
-                {
-                    "level": 2,
-                    "quest_locked": true,
-                    "barter": true
                 }
             ]
         }
@@ -168,9 +197,9 @@
         }
     },
     {
-        "name": "ANA Tactical M2 plate carrier (Digital Flora)",
+        "name": "ANA Tactical M2 plate carrier (OD Green)",
         "category": "Armored Rig",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2a/M2.png/revision/latest/scale-to-width-down/320?cb=20180520221351",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2a/M2.png/revision/latest/scale-to-width-down/320?cb=20251224171006",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
@@ -181,17 +210,49 @@
                     "quest_locked": false,
                     "barter": true
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
     {
-        "name": "ANA Tactical M1 plate carrier (Olive Drab)",
+        "name": "ANA Tactical M2 plate carrier (MultiCam Alpine)",
         "category": "Armored Rig",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/66/ANA_Tactical_M1.png/revision/latest/scale-to-width-down/320?cb=20181227153645",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b5/ANA_Tactical_M2_plate_carrier_%28MultiCam_Alpine%29_image.png/revision/latest/scale-to-width-down/320?cb=20260102175204",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "ANA Tactical M1 plate carrier (OD Green)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/66/ANA_Tactical_M1.png/revision/latest/scale-to-width-down/320?cb=20251224170049",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
-        "trader_info": {}
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
     },
     {
         "name": "Crye Precision AVS plate carrier (Ranger Green)",
@@ -211,6 +272,23 @@
         }
     },
     {
+        "name": "Crye Precision AVS plate carrier (MultiCam)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/aa/Crye_Precision_AVS_plate_carrier_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20250418135748",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Red": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
         "name": "5.11 Tactical TacTec plate carrier (Ranger Green)",
         "category": "Armored Rig",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/20/TactecImage.png/revision/latest/scale-to-width-down/320?cb=20180909205723",
@@ -220,13 +298,38 @@
         "trader_info": {}
     },
     {
+        "name": "5.11 Tactical TacTec plate carrier (Storm)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/5.11_Tactical_TacTec_plate_carrier_%28Storm%29_image.png/revision/latest/scale-to-width-down/320?cb=20250418135905",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
         "name": "Ars Arma CPC MOD.1 plate carrier (A-TACS FG)",
         "category": "Armored Rig",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/ArsArmaCPCMOD2.png/revision/latest?cb=20200502000042",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
-        "trader_info": {}
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
     },
     {
         "name": "Crye Precision CPC plate carrier (Goons Edition)",
@@ -287,15 +390,7 @@
         "always_obtainable": false,
         "meta": false,
         "flea": true,
-        "trader_info": {
-            "Ragman": [
-                {
-                    "level": 4,
-                    "quest_locked": true,
-                    "barter": true
-                }
-            ]
-        }
+        "trader_info": {}
     },
     {
         "name": "Crye Precision AVS plate carrier (Tagilla Edition)",
@@ -305,5 +400,371 @@
         "meta": false,
         "flea": true,
         "trader_info": {}
+    },
+    {
+        "name": "Tac-Kek JayPC plate carrier (Black)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/51/Tac-Kek_JayPC_plate_carrier_%28Black%291.png/revision/latest/scale-to-width-down/320?cb=20251225204106",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Tac-Kek JayPC plate carrier (OD Green)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/55/Tac-kek_JayPC.png/revision/latest/scale-to-width-down/320?cb=20251225204036",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Crye Precision JPC Plate Carrier (MultiCam)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/94/Crye_Precision_JPC_Plate_Carrier_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20251225141218",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Tasmanian Tiger Plate Carrier MKIII (Coyote Brown)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/58/Tasmanian_Tiger_PC_MKIII_CB_Image.png/revision/latest/scale-to-width-down/320?cb=20240821042505",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Stich Profi Plate Carrier V2 (Black)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/80/Stich_Profi_Plate_Carrier_V2_Image.png/revision/latest/scale-to-width-down/320?cb=20240821040920",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Stich Profi Plate Carrier V2 (MARPAT Woodland)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d0/Stich_Profi_Plate_Carrier_V2_%28MARPAT_Woodland%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024220145",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Stich Profi Plate Carrier V2 (A-TACS FG)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3d/Stich_Profi_Plate_Carrier_V2_%28A-TACS_FG%29_image.png/revision/latest/scale-to-width-down/320?cb=20260429225024",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Stich Profi Plate Carrier V2 (Coyote)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/80/Stich_Profi_Plate_Carrier_V2_%28Coyote%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430200232",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Stich Profi Stich Defense mod.2 plate carrier (MultiCam)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7f/Stich_Profi_Defense_M.2_Image.png/revision/latest/scale-to-width-down/320?cb=20240823223040",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "FORT Gladiator-S plate carrier (Lightweight, MultiCam)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/83/FORT_Gladiator-S_plate_carrier_%28Lightweight%2C_MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20260428234109",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "FORT Gladiator-S plate carrier (Lightweight, Viking)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b3/FORT_Gladiator-S_plate_carrier_%28Viking%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430201520",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "6B45 armored rig (General Purpose, EMR)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/6B45_%28General%29_Image.png/revision/latest/scale-to-width-down/320?cb=20251223164332",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "6B45 armored rig (Medic, EMR)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b2/6B45_%28Medic%29_Image.png/revision/latest/scale-to-width-down/320?cb=20251223164646",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "6B45 armored rig (Assault, EMR)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a0/6B45_%28Assault%29_Image.png/revision/latest/scale-to-width-down/320?cb=20251223165023",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "FORT Gladiator-S plate carrier (Death is Inevitable)",
+        "category": "Armored Rig",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/FORT_Gladiator-S_plate_carrier_%28Death_is_Inevitable%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430205426",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "",
+        "category": "Armored Rig",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "",
+        "category": "Armored Rig",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "",
+        "category": "Armored Rig",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "",
+        "category": "Armored Rig",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "",
+        "category": "Armored Rig",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "",
+        "category": "Armored Rig",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "",
+        "category": "Armored Rig",
+        "image_url": "",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
     }
 ]

@@ -89,7 +89,7 @@
     {
         "name": "Diamond Age NeoSteel High Cut helmet (Black)",
         "category": "Helmet",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/72/NeoSteelimage.png/revision/latest?cb=20231228134820",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/72/NeoSteelimage.png/revision/latest/scale-to-width-down/320?cb=20240813111216",
         "always_obtainable": false,
         "meta": false,
         "flea": false,
@@ -98,6 +98,40 @@
                 {
                     "level": 3,
                     "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Diamond Age NeoSteel High Cut helmet (Aces)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/52/Diamond_Age_NeoSteel_High_Cut_helmet_%28Aces%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024221528",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Diamond Age NeoSteel High Cut helmet (Orange Stains)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2c/Diamond_Age_NeoSteel_High_Cut_helmet_%28Orange_Stains%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024221410",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
                     "barter": false
                 }
             ]
@@ -282,13 +316,72 @@
         }
     },
     {
+        "name": "Galvion Caiman Hybrid helmet (MultiCam)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/81/Galvion_Caiman_Hybrid_helmet_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024205212",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Galvion Caiman Hybrid helmet (Mutualist)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/71/Galvion_Caiman_Hybrid_helmet_%28Mutualist%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024221641",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Galvion Caiman Hybrid helmet (MultiCam Alpine)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/38/Galvion_Caiman_Hybrid_helmet_%28MultiCam_Alpine%29_image.png/revision/latest/scale-to-width-down/320?cb=20260102182041",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
         "name": "NFM HJELM helmet (Hellhound Grey)",
         "category": "Helmet",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8b/HJELM.png/revision/latest?cb=20211225183648",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
-        "trader_info": {}
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
     },
     {
         "name": "UNTAR helmet",
@@ -315,20 +408,30 @@
         }
     },
     {
-        "name": "6B47 Ratnik-BSh helmet",
+        "name": "6B47 Ratnik-BSh helmet (EMR cover)",
         "category": "Helmet",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f1/6B47.gif/revision/latest/scale-to-width-down/320?cb=20180806190854",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
         "trader_info": {
-            "Prapor": [
+            "Ragman": [
                 {
                     "level": 2,
                     "quest_locked": true,
-                    "barter": false
+                    "barter": true
                 }
-            ],
+            ]
+        }
+    },
+    {
+        "name": "6B47 Ratnik-BSh helmet (EMR Arctic cover)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2b/6B47_Ratnik-BSh_helmet_%28EMR_Arctic_cover%29_image.png/revision/latest/scale-to-width-down/320?cb=20250412202638",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
             "Ragman": [
                 {
                     "level": 2,
@@ -366,6 +469,57 @@
             "Prapor": [
                 {
                     "level": 1,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "DevTac Ronin Respirator",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/01/DevTac_Ronin_Respirator.png/revision/latest/scale-to-width-down/320?cb=20240826032719",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "DevTac Ronin Respirator (Eternal Green)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8c/DevTac_Ronin_Respirator_%28Eternal_Green%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024215943",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "DevTac Ronin Respirator (Beast)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/70/DevTac_Ronin_Respirator_%28Beast%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024212607",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
                     "quest_locked": true,
                     "barter": false
                 }
@@ -416,7 +570,7 @@
         "trader_info": {}
     },
     {
-        "name": "HighCom Striker ACHHC IIIA helmet",
+        "name": "HighCom Striker ACHHC IIIA helmet (Olive Drab)",
         "category": "Helmet",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/26/ACHHC.gif/revision/latest/scale-to-width-down/320?cb=20180805175454",
         "always_obtainable": false,
@@ -427,6 +581,23 @@
                 {
                     "level": 3,
                     "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HighCom Striker ACHHC IIIA helmet (Coyote Brown)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/HighCom_Striker_ACHHC_IIIA_helmet_%28Coyote_Brown%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430011109",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
                     "barter": false
                 }
             ]
@@ -450,16 +621,111 @@
         }
     },
     {
-        "name": "Diamond Age Bastion helmet (Black)",
+        "name": "MTEK STRIKE Ballistic helmet (Coyote)",
         "category": "Helmet",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/57/Bastion_View.png/revision/latest/scale-to-width-down/320?cb=20200529021033",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/72/MTEK_STRIKE_Ballistic_helmet_%28Coyote%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413233826",
         "always_obtainable": false,
-        "meta": true,
+        "meta": false,
         "flea": true,
         "trader_info": {
             "Ragman": [
                 {
-                    "level": 3,
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "MTEK STRIKE Ballistic helmet (Coyote/MultiCam Arid)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ef/MTEK_STRIKE_Ballistic_helmet_%28Coyote-MultiCam_Arid%29_image.png/revision/latest/scale-to-width-down/312?cb=20250413233906",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Atlant Armour Titan Aramid helmet (MultiCam)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3a/Atlant_Armour_Titan_Aramid_helmet_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20260428223437",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Atlant Armour Titan Aramid helmet (OD Green)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b1/Atlant_Armour_Titan_Aramid_helmet_%28OD_Green%29_image.png/revision/latest/scale-to-width-down/320?cb=20260428223508",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Ballistic Armor Co. Bastion helmet (Armor Black)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Ballistic_Armor_Co._Bastion_helmet_%28Armor_Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413114124",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Ballistic Armor Co. Bastion helmet (OD Green)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/45/Ballistic_Armor_Co._Bastion_helmet_%28OD_Green%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413114144",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Ballistic Armor Co. Bastion helmet (MultiCam)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/28/Ballistic_Armor_Co._Bastion_helmet_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413114216",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "MTEK FLUX Ballistic helmet (MultiCam Alpine)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ab/MTEK_FLUX_Ballistic_helmet_%28MultiCam_Alpine%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413232819",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 4,
                     "quest_locked": false,
                     "barter": false
                 }
@@ -477,8 +743,8 @@
             "Peacekeeper": [
                 {
                     "level": 4,
-                    "quest_locked": true,
-                    "barter": false
+                    "quest_locked": false,
+                    "barter": true
                 }
             ]
         }
@@ -501,19 +767,116 @@
         }
     },
     {
-        "name": "Team Wendy EXFIL Ballistic Helmet",
+        "name": "Crye Precision AirFrame helmet (Shark)",
         "category": "Helmet",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c8/Team_Wendy_EXFIL_Ballistic_Helmet.gif/revision/latest/scale-to-width-down/320?cb=20191229154600",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/88/Crye_Precision_AirFrame_helmet_%28Shark%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430215847",
         "always_obtainable": false,
         "meta": true,
         "flea": false,
         "trader_info": {
-            "Ragman": [
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Crye Precision AirFrame helmet (Old School)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/11/Crye_Precision_AirFrame_helmet_%28Old_School%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430185041",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Crye Precision AirFrame M-LOK helmet (Black)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4b/Crye_Precision_AirFrame_M-LOK_helmet_%28Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430215508",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Crye Precision AirFrame M-LOK helmet (Bull)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/45/Crye_Precision_AirFrame_M-LOK_helmet_%28Bull%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430215915",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Team Wendy EXFIL Ballistic Helmet (Black)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/71/Team_Wendy_EXFIL_Ballistic_Helmet_%28Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20250415140751",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Peacekeeper": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Team Wendy EXFIL Ballistic Helmet (Coyote Brown)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0a/Team_Wendy_EXFIL_Ballistic_Helmet_%28Coyote_Brown%29_image.png/revision/latest/scale-to-width-down/320?cb=20250415140809",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Peacekeeper": [
                 {
                     "level": 4,
                     "quest_locked": false,
                     "barter": false
-                },
+                }
+            ]
+        }
+    },
+    {
+        "name": "Team Wendy EXFIL Ballistic Helmet (MultiCam)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9c/Team_Wendy_EXFIL_Ballistic_Helmet_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430214317",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
                 {
                     "level": 4,
                     "quest_locked": true,
@@ -545,9 +908,26 @@
         }
     },
     {
-        "name": "HighCom Striker ULACH IIIA helmet",
+        "name": "HighCom Striker ULACH IIIA helmet (Black)",
         "category": "Helmet",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/34/ULACH.gif/revision/latest/scale-to-width-down/320?cb=20180806205056",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/73/HighCom_Striker_ULACH_IIIA_helmet_%28Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413194559",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": true,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HighCom Striker ULACH IIIA helmet (Desert Tan)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/51/HighCom_Striker_ULACH_IIIA_helmet_%28Desert_Tan%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413194619",
         "always_obtainable": false,
         "meta": true,
         "flea": true,
@@ -555,6 +935,91 @@
             "Ragman": [
                 {
                     "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HighCom Striker ULACH IIIA helmet (Coyote Stripes)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/77/HighCom_Striker_ULACH_IIIA_helmet_%28Coyote_Stripes%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024205529",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HighCom Striker ULACH IIIA helmet (Sand)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/HighCom_Striker_ULACH_IIIA_helmet_%28Sand%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024220715",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HighCom Striker ULACH IIIA helmet (Green Stripes)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c8/HighCom_Striker_ULACH_IIIA_helmet_%28Green_Stripes%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024212644",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HighCom Striker ULACH IIIA helmet (Mesh Spray)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0a/HighCom_Striker_ULACH_IIIA_helmet_%28Mesh_Spray%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024220059",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HighCom Striker ULACH IIIA helmet (Winter Mesh Spray)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6b/HighCom_Striker_ULACH_IIIA_helmet_%28Winter_Mesh_Spray%29_image.png/revision/latest/scale-to-width-down/320?cb=20260102172351",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
                     "quest_locked": true,
                     "barter": false
                 }
@@ -579,12 +1044,12 @@
         }
     },
     {
-        "name": "Maska-1SCh bulletproof helmet",
+        "name": "Maska-1SCh bulletproof helmet (Olive Drab)",
         "category": "Helmet",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9d/Maska_1Sch_helmet.gif/revision/latest/scale-to-width-down/320?cb=20190101152329",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/11/Maska-1SCh_bulletproof_helmet_%28Olive_Drab%29_image.png/revision/latest/scale-to-width-down/320?cb=20250414223624",
         "always_obtainable": false,
         "meta": false,
-        "flea": false,
+        "flea": true,
         "trader_info": {
             "Prapor": [
                 {
@@ -594,6 +1059,24 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Maska-1SCh bulletproof helmet (Killa Edition)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b0/Maska-1SCh_bulletproof_helmet_%28Killa_Edition%29_image.png/revision/latest/scale-to-width-down/320?cb=20250414223722",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "Maska-1SCh bulletproof helmet (Vida Edition)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bb/Maska-1SCh_bulletproof_helmet_%28Vida_Edition%29_image.png/revision/latest/scale-to-width-down/320?cb=20260210192542",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
     },
     {
         "name": "Altyn bulletproof helmet (Olive Drab)",
@@ -609,20 +1092,27 @@
                     "quest_locked": true,
                     "barter": true
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
     {
-        "name": "Rys-T bulletproof helmet",
+        "name": "Rys-T bulletproof helmet (Black)",
         "category": "Helmet",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/77/RysTHelmet.png/revision/latest/scale-to-width-down/320?cb=20201019160756",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/77/RysTHelmet.png/revision/latest/scale-to-width-down/320?cb=20231101021315",
         "always_obtainable": false,
         "meta": true,
         "flea": false,
         "trader_info": {}
     },
     {
-        "name": "Vulkan-5 (LShZ-5) bulletproof helmet",
+        "name": "Vulkan-5 (LShZ-5) bulletproof helmet (Black)",
         "category": "Helmet",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/94/Vulkan-5_%28LShZ-5%29_heavy_helmet.png/revision/latest/scale-to-width-down/320?cb=20190411084258",
         "always_obtainable": false,
@@ -634,6 +1124,57 @@
                     "level": 4,
                     "quest_locked": false,
                     "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Vulkan-5 (LShZ-5) bulletproof helmet (Eight-ball)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/58/Vulkan-5_LShZ-5_bulletproof_helmet_%28Eight-ball%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024221738",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Atlant Armour Titan Aramid helmet (Rudiarius)",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/35/Atlant_Armour_Titan_Aramid_helmet_%28Rudiarius%29_image.png/revision/latest/scale-to-width-down/320?cb=20260428223410",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Champion's helmet",
+        "category": "Helmet",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/04/Champion%27s_helmet_image.png/revision/latest/scale-to-width-down/320?cb=20251024213005",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
                 }
             ]
         }

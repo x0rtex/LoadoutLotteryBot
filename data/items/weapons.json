@@ -77,6 +77,13 @@
                     "quest_locked": false,
                     "barter": false
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -203,6 +210,13 @@
                     "quest_locked": false,
                     "barter": false
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -280,6 +294,13 @@
                     "quest_locked": false,
                     "barter": true
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -301,6 +322,13 @@
                     "level": 1,
                     "quest_locked": false,
                     "barter": true
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
                 }
             ]
         }
@@ -400,7 +428,7 @@
             "Prapor": [
                 {
                     "level": 1,
-                    "quest_locked": true,
+                    "quest_locked": false,
                     "barter": false
                 }
             ],
@@ -466,6 +494,13 @@
                     "quest_locked": false,
                     "barter": true
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -522,6 +557,13 @@
                     "quest_locked": true,
                     "barter": true
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -537,6 +579,13 @@
                 {
                     "level": 4,
                     "quest_locked": true,
+                    "barter": false
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
                     "barter": false
                 }
             ]
@@ -634,6 +683,13 @@
                     "quest_locked": true,
                     "barter": false
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -671,12 +727,12 @@
         "trader_info": {
             "Peacekeeper": [
                 {
-                    "level": 1,
+                    "level": 2,
                     "quest_locked": false,
                     "barter": true
                 },
                 {
-                    "level": 2,
+                    "level": 3,
                     "quest_locked": false,
                     "barter": false
                 },
@@ -688,28 +744,25 @@
             ],
             "Mechanic": [
                 {
-                    "level": 2,
+                    "level": 3,
                     "quest_locked": false,
                     "barter": false
                 },
                 {
-                    "level": 2,
-                    "quest_locked": false,
-                    "barter": true
-                },
-                {
-                    "level": 2,
-                    "quest_locked": true,
-                    "barter": true
-                },
-                {
-                    "level": 3,
-                    "quest_locked": false,
-                    "barter": true
-                },
-                {
                     "level": 3,
                     "quest_locked": true,
+                    "barter": false
+                },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
                     "barter": false
                 }
             ]
@@ -780,6 +833,13 @@
                     "quest_locked": false,
                     "barter": false
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -821,6 +881,13 @@
                     "quest_locked": false,
                     "barter": true
                 },
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Ref": [
                 {
                     "level": 4,
                     "quest_locked": false,
@@ -891,6 +958,13 @@
                     "level": 4,
                     "quest_locked": false,
                     "barter": true
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
                 }
             ]
         }
@@ -992,6 +1066,13 @@
                     "level": 2,
                     "quest_locked": false,
                     "barter": true
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
                 }
             ]
         }
@@ -1109,6 +1190,13 @@
                     "quest_locked": false,
                     "barter": false
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -1184,6 +1272,13 @@
                     "quest_locked": false,
                     "barter": true
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -1211,7 +1306,15 @@
         "always_obtainable": false,
         "meta": false,
         "flea": true,
-        "trader_info": {}
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
     },
     {
         "name": "SIG MPX 9x19",
@@ -1238,6 +1341,13 @@
                     "level": 1,
                     "quest_locked": false,
                     "barter": true
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
                 }
             ]
         }
@@ -1268,6 +1378,13 @@
                     "quest_locked": false,
                     "barter": true
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -1296,6 +1413,13 @@
                     "level": 1,
                     "quest_locked": true,
                     "barter": true
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
                 }
             ]
         }
@@ -1698,7 +1822,7 @@
         }
     },
     {
-        "name": "Saiga-12 12ga ver.10 12/76",
+        "name": "Saiga-12K 12ga ver.10 12/76",
         "category": "Shotgun",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cd/Saiga12.png/revision/latest/scale-to-width-down/180?cb=20180219121914",
         "always_obtainable": false,
@@ -1713,6 +1837,13 @@
                 },
                 {
                     "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Mechanic": [
+                {
+                    "level": 4,
                     "quest_locked": false,
                     "barter": true
                 }
@@ -1929,6 +2060,13 @@
                     "quest_locked": true,
                     "barter": false
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -1973,6 +2111,13 @@
                     "quest_locked": true,
                     "barter": false
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -1987,6 +2132,13 @@
             "Peacekeeper": [
                 {
                     "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 2,
                     "quest_locked": false,
                     "barter": false
                 }
@@ -2093,24 +2245,19 @@
             ],
             "Peacekeeper": [
                 {
-                    "level": 3,
+                    "level": 2,
                     "quest_locked": false,
                     "barter": false
                 }
             ],
             "Jaeger": [
                 {
-                    "level": 2,
+                    "level": 1,
                     "quest_locked": false,
                     "barter": true
                 },
                 {
                     "level": 3,
-                    "quest_locked": true,
-                    "barter": false
-                },
-                {
-                    "level": 4,
                     "quest_locked": true,
                     "barter": false
                 }
@@ -2866,6 +3013,13 @@
                     "quest_locked": false,
                     "barter": false
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -2916,6 +3070,13 @@
                     "level": 4,
                     "quest_locked": true,
                     "barter": true
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
                 }
             ]
         }
@@ -3072,6 +3233,13 @@
                 {
                     "level": 4,
                     "quest_locked": true,
+                    "barter": false
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
                     "barter": false
                 }
             ]

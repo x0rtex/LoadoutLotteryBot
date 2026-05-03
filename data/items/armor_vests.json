@@ -111,6 +111,13 @@
                     "quest_locked": false,
                     "barter": true
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -165,6 +172,23 @@
         }
     },
     {
+        "name": "BNTI Kirasa-N body armor (Green)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/83/BNTI-Kirasa-N-armor.png/revision/latest/scale-to-width-down/312?cb=20190301085905",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 1,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
         "name": "NFM THOR Concealable Reinforced Vest body armor",
         "category": "Armor Vest",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e7/Thor_View.png/revision/latest/scale-to-width-down/320?cb=20211205235338",
@@ -182,13 +206,55 @@
         }
     },
     {
+        "name": "NFM THOR Concealable Reinforced Vest body armor (Head Eyes)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c2/NFM_THOR_Concealable_Reinforced_Vest_body_armor_%28Head_Eyes%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024220612",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
         "name": "HighCom Trooper TFO body armor (Multicam)",
         "category": "Armor Vest",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/09/Highcom_Trooper_TFO_armor_%28multicam%29.png/revision/latest/scale-to-width-down/319?cb=20190301085944",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/09/Highcom_Trooper_TFO_armor_%28multicam%29.png/revision/latest/scale-to-width-down/300?cb=20240103165039",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
-        "trader_info": {}
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "HighCom Trooper TFO body armor (Coyote)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/HighCom_Trooper_TFO_body_armor_%28Coyote%29_image.png/revision/latest/scale-to-width-down/320?cb=20250418135835",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 3,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
     },
     {
         "name": "6B13 assault armor",
@@ -239,9 +305,26 @@
         }
     },
     {
-        "name": "NPP KlASS Korund-VM body armor",
+        "name": "Hexatac HPC Plate Carrier (Multicam)",
         "category": "Armor Vest",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/KORUND.png/revision/latest/scale-to-width-down/320?cb=20201019171744",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8a/Hexatac_HPC_Plate_Carrier_%28MultiCam%29_image.png/revision/latest/scale-to-width-down/320?cb=20250418135805",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "NPP KlASS Korund-VM body armor (Black)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/db/KORUND.png/revision/latest/scale-to-width-down/320?cb=20231101020528",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
@@ -256,18 +339,86 @@
         }
     },
     {
+        "name": "NPP KlASS Korund-VM body armor (Kamysh)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3b/NPP_KlASS_Korund-VM_body_armor_%28Kamysh%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024212807",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
         "name": "FORT Redut-M body armor",
         "category": "Armor Vest",
         "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7b/FORT_Redut-M_body_armor.png/revision/latest/scale-to-width-down/320?cb=20190410224156",
         "always_obtainable": false,
         "meta": true,
-        "flea": false,
+        "flea": true,
         "trader_info": {
             "Ragman": [
                 {
                     "level": 4,
-                    "quest_locked": true,
+                    "quest_locked": false,
                     "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "FORT Redut-M body armor (SK Woodland)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/59/FORT_Redut-M_body_armor_%28SK_Woodland%29_image.png/revision/latest/scale-to-width-down/320?cb=20250418135925",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "FORT Redut-M body armor (Prisoner of the Arena)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8c/FORT_Redut-M_body_armor_%28Prisoner_of_the_Arena%29_image.png/revision/latest/scale-to-width-down/320?cb=20260428140650",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "FORT Redut-M body armor (Black)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e5/FORT_Redut-M_body_armor_%28Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20260429224500",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
                 }
             ]
         }
@@ -295,6 +446,13 @@
                     "quest_locked": true,
                     "barter": true
                 }
+            ],
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
             ]
         }
     },
@@ -305,7 +463,15 @@
         "always_obtainable": false,
         "meta": true,
         "flea": true,
-        "trader_info": {}
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
     },
     {
         "name": "FORT Defender-2 body armor",
@@ -320,6 +486,23 @@
                     "level": 4,
                     "quest_locked": false,
                     "barter": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "FORT Defender-2 body armor (Flecktarn)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a5/FORT_Defender-2_body_armor_%28Flecktarn%29_image.png/revision/latest/scale-to-width-down/320?cb=20260429223623",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
                 }
             ]
         }
@@ -348,7 +531,22 @@
         "always_obtainable": false,
         "meta": true,
         "flea": true,
-        "trader_info": {}
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ],
+            "Peacekeeper": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ]
+        }
     },
     {
         "name": "FORT Redut-T5 body armor (Smog)",
@@ -361,7 +559,7 @@
             "Ragman": [
                 {
                     "level": 4,
-                    "quest_locked": true,
+                    "quest_locked": false,
                     "barter": true
                 }
             ]
@@ -377,21 +575,31 @@
         "trader_info": {}
     },
     {
-        "name": "LBT-6094A Slick Plate Carrier",
+        "name": "LBT-6094A Slick Plate Carrier (Black)",
         "category": "Armor Vest",
-        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ee/SLICK-BIG-GIF.gif/revision/latest?cb=20220328142855",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/45/LBT-6094A_Slick_Plate_Carrier_%28Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413231727",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
-        "trader_info": {
-            "Ragman": [
-                {
-                    "level": 4,
-                    "quest_locked": false,
-                    "barter": true
-                }
-            ]
-        }
+        "trader_info": {}
+    },
+    {
+        "name": "LBT-6094A Slick Plate Carrier (Olive Drab)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/74/LBT-6094A_Slick_Plate_Carrier_%28Olive_Drab%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413231750",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
+    },
+    {
+        "name": "LBT-6094A Slick Plate Carrier (Coyote Tan)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5c/LBT-6094A_Slick_Plate_Carrier_%28Coyote_Tan%29_image.png/revision/latest/scale-to-width-down/320?cb=20250413231817",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {}
     },
     {
         "name": "BNTI Zhuk body armor (Digital Flora)",
@@ -400,7 +608,15 @@
         "always_obtainable": false,
         "meta": true,
         "flea": true,
-        "trader_info": {}
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
     },
     {
         "name": "NFM THOR Integrated Carrier body armor",
@@ -427,19 +643,50 @@
         "meta": false,
         "flea": false,
         "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ],
             "Prapor": [
                 {
                     "level": 4,
-                    "quest_locked": true,
+                    "quest_locked": false,
                     "barter": true
                 }
             ]
         }
     },
     {
-        "name": "NPP KlASS Kora-Kulon body armor",
+        "name": "NPP KlASS Kora-Kulon body armor (Black)",
         "category": "Armor Vest",
-        "image_url": "https://i.imgur.com/qzkgWxT.png",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/47/NPP_KlASS_Kora-Kulon_body_armor_%28Black%29_image.png/revision/latest/scale-to-width-down/320?cb=20250415131106",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Ragman": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": true
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 1,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "NPP KlASS Kora-Kulon body armor (EMR)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9d/NPP_KlASS_Kora-Kulon_body_armor_%28EMR%29_image.png/revision/latest/scale-to-width-down/320?cb=20250415131038",
         "always_obtainable": false,
         "meta": false,
         "flea": true,
@@ -449,13 +696,6 @@
                     "level": 1,
                     "quest_locked": true,
                     "barter": false
-                }
-            ],
-            "Ragman": [
-                {
-                    "level": 1,
-                    "quest_locked": false,
-                    "barter": true
                 }
             ]
         }
@@ -473,6 +713,64 @@
                     "level": 2,
                     "quest_locked": true,
                     "barter": true
+                }
+            ],
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": false,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Interceptor OTV body armor (Woodland)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5a/Interceptor_OTV_body_armor_%28Woodland%29_image.png/revision/latest/scale-to-width-down/320?cb=20251024212411",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 2,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "FORT Gladiator-S plate carrier (Gray)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/96/FORT_Gladiator-S_plate_carrier_%28Gray%29_image.png/revision/latest/scale-to-width-down/320?cb=20260430004513",
+        "always_obtainable": false,
+        "meta": true,
+        "flea": false,
+        "trader_info": {
+            "Ref": [
+                {
+                    "level": 4,
+                    "quest_locked": true,
+                    "barter": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "6B45 body armor (EMR)",
+        "category": "Armor Vest",
+        "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/cb/6B45_Vest_Image.png/revision/latest/scale-to-width-down/320?cb=20251223164012",
+        "always_obtainable": false,
+        "meta": false,
+        "flea": true,
+        "trader_info": {
+            "Prapor": [
+                {
+                    "level": 3,
+                    "quest_locked": false,
+                    "barter": false
                 }
             ]
         }
