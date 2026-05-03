@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import asyncio
 import datetime
-import logging
 import os
 import platform
 import time
@@ -13,19 +12,10 @@ import psutil
 from discord import option
 from discord.ext import commands
 from dotenv import load_dotenv
-from rich.logging import RichHandler
 
+from logger.logger import logger
 from utils import db, msgs, roll_logic, views
 from utils.users import TraderLevels, UserSettings
-
-# Logger
-logging.basicConfig(
-    level=logging.INFO, format="%(message)s", handlers=[RichHandler(rich_tracebacks=True, show_path=False, markup=True)]
-)
-logger = logging.getLogger("discord")
-file_handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="w")
-file_handler.setFormatter(logging.Formatter("%(asctime)s:%(levelname)s:%(name)s: %(message)s"))
-logger.addHandler(file_handler)
 
 asyncio.set_event_loop(asyncio.new_event_loop())
 bot = commands.Bot(help_command=commands.DefaultHelpCommand())

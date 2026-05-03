@@ -1,12 +1,16 @@
 from __future__ import annotations
 
 import json
+import logging
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 from typing import NamedTuple, Self
+from urllib.parse import urlparse
 
 from typing_extensions import Literal
+
+logger = logging.getLogger("discord")
 
 #############################
 # Constants                 #
@@ -124,6 +128,22 @@ def _parse_obtain(raw: list[dict]) -> list[Obtain]:
     return [Obtain(o["level"], o["quest_locked"], o["barter"]) for o in raw]
 
 
+def _validate_image_url(url: str, name: str) -> str:
+    """Validate image URL from JSON. Returns empty string on failure."""
+    if not url or not url.strip():
+        return ""
+
+    try:
+        parsed = urlparse(url)
+        if not all([parsed.scheme, parsed.netloc]):
+            raise ValueError(f"No scheme or host: {url}")
+    except Exception:
+        logger.error(f"Invalid image URL for '{name}': '{url}'")
+        return ""
+
+    return url
+
+
 def _load_items(path: Path) -> tuple[Item, ...]:
     with open(path) as f:
         data = json.load(f)
@@ -134,7 +154,7 @@ def _load_items(path: Path) -> tuple[Item, ...]:
             Item(
                 name=d["name"],
                 category=Category(d["category"]),
-                image_url=d["image_url"],
+                image_url=_validate_image_url(d["image_url"], d["name"]),
                 always_obtainable=d["always_obtainable"],
                 meta=d["meta"],
                 flea=d["flea"],
@@ -156,6 +176,8 @@ def _load_rules(path: Path) -> tuple[GameRule, ...]:
 # Weapons & Gamerules       #
 #############################
 
+logger.info("Loading items...")
+
 
 class Items:
     Weapons = _load_items(_ITEMS_DIR / "weapons.json")
@@ -164,6 +186,9 @@ class Items:
     Rigs = _load_items(_ITEMS_DIR / "rigs.json")
     Helmets = _load_items(_ITEMS_DIR / "helmets.json")
     Backpacks = _load_items(_ITEMS_DIR / "backpacks.json")
+
+
+logger.info("Loading game rules...")
 
 
 class GameRules:
