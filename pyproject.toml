@@ -1,0 +1,18 @@
+[project]
+name = "loadout-lottery-bot"
+version = "1.2.0"
+description = "Discord bot for generating a completely random loadout, map, and optional random modifier for Escape from Tarkov."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "psutil>=7.2.2",
+    "py-cord>=2.7.2",
+    "python-dotenv>=1.2.2",
+    "uvloop>=0.22.1 ; sys_platform != 'win32'",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.12",
+    "taskipy>=1.2.1",
+]

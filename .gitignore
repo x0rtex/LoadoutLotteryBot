@@ -1,0 +1,5 @@
+.env
+.venv
+discord.log
+user_settings.db
+__pycache__
