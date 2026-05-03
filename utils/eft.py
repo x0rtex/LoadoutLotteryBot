@@ -16,35 +16,6 @@ from typing_extensions import Literal
 _ITEMS_DIR = Path(__file__).parent.parent / "data" / "items"
 _GAMERULES_DIR = Path(__file__).parent.parent / "data" / "gamerules"
 
-# Item Categories
-WEAPON: str = "Weapon"
-ARMOR_VEST: str = "Armor Vest"
-ARMORED_RIG: str = "Armored Rig"
-RIG: str = "Rig"
-HELMET: str = "Helmet"
-BACKPACK: str = "Backpack"
-GUN_MOD: str = "Gun Mods"
-AMMO: str = "Ammo"
-MAP: str = "Map"
-RANDOM_MODIFIER: str = "Random Modifier"
-YOUR_CHOICE: str = "YOUR CHOICE!"
-
-
-class Trader(str, Enum):
-    PRAPOR = "prapor"
-    THERAPIST = "therapist"
-    SKIER = "skier"
-    PEACEKEEPER = "peacekeeper"
-    MECHANIC = "mechanic"
-    RAGMAN = "ragman"
-    JAEGER = "jaeger"
-    REF = "ref"
-
-    @property
-    def display_name(self: Self) -> str:
-        return self.value.capitalize()
-
-
 # Trader Level Modifiers
 LL1_TRADERS: str = "Up to level 1 traders"
 LL2_TRADERS: str = "Up to level 2 traders"
@@ -71,6 +42,45 @@ YOU_CHOOSE_IMAGE: str = "https://clipartix.com/wp-content/uploads/2018/03/you-cl
 #############################
 
 
+class Trader(str, Enum):
+    PRAPOR = "prapor"
+    THERAPIST = "therapist"
+    SKIER = "skier"
+    PEACEKEEPER = "peacekeeper"
+    MECHANIC = "mechanic"
+    RAGMAN = "ragman"
+    JAEGER = "jaeger"
+    REF = "ref"
+
+    @property
+    def display_name(self: Self) -> str:
+        return self.value.capitalize()
+
+
+class Category(str, Enum):
+    WEAPON = "Weapon"
+    MELEE = "Melee"
+    ASSAULT_CARBINE = "Assault Carbine"
+    ASSAULT_RIFLE = "Assault Rifle"
+    SMG = "SMG"
+    SHOTGUN = "Shotgun"
+    MARKSMAN_RIFLE = "Marksman Rifle"
+    BOLT_ACTION = "Bolt-Action Rifle"
+    PISTOL = "Pistol"
+    MACHINE_GUN = "Machine Gun"
+    GRENADE_LAUNCHER = "Grenade Launcher"
+    ROCKET_LAUNCHER = "Rocket Launcher"
+    ARMOR_VEST = "Armor Vest"
+    ARMORED_RIG = "Armored Rig"
+    RIG = "Rig"
+    HELMET = "Helmet"
+    BACKPACK = "Backpack"
+    GUN_MOD = "Gun Mods"
+    AMMO = "Ammo"
+    MAP = "Map"
+    RANDOM_MODIFIER = "Random Modifier"
+
+
 class Obtain(NamedTuple):
     level: Literal[1, 2, 3, 4]  # Trader loyalty level
     quest_locked: bool  # Whether an item is locked behind a trader's quest or not
@@ -80,7 +90,7 @@ class Obtain(NamedTuple):
 @dataclass(slots=True, frozen=True)
 class Item:
     name: str
-    category: str
+    category: Category
     image_url: str
     always_obtainable: bool
     meta: bool
@@ -91,7 +101,7 @@ class Item:
 @dataclass(slots=True, frozen=True)
 class GameRule:
     name: str
-    category: str
+    category: Category
     image_url: str
     meta: bool
 
@@ -114,7 +124,7 @@ def _load_items(path: Path) -> tuple[Item, ...]:
         items.append(
             Item(
                 name=d["name"],
-                category=d["category"],
+                category=Category(d["category"]),
                 image_url=d["image_url"],
                 always_obtainable=d["always_obtainable"],
                 meta=d["meta"],
@@ -128,7 +138,9 @@ def _load_items(path: Path) -> tuple[Item, ...]:
 def _load_rules(path: Path) -> tuple[GameRule, ...]:
     with open(path) as f:
         data = json.load(f)
-    return tuple(GameRule(**d) for d in data)
+    return tuple(
+        GameRule(name=d["name"], category=Category(d["category"]), image_url=d["image_url"], meta=d["meta"]) for d in data
+    )
 
 
 #############################

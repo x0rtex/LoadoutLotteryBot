@@ -84,7 +84,7 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
     filtered_items, rolls, need_rig = roll_logic.roll_items(user_settings)
 
     for rolled_item in rolls:
-        embed_msg.add_field(name=f"{rolled_item.category}:", value=f"{rolled_item.name}", inline=False)
+        embed_msg.add_field(name=f"{rolled_item.category.value}:", value=f"{rolled_item.name}", inline=False)
 
     button = views.RandomModifierButton()
     await ctx.respond(embed=embed_msg, view=button)
@@ -92,7 +92,7 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
     if button.value:
         rolled_random_modifier = roll_logic.roll_random_modifier(user_settings)
         embed_msg.add_field(
-            name=f"{rolled_random_modifier.category}:",
+            name=f"{rolled_random_modifier.category.value}:",
             value=f"{rolled_random_modifier.name}",
             inline=False,
         )

@@ -4,42 +4,42 @@ import random
 import discord
 
 from utils import eft, msgs, views
-from utils.eft import GameRule, GameRules, Item, Items
+from utils.eft import Category, GameRule, GameRules, Item, Items
 from utils.users import UserSettings
 
 
-def roll_items(user_settings: UserSettings) -> tuple[dict, list, bool]:
-    filtered_items: dict = filter_items(user_settings)
+def roll_items(user_settings: UserSettings) -> tuple[dict[Category, tuple], list[Item | GameRule], bool]:
+    filtered_items: dict[Category, tuple] = filter_items(user_settings)
 
-    weapon: Item = random.choice(filtered_items[eft.WEAPON])
-    armor: Item = random.choice(filtered_items[eft.ARMOR_VEST] + filtered_items[eft.ARMORED_RIG])
-    helmet: Item = random.choice(filtered_items[eft.HELMET])
-    backpack: Item = random.choice(filtered_items[eft.BACKPACK])
-    gun_mods: GameRule = random.choice(filtered_items[eft.GUN_MOD])
-    ammo: GameRule = random.choice(filtered_items[eft.AMMO])
-    map: GameRule = random.choice(filtered_items[eft.MAP])
+    weapon: Item = random.choice(filtered_items[Category.WEAPON])
+    armor: Item = random.choice(filtered_items[Category.ARMOR_VEST] + filtered_items[Category.ARMORED_RIG])
+    helmet: Item = random.choice(filtered_items[Category.HELMET])
+    backpack: Item = random.choice(filtered_items[Category.BACKPACK])
+    gun_mods: GameRule = random.choice(filtered_items[Category.GUN_MOD])
+    ammo: GameRule = random.choice(filtered_items[Category.AMMO])
+    map: GameRule = random.choice(filtered_items[Category.MAP])
 
     rolls: list[Item | GameRule] = [weapon, armor, helmet, backpack, gun_mods, ammo, map]
 
-    need_rig: bool = armor.category == eft.ARMOR_VEST
+    need_rig: bool = armor.category == Category.ARMOR_VEST
     if need_rig:
-        rolled_rig = random.choice(filtered_items[eft.RIG])
+        rolled_rig = random.choice(filtered_items[Category.RIG])
         rolls.insert(2, rolled_rig)
 
     return filtered_items, rolls, need_rig
 
 
-def filter_items(user_settings: UserSettings) -> dict:
+def filter_items(user_settings: UserSettings) -> dict[Category, tuple[Item | GameRule, ...]]:
     return {
-        eft.WEAPON: tuple(item for item in Items.Weapons if check_item(item, user_settings)),
-        eft.ARMOR_VEST: tuple(item for item in Items.ArmorVests if check_item(item, user_settings)),
-        eft.ARMORED_RIG: tuple(item for item in Items.ArmoredRigs if check_item(item, user_settings)),
-        eft.HELMET: tuple(item for item in Items.Helmets if check_item(item, user_settings)),
-        eft.RIG: tuple(item for item in Items.Rigs if check_item(item, user_settings)),
-        eft.BACKPACK: tuple(item for item in Items.Backpacks if check_item(item, user_settings)),
-        eft.GUN_MOD: tuple(trader for trader in GameRules.GunMods if check_trader_modifier(trader, user_settings)),
-        eft.AMMO: tuple(trader for trader in GameRules.Ammo if check_trader_modifier(trader, user_settings)),
-        eft.MAP: tuple(gamerule for gamerule in GameRules.Maps if check_gamerule(gamerule, user_settings)),
+        Category.WEAPON: tuple(item for item in Items.Weapons if check_item(item, user_settings)),
+        Category.ARMOR_VEST: tuple(item for item in Items.ArmorVests if check_item(item, user_settings)),
+        Category.ARMORED_RIG: tuple(item for item in Items.ArmoredRigs if check_item(item, user_settings)),
+        Category.HELMET: tuple(item for item in Items.Helmets if check_item(item, user_settings)),
+        Category.RIG: tuple(item for item in Items.Rigs if check_item(item, user_settings)),
+        Category.BACKPACK: tuple(item for item in Items.Backpacks if check_item(item, user_settings)),
+        Category.GUN_MOD: tuple(trader for trader in GameRules.GunMods if check_trader_modifier(trader, user_settings)),
+        Category.AMMO: tuple(trader for trader in GameRules.Ammo if check_trader_modifier(trader, user_settings)),
+        Category.MAP: tuple(gamerule for gamerule in GameRules.Maps if check_gamerule(gamerule, user_settings)),
     }
 
 
@@ -69,7 +69,7 @@ def check_item_traders(item: Item, user_settings: UserSettings) -> bool:
     return False
 
 
-def roll_random_modifier(user_settings: UserSettings) -> eft.GameRule:
+def roll_random_modifier(user_settings: UserSettings) -> GameRule:
     filtered_good_modifiers = GameRules.GoodModifiers  # TODO: May need to filter these later
     filtered_ok_modifiers = tuple(ok_mod for ok_mod in GameRules.OkModifiers if check_gamerule(ok_mod, user_settings))
     filtered_bad_modifiers = GameRules.BadModifiers  # TODO: May need to filter these later
@@ -109,7 +109,7 @@ async def reveal_roll(
     prefix: str,
 ) -> None:
     embed_msg.set_image(url="")
-    embed_msg.add_field(name=f"{prefix}{rolled_item.category}:", value=":grey_question:", inline=False)
+    embed_msg.add_field(name=f"{prefix}{rolled_item.category.value}:", value=":grey_question:", inline=False)
 
     if not ctx.response.is_done():
         await ctx.respond(embed=embed_msg)
@@ -119,7 +119,7 @@ async def reveal_roll(
     await asyncio.sleep(1)
     embed_msg.set_field_at(
         index=-1,
-        name=f"{prefix}{rolled_item.category}:",
+        name=f"{prefix}{rolled_item.category.value}:",
         value=f"{rolled_item.name}",
         inline=False,
     )
@@ -134,7 +134,7 @@ async def is_random_modifier_special(
     need_rig: bool,
     ctx: discord.ApplicationContext,
     embed_msg: discord.Embed,
-    filtered_items: dict[str, list],
+    filtered_items: dict[Category, tuple],
 ) -> None:
     if rolled_random_modifier.name == views.REROLL_ONE:
         select = views.RerollOneSlotWithRig() if need_rig else views.RerollOneSlotNoRig()
@@ -149,19 +149,20 @@ async def reroll(
     ctx: discord.ApplicationContext,
     view: discord.ui.View,
     embed_msg: discord.Embed,
-    filtered_items: dict,
+    filtered_items: dict[Category, tuple],
 ) -> None:
     await ctx.edit(embed=embed_msg, view=view)
     await view.wait()
 
-    for category in view.value:
+    for category_str in view.value:
+        category = Category(category_str)
         rerolled = random.choice(filtered_items[category])
 
         if ctx.command.name == "roll":
             await reveal_roll(ctx, embed_msg, rerolled, msgs.REROLLED_PREFIX)
         elif ctx.command.name == "fastroll":
             embed_msg.add_field(
-                name=f"{msgs.REROLLED_PREFIX}{rerolled.category}:",
+                name=f"{msgs.REROLLED_PREFIX}{rerolled.category.value}:",
                 value=f"{rerolled.name}",
                 inline=False,
             )

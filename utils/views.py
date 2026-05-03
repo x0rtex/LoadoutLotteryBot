@@ -2,7 +2,7 @@ from typing import Self
 
 import discord
 
-from utils import eft
+from utils.eft import Category
 
 # Reroll Slots Random Modifiers
 REROLL_ONE: str = "Re-roll 1 slot"
@@ -10,23 +10,23 @@ REROLL_TWO: str = "Re-roll 2 slots"
 REROLL_ONE_PLACEHOLDER: str = "Select slot to re-roll"
 REROLL_TWO_PLACEHOLDER: str = "Select slots to re-roll"
 REROLL_OPTIONS_NO_RIG: list[discord.SelectOption] = [
-    discord.SelectOption(label=eft.WEAPON, emoji="🔫"),
-    discord.SelectOption(label=eft.ARMORED_RIG, emoji="🛡️"),
-    discord.SelectOption(label=eft.HELMET, emoji="🪖"),
-    discord.SelectOption(label=eft.BACKPACK, emoji="🎒"),
-    discord.SelectOption(label=eft.GUN_MOD, emoji="🔧"),
-    discord.SelectOption(label=eft.AMMO, emoji="🔍"),
-    discord.SelectOption(label=eft.MAP, emoji="🗺️"),
+    discord.SelectOption(label=Category.WEAPON.value, emoji="🔫"),
+    discord.SelectOption(label=Category.ARMORED_RIG.value, emoji="🛡️"),
+    discord.SelectOption(label=Category.HELMET.value, emoji="🪖"),
+    discord.SelectOption(label=Category.BACKPACK.value, emoji="🎒"),
+    discord.SelectOption(label=Category.GUN_MOD.value, emoji="🔧"),
+    discord.SelectOption(label=Category.AMMO.value, emoji="🔍"),
+    discord.SelectOption(label=Category.MAP.value, emoji="🗺️"),
 ]
 REROLL_OPTIONS_RIG: list[discord.SelectOption] = [
-    discord.SelectOption(label=eft.WEAPON, emoji="🔫"),
-    discord.SelectOption(label=eft.ARMOR_VEST, emoji="🛡️"),
-    discord.SelectOption(label=eft.RIG, emoji="🦺"),
-    discord.SelectOption(label=eft.HELMET, emoji="🪖"),
-    discord.SelectOption(label=eft.BACKPACK, emoji="🎒"),
-    discord.SelectOption(label=eft.GUN_MOD, emoji="🔧"),
-    discord.SelectOption(label=eft.AMMO, emoji="🔍"),
-    discord.SelectOption(label=eft.MAP, emoji="🗺️"),
+    discord.SelectOption(label=Category.WEAPON.value, emoji="🔫"),
+    discord.SelectOption(label=Category.ARMOR_VEST.value, emoji="🛡️"),
+    discord.SelectOption(label=Category.RIG.value, emoji="🦺"),
+    discord.SelectOption(label=Category.HELMET.value, emoji="🪖"),
+    discord.SelectOption(label=Category.BACKPACK.value, emoji="🎒"),
+    discord.SelectOption(label=Category.GUN_MOD.value, emoji="🔧"),
+    discord.SelectOption(label=Category.AMMO.value, emoji="🔍"),
+    discord.SelectOption(label=Category.MAP.value, emoji="🗺️"),
 ]
 
 
