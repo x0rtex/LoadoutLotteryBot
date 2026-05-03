@@ -59,6 +59,8 @@ def check_item_traders(item: eft.Item, user_settings: users.UserSettings) -> boo
     for trader_name, obtains in item.trader_info.items():
         for obtain in obtains:
             trader_level = user_settings["trader_levels"].get(trader_name)
+            if trader_level is None:
+                continue
             if (
                 (trader_level < obtain.level)
                 or (obtain.quest_locked and not user_settings["allow_quest_locked"])

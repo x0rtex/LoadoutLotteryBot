@@ -15,6 +15,7 @@ UserSettings = dict[
         eft.MECHANIC: 1 | 2 | 3 | 4,
         eft.RAGMAN: 1 | 2 | 3 | 4,
         eft.JAEGER: 0 | 1 | 2 | 3 | 4,
+        eft.REF: 1 | 2 | 3 | 4,
     },
 ]
 
@@ -32,5 +33,6 @@ DEFAULT_SETTINGS: UserSettings = {
         eft.MECHANIC: 4,
         eft.RAGMAN: 4,
         eft.JAEGER: 4,
+        eft.REF: 4,
     },
 }

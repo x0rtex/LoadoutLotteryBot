@@ -22,8 +22,16 @@ def initialize_database() -> None:
                         peacekeeper TINYINT,
                         mechanic TINYINT,
                         ragman TINYINT,
-                        jaeger TINYINT
+                        jaeger TINYINT,
+                        ref TINYINT
                     )""")
+
+        # Migration: Add ref column if it doesn't exist
+        c.execute("PRAGMA table_info(user_settings)")
+        columns = [row[1] for row in c.fetchall()]
+        if "ref" not in columns:
+            c.execute("ALTER TABLE user_settings ADD COLUMN ref TINYINT DEFAULT 4")
+
         con.commit()
 
 
@@ -50,7 +58,8 @@ def write_user_settings(user_id: int, user_settings: users.UserSettings) -> None
                             peacekeeper = ?,
                             mechanic = ?,
                             ragman = ?,
-                            jaeger = ?
+                            jaeger = ?,
+                            ref = ?
                         WHERE user_id = ?""",
                 (
                     user_settings["flea"],
@@ -65,6 +74,7 @@ def write_user_settings(user_id: int, user_settings: users.UserSettings) -> None
                     user_settings["trader_levels"][eft.MECHANIC],
                     user_settings["trader_levels"][eft.RAGMAN],
                     user_settings["trader_levels"][eft.JAEGER],
+                    user_settings["trader_levels"][eft.REF],
                     user_id,
                 ),
             )
@@ -100,6 +110,7 @@ def write_user_settings(user_id: int, user_settings: users.UserSettings) -> None
                     user_settings["trader_levels"][eft.MECHANIC],
                     user_settings["trader_levels"][eft.RAGMAN],
                     user_settings["trader_levels"][eft.JAEGER],
+                    user_settings["trader_levels"][eft.REF],
                 ),
             )
 
@@ -127,5 +138,6 @@ def read_user_settings(user_id: int) -> dict:
                 eft.MECHANIC: row[10],
                 eft.RAGMAN: row[11],
                 eft.JAEGER: row[12],
+                eft.REF: row[13],
             },
         }

@@ -34,6 +34,7 @@ PEACEKEEPER: str = "Peacekeeper"
 MECHANIC: str = "Mechanic"
 RAGMAN: str = "Ragman"
 JAEGER: str = "Jaeger"
+REF: str = "Ref"
 
 # Trader Level Modifiers
 LL1_TRADERS: str = "Up to level 1 traders"

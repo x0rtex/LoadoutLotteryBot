@@ -111,6 +111,7 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
 @option(name="mechanic", description="Enter Mechanic's trader level", type=int, choices=[1, 2, 3, 4])
 @option(name="ragman", description="Enter Ragman's trader level", type=int, choices=[1, 2, 3, 4])
 @option(name="jaeger", description="Enter Jaeger's trader level", type=int, choices=[0, 1, 2, 3, 4])
+@option(name="ref", description="Enter Ref's trader level", type=int, choices=[1, 2, 3, 4])
 @option(name="flea", description="Do you have access to the flea market?", type=bool, choices=[True, False])
 @option(name="allow_quest_locked", description="Allow quest locked items to be rolled?", type=bool, choices=[True, False])
 @option(name="allow_fir_only", description="Allow non-trader flea-banned items to be rolled?", type=bool, choices=[True, False])
@@ -125,6 +126,7 @@ async def settings(
     mechanic: int,
     ragman: int,
     jaeger: int,
+    ref: int,
     flea: bool,
     allow_quest_locked: bool,
     allow_fir_only: bool,
@@ -142,6 +144,7 @@ async def settings(
             eft.MECHANIC: mechanic,
             eft.RAGMAN: ragman,
             eft.JAEGER: jaeger,
+            eft.REF: ref,
         },
         "flea": flea,
         "allow_quest_locked": allow_quest_locked,
