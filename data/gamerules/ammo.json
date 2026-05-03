@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Up to level 1 traders",
+    "category": "Ammo",
+    "image_url": "https://i.imgur.com/I71LsPN.png",
+    "meta": false
+  },
+  {
+    "name": "Up to level 2 traders",
+    "category": "Ammo",
+    "image_url": "https://i.imgur.com/qmB6NSH.png",
+    "meta": false
+  },
+  {
+    "name": "Up to level 3 traders",
+    "category": "Ammo",
+    "image_url": "https://i.imgur.com/vupz2Hi.png",
+    "meta": false
+  },
+  {
+    "name": "Up to level 4 traders",
+    "category": "Ammo",
+    "image_url": "https://i.imgur.com/tROE6zs.png",
+    "meta": false
+  },
+  {
+    "name": "No Restrictions",
+    "category": "Ammo",
+    "image_url": "https://i.imgur.com/r5VRNUB.png",
+    "meta": true
+  }
+]

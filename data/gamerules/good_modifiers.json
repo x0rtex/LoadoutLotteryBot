@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Re-roll 1 slot",
+    "category": "Random Modifier",
+    "image_url": "https://w7.pngwing.com/pngs/56/672/png-transparent-gurps-customer-service-dice-dice-throw-game-service-dice.png",
+    "meta": true
+  },
+  {
+    "name": "Re-roll 2 slots",
+    "category": "Random Modifier",
+    "image_url": "https://w7.pngwing.com/pngs/56/672/png-transparent-gurps-customer-service-dice-dice-throw-game-service-dice.png",
+    "meta": true
+  },
+  {
+    "name": "Ask your scav for some loot",
+    "category": "Random Modifier",
+    "image_url": "https://pbs.twimg.com/media/DlXnlRvXoAAhOv2.jpg",
+    "meta": true
+  },
+  {
+    "name": "Pop any 3 stimulants at start of raid",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/lYmpWWL.png",
+    "meta": true
+  },
+  {
+    "name": "Weapon.PISTOL secondary",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/pIIl7j1.png",
+    "meta": true
+  },
+  {
+    "name": "Impact grenades only",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ac/RGN_View.png/revision/latest?cb=20211212210251",
+    "meta": true
+  },
+  {
+    "name": "Carry at least 4 grenades, and use them liberally during the raid",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7d/Vog25.png/revision/latest?cb=20200316073837",
+    "meta": true
+  }
+]

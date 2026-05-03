@@ -1,0 +1,540 @@
+[
+  {
+    "name": "YOUR CHOICE!",
+    "category": "Backpack",
+    "image_url": "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+    "always_obtainable": true,
+    "meta": true,
+    "flea": false,
+    "trader_info": {}
+  },
+  {
+    "name": "6Sh118 raid backpack (Digital Flora)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/14/6SH118_View.png/revision/latest?cb=20230324190053",
+    "always_obtainable": false,
+    "meta": true,
+    "flea": false,
+    "trader_info": {
+      "Prapor": [
+        {
+          "level": 4,
+          "quest_locked": true,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "LBT-2670 Slim Field Med Pack (Black)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/0a/LBT-2670_View.png/revision/latest?cb=20200314005924",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Therapist": [
+        {
+          "level": 3,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mystery Ranch Blackjack 50 backpack (Multicam)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/Mystery_Ranch_Blackjack_50_backpack.png/revision/latest/scale-to-width-down/320?cb=20200714203420",
+    "always_obtainable": false,
+    "meta": true,
+    "flea": false,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": true,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Eberlestock F4 Terminator load bearing backpack (Tiger Stripe)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5e/F4_terminator_view.png/revision/latest/scale-to-width-down/315?cb=20201020145959",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": false,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "SSO Attack 2 raid backpack (Khaki)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/07/Attack.PNG/revision/latest/scale-to-width-down/320?cb=20180517203915",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": false,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Tasmanian Tiger Trooper 35 backpack",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/25/Tasmanian_trooper_35.png/revision/latest?cb=20230107201140",
+    "always_obtainable": false,
+    "meta": true,
+    "flea": false,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Pilgrim tourist backpack",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fd/Pilgrim_Backpack.png/revision/latest/scale-to-width-down/312?cb=20190301071419",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": false,
+    "trader_info": {}
+  },
+  {
+    "name": "3V Gear Paratus 3-Day Operator's Tactical backpack (Foliage Grey)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/ca/3V_G_Paratus.png/revision/latest/scale-to-width-down/320?cb=20190301072645",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": false,
+    "trader_info": {
+      "Peacekeeper": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Eberlestock G2 Gunslinger II backpack (Dry Earth)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/91/Gunslinger_II_backpack_image.png/revision/latest/scale-to-width-down/290?cb=20210330172156",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": false,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 3,
+          "quest_locked": true,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Oakley Mechanism heavy duty backpack (Black)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d0/Oakley_Mechanism_.png/revision/latest/scale-to-width-down/320?cb=20191108103108",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 2,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "ANA Tactical Beta 2 Battle backpack (Olive Drab)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ef/Beta2BP.png/revision/latest/scale-to-width-down/320?cb=20180802222134",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 3,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Gruppa 99 T30 backpack",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/56/Gruppa_99_T30_BM.gif/revision/latest/scale-to-width-down/320?cb=20220705202041",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 3,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Eberlestock F5 Switchblade backpack (Dry Earth)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/26/Eberlestock_F5_backpack_view.png/revision/latest/scale-to-width-down/315?cb=20201020150753",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "Camelbak Tri-Zip assault backpack (Foliage)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/df/CamelbackThreezeep.png/revision/latest/scale-to-width-down/320?cb=20190517215207",
+    "always_obtainable": false,
+    "meta": true,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 3,
+          "quest_locked": true,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "LBT-1476A 3Day Pack (Woodland)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e1/LBT-1476A_VIEW.png/revision/latest/scale-to-width-down/320?cb=20211213223219",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 2,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Gruppa 99 T20 backpack",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/be/Gruppa_99_T20_Image.gif/revision/latest/scale-to-width-down/320?cb=20220220203102",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 3,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Hazard 4 Drawbridge backpack (Coyote Tan)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/85/HazardDrawbridge_View.png/revision/latest/scale-to-width-down/320?cb=20211206001203",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 2,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Hazard 4 Takedown sling backpack",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/ae/Hazard4_Takedown.gif/revision/latest/scale-to-width-down/320?cb=20210331130153",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 2,
+          "quest_locked": true,
+          "barter": false
+        },
+        {
+          "level": 3,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Hazard 4 Pillbox backpack (Black)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/17/HazardPillboxView.png/revision/latest/scale-to-width-down/320?cb=20211206001554",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 1,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scav backpack",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/96/Scav_Backpack_Inspect.png/revision/latest/scale-to-width-down/320?cb=20190517215051",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "WARTECH Berkut BB-102 backpack (A-TACS FG)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/03/Wartech_Berkut_VV-102_backpack_ins.png/revision/latest?cb=20201031071733",
+    "always_obtainable": true,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 2,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "LBT-8005A Day Pack backpack (MultiCam Black)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/8c/Day_pack2.PNG/revision/latest/scale-to-width-down/320?cb=20211206005550",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Peacekeeper": [
+        {
+          "level": 2,
+          "quest_locked": false,
+          "barter": false
+        },
+        {
+          "level": 2,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sanitar's bag",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/75/Sanitar_Bag_View.png/revision/latest/scale-to-width-down/320?cb=20200727184258",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "Flyye MBSS backpack",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/c/c0/Flyye_MBSS_Backpack2.png/revision/latest/scale-to-width-down/303?cb=20221117115315",
+    "always_obtainable": true,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 1,
+          "quest_locked": false,
+          "barter": false
+        }
+      ],
+      "Peacekeeper": [
+        {
+          "level": 1,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mystery Ranch NICE COMM 3 BVS frame system (Coyote)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/94/COMM_3_BVS.png/revision/latest/scale-to-width-down/320?cb=20220705200139",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "Duffle bag",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/19/EfT_Item_Icon_116.png/revision/latest/scale-to-width-down/320?cb=20180707232346",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "LolKek 3F Transfer tourist backpack",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9d/LK_3F_backpack_view.png/revision/latest/scale-to-width-down/315?cb=20201020151157",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "Transformer Bag",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/EfT_Item_Icon_316.png/revision/latest/scale-to-width-down/320?cb=20180707232426",
+    "always_obtainable": true,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 1,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "VKBO army bag",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a6/Armybagimage.png/revision/latest/scale-to-width-down/320?cb=20230324190046",
+    "always_obtainable": true,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Prapor": [
+        {
+          "level": 1,
+          "quest_locked": false,
+          "barter": false
+        }
+      ],
+      "Jaeger": [
+        {
+          "level": 1,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Tactical sling bag (khaki)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/72/Tactical_Sling_bag.png/revision/latest/scale-to-width-down/320?cb=20180707232914",
+    "always_obtainable": true,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 1,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mystery Ranch SATL Bridger Assault Pack (Foliage)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/79/SATL-Foliage-Fullscale.png/revision/latest/scale-to-width-down/308?cb=20240116210917",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Tehinkom RK-PT-25 patrol backpack (Digital Flora)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fe/Tehinkom_RK-PT-25_Image.png/revision/latest/scale-to-width-down/278?cb=20240123002648",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 2,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Direct Action Dragon Egg Mark II backpack (Black)",
+    "category": "Backpack",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3a/DragonEggMkII_3D.png/revision/latest/scale-to-width-down/292?cb=20240123002514",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 3,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  }
+]

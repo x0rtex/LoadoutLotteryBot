@@ -1,0 +1,309 @@
+[
+  {
+    "name": "WARTECH TV-115 plate carrier (Olive Drab)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4c/TV-115_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064819",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "Eagle Allied Industries MBSS plate carrier (Coyote Brown)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b4/MBSS_USECPLATE_Image.png/revision/latest/scale-to-width-down/320?cb=20230813072215",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "Eagle Industries MMAC plate carrier (Ranger Green)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Mmac-view.png/revision/latest/scale-to-width-down/320?cb=20211229223039",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Peacekeeper": [
+        {
+          "level": 3,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Shellback Tactical Banshee plate carrier (A-TACS AU)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/71/Shellback_Tactical_Banshee_plate_carrier.png/revision/latest/scale-to-width-down/320?cb=20221230035237",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 2,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Ars Arma A18 Skanda plate carrier (MultiCam)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/78/A18_View.png/revision/latest/scale-to-width-down/320?cb=20191101010154",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "WARTECH TV-110 plate carrier (Coyote)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a9/Wartech_TV-110_plate_carrier.png/revision/latest/scale-to-width-down/320?cb=20190305205424",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "FirstSpear Strandhogg plate carrier (Ranger Green)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/68/Strandhogg.png/revision/latest/scale-to-width-down/253?cb=20211229223415",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 3,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "ECLiPSE RBAV-AF plate carrier (Ranger Green)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a0/RBAV-AF.png/revision/latest/scale-to-width-down/320?cb=20220705225122",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 3,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "CQC Osprey MK4A plate carrier (Assault, MTP)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b6/OspreyMk4_Assault_View.png/revision/latest/scale-to-width-down/320?cb=20211206002242",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 3,
+          "quest_locked": true,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "6B3TM-01M armored rig (Khaki)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/12/6B3TM-01M.png/revision/latest/scale-to-width-down/320?cb=20191028200236",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 2,
+          "quest_locked": false,
+          "barter": true
+        },
+        {
+          "level": 2,
+          "quest_locked": true,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "6B5-15 Zh-86 Uley armored rig (Flora)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7a/6B5-15.png/revision/latest/scale-to-width-down/320?cb=20181231121409",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 2,
+          "quest_locked": true,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "ANA Tactical M2 plate carrier (Digital Flora)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/2a/M2.png/revision/latest/scale-to-width-down/320?cb=20180520221351",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "ANA Tactical M1 plate carrier (Olive Drab)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/66/ANA_Tactical_M1.png/revision/latest/scale-to-width-down/320?cb=20181227153645",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "Crye Precision AVS plate carrier (Ranger Green)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/97/Crye_Precision_AVS_chest_rig.png/revision/latest/scale-to-width-down/320?cb=20190517215229",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "5.11 Tactical TacTec plate carrier (Ranger Green)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/20/TactecImage.png/revision/latest/scale-to-width-down/320?cb=20180909205723",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "Ars Arma CPC MOD.1 plate carrier (A-TACS FG)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/ArsArmaCPCMOD2.png/revision/latest?cb=20200502000042",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "Crye Precision CPC plate carrier (Goons Edition)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/Crye_Precision_CPC_GE.png/revision/latest/scale-to-width-down/320?cb=20220705232026",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "S&S Precision PlateFrame plate carrier (Goons Edition)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/b4/S%26S_Precision_PlateFrame_GE.png/revision/latest/scale-to-width-down/320?cb=20220705231743",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  },
+  {
+    "name": "CQC Osprey MK4A plate carrier (Protection, MTP)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/03/OspreyMk4_Protection_View.png/revision/latest/scale-to-width-down/320?cb=20211206002414",
+    "always_obtainable": false,
+    "meta": true,
+    "flea": true,
+    "trader_info": {
+      "Peacekeeper": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "NPP KlASS Bagariy armored rig (Digital Flora)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9a/NPP_Bagariy.png/revision/latest/scale-to-width-down/320?cb=20220705234540",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": false,
+          "barter": false
+        }
+      ]
+    }
+  },
+  {
+    "name": "Tasmanian Tiger SK plate carrier (Multicam Black)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/eb/Tasmanian_Tiger_SK.png/revision/latest/scale-to-width-down/320?cb=20220705232948",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {
+      "Ragman": [
+        {
+          "level": 4,
+          "quest_locked": true,
+          "barter": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "Crye Precision AVS plate carrier (Tagilla Edition)",
+    "category": "Armored Rig",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/92/MBAV_View.png/revision/latest/scale-to-width-down/320?cb=20211205220746",
+    "always_obtainable": false,
+    "meta": false,
+    "flea": true,
+    "trader_info": {}
+  }
+]

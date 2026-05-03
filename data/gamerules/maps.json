@@ -1,0 +1,68 @@
+[
+  {
+    "name": "YOUR CHOICE!",
+    "category": "Map",
+    "image_url": "https://clipartix.com/wp-content/uploads/2018/03/you-clipart-2018-14.jpg",
+    "meta": true
+  },
+  {
+    "name": "Factory",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Factory-Day_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811153020",
+    "meta": true
+  },
+  {
+    "name": "Woods",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_woods.png/revision/latest/scale-to-width-down/382?cb=20171101223132",
+    "meta": true
+  },
+  {
+    "name": "Customs",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/9f/Customs_Banner.png/revision/latest/scale-to-width-down/382?cb=20200811151055",
+    "meta": true
+  },
+  {
+    "name": "Interchange",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3e/Banner_interchange.png/revision/latest/scale-to-width-down/382?cb=20200811153253",
+    "meta": true
+  },
+  {
+    "name": "Shoreline",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/Banner_shoreline.png/revision/latest/scale-to-width-down/382?cb=20171101223501",
+    "meta": true
+  },
+  {
+    "name": "Reserve",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f4/Reserve.png/revision/latest/scale-to-width-down/382?cb=20191101214624",
+    "meta": true
+  },
+  {
+    "name": "The Lab",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/TheLabBanner.png/revision/latest/scale-to-width-down/382?cb=20181225171705",
+    "meta": true
+  },
+  {
+    "name": "Lighthouse",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/dc/Banner_lighthouse.png/revision/latest/scale-to-width-down/382?cb=20211213001748",
+    "meta": true
+  },
+  {
+    "name": "Streets of Tarkov",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/41/Banner_streets.png/revision/latest/scale-to-width-down/382?cb=20230131205551",
+    "meta": true
+  },
+  {
+    "name": "Ground Zero",
+    "category": "Map",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/Ground_Zero_Banner.png/revision/latest/scale-to-width-down/320?cb=20231228134014",
+    "meta": true
+  }
+]

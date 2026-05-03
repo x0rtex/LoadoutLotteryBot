@@ -1,0 +1,140 @@
+[
+  {
+    "name": "No face cover or glasses",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/AQ7ntWE.png",
+    "meta": false
+  },
+  {
+    "name": "Only smoke grenades",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/M18_Green_View.png/revision/latest?cb=20211212211007",
+    "meta": false
+  },
+  {
+    "name": "No suppressors",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/Otrn9Xc.png",
+    "meta": false
+  },
+  {
+    "name": "No insurance",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/E5xueS0.png",
+    "meta": false
+  },
+  {
+    "name": "Iron sights only",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4f/Kriss_FlipupRear_View.png/revision/latest/scale-to-width-down/320?cb=20201224175245",
+    "meta": false
+  },
+  {
+    "name": "Hip fire only (unbind aim)",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/xh2Z6eT.jpg",
+    "meta": false
+  },
+  {
+    "name": "No surgery kits",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/ZLf9udj.png",
+    "meta": false
+  },
+  {
+    "name": "No docs/sicc/keytool/keycard holder",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/5Rusxe3.png",
+    "meta": false
+  },
+  {
+    "name": "Weapon must be stock",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/j3RShdo.png",
+    "meta": false
+  },
+  {
+    "name": "Single-fire only",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/yhRZB5H.png",
+    "meta": false
+  },
+  {
+    "name": "Hatchlings must be fought with a melee",
+    "category": "Random Modifier",
+    "image_url": "https://academyoffencingmasters.com/blog/wp-content/uploads/2017/02/Valentine%E2%80%99s-Day-Love-and-Swordfighting-Duels.jpg",
+    "meta": true
+  },
+  {
+    "name": "No headphones",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/FOrgqJm.png",
+    "meta": false
+  },
+  {
+    "name": "Level 1 Meds",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/I71LsPN.png",
+    "meta": false
+  },
+  {
+    "name": "No grenades",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/8d22sUW.png",
+    "meta": false
+  },
+  {
+    "name": "Flashlight always on",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/6/6a/X400image.png/revision/latest/scale-to-width-down/320?cb=20190628034042",
+    "meta": false
+  },
+  {
+    "name": "Use helmet flashlight and keep it always turned on",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/tbmab5X.png",
+    "meta": false
+  },
+  {
+    "name": "Only use stimulants for healing",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/72/ETG_change.png/revision/latest?cb=20181228104842",
+    "meta": false
+  },
+  {
+    "name": "Must attempt to extract camp one player",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/uMBkzX3.png",
+    "meta": false
+  },
+  {
+    "name": "Scavs must be killed with a sawed-off double barrel as secondary",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/uMBkzX3.png",
+    "meta": false
+  },
+  {
+    "name": "Must use \"Scav Down\" voice line every time you kill a scav",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/IrlJOQL.png",
+    "meta": false
+  },
+  {
+    "name": "Must swap backpacks with teammate at the end of the raid (including the loot inside)",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/PB7E1Gf.jpeg",
+    "meta": false
+  },
+  {
+    "name": "Fire your weapon into the air to signal your presence at the beginning of the raids",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/GcpDk0I.png",
+    "meta": false
+  },
+  {
+    "name": "Change your interface language to \u0420\u0443\u0441\u0441\u043a\u0438\u0439 for the true Tarkovian experience",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/xjUtGIM.png",
+    "meta": false
+  }
+]

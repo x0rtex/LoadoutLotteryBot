@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Use highest capacity magazine",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/90/MAG5-100.png/revision/latest/scale-to-width-down/1200?cb=20190414152250",
+    "meta": true
+  },
+  {
+    "name": "Attempt to befriend one random player",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/i3KRTCc.png",
+    "meta": true
+  },
+  {
+    "name": "Night raid (NVG if applicable)",
+    "category": "Random Modifier",
+    "image_url": "https://i.redd.it/juv50kmkgm941.png",
+    "meta": true
+  },
+  {
+    "name": "Flash grenades only",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/fc/Model_7290_Flash_Bang.png/revision/latest?cb=20211212182627",
+    "meta": true
+  },
+  {
+    "name": "M67 Hand grenades only",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e2/M67.png/revision/latest/scale-to-width-down/320?cb=20200216033043",
+    "meta": true
+  },
+  {
+    "name": "Use highest flesh damage round available",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1b/.45_RIP_View.png/revision/latest?cb=20200508230152",
+    "meta": true
+  },
+  {
+    "name": "Use highest penetration round available",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f0/338ap.png/revision/latest/scale-to-width-down/320?cb=20210102070935",
+    "meta": true
+  },
+  {
+    "name": "Use thermal scope",
+    "category": "Random Modifier",
+    "image_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/3/3c/Sig_ECHO1_Image.png/revision/latest/scale-to-width-down/320?cb=20230813064714",
+    "meta": true
+  },
+  {
+    "name": "Swap weapons with a teammate at the start of the raid",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/scq6eWt.png",
+    "meta": false
+  },
+  {
+    "name": "Attempt to dress up as a scav",
+    "category": "Random Modifier",
+    "image_url": "https://i.imgur.com/yJcVKMJ.png",
+    "meta": false
+  }
+]
