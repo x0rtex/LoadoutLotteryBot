@@ -605,39 +605,5 @@
         "meta": false,
         "flea": true,
         "trader_info": {}
-    },
-    {
-        "name": "",
-        "category": "Backpack",
-        "image_url": "",
-        "always_obtainable": false,
-        "meta": false,
-        "flea": true,
-        "trader_info": {
-            "Prapor": [
-                {
-                    "level": 1,
-                    "quest_locked": false,
-                    "barter": false
-                }
-            ]
-        }
-    },
-    {
-        "name": "",
-        "category": "Backpack",
-        "image_url": "",
-        "always_obtainable": false,
-        "meta": false,
-        "flea": true,
-        "trader_info": {
-            "Prapor": [
-                {
-                    "level": 1,
-                    "quest_locked": false,
-                    "barter": false
-                }
-            ]
-        }
     }
 ]
