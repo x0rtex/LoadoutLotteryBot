@@ -4,7 +4,7 @@ import json
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
-from typing import NamedTuple
+from typing import NamedTuple, Self
 
 #############################
 # Constants                 #
@@ -39,7 +39,7 @@ class Trader(str, Enum):
     REF = "ref"
 
     @property
-    def display_name(self) -> str:
+    def display_name(self: Self) -> str:
         return self.value.capitalize()
 
 

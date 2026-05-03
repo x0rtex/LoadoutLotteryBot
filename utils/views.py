@@ -1,3 +1,5 @@
+from typing import Self
+
 import discord
 
 from utils import eft
@@ -29,24 +31,24 @@ REROLL_OPTIONS_RIG: list[discord.SelectOption] = [
 
 
 class RandomModifierButton(discord.ui.View):
-    def __init__(self) -> None:
+    def __init__(self: Self) -> None:
         super().__init__(timeout=None)
         self.value: bool = False
 
     @discord.ui.button(label="Roll Random Modifier", style=discord.ButtonStyle.green, custom_id="persistent_view:roll")
-    async def button_callback_yes(self, _, interaction: discord.Interaction) -> None:
+    async def button_callback_yes(self: Self, _, interaction: discord.Interaction) -> None:
         await interaction.response.edit_message(view=None)
         self.value: bool = True
         self.stop()
 
     @discord.ui.button(label="Finish", style=discord.ButtonStyle.grey, custom_id="persistent_view:no-roll")
-    async def button_callback_no(self, _, interaction: discord.Interaction) -> None:
+    async def button_callback_no(self: Self, _, interaction: discord.Interaction) -> None:
         await interaction.response.edit_message(view=None)
         self.stop()
 
 
 class RerollOneSlotWithRig(discord.ui.View):
-    def __init__(self) -> None:
+    def __init__(self: Self) -> None:
         super().__init__(timeout=None)
         self.value = None
 
@@ -57,7 +59,7 @@ class RerollOneSlotWithRig(discord.ui.View):
         max_values=1,
         options=REROLL_OPTIONS_RIG,
     )
-    async def select_callback(self, select: discord.ui.select, _) -> None:
+    async def select_callback(self: Self, select: discord.ui.select, _) -> None:
         self.value = [select.values[0]]
         self.stop()
 
@@ -74,7 +76,7 @@ class RerollOneSlotNoRig(discord.ui.View):
         max_values=1,
         options=REROLL_OPTIONS_NO_RIG,
     )
-    async def select_callback(self, select: discord.ui.select, _) -> None:
+    async def select_callback(self: Self, select: discord.ui.select, _) -> None:
         self.value = [select.values[0]]
         self.stop()
 
@@ -91,7 +93,7 @@ class RerollTwoSlotsWithRig(discord.ui.View):
         max_values=2,
         options=REROLL_OPTIONS_RIG,
     )
-    async def select_callback(self, select: discord.ui.select, _) -> None:
+    async def select_callback(self: Self, select: discord.ui.select, _) -> None:
         self.value = select.values
         self.stop()
 
@@ -108,6 +110,6 @@ class RerollTwoSlotsNoRig(discord.ui.View):
         max_values=2,
         options=REROLL_OPTIONS_NO_RIG,
     )
-    async def select_callback(self, select: discord.ui.select, _) -> None:
+    async def select_callback(self: Self, select: discord.ui.select, _) -> None:
         self.value = select.values
         self.stop()
