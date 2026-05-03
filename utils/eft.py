@@ -73,6 +73,14 @@ class Item:
     trader_info: dict[str, list[Obtain]]
 
 
+@dataclass(slots=True, frozen=True)
+class GameRule:
+    name: str
+    category: str
+    image_url: str
+    meta: bool
+
+
 ALL_WEAPONS: tuple = (
     Item(
         name=YOUR_CHOICE,
@@ -1502,17 +1510,6 @@ ALL_WEAPONS: tuple = (
         },
     ),
     Item(
-        name="Degtyarev RPDN 7.62x39",
-        category=MACHINE_GUN,
-        image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1a/Degtyarev_rpdn_lmg.png/revision/latest/scale-to-width-down/320?cb=20240114131549",
-        always_obtainable=False,
-        meta=False,
-        flea=False,
-        trader_info={
-            MECHANIC: [Obtain(level=3, quest_locked=False, barter=True)],
-        },
-    ),
-    Item(
         name='SR-2M "Veresk" 9x21',
         category=SMG,
         image_url="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/5/5b/SR2M_View.png/revision/latest/scale-to-width-down/320?cb=20231025202344",
@@ -2135,8 +2132,6 @@ ALL_ARMORED_RIGS: tuple = (
         trader_info={},
     ),
 )
-
-ALL_ARMORS = ALL_ARMOR_VESTS + ALL_ARMORED_RIGS
 
 ALL_RIGS: tuple = (
     Item(
@@ -3246,15 +3241,6 @@ ALL_BACKPACKS: tuple = (
     ),
 )
 
-
-@dataclass(slots=True, frozen=True)
-class GameRule:
-    name: str
-    category: str
-    image_url: str
-    meta: bool
-
-
 ALL_GUN_MODS: tuple = (
     GameRule(
         name=LL1_TRADERS,
@@ -3638,5 +3624,3 @@ BAD_MODIFIERS: tuple = (
         meta=False,
     ),
 )
-
-ALL_MODIFIERS: tuple = (GOOD_MODIFIERS, OK_MODIFIERS, BAD_MODIFIERS)
