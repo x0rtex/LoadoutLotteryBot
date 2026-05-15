@@ -1,14 +1,14 @@
+import logging
 import sqlite3
 
-from logger.logger import logger
+from config.config import settings as cfg
 from utils.users import TraderLevels, UserSettings
 
-# Database name
-USER_SETTINGS_DB: str = "user_settings.db"
+logger = logging.getLogger("discord")
 
 
 def initialize_database() -> None:
-    with sqlite3.connect(USER_SETTINGS_DB) as con:
+    with sqlite3.connect(cfg.db_path) as con:
         c = con.cursor()
         c.execute("""CREATE TABLE IF NOT EXISTS user_settings (
                         user_id INTEGER PRIMARY KEY,
@@ -43,7 +43,7 @@ def user_exists(cursor, user_id: int) -> bool:
 
 
 def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
-    with sqlite3.connect(USER_SETTINGS_DB) as con:
+    with sqlite3.connect(cfg.db_path) as con:
         c = con.cursor()
 
         if user_exists(c, user_id):
@@ -121,7 +121,7 @@ def write_user_settings(user_id: int, user_settings: UserSettings) -> None:
 
 
 def read_user_settings(user_id: int) -> UserSettings:
-    with sqlite3.connect(USER_SETTINGS_DB) as con:
+    with sqlite3.connect(cfg.db_path) as con:
         c = con.cursor()
         c.execute("SELECT * FROM user_settings WHERE user_id = ?", (user_id,))
         row = c.fetchone()

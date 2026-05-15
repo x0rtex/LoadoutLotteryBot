@@ -1,19 +1,20 @@
 from dataclasses import asdict, dataclass, field
 from typing import Self
 
+from config.config import settings as cfg
 from utils.eft import Trader
 
 
 @dataclass(frozen=True)
 class TraderLevels:
-    prapor: int = 4
-    therapist: int = 4
-    skier: int = 4
-    peacekeeper: int = 4
-    mechanic: int = 4
-    ragman: int = 4
-    jaeger: int = 4
-    ref: int = 4
+    prapor: int = cfg.default_traders.prapor
+    therapist: int = cfg.default_traders.therapist
+    skier: int = cfg.default_traders.skier
+    peacekeeper: int = cfg.default_traders.peacekeeper
+    mechanic: int = cfg.default_traders.mechanic
+    ragman: int = cfg.default_traders.ragman
+    jaeger: int = cfg.default_traders.jaeger
+    ref: int = cfg.default_traders.ref
 
     def get_level(self: Self, trader: Trader) -> int:
         return getattr(self, trader.value)
@@ -24,11 +25,11 @@ class TraderLevels:
 
 @dataclass(frozen=True)
 class UserSettings:
-    flea: bool = True
-    allow_quest_locked: bool = True
-    allow_fir_only: bool = False
-    meta_only: bool = False
-    roll_thermals: bool = False
+    flea: bool = cfg.default_flea
+    allow_quest_locked: bool = cfg.default_allow_quest_locked
+    allow_fir_only: bool = cfg.default_allow_fir_only
+    meta_only: bool = cfg.default_meta_only
+    roll_thermals: bool = cfg.default_roll_thermals
     trader_levels: TraderLevels = field(default_factory=TraderLevels)
 
     def to_dict(self: Self) -> dict:

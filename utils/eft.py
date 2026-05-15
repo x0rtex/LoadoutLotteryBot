@@ -10,6 +10,8 @@ from urllib.parse import urlparse
 
 from typing_extensions import Literal
 
+from config.config import settings as cfg
+
 logger = logging.getLogger("discord")
 
 #############################
@@ -17,8 +19,8 @@ logger = logging.getLogger("discord")
 #############################
 
 # Directories
-_ITEMS_DIR = Path(__file__).parent.parent / "data" / "items"
-_GAMERULES_DIR = Path(__file__).parent.parent / "data" / "gamerules"
+_ITEMS_DIR = cfg.data_dir / "items"
+_GAMERULES_DIR = cfg.data_dir / "gamerules"
 
 # Images
 DICE_IMAGE: str = (

@@ -1,13 +1,14 @@
 import logging
 import os
 from datetime import datetime, timezone
+from pathlib import Path
 
 from rich.logging import RichHandler
 
-os.makedirs("logs", exist_ok=True)
-
-LOG_DIR = "logs"
+LOG_DIR = str(Path(__file__).parent.parent / "logs")
 LATEST_LOG = os.path.join(LOG_DIR, "latest.log")
+
+os.makedirs(LOG_DIR, exist_ok=True)
 
 if os.path.exists(LATEST_LOG):
     mtime = os.path.getmtime(LATEST_LOG)

@@ -13,6 +13,7 @@ from discord import option
 from discord.ext import commands
 from dotenv import load_dotenv
 
+from config.config import settings as cfg
 from logger.logger import logger
 from utils import db, msgs, roll_logic, views
 from utils.users import TraderLevels, UserSettings
@@ -24,7 +25,7 @@ bot = commands.Bot(help_command=commands.DefaultHelpCommand())
 # Bot startup message
 @bot.event
 async def on_ready() -> None:
-    await bot.change_presence(activity=discord.Game("/help"))
+    await bot.change_presence(activity=discord.Game(cfg.bot_activity))
     bot.add_view(views.RandomModifierButton())
     logger.info(f"Logged in as {bot.user}")
     logger.info(f"Guilds: {len(bot.guilds)}")
@@ -32,7 +33,7 @@ async def on_ready() -> None:
 
 # /roll
 @bot.slash_command(name="roll", description="Loadout Lottery!")
-@commands.cooldown(1, 20, commands.BucketType.channel)
+@commands.cooldown(1, cfg.cooldown_roll, commands.BucketType.channel)
 async def roll(ctx: discord.ApplicationContext) -> None:
     msgs.print_command_timestamp(ctx)
     db.initialize_database()
@@ -50,13 +51,13 @@ async def roll(ctx: discord.ApplicationContext) -> None:
     await button.wait()
     if button.value:
         rolled_random_modifier = roll_logic.roll_random_modifier(user_settings)
-        await asyncio.sleep(1)
+        await asyncio.sleep(cfg.delay_before_random_modifier)
         await roll_logic.reveal_roll(ctx, embed_msg, rolled_random_modifier, "")
 
         # Check if random modifier requires further action
         await roll_logic.is_random_modifier_special(rolled_random_modifier, need_rig, ctx, embed_msg, filtered_items)
 
-    await asyncio.sleep(5)
+    await asyncio.sleep(cfg.delay_before_final)
     embed_msg.set_image(url="")
     embed_msg.set_footer(text="Enjoy!")
     await ctx.edit(embed=embed_msg, view=None)
@@ -64,7 +65,7 @@ async def roll(ctx: discord.ApplicationContext) -> None:
 
 # /fastroll
 @bot.slash_command(name="fastroll", description="Loadout Lottery! (Without the waiting around)")
-@commands.cooldown(1, 5, commands.BucketType.user)
+@commands.cooldown(1, cfg.cooldown_fastroll, commands.BucketType.user)
 async def fastroll(ctx: discord.ApplicationContext) -> None:
     msgs.print_command_timestamp(ctx)
     db.initialize_database()
@@ -95,7 +96,7 @@ async def fastroll(ctx: discord.ApplicationContext) -> None:
 
 # /settings
 @bot.slash_command(name="settings", description="Customise your Loadout Lottery experience.")
-@commands.cooldown(1, 10, commands.BucketType.user)
+@commands.cooldown(1, cfg.cooldown_settings, commands.BucketType.user)
 @option(name="prapor", description="Enter Prapor's trader level", type=int, choices=[0, 1, 2, 3, 4])
 @option(name="therapist", description="Enter Therapist's trader level", type=int, choices=[1, 2, 3, 4])
 @option(name="skier", description="Enter Skier's trader level", type=int, choices=[0, 1, 2, 3, 4])
@@ -165,8 +166,8 @@ async def settings(
 
 
 # /viewsettings
-@bot.slash_command(name="viewsettings", description="View your currently saved Loadout Lottery settings.")
-@commands.cooldown(1, 10, commands.BucketType.user)
+@bot.slash_command(name="viewsettings", description="View your currently saved Loadout Lottery cfg.")
+@commands.cooldown(1, cfg.cooldown_settings, commands.BucketType.user)
 async def viewsettings(ctx: discord.ApplicationContext) -> None:
     msgs.print_command_timestamp(ctx)
 
@@ -183,7 +184,7 @@ async def viewsettings(ctx: discord.ApplicationContext) -> None:
 
 # /resetsettings
 @bot.slash_command(name="resetsettings", description="Reset your currently saved Loadout Lottery settings to default.")
-@commands.cooldown(1, 10, commands.BucketType.user)
+@commands.cooldown(1, cfg.cooldown_settings, commands.BucketType.user)
 async def resetsettings(ctx: discord.ApplicationContext) -> None:
     msgs.print_command_timestamp(ctx)
 
@@ -196,7 +197,7 @@ async def resetsettings(ctx: discord.ApplicationContext) -> None:
 
 # /ping
 @bot.slash_command(name="ping", description="Check the bot's latency.")
-@commands.cooldown(1, 5, commands.BucketType.user)
+@commands.cooldown(1, cfg.cooldown_ping, commands.BucketType.user)
 async def ping(ctx: discord.ApplicationContext) -> None:
     msgs.print_command_timestamp(ctx)
 
@@ -205,7 +206,7 @@ async def ping(ctx: discord.ApplicationContext) -> None:
 
 # /stats
 @bot.slash_command(name="stats", description="Displays the bot's statistics")
-@commands.cooldown(1, 5, commands.BucketType.user)
+@commands.cooldown(1, cfg.cooldown_stats, commands.BucketType.user)
 async def stats(ctx: discord.ApplicationContext) -> None:
     msgs.print_command_timestamp(ctx)
 

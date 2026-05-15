@@ -3,6 +3,7 @@ import random
 
 import discord
 
+from config.config import settings as cfg
 from utils import msgs, views
 from utils.eft import Category, GameRule, GameRules, Item, Items, TraderLevelRule
 from utils.users import UserSettings
@@ -117,7 +118,7 @@ async def reveal_roll(
     else:
         await ctx.edit(embed=embed_msg, view=None)
 
-    await asyncio.sleep(1)
+    await asyncio.sleep(cfg.delay_before_reveal)
     embed_msg.set_field_at(
         index=-1,
         name=f"{prefix}{rolled_item.category.value}:",
@@ -127,7 +128,7 @@ async def reveal_roll(
 
     embed_msg.set_image(url=rolled_item.image_url)
     await ctx.edit(embed=embed_msg, view=None)
-    await asyncio.sleep(1.5)
+    await asyncio.sleep(cfg.delay_after_reveal)
 
 
 async def is_random_modifier_special(
