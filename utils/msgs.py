@@ -1,5 +1,4 @@
 import logging
-import time
 
 import discord
 
@@ -19,6 +18,7 @@ WELCOME_TEXT_META: str = "🎲 Welcome to META Loadout Lottery! 🎰"
 
 
 def create_embed(ctx: discord.ApplicationContext, user_settings: UserSettings) -> discord.Embed:
+    assert ctx.interaction is not None and ctx.interaction.user is not None
     embed_msg = discord.Embed(title=WELCOME_TEXT_META if user_settings.meta_only else WELCOME_TEXT, url=GITHUB_URL)
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
     embed_msg.set_thumbnail(url=ctx.interaction.user.display_avatar.url)
@@ -26,10 +26,12 @@ def create_embed(ctx: discord.ApplicationContext, user_settings: UserSettings) -
 
 
 def print_command_timestamp(ctx: discord.ApplicationContext) -> None:
+    assert ctx.command is not None
     logger.info(f"/{ctx.command.name} invoked")
 
 
 def show_user_settings(user_settings: UserSettings, ctx: discord.ApplicationContext) -> discord.Embed:
+    assert ctx.interaction is not None and ctx.interaction.user is not None
     embed_msg = discord.Embed()
     embed_msg.set_author(name=SUPPORT_SERVER, icon_url=LOADOUT_LOTTERY_ICON, url=DISCORD_SERVER)
     embed_msg.set_thumbnail(url=ctx.interaction.user.display_avatar.url)

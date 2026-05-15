@@ -59,7 +59,7 @@ class RerollOneSlotWithRig(discord.ui.View):
         max_values=1,
         options=REROLL_OPTIONS_RIG,
     )
-    async def select_callback(self: Self, select: discord.ui.select, _) -> None:
+    async def select_callback(self: Self, select: discord.ui.Select, _) -> None:
         self.value = [select.values[0]]
         self.stop()
 
@@ -76,7 +76,7 @@ class RerollOneSlotNoRig(discord.ui.View):
         max_values=1,
         options=REROLL_OPTIONS_NO_RIG,
     )
-    async def select_callback(self: Self, select: discord.ui.select, _) -> None:
+    async def select_callback(self: Self, select: discord.ui.Select, _) -> None:
         self.value = [select.values[0]]
         self.stop()
 
@@ -93,7 +93,7 @@ class RerollTwoSlotsWithRig(discord.ui.View):
         max_values=2,
         options=REROLL_OPTIONS_RIG,
     )
-    async def select_callback(self: Self, select: discord.ui.select, _) -> None:
+    async def select_callback(self: Self, select: discord.ui.Select, _) -> None:
         self.value = select.values
         self.stop()
 
@@ -110,6 +110,6 @@ class RerollTwoSlotsNoRig(discord.ui.View):
         max_values=2,
         options=REROLL_OPTIONS_NO_RIG,
     )
-    async def select_callback(self: Self, select: discord.ui.select, _) -> None:
+    async def select_callback(self: Self, select: discord.ui.Select, _) -> None:
         self.value = select.values
         self.stop()

@@ -148,7 +148,7 @@ async def is_random_modifier_special(
 
 async def reroll(
     ctx: discord.ApplicationContext,
-    view: discord.ui.View,
+    view,
     embed_msg: discord.Embed,
     filtered_items: dict[Category, tuple],
 ) -> None:
@@ -159,6 +159,7 @@ async def reroll(
         category = Category(category_str)
         rerolled = random.choice(filtered_items[category])
 
+        assert ctx.command is not None
         if ctx.command.name == "roll":
             await reveal_roll(ctx, embed_msg, rerolled, msgs.REROLLED_PREFIX)
         elif ctx.command.name == "fastroll":

@@ -238,6 +238,8 @@ async def stats(ctx: discord.ApplicationContext) -> None:
 
 @bot.event  # Application command error handler
 async def on_application_command_error(ctx: discord.ApplicationContext, error: discord.DiscordException) -> None:
+    if ctx.command is None:
+        return
     if isinstance(error, commands.CommandOnCooldown):
         logger.info(f"/{ctx.command.name} is on cooldown ({round(error.retry_after, 1)}s remaining)")
         await ctx.respond(
