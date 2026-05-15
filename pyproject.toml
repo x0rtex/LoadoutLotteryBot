@@ -12,6 +12,12 @@ dependencies = [
     "uvloop>=0.22.1 ; sys_platform != 'win32'",
 ]
 
+[tool.pyrefly]
+project-includes = [
+    "**/*.py*",
+    "**/*.ipynb",
+]
+
 [dependency-groups]
 dev = [
     "ruff>=0.15.12",

@@ -1,6 +1,11 @@
 .env
 .venv
+.zed
+.vscode
+.idea
 discord.log
 user_settings.db
 __pycache__
-.zed
+AGENTS.md
+openspec
+.opencode
