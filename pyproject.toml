@@ -7,21 +7,20 @@ requires-python = ">=3.12"
 dependencies = [
     "psutil>=7.2.2",
     "py-cord>=2.7.2",
+    "pydantic>=2.13.4",
     "python-dotenv>=1.2.2",
     "rich>=15.0.0",
     "uvloop>=0.22.1 ; sys_platform != 'win32'",
 ]
 
 [tool.pyrefly]
-project-includes = [
-    "**/*.py*",
-    "**/*.ipynb",
-]
+project-includes = ["**/*.py*"]
+python-version = "3.12"
 
 [dependency-groups]
 dev = [
+    "pyrefly>=1.0.0",
     "ruff>=0.15.12",
     "taskipy>=1.2.1",
-    "ty>=0.0.34",
     "types-psutil>=7.2.2.20260508",
 ]

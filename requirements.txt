@@ -6,6 +6,8 @@ aiohttp==3.13.5
     # via py-cord
 aiosignal==1.4.0
     # via aiohttp
+annotated-types==0.7.0
+    # via pydantic
 attrs==26.1.0
     # via aiohttp
 frozenlist==1.8.0
@@ -30,6 +32,10 @@ psutil==7.2.2
     # via loadout-lottery-bot
 py-cord==2.7.2
     # via loadout-lottery-bot
+pydantic==2.13.4
+    # via loadout-lottery-bot
+pydantic-core==2.46.4
+    # via pydantic
 pygments==2.20.0
     # via rich
 python-dotenv==1.2.2
@@ -40,6 +46,11 @@ typing-extensions==4.15.0
     # via
     #   aiosignal
     #   py-cord
+    #   pydantic
+    #   pydantic-core
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via pydantic
 uvloop==0.22.1 ; sys_platform != 'win32'
     # via loadout-lottery-bot
 yarl==1.23.0
