@@ -3,7 +3,7 @@
 .zed
 .vscode
 .idea
-discord.log
+logs/
 user_settings.db
 __pycache__
 AGENTS.md
